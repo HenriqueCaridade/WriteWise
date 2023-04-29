@@ -1,0 +1,8 @@
+/*
+
+# Ignore everything but these:
+!/.minix-src/
+!/lab[0-9]/
+!/proj/
+!/.gitignore
+!/README.md
