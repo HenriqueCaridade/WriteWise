@@ -4,6 +4,8 @@
 
 # Ignore everything but these:
 !/.minix-src/
+!/lab[0-9]/.vscode
+!/lab[0-9]/.clang-format
 !/lab[0-9]/*.c
 !/lab[0-9]/*.h
 !/lab[0-9]/Makefile
