@@ -1,9 +1,9 @@
 /*
-/lab0/bitwise/bitwise
-/lab0/helloworld/hello
 
 # Ignore everything but these:
 !/.minix-src/
+!/lab0/bitwise/bitwise.c
+!/lab0/helloworld/hello.c
 !/lab[0-9]/.vscode
 !/lab[0-9]/.clang-format
 !/lab[0-9]/*.c
