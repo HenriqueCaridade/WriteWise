@@ -1,4 +1,12 @@
 /*
+/lab0/bitwise/bitwise
+/lab0/helloworld/hello
+/lab[0-9]/.depend
+/lab[0-9]/.gdbinit
+/lab[0-9]/*.txt
+/lab[0-9]/*.d
+/lab[0-9]/*.o
+/lab[0-9]/lab[0-9]
 
 # Ignore everything but these:
 !/.minix-src/
