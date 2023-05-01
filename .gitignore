@@ -1,16 +1,12 @@
 /*
 /lab0/bitwise/bitwise
 /lab0/helloworld/hello
-/lab[0-9]/.depend
-/lab[0-9]/.gdbinit
-/lab[0-9]/*.txt
-/lab[0-9]/*.d
-/lab[0-9]/*.o
-/lab[0-9]/lab[0-9]
 
 # Ignore everything but these:
 !/.minix-src/
-!/lab[0-9]/
+!/lab[0-9]/*.c
+!/lab[0-9]/*.h
+!/lab[0-9]/Makefile
 !/proj/
 !/.gitignore
 !/README.md
