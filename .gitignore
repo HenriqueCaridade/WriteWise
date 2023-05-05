@@ -1,14 +1,25 @@
-/*
+*
+!*/
 
 # Ignore everything but these:
-!/.minix-src/
-!/lab0/bitwise/bitwise.c
-!/lab0/helloworld/hello.c
-!/lab[0-9]/.vscode
-!/lab[0-9]/.clang-format
-!/lab[0-9]/*.c
-!/lab[0-9]/*.h
-!/lab[0-9]/Makefile
-!/proj/
-!/.gitignore
-!/README.md
+!.minix-src/
+
+!lab0/bitwise/bitwise.c
+!lab0/helloworld/hello.c
+!lab[0-9]/.vscode
+!lab[0-9]/.clang-format
+!lab[0-9]/*.c
+!lab[0-9]/*.h
+!lab[0-9]/Makefile
+
+!proj/src/.vscode
+!proj/src/.clang-format
+!proj/src/*.c
+!proj/src/*.h
+!proj/src/Makefile
+
+!proj/src/lib/*
+!proj/src/lib/drivers/*
+
+!.gitignore
+!README.md
