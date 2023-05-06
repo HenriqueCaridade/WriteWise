@@ -46,6 +46,8 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
+                // Draw screen:
+                // HERE
             }
             if (msg.m_notify.interrupts & irqSetMouse) {
                 // Mouse Interrupt
