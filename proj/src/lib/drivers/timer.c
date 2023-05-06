@@ -1,10 +1,10 @@
 #include <lcom/lcf.h>
 #include <lcom/timer.h>
-
 #include <stdint.h>
+#include "timer.h"
 #include "i8254.h"
 
-int counter = 0;
+uint64_t counter = 0;
 int hookIdTimer = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
@@ -27,17 +27,13 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
-int (timer_subscribe_int)(uint8_t *bit_no) {
-  if (bit_no == 0) return 1;
-  *bit_no = BIT(hookIdTimer);
-
-  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hookIdTimer)) return 1;
-  return 0;
+int (timer_subscribe_interrupt)() {
+  irqSetTimer = BIT(hookIdTimer);
+  return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hookIdTimer);
 }
 
 int (timer_unsubscribe_int)() {
-  if (sys_irqrmpolicy(&hookIdTimer)) return 1;
-  return 0;
+  return sys_irqrmpolicy(&hookIdTimer);
 }
 
 void (timer_int_handler)() {
@@ -74,4 +70,8 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
 
   timer_print_config(timer, field, conf);
   return 0;
+}
+
+uint64_t(timer_get_elapsed_count)(){
+    return counter;
 }

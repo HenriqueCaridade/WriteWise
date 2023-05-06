@@ -18,8 +18,10 @@
 !proj/src/*.h
 !proj/src/Makefile
 
-!proj/src/lib/*
-!proj/src/lib/drivers/*
+!proj/src/lib/*.c
+!proj/src/lib/*.h
+!proj/src/lib/drivers/*.c
+!proj/src/lib/drivers/*.h
 
 !.gitignore
 !README.md

@@ -1,5 +1,6 @@
 #include <lcom/lcf.h>
 #include <lcom/utils.h>
+#include "mouse.h"
 #include "i8042.h"
 #include "KBC.h"
 
@@ -9,9 +10,8 @@ uint8_t byteIndex = 0;
 uint8_t mouseBytes[3];
 uint8_t currentByte;
 
-int (mouse_subscribe_int)(uint8_t *bit_no){
-  if (bit_no == 0) return 1;
-  *bit_no = BIT(hookIdMouse);
+int (mouse_subscribe_int)(){
+  irqSetMouse = BIT(hookIdMouse);
   return sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &hookIdMouse);
 }
 
@@ -19,8 +19,16 @@ int (mouse_unsubscribe_int)() {
   return sys_irqrmpolicy(&hookIdMouse);
 }
 
-void (mouse_ih)(){
-  if (read_KBC_output(KBC_OUT_CMD, &currentByte, true)) printf("Error in reading byte from mouse.");
+int (mouse_int_h)(){
+    if (read_KBC_output(KBC_OUT_CMD, &currentByte, true)) printf("Error in reading byte from mouse.");
+    mouse_sync_bytes();
+    if (byteIndex == 3) { // Packet is complete
+        mouse_bytes_to_packet();
+        mouse_print_packet(&mousePacket);
+        byteIndex = 0;
+        return 1; // Complete
+    }
+    return 0;
 }
 
 void (mouse_sync_bytes)(){

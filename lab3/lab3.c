@@ -65,12 +65,12 @@ int(kbd_test_scan)() {
             */
             kbc_ih();
 
-            // Errado!
             // kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTES ? 2 : 1, &scancode);
             // BreakCode: 0xE0 0x00
             // MakeCode: 0xXX
             // BreakCode: 0xE0 0x00
             // BreakCode: 0xXX
+            // Errado!
             
             if (scancode == TWO_BYTES){
               isTwoBytes = true;
