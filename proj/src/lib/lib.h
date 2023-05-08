@@ -15,7 +15,8 @@
 #include "drivers/KBC/mouse.h"
 
 // Macros
-#include "drivers/graphics/i8254.h"
+#include "drivers/graphics/VBE.h"
+#include "drivers/timer/i8254.h"
 #include "drivers/KBC/i8042.h"
 
 message msg;
