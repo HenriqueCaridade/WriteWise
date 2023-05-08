@@ -20,8 +20,17 @@
 
 !proj/src/lib/*.c
 !proj/src/lib/*.h
+!proj/src/lib/text/*.c
+!proj/src/lib/text/*.h
 !proj/src/lib/drivers/*.c
 !proj/src/lib/drivers/*.h
+!proj/src/lib/drivers/graphics/*.c
+!proj/src/lib/drivers/graphics/*.h
+!proj/src/lib/drivers/KBC/*.c
+!proj/src/lib/drivers/KBC/*.h
+!proj/src/lib/drivers/timer/*.c
+!proj/src/lib/drivers/timer/*.h
+
 
 !.gitignore
 !README.md

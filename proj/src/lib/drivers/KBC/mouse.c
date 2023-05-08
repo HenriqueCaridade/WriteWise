@@ -20,7 +20,11 @@ int (mouse_unsubscribe_int)() {
 }
 
 int (mouse_int_h)(){
-    if (read_KBC_output(KBC_OUT_CMD, &currentByte, true)) printf("Error in reading byte from mouse.");
+    if (read_KBC_output(KBC_OUT_CMD, &currentByte, true)) {
+        printf("Error in reading byte from mouse.");
+        byteIndex = 0;
+        return 0;
+    }
     mouse_sync_bytes();
     if (byteIndex == 3) { // Packet is complete
         mouse_bytes_to_packet();

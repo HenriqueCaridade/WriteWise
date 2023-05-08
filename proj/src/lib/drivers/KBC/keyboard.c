@@ -22,7 +22,12 @@ int (keyboard_unsubscribe_int)() {
 }
 
 int (keyboard_ih)() {
-    if (read_KBC_output(KBC_OUT_CMD, &scancode, false)) printf("ERROR: Could not read scancode!\n");
+    if (read_KBC_output(KBC_OUT_CMD, &scancode, false)) {
+        printf("ERROR: Could not read scancode!\n");
+        isTwoBytes = false;
+        isScancodeTwoBytes = false;
+        return 0;
+    }
     if (scancode == TWO_BYTES){
         isTwoBytes = true;
         return 0;
@@ -34,10 +39,10 @@ int (keyboard_ih)() {
 }
 
 int (keyboard_restore)(){
-    if (sys_outb(0x64, 0x20)) return 1;
+    if (write_KBC_command(KBC_IN_CMD, KBC_READ_CMD)) return 1;
     uint8_t config;
-    if (util_sys_inb(0x60, &config)) return 1;
-    config |= 1;
-    if (sys_outb(0x64, 0x60)) return 1;
-    return sys_outb(0x60, config);
+    if (read_KBC_output(KBC_OUT_CMD, &config, false)) return 1;
+    config |= ENABLE_INT;
+    if (write_KBC_command(KBC_IN_CMD, KBC_WRITE_CMD)) return 1;
+    return write_KBC_command(KBC_WRITE_CMD, config);
 }

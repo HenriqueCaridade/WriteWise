@@ -31,6 +31,9 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+
+int drawScreen();
+
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAll()) return 1;
     if (setMinixMode(vbe600pDc)) return 1;
@@ -46,8 +49,8 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
-                // Draw screen:
-                // HERE
+                // Draw screen
+                if (drawScreen()) { setMinixMode(textMode); return 1; }
             }
             if (msg.m_notify.interrupts & irqSetMouse) {
                 // Mouse Interrupt
@@ -76,4 +79,19 @@ int(proj_main_loop)(int argc, char *argv[]){
     }
     if (setMinixMode(textMode)) return 1;
     return exitAll();
+}
+
+int testScreen(){
+    // TEST SCREEN
+    if (drawTextColor(20, 20, "THE QUICK BROWN FOX JUMPS OF THE LAZY DOG", 0xFFFFFF)) return 1;
+    if (drawTextColor(20, 40, "the quick brown fox jumps of the lazy dog", 0x40FF40)) return 1;
+    if (drawTextColor(20, 60, "0123456789", 0xFF00FF)) return 1;
+    if (drawTextColor(20, 80, "a.a,a;a:", 0x4040FF)) return 1;
+    return 0;
+}
+
+int drawScreen(){
+    clearScreen();
+    if (testScreen()) return 1;
+    return 0;
 }
