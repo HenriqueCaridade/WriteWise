@@ -15,7 +15,7 @@ int (set_graphic_mode)(uint16_t submode) {
     
     memset(&modeInfo, 0, sizeof(modeInfo));
     if(vbe_get_mode_info(submode, &modeInfo)) {
-        printf("vbe_get_mode_info failed.")
+        printf("vbe_get_mode_info failed.");
         return 1;
     }
     bytes_pp = (modeInfo.BitsPerPixel + 7) >> 3;

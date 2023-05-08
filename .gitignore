@@ -31,6 +31,5 @@
 !proj/src/lib/drivers/timer/*.c
 !proj/src/lib/drivers/timer/*.h
 
-
 !.gitignore
 !README.md
