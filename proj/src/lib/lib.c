@@ -1,5 +1,22 @@
+
 #include "lib.h"
 
+int initAllDrivers(){
+    isScancodeTwoBytes = false;
+    currentMode = textMode;
+    setFontType(medium);
+    if (timer_subscribe_interrupt()) return 1;
+    if (keyboard_subscribe_int()) return 1;
+    if (mouse_subscribe_int()) return 1;
+    return 0;
+}
+
+int exitAllDrivers(){
+    if (mouse_unsubscribe_int()) return 1;
+    if (keyboard_unsubscribe_int()) return 1;
+    if (timer_unsubscribe_int()) return 1;
+    return 0;
+}
 
 int setFrameRate(uint16_t fps){
     if (fps < 20 || fps > 60) {
@@ -15,10 +32,16 @@ int setMinixMode(minix_mode_t mode){
         currentMode = mode;
     } else {
         if (set_graphic_mode(mode)) return 1;
-        if (set_frame_buffer()) { setMinixMode(textMode); return 1;}
+        if (set_frame_buffer()) { setMinixMode(textMode); return 1; }
         currentMode = mode;
     }
     return 0;
+}
+
+int exitGraphMode(int code) {
+    int attempts = 10;
+    while (attempts-- && set_text_mode());
+    return code;
 }
 
 void clearScreen(){
@@ -61,18 +84,21 @@ int drawRectRGB(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t
     return vg_draw_rectangle(x, y, width, height, direct_mode(red, green, blue));
 }
 
-int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color){
-    // Only called when color is already calculated
-    int index = getCharIndex(c);
-    if (index < 0) return 1;
+int _draw5x7(uint16_t x, uint16_t y, const bool c[7][5], uint32_t color) {
     for (uint16_t dy = 0; dy < currentFontSize.height; dy++){
         for (uint16_t dx = 0; dx < currentFontSize.width; dx++){
-            if (alphabet[index][dy / currentPixelSize][dx / currentPixelSize]) {
+            if (c[dy / currentPixelSize][dx / currentPixelSize]) {
                 if (vg_draw_pixel(x + dx, y + dy, color)) return 1;
             }
         }
     }
     return 0;
+}
+int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color){
+    // Only called when color is already calculated
+    int index = getCharIndex(c);
+    if (index < 0) return 1;
+    return _draw5x7(x, y, alphabet[index], color);
 }
 int drawCharColor(uint16_t x, uint16_t y, const char c, uint32_t color){
     if (currentMode == vbe768pInd) return _drawChar(x, y, c, color);
@@ -99,20 +125,6 @@ int drawTextRGB(uint16_t x, uint16_t y, const char* str, uint8_t red, uint8_t gr
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
     return _drawText(x, y, str, direct_mode(red, green, blue));
 }
-
-int initAll(){
-    isScancodeTwoBytes = false;
-    currentMode = textMode;
-    setFontType(medium);
-    if (timer_subscribe_interrupt()) return 1;
-    if (keyboard_subscribe_int()) return 1;
-    if (mouse_subscribe_int()) return 1;
-    return 0;
-}
-
-int exitAll(){
-    if (mouse_unsubscribe_int()) return 1;
-    if (keyboard_unsubscribe_int()) return 1;
-    if (timer_unsubscribe_int()) return 1;
-    return 0;
+uint16_t getTextWidth(const char* str) {
+    return strlen(str) * (currentFontSize.width + currentPixelSize) - currentPixelSize;
 }

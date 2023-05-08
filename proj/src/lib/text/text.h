@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _PROJ_TEXT_H
+#define _PROJ_TEXT_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -24,3 +25,5 @@ const bool alphabet[67][7][5];
 
 int getCharIndex(const char c);
 void setFontType(font_type_t fontType);
+
+#endif // _PROJ_TEXT_H

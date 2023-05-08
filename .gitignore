@@ -1,9 +1,11 @@
 *
 !*/
 
-# Ignore everything but these:
+###  Ignore everything but these:  ###
+# Minix Include Files
 !.minix-src/
 
+# Labs' Files
 !lab0/bitwise/bitwise.c
 !lab0/helloworld/hello.c
 !lab[0-9]/.vscode
@@ -12,12 +14,14 @@
 !lab[0-9]/*.h
 !lab[0-9]/Makefile
 
+# Project Files
 !proj/src/.vscode
 !proj/src/.clang-format
 !proj/src/*.c
 !proj/src/*.h
 !proj/src/Makefile
 
+# Library Files
 !proj/src/lib/*.c
 !proj/src/lib/*.h
 !proj/src/lib/text/*.c
@@ -30,6 +34,10 @@
 !proj/src/lib/drivers/KBC/*.h
 !proj/src/lib/drivers/timer/*.c
 !proj/src/lib/drivers/timer/*.h
+
+# UI Files
+!proj/src/ui/*.c
+!proj/src/ui/*.h
 
 !.gitignore
 !README.md

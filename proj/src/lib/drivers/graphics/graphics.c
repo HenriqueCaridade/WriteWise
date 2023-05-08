@@ -14,7 +14,7 @@ int (set_graphic_mode)(uint16_t submode) {
     }
     
     memset(&modeInfo, 0, sizeof(modeInfo));
-    if(vbe_get_mode_info(submode, &modeInfo)) {
+    if (vbe_get_mode_info(submode, &modeInfo)) {
         printf("vbe_get_mode_info failed.");
         return 1;
     }
@@ -28,7 +28,7 @@ int (set_text_mode)() {
     memset(&reg86, 0, sizeof(reg86));
     reg86.intno = 0x10;
     reg86.ax = 0x0003;
-    if(sys_int86(&reg86) != OK) {
+    if (sys_int86(&reg86) != OK) {
         printf("Set text mode failed.\n");
         return 1;
     }
@@ -48,20 +48,27 @@ int (set_frame_buffer)(){
         return 1;
     }
 
-    frameBuffer = vm_map_phys(SELF, (void*) physicAddresses.mr_base, frameSize);
-    if (frameBuffer == NULL) {
+    vMem = vm_map_phys(SELF, (void*) physicAddresses.mr_base, frameSize);
+    if (vMem == NULL) {
         printf("Virtual memory allocation error.\n");
         return 1;
     }
 
+    frameBuffer = (uint8_t *) malloc(frameSize);
     return 0;
 }
 
+int (exit_graphic_mode)() {
+    free(frameBuffer);
+    return vg_exit();
+}
+
+void (flip_frame)() {
+    memcpy(vMem, frameBuffer, frameSize);
+}
+
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    if (x > modeInfo.XResolution || y > modeInfo.YResolution) {
-        printf("Pixel Coords (%d, %d) out of bounds(%d, %d).\n", x, y, modeInfo.XResolution, modeInfo.YResolution);
-        return 1;
-    }
+    if (x >= modeInfo.XResolution || y >= modeInfo.YResolution) return 1;
     size_t i = (modeInfo.XResolution * y + x) * bytes_pp;
     memcpy(frameBuffer + i, &color, bytes_pp);
     return 0;

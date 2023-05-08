@@ -33,8 +33,12 @@ typedef enum {
 
 minix_mode_t currentMode;
 
+int initAllDrivers();
+int exitAllDrivers();
+
 int setFrameRate(uint16_t fps);
 int setMinixMode(minix_mode_t mode);
+int exitGraphMode(int code);
 
 void clearScreen();
 int drawPixelColor(uint16_t x, uint16_t y, uint32_t color);
@@ -45,14 +49,13 @@ int drawVLineColor(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int drawVLineRGB(uint16_t x, uint16_t y, uint16_t len, uint8_t red, uint8_t green, uint8_t blue);
 int drawRectColor(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 int drawRectRGB(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t red, uint8_t green, uint8_t blue);
+int _draw5x7(uint16_t x, uint16_t y, const bool c[7][5], uint32_t color);
 int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color);
 int drawCharColor(uint16_t x, uint16_t y, const char c, uint32_t color);
 int drawCharRGB(uint16_t x, uint16_t y, const char c, uint8_t red, uint8_t green, uint8_t blue);
 int _drawText(uint16_t x, uint16_t y, const char* str, uint32_t color);
 int drawTextColor(uint16_t x, uint16_t y, const char* str, uint32_t color);
 int drawTextRGB(uint16_t x, uint16_t y, const char* str, uint8_t red, uint8_t green, uint8_t blue);
-
-int initAll();
-int exitAll();
+uint16_t getTextWidth(const char* str);
 
 #endif // _PROJ_LIB_H

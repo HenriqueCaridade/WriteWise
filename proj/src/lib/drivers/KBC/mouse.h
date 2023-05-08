@@ -2,6 +2,7 @@
 #define _PROJ_MOUSE_H
 
 uint8_t irqSetMouse;
+struct packet mousePacket;
 
 int (mouse_subscribe_int)();
 int (mouse_unsubscribe_int)();

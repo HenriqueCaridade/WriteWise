@@ -5,7 +5,6 @@
 #include "KBC.h"
 
 int hookIdMouse = 2;
-struct packet mousePacket;
 uint8_t byteIndex = 0;
 uint8_t mouseBytes[3];
 uint8_t currentByte;
@@ -28,7 +27,7 @@ int (mouse_int_h)(){
     mouse_sync_bytes();
     if (byteIndex == 3) { // Packet is complete
         mouse_bytes_to_packet();
-        mouse_print_packet(&mousePacket);
+        // mouse_print_packet(&mousePacket);
         byteIndex = 0;
         return 1; // Complete
     }

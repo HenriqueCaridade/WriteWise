@@ -7,14 +7,16 @@ PROG=proj
 .PATH: ${.CURDIR}/lib/drivers/graphics
 .PATH: ${.CURDIR}/lib/drivers/KBC
 .PATH: ${.CURDIR}/lib/drivers/timer
+.PATH: ${.CURDIR}/ui/
 
 # lib and driver files
 LIB_FILES = lib.c
 TEXT_FILES = text.c
 DRIVER_FILES = graphics.c KBC.c keyboard.c mouse.c timer.c utils.c
+UI_FILES = ui.c
 
 # source code files to be compiled
-SRCS = $(LIB_FILES) $(TEXT_FILES) $(DRIVER_FILES) proj
+SRCS = $(LIB_FILES) $(TEXT_FILES) $(DRIVER_FILES) $(UI_FILES) proj
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
