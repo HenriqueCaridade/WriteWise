@@ -107,9 +107,6 @@ int(proj_main_loop)(int argc, char *argv[]){
         exitAllDrivers();
         return 1;
     }
-    for (size_t i = 0; i < dictionarySize; i++) {
-        printf("%s\n", dictionary[i]);
-    }
     while (currAppState != endState) {
         if (driver_receive(ANY, &msg, &ipcStatus)) {
             printf("driver_receive failed.");
