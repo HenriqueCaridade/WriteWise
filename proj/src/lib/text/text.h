@@ -21,7 +21,7 @@ typedef enum {
     xxxlarge,
 } font_type_t;
 
-#define ALPHABET_SIZE 68
+#define ALPHABET_SIZE 69
 const bool alphabet[ALPHABET_SIZE][7][5];
 
 int getCharIndex(const char c);

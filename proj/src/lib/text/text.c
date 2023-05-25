@@ -1,11 +1,6 @@
 
 #include "text.h"
 
-/*
-    UPPER CASE
-*/
-
-// 26 + 26 + 10 + 5 + 1 = 68
 const bool alphabet[ALPHABET_SIZE][7][5] = {
 { // 0
     {0, 1, 1, 1, 0},
@@ -333,10 +328,10 @@ const bool alphabet[ALPHABET_SIZE][7][5] = {
 },
 { // Letter a
     {0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0},
     {0, 1, 1, 1, 0},
     {0, 0, 0, 0, 1},
     {0, 1, 1, 1, 1},
-    {1, 0, 0, 0, 1},
     {1, 0, 0, 0, 1},
     {0, 1, 1, 1, 0}
 },
@@ -610,6 +605,15 @@ const bool alphabet[ALPHABET_SIZE][7][5] = {
     {0, 0, 0, 0, 0},
     {0, 1, 0, 0, 0}
 },
+{ // Exclamation Mark
+    {0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0},
+    {0, 0, 0, 0, 0},
+    {0, 1, 0, 0, 0}
+},
 { // UNKNOWN CHAR RECT
     {1, 1, 1, 1, 1},
     {1, 0, 0, 0, 1},
@@ -630,6 +634,7 @@ int getCharIndex(const char c) {
     if (c == ',') return 64;
     if (c == ';') return 65;
     if (c == ':') return 66;
+    if (c == '!') return 67;
     return ALPHABET_SIZE - 1;
 }
 

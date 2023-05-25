@@ -39,8 +39,14 @@ int setMinixMode(minix_mode_t mode){
 
 int exitGraphMode(int code) {
     int attempts = 10;
-    while (attempts-- && set_text_mode());
+    while (attempts-- && set_text_mode()) tickdelay(micros_to_ticks(20000));
     return code;
+}
+
+int setTheme(app_theme_t newTheme) {
+    if (newTheme != darkTheme && newTheme != lightTheme) return 1;
+    currentTheme = newTheme;
+    return 0;
 }
 
 uint16_t getXFromPercent(float px) {
@@ -76,9 +82,11 @@ uint16_t getYFromPercent(float py) {
     }
 }
 
-
 void clearScreen(){
-    memset(frameBuffer, 0, frameSize);
+    switch (currentTheme){
+    case darkTheme:  memset(frameBuffer, 0x00, frameSize); return;
+    case lightTheme: memset(frameBuffer, 0xff, frameSize); return;
+    }
 }
 
 int drawPixelColor(float px, float py, uint32_t color){
@@ -142,25 +150,60 @@ int drawCharRGB(float px, float py, const char c, uint8_t red, uint8_t green, ui
     return _drawChar(getXFromPercent(px), getYFromPercent(py), c, direct_mode(red, green, blue), size);
 }
 
-int _drawText(uint16_t x, uint16_t y, const char* str, uint32_t color, font_size_t size){
+int _drawText(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size){
     // Only called when color is already calculated
-    for (int i = 0; str[i] != 0; i++){
-        uint16_t dx = i * (size.width + size.pixel);
-        if (_drawChar(x + dx, y, str[i], color, size)) return 1;
+    char* nextWord = strchr(str, ' ');
+    uint16_t dx = 0, dy = 0;
+    const uint16_t xStep = size.width + size.pixel;
+    const uint16_t yStep = size.height + size.pixel;
+    for (; *str != 0; str++) {
+        if (str == nextWord) {
+            nextWord = strchr(str + 1, ' ');
+            uint16_t wordWidth = (nextWord == NULL) ? strlen(str) * xStep : (nextWord - str) * xStep;
+            if (dx + wordWidth > maxWidth) {
+                dx = 0;
+                dy += yStep;
+                continue;
+            }
+        }
+        if (_drawChar(x + dx, y + dy, *str, color, size)) return 1;
+        dx += xStep;
     }
     return 0;
 }
-int drawTextColor(float cx, float cy, const char* str, uint32_t color, font_size_t size) {
-    uint16_t x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
-    uint16_t y = getYFromPercent(cy) - (size.height >> 1);
-    if (currentMode == vbe768pInd) return _drawText(x, y, str, color, size);
-    return _drawText(x, y, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
+int drawTextColor(float cx, float cy, float maxWidth, const char* str, uint32_t color, font_size_t size) {
+    uint16_t x, y, maxW;
+    if (maxWidth < 0) {
+        x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
+        maxW = (uint16_t) -1;
+    } else {
+        x = getXFromPercent(cx) - (getXFromPercent(maxWidth) >> 1);
+        maxW = getXFromPercent(maxWidth);
+    }
+    y = getYFromPercent(cy) - (size.height >> 1);
+    if (currentMode == vbe768pInd) return _drawText(x, y, maxW, str, color, size);
+    return _drawText(x, y, maxW, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
-int drawTextRGB(float cx, float cy, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
-    uint16_t x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
-    uint16_t y = getXFromPercent(cy) - (size.height >> 1);
+int drawTextRGB(float cx, float cy, float maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
+    uint16_t x, y, maxW;
+    if (maxWidth < 0) {
+        x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
+        maxW = (uint16_t) -1;
+    } else {
+        x = getXFromPercent(cx) - (getXFromPercent(maxWidth) >> 1);
+        maxW = getXFromPercent(maxWidth);
+    }
+    y = getYFromPercent(cy) - (size.height >> 1);
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawText(x, y, str, direct_mode(red, green, blue), size);
+    return _drawText(x, y, maxW, str, direct_mode(red, green, blue), size);
+}
+int drawTextXYColor(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size) {
+    if (currentMode == vbe768pInd) return _drawText(x, y, maxWidth, str, color, size);
+    return _drawText(x, y, maxWidth, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
+}
+int drawTextXYRGB(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
+    if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
+    return _drawText(x, y, maxWidth, str, direct_mode(red, green, blue), size);
 }
 uint16_t getTextWidth(const char* str, font_size_t size) {
     return strlen(str) * (size.width + size.pixel) - size.pixel;

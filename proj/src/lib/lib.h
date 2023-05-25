@@ -30,8 +30,13 @@ typedef enum {
     vbe1024pDc = 0x11A,
     vbe864pDc = 0x14C
 } minix_mode_t;
-
 minix_mode_t currentMode;
+
+typedef enum {
+    darkTheme,
+    lightTheme
+} app_theme_t;
+app_theme_t currentTheme;
 
 int initAllDrivers();
 int exitAllDrivers();
@@ -39,6 +44,7 @@ int exitAllDrivers();
 int setFrameRate(uint16_t fps);
 int setMinixMode(minix_mode_t mode);
 int exitGraphMode(int code);
+int setTheme(app_theme_t newTheme);
 
 uint16_t getXFromPercent(float px);
 uint16_t getYFromPercent(float py);
@@ -56,9 +62,11 @@ int _draw5x7      (uint16_t x, uint16_t y, const bool c[7][5], uint32_t color, f
 int _drawChar     (uint16_t x, uint16_t y, const char c, uint32_t color, font_size_t size);
 int drawCharColor (float px, float py, const char c, uint32_t color, font_size_t size);
 int drawCharRGB   (float px, float py, const char c, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
-int _drawText     (uint16_t x, uint16_t y, const char* str, uint32_t color, font_size_t size);
-int drawTextColor (float px, float py, const char* str, uint32_t color, font_size_t size);
-int drawTextRGB   (float px, float py, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
+int _drawText     (uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size);
+int drawTextColor (float cx, float cy, float maxWidth, const char* str, uint32_t color, font_size_t size);
+int drawTextRGB   (float cx, float cy, float maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
+int drawTextXYColor(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size);
+int drawTextXYRGB  (uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
 uint16_t getTextWidth(const char* str, font_size_t size);
 
 #endif // _PROJ_LIB_H

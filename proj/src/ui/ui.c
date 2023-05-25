@@ -108,7 +108,7 @@ int drawCursor() {
 int _drawButton(int index){
     button_t *currButton = _buttons + index;
     if (drawRectColor(currButton->px, currButton->py, currButton->width, currButton->height, currButton->color)) return 1;
-    if (drawTextColor(currButton->px + currButton->width / 2, currButton->py + currButton->height / 2, currButton->text, currButton->tColor, currButton->tSize)) return 1;
+    if (drawTextColor(currButton->px + currButton->width / 2, currButton->py + currButton->height / 2, -1.0f, currButton->text, currButton->tColor, currButton->tSize)) return 1;
     return 0;
 }
 int drawButton(int index){
