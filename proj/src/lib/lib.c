@@ -47,6 +47,7 @@ int exitGraphMode(int code) {
 int setTheme(app_theme_t newTheme) {
     if (newTheme != darkTheme && newTheme != lightTheme) return 1;
     currentTheme = newTheme;
+    printf("Set Theme to %d.\n", currentTheme);
     return 0;
 }
 

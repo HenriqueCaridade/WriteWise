@@ -39,5 +39,10 @@
 !proj/src/ui/*.c
 !proj/src/ui/*.h
 
+# Data Files
+!proj/src/data/*.c
+!proj/src/data/*.h
+!proj/src/data/*.dict
+
 !.gitignore
 !README.md

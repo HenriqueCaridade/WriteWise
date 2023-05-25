@@ -7,6 +7,7 @@
 // Any header files included below this line should have been created by you
 #include "lib/lib.h"
 #include "ui/ui.h"
+#include "data/data.h"
 
 int main(int argc, char *argv[]) {
     // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -92,10 +93,23 @@ void keyboardScancodeHandler();
 
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
-    if (setFrameRate(60)) { exitAllDrivers(); return 1; }
+    if (setFrameRate(30)) { exitAllDrivers(); return 1; }
     if (setMinixMode(vbe600pDc)) { exitAllDrivers(); return 1; }
-    if (initUI() || loadScreen()) { exitGraphMode(1); exitAllDrivers();  return 1; }
-    if (setTheme(darkTheme)) { exitGraphMode(1); exitAllDrivers();  return 1; }
+    if (initUI() || loadScreen() || setTheme(darkTheme)) {
+        printf("Failed Initializing UI.\n");
+        exitGraphMode(1);
+        exitAllDrivers();
+        return 1;
+    }
+    if (loadDictionary("/home/lcom/labs/proj/src/data/english.dict")) {
+        printf("Failed Initializing Dictionary.\n");
+        exitGraphMode(1);
+        exitAllDrivers();
+        return 1;
+    }
+    for (size_t i = 0; i < dictionarySize; i++) {
+        printf("%s\n", dictionary[i]);
+    }
     while (currAppState != endState) {
         if (driver_receive(ANY, &msg, &ipcStatus)) {
             printf("driver_receive failed.");
@@ -266,10 +280,10 @@ int settingsScreenLoad() {
 
 int drawScreen() {
     if (loadStaticUI()) return 1;
-    if (drawSelectedButton()) return 1;
+    //if (drawSelectedButton()) return 1;
 
     // TODO: Non-static components here...
-    switch (currentAppState) {
+    switch (currAppState) {
         default: break;
     }
     
@@ -279,6 +293,7 @@ int drawScreen() {
 }
 
 int loadScreen(){
+    printf("Loading Screen...\n");
     switch (currAppState){
     case startState:        return startScreenLoad();
     case mainState:         return mainScreenLoad();
