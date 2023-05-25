@@ -3,7 +3,7 @@
 
 #define CLAMP(x, lower, upper) (MIN(upper, MAX(x, lower)))
 
-button_t _buttons[MAX_AMOUNT_OF_BUTTONS] = {{0, 0, 0, 0, 0, 0, 0, (font_size_t){0, 0, 0}, 0}};
+button_t _buttons[MAX_AMOUNT_OF_BUTTONS] = {{0, 0, 0, 0, 0, 0, 0, (font_size_t){0, 0, 0}, 0, 0}};
 bool _buttonPlaces[MAX_AMOUNT_OF_BUTTONS] = {false};
 
 const bool cursorMapMain[CURSOR_HEIGHT][CURSOR_WIDTH] = { // Main Cursor
@@ -105,16 +105,41 @@ int drawCursor() {
     return 0;
 }
 
-int _drawButton(int index){
+int _drawButton(int index) {
     button_t *currButton = _buttons + index;
     if (drawRectColor(currButton->px, currButton->py, currButton->width, currButton->height, currButton->color)) return 1;
     if (drawTextColor(currButton->px + currButton->width / 2, currButton->py + currButton->height / 2, -1.0f, currButton->text, currButton->tColor, currButton->tSize)) return 1;
     return 0;
 }
-int drawButton(int index){
+
+int drawButton(int index) {
     if (index < 0 || index >= MAX_AMOUNT_OF_BUTTONS) return 1;
     if (_buttonPlaces[index]) return 1;
     return _drawButton(index);
+}
+
+int _getSelectedButton() {
+    for (int i = 0; i < MAX_AMOUNT_OF_BUTTONS; i++)
+        if (_buttonPlaces[i])
+            if (_isClickOnButton(cursor.x, cursor.y, _buttons + i))
+                return i;
+    return -1;
+}
+
+int drawSelectedButton() {
+    int index = _getSelectedButton();
+    if (index < 0) return 0;
+    button_t *currButton = _buttons + index;
+    uint16_t x, y, w, h;
+    x = getXFromPercent(currButton->px);
+    y = getYFromPercent(currButton->py);
+    w = getXFromPercent(currButton->width);
+    h = getYFromPercent(currButton->height);
+    if (_drawRect(x - 2, y - 2, w + 4, 2, currButton->bColor)) return 1;
+    if (_drawRect(x - 2, y - 2, 2, h + 4, currButton->bColor)) return 1;
+    if (_drawRect(x - 2, y + h, w + 4, 2, currButton->bColor)) return 1;
+    if (_drawRect(x + w, y - 2, 2, h + 4, currButton->bColor)) return 1;
+    return 0;
 }
 
 int drawButtons() {
@@ -152,7 +177,7 @@ int mouseUpdate() {
     if (moreMouseInfo.rightPressed && !mousePacket.rb) { // Right Click
     }
     */
-    if (mousePacket.lb) {
+    if (!moreMouseInfo.leftPressed && mousePacket.lb) {
         moreMouseInfo.leftX = cursor.x;
         moreMouseInfo.leftY = cursor.y;
     }

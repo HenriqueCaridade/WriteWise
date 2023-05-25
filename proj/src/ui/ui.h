@@ -20,6 +20,7 @@ typedef struct {
     const char *text;       // Button Text
     uint32_t tColor;        // Text Color
     font_size_t tSize;      // Text Size
+    uint32_t bColor;        // Border Color
     void (*onClick)(void);  // On Click void callback
 } button_t;
 
@@ -56,6 +57,8 @@ int removeButton(int index);
 int drawCursor();
 int _drawButton(int index);
 int drawButton(int index);
+int _getSelectedButton();
+int drawSelectedButton();
 int drawButtons();
 
 int _isClickOnButton(uint16_t x, uint16_t y, button_t* button);

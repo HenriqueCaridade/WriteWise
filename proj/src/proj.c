@@ -185,10 +185,10 @@ int mainScreenLoad() {
     printf("Main Started Drawing.\n");
     if (drawTextColor(0.5f, 0.15f, -1.0f, "Write Wise", getThemeColor(textColor), getFontSize(xxlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to exit...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
-    if (addButton((button_t){0.3f, 0.30f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Training"    , getThemeColor(buttonTextColor), getFontSize(medium), _mainButtonTraining    }, 0)) return 1;
-    if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Race"        , getThemeColor(buttonTextColor), getFontSize(medium), _mainButtonRace        }, 1)) return 1;
-    if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Instructions", getThemeColor(buttonTextColor), getFontSize(medium), _mainButtonInstructions}, 2)) return 1;
-    if (addButton((button_t){0.3f, 0.75f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Settings"    , getThemeColor(buttonTextColor), getFontSize(medium), _mainButtonSettings    }, 3)) return 1;
+    if (addButton((button_t){0.3f, 0.30f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Training"    , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonTraining    }, 0)) return 1;
+    if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Race"        , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonRace        }, 1)) return 1;
+    if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Instructions", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonInstructions}, 2)) return 1;
+    if (addButton((button_t){0.3f, 0.75f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Settings"    , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonSettings    }, 3)) return 1;
     printf("Main Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -233,12 +233,12 @@ int instructionScreenLoad() {
 }
 
 int settingsScreenLoad();
-void _settingsButton480p      (void) { setMinixMode(vbe480pDc);  settingsScreenLoad(); }
-void _settingsButton600p      (void) { setMinixMode(vbe600pDc);  settingsScreenLoad(); }
-void _settingsButton864p      (void) { setMinixMode(vbe864pDc);  settingsScreenLoad(); }
-void _settingsButton1024p     (void) { setMinixMode(vbe1024pDc); settingsScreenLoad(); }
-void _settingsButtonDarkTheme (void) { setTheme(darkTheme);      settingsScreenLoad(); }
-void _settingsButtonLightTheme(void) { setTheme(lightTheme);     settingsScreenLoad(); }
+void _settingsButton480p      (void) { exitUI(); setMinixMode(vbe480pDc);  initUI(); settingsScreenLoad(); }
+void _settingsButton600p      (void) { exitUI(); setMinixMode(vbe600pDc);  initUI(); settingsScreenLoad(); }
+void _settingsButton864p      (void) { exitUI(); setMinixMode(vbe864pDc);  initUI(); settingsScreenLoad(); }
+void _settingsButton1024p     (void) { exitUI(); setMinixMode(vbe1024pDc); initUI(); settingsScreenLoad(); }
+void _settingsButtonDarkTheme (void) { setTheme(darkTheme);  settingsScreenLoad(); }
+void _settingsButtonLightTheme(void) { setTheme(lightTheme); settingsScreenLoad(); }
 int settingsScreenLoad() {
     clearScreen();
     clearButtons();
@@ -248,24 +248,31 @@ int settingsScreenLoad() {
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
     if (drawTextColor(0.25f, 0.15f, -1.0f, "Resolution", getThemeColor(textColor), getFontSize(medium))) return 1;
     if (addButton((button_t){0.1f, 0.30f, 0.3f, 0.1f, getThemeColor(currentMode == vbe480pDc  ? selectedButtonColor : buttonBackColor),
-        "640x480", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButton480p }, 0)) return 1;
+        "640x480", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButton480p }, 0)) return 1;
     if (addButton((button_t){0.1f, 0.45f, 0.3f, 0.1f, getThemeColor(currentMode == vbe600pDc  ? selectedButtonColor : buttonBackColor),
-        "800x600", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButton600p }, 1)) return 1;
+        "800x600", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButton600p }, 1)) return 1;
     if (addButton((button_t){0.1f, 0.60f, 0.3f, 0.1f, getThemeColor(currentMode == vbe864pDc  ? selectedButtonColor : buttonBackColor),
-        "1152x864", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButton864p }, 2)) return 1;
+        "1152x864", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButton864p }, 2)) return 1;
     if (addButton((button_t){0.1f, 0.75f, 0.3f, 0.1f, getThemeColor(currentMode == vbe1024pDc ? selectedButtonColor : buttonBackColor),
-        "1280x1024", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButton1024p }, 3)) return 1;
+        "1280x1024", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButton1024p }, 3)) return 1;
     if (drawTextColor(0.75f, 0.15f, -1.0f, "Theme", getThemeColor(textColor), getFontSize(medium))) return 1;
     if (addButton((button_t){0.6f, 0.45f, 0.3f, 0.1f, getThemeColor(currentTheme == darkTheme  ? selectedButtonColor : buttonBackColor),
-        "Dark", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButtonDarkTheme }, 4)) return 1;
+        "Dark", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButtonDarkTheme }, 4)) return 1;
     if (addButton((button_t){0.6f, 0.60f, 0.3f, 0.1f, getThemeColor(currentTheme == lightTheme ? selectedButtonColor : buttonBackColor),
-        "Light", getThemeColor(buttonTextColor), getFontSize(medium), _settingsButtonLightTheme }, 5)) return 1;
+        "Light", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButtonLightTheme }, 5)) return 1;
     printf("Settings Screen Drawn.\n");
     return calcStaticUI();
 }
 
 int drawScreen() {
     if (loadStaticUI()) return 1;
+    if (drawSelectedButton()) return 1;
+
+    // TODO: Non-static components here...
+    switch (currentAppState) {
+        default: break;
+    }
+    
     if (drawCursor()) return 1;
     flip_frame(); // Update Screen
     return 0;

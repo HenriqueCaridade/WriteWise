@@ -34,12 +34,13 @@ int setMinixMode(minix_mode_t mode){
         if (set_frame_buffer()) { setMinixMode(textMode); return 1; }
         currentMode = mode;
     }
+    printf("Set %d mode successfully!\n", currentMode);
     return 0;
 }
 
 int exitGraphMode(int code) {
     int attempts = 10;
-    while (attempts-- && set_text_mode()) tickdelay(micros_to_ticks(20000));
+    while (attempts-- && exit_graphic_mode()) tickdelay(micros_to_ticks(20000));;
     return code;
 }
 
@@ -116,6 +117,9 @@ int drawVLineRGB(float px, float py, float len, uint8_t red, uint8_t green, uint
     return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), direct_mode(red, green, blue));
 }
 
+int _drawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+    return vg_draw_rectangle(x, y, width, height, color);
+}
 int drawRectColor(float px, float py, float width, float height, uint32_t color){
     if (currentMode == vbe768pInd) return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), color);
     return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
