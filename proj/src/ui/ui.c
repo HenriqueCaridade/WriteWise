@@ -3,7 +3,7 @@
 
 #define CLAMP(x, lower, upper) (MIN(upper, MAX(x, lower)))
 
-button_t _buttons[MAX_AMOUNT_OF_BUTTONS] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+button_t _buttons[MAX_AMOUNT_OF_BUTTONS] = {{0, 0, 0, 0, 0, 0, 0, (font_size_t){0, 0, 0}, 0}};
 bool _buttonPlaces[MAX_AMOUNT_OF_BUTTONS] = {false};
 
 const bool cursorMapMain[CURSOR_HEIGHT][CURSOR_WIDTH] = { // Main Cursor
@@ -48,24 +48,24 @@ int initUI() {
     cursor.x = cursor.y = 200;
     cursor.color = 0xFFFFFF;
     cursor.bColor = 0x000000;
-    uiBuffer = (uint8_t *) malloc(frameSize);
-    memset(uiBuffer, 0, frameSize);
+    staticBuffer = (uint8_t *) malloc(frameSize);
+    memset(staticBuffer, 0, frameSize);
     return clearButtons();
 }
 
 int exitUI() {
-    free(uiBuffer);
+    free(staticBuffer);
     return 0;
 }
 
 int calcStaticUI(){
     if (drawButtons()) return 1;
-    memcpy(uiBuffer, frameBuffer, frameSize);
+    memcpy(staticBuffer, frameBuffer, frameSize);
     return 0;
 }
 
 int loadStaticUI() {
-    memcpy(frameBuffer, uiBuffer, frameSize);
+    memcpy(frameBuffer, staticBuffer, frameSize);
     return 0;
 }
 
@@ -107,23 +107,8 @@ int drawCursor() {
 
 int _drawButton(int index){
     button_t *currButton = _buttons + index;
-    if (drawRectColor(currButton->x, currButton->y, currButton->width, currButton->height, currButton->color))
-        return 1;
-    if (currButton->bWidth != 0) {
-        // Draw Border
-        const uint16_t farX = currButton->x + currButton->width - 1;
-        const uint16_t farY = currButton->y + currButton->height - 1;
-        for (int i = 0; i < currButton->bWidth; i++) {
-            if (drawHLineColor(currButton->x, currButton->y + i, currButton->width, currButton->bColor)) return 1;
-            if (drawHLineColor(currButton->x, farY - i, currButton->width, currButton->bColor)) return 1;
-            if (drawVLineColor(currButton->x + i, currButton->y, currButton->height, currButton->bColor)) return 1;
-            if (drawVLineColor(farX - i, currButton->y, currButton->height, currButton->bColor)) return 1;
-        }
-    }
-    int16_t textWidth = getTextWidth(currButton->text);
-    int16_t tx = (int16_t)(currButton->x + (currButton->width  >> 1)) - (textWidth >> 1);
-    int16_t ty = (int16_t)(currButton->y + (currButton->height >> 1)) - (currentFontSize.height >> 1);
-    if (drawTextColor(tx, ty, currButton->text, currButton->tColor)) return 1;
+    if (drawRectColor(currButton->px, currButton->py, currButton->width, currButton->height, currButton->color)) return 1;
+    if (drawTextColor(currButton->px + currButton->width / 2, currButton->py + currButton->height / 2, currButton->text, currButton->tColor, currButton->tSize)) return 1;
     return 0;
 }
 int drawButton(int index){
@@ -140,12 +125,11 @@ int drawButtons() {
 }
 
 int _isClickOnButton(uint16_t x, uint16_t y, button_t* button) {
-    return (button->x <= x && x < button->x + button->width) &&
-           (button->y <= y && y < button->y + button->height);
+    return (getXFromPercent(button->px) <= x && x < getXFromPercent(button->px + button->width)) &&
+           (getYFromPercent(button->py) <= y && y < getYFromPercent(button->py + button->height));
 }
 
 int mouseUpdate() {
-    printf("Cursor: %d, %d\n", cursor.x, cursor.y);
     if (!mousePacket.x_ov) cursor.x = CLAMP(cursor.x + mousePacket.delta_x, 0, modeInfo.XResolution);
     if (!mousePacket.y_ov) cursor.y = CLAMP(cursor.y - mousePacket.delta_y, 0, modeInfo.YResolution);
     if (moreMouseInfo.leftPressed && !mousePacket.lb) { // Left Click

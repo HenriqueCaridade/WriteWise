@@ -12,21 +12,20 @@
 #include "../lib/lib.h"
 
 typedef struct {
-    uint16_t x;             // X pos
-    uint16_t y;             // Y pos
-    uint16_t width;         // Width
-    uint16_t height;        // Height
+    float px;               // X pos
+    float py;               // Y pos
+    float width;            // Width
+    float height;           // Height
     uint32_t color;         // Background Color
-    uint16_t bWidth;        // Border Width (set to 0 if no border);
-    uint32_t bColor;        // Border Color
     const char *text;       // Button Text
     uint32_t tColor;        // Text Color
+    font_size_t tSize;      // Text Size
     void (*onClick)(void);  // On Click void callback
 } button_t;
 
 button_t _buttons[MAX_AMOUNT_OF_BUTTONS];
 bool _buttonPlaces[MAX_AMOUNT_OF_BUTTONS];
-uint8_t *uiBuffer;
+uint8_t *staticBuffer;
 
 struct {
     bool leftPressed;

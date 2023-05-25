@@ -14,11 +14,11 @@ int main(int argc, char *argv[]) {
 
     // enables to log function invocations that are being "wrapped" by LCF
     // [comment this out if you don't want/need/ it]
-    lcf_trace_calls("/home/lcom/labs/lab4/trace.txt");
+    lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
 
     // enables to save the output of printf function calls on a file
     // [comment this out if you don't want/need it]
-    lcf_log_output("/home/lcom/labs/lab4/output.txt");
+    lcf_log_output("/home/lcom/labs/proj/src/output.txt");
 
     // handles control over to LCF
     // [LCF handles command line arguments and invokes the right function]
@@ -32,16 +32,27 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+typedef enum {
+    startState,
+    mainState,
+    trainingState,
+    raceState,
+    instructionState,
+    endState,
+} app_state_t;
+
+app_state_t currAppState = startState;
 int drawScreen();
-int loadUI();
+int loadScreen();
+int changeState();
+void keyboardScancodeHandler();
 
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
-    if (setFrameRate(60)) return 1;
-    if (setMinixMode(vbe600pDc)) return 1;
-    if (initUI() || loadUI()) { exit_graphic_mode(); return 1; }
-    bool running = true;
-    while (running) {
+    if (setFrameRate(60)) { exitAllDrivers(); return 1; }
+    if (setMinixMode(vbe600pDc)) { exitAllDrivers(); return 1; }
+    if (initUI() || loadScreen()) { vg_exit(); exitAllDrivers();  return 1; }
+    while (currAppState != endState) {
         if (driver_receive(ANY, &msg, &ipcStatus)) {
             printf("driver_receive failed.");
             continue;
@@ -53,7 +64,7 @@ int(proj_main_loop)(int argc, char *argv[]){
                 // Timer Interrupt
                 timer_int_handler();
                 // Draw screen
-                if (drawScreen()) { exit_graphic_mode(); return 1; }
+                if (drawScreen(currAppState)) { vg_exit(); exitAllDrivers(); return 1; }
             }
             if (msg.m_notify.interrupts & irqSetMouse) {
                 // Mouse Interrupt
@@ -66,53 +77,98 @@ int(proj_main_loop)(int argc, char *argv[]){
                 // Keyboard Interrupt
                 if (keyboard_ih()) {
                     // New Scancode
-                    if (isScancodeTwoBytes) { // Scancode available is Two Bytes
-                        // Do something...
-                    } else { // Normal Scancode
-                        if (scancode == BREAK_ESC) {
-                            running = false;
-                            break;
-                        }
-                    }
+                    keyboardScancodeHandler();
                 }
             }
             break;
         }
         }
     }
-    exit_graphic_mode();
+    vg_exit();
     return exitAllDrivers();
 }
-
-uint32_t currColorPhase = 0;
-uint32_t testColors[4] = {0xFFFFFF, 0x40FF40, 0xFF00FF, 0x4040FF};
-
-
-void onClickTestButton(void) {
-    currColorPhase++;
-    loadUI();
+int changeState(app_state_t newState){
+    printf("Changed From %d to %d.\n", currAppState, newState);
+    currAppState = newState;
+    if (newState == endState) return 0;
+    return loadScreen();
 }
 
-int testUI(){
+void keyboardScancodeHandler() {
+    if (scancode & MAKE_CODE) {
+        // BREAK CODE
+        if (!isScancodeTwoBytes && scancode == BREAK_ESC) changeState(endState); return;
+    } else {
+        // MAKE CODE
+        if (currAppState == startState) {
+            changeState(mainState);
+            return;
+        }
+        if (isScancodeTwoBytes) {
+            switch (scancode) {
+                default: return;
+            }
+        } else {
+            switch (scancode) {
+                default: return;
+            }
+        }
+    }
+}
+
+int startScreenLoad() {
     // TEST UI
     clearScreen();
     clearButtons();
-    if (drawTextColor(20, 20, "THE QUICK BROWN FOX JUMPS OF THE LAZY DOG", testColors[currColorPhase % 4])) return 1;
-    if (drawTextColor(20, 40, "the quick brown fox jumps of the lazy dog", testColors[(currColorPhase + 1) % 4])) return 1;
-    if (drawTextColor(20, 60, "0123456789", testColors[(currColorPhase + 2) % 4])) return 1;
-    if (drawTextColor(20, 80, "a.a,a;a:", testColors[(currColorPhase + 3) % 4])) return 1;
-    if (addButton((button_t){20, 100, 100, 40, 0xFFFFFF, 0, 0xFF0000, "Test", 0x202020, onClickTestButton}, 0)) return 1;
-    return 0;
+    if (drawTextColor(0.5f, 0.30f, "Write Wise", 0xFFFFFF, getFontSize(xxxlarge))) return 1;
+    if (drawTextColor(0.5f, 0.95f, "Press any key to start...", 0x505050, getFontSize(medium))) return 1;
+    return calcStaticUI();
 }
 
-int drawScreen(){
+void _mainButtonTraining(void)     { changeState(trainingState);    }
+void _mainButtonRace(void)         { changeState(raceState);        }
+void _mainButtonInstructions(void) { changeState(instructionState); }
+int mainScreenLoad() {
+    clearScreen();
+    clearButtons();
+    if (drawTextColor(0.5f, 0.15f, "Write Wise", 0xFFFFFF, getFontSize(xxlarge))) return 1;
+    if (drawTextColor(0.5f, 0.95f, "Press ESC to exit...", 0x505050, getFontSize(medium))) return 1;
+    if (addButton((button_t){0.3f, 0.30f, 0.4f, 0.1f, 0xAFAFAF, "Training"    , 0x202020, getFontSize(medium), _mainButtonTraining    }, 0)) return 1;
+    if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, 0xAFAFAF, "Race"        , 0x202020, getFontSize(medium), _mainButtonRace        }, 1)) return 1;
+    if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, 0xAFAFAF, "Instructions", 0x202020, getFontSize(medium), _mainButtonInstructions}, 2)) return 1;
+    return calcStaticUI();
+}
+
+int trainingScreenLoad() {
+    clearScreen();
+    clearButtons();
+    return calcStaticUI();
+}
+int raceScreenLoad() {
+    clearScreen();
+    clearButtons();
+    return calcStaticUI();
+}
+int instructionScreenLoad() {
+    clearScreen();
+    clearButtons();
+    return calcStaticUI();
+}
+
+int drawScreen() {
     if (loadStaticUI()) return 1;
     if (drawCursor()) return 1;
     flip_frame(); // Update Screen
     return 0;
 }
 
-int loadUI(){
-    if (testUI()) return 1;
-    return calcStaticUI();
+int loadScreen(){
+    switch (currAppState){
+    case startState:       return startScreenLoad();
+    case mainState:        return mainScreenLoad();
+    case trainingState:    return trainingScreenLoad();
+    case raceState:        return raceScreenLoad();
+    case instructionState: return instructionScreenLoad();
+    case endState:         return 1;
+    }
 }

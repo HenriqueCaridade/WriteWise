@@ -5,8 +5,8 @@
     UPPER CASE
 */
 
-// 26 + 26 + 10 + 5 = 67
-const bool alphabet[67][7][5] = {
+// 26 + 26 + 10 + 5 + 1 = 68
+const bool alphabet[ALPHABET_SIZE][7][5] = {
 { // 0
     {0, 1, 1, 1, 0},
     {1, 0, 0, 0, 1},
@@ -609,6 +609,15 @@ const bool alphabet[67][7][5] = {
     {0, 0, 0, 0, 0},
     {0, 0, 0, 0, 0},
     {0, 1, 0, 0, 0}
+},
+{ // UNKNOWN CHAR RECT
+    {1, 1, 1, 1, 1},
+    {1, 0, 0, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1}
 }
 };
 
@@ -621,16 +630,17 @@ int getCharIndex(const char c) {
     if (c == ',') return 64;
     if (c == ';') return 65;
     if (c == ':') return 66;
-    printf("Char Index not found for '%c'\n", c);
-    return -1;
+    return ALPHABET_SIZE - 1;
 }
 
-void setFontType(font_type_t fontType) {
-    currentFontType = fontType;
+font_size_t getFontSize(font_type_t fontType) {
     switch (fontType) {
-    case small:  currentFontSize = (font_size_t){ 5,  7}; currentPixelSize = 1; break;
-    case medium: currentFontSize = (font_size_t){10, 14}; currentPixelSize = 2; break;
-    case large:  currentFontSize = (font_size_t){15, 21}; currentPixelSize = 3; break;
+    case small:     return (font_size_t){ 5,  7, 1};
+    case medium:    return (font_size_t){10, 14, 2};
+    case large:     return (font_size_t){15, 21, 3};
+    case xlarge:    return (font_size_t){20, 28, 4};
+    case xxlarge:   return (font_size_t){25, 35, 5};
+    case xxxlarge:  return (font_size_t){30, 42, 6};
     }
 }
 

@@ -4,7 +4,6 @@
 int initAllDrivers(){
     isScancodeTwoBytes = false;
     currentMode = textMode;
-    setFontType(medium);
     if (timer_subscribe_interrupt()) return 1;
     if (keyboard_subscribe_int()) return 1;
     if (mouse_subscribe_int()) return 1;
@@ -44,87 +43,125 @@ int exitGraphMode(int code) {
     return code;
 }
 
+uint16_t getXFromPercent(float px) {
+    switch (currentMode) {
+        case vbe480pDc:
+            return (uint16_t) (px * 640);
+        case vbe600pDc:
+            return (uint16_t) (px * 800);
+        case vbe768pInd:
+            return (uint16_t) (px * 1024);
+        case vbe864pDc:
+            return (uint16_t) (px * 1152);
+        case vbe1024pDc:
+            return (uint16_t) (px * 1280);
+        default:
+            return 0;
+    }
+}
+uint16_t getYFromPercent(float py) {
+    switch (currentMode) {
+        case vbe480pDc:
+            return (uint16_t) (py * 480);
+        case vbe600pDc:
+            return (uint16_t) (py * 600);
+        case vbe768pInd:
+            return (uint16_t) (py * 768);
+        case vbe864pDc:
+            return (uint16_t) (py * 864);
+        case vbe1024pDc:
+            return (uint16_t) (py * 1024);
+        default:
+            return 0;
+    }
+}
+
+
 void clearScreen(){
     memset(frameBuffer, 0, frameSize);
 }
 
-int drawPixelColor(uint16_t x, uint16_t y, uint32_t color){
-    if (currentMode == vbe768pInd) return vg_draw_pixel(x, y, color);
-    return vg_draw_pixel(x, y, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawPixelColor(float px, float py, uint32_t color){
+    if (currentMode == vbe768pInd) return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), color);
+    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
-int drawPixelRGB(uint16_t x, uint16_t y, uint8_t red, uint8_t green, uint8_t blue) {
+int drawPixelRGB(float px, float py, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawPixelRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_pixel(x, y, direct_mode(red, green, blue));
+    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), direct_mode(red, green, blue));
 }
 
-int drawHLineColor(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
-    if (currentMode == vbe768pInd) return vg_draw_hline(x, y, len, color);
-    return vg_draw_hline(x, y, len, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawHLineColor(float px, float py, float len, uint32_t color){
+    if (currentMode == vbe768pInd) return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len), color);
+    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len) , direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
-int drawHLineRGB(uint16_t x, uint16_t y, uint16_t len, uint8_t red, uint8_t green, uint8_t blue) {
+int drawHLineRGB(float px, float py, float len, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawHLineRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_hline(x, y, len, direct_mode(red, green, blue));
+    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len), direct_mode(red, green, blue));
 }
 
-int drawVLineColor(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
-    if (currentMode == vbe768pInd) return vg_draw_vline(x, y, len, color);
-    return vg_draw_vline(x, y, len, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawVLineColor(float px, float py, float len, uint32_t color){
+    if (currentMode == vbe768pInd) return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), color);
+    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
-int drawVLineRGB(uint16_t x, uint16_t y, uint16_t len, uint8_t red, uint8_t green, uint8_t blue){
+int drawVLineRGB(float px, float py, float len, uint8_t red, uint8_t green, uint8_t blue){
     if (currentMode == vbe768pInd) { printf("drawVLineRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_vline(x, y, len, direct_mode(red, green, blue));
+    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), direct_mode(red, green, blue));
 }
 
-int drawRectColor(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color){
-    if (currentMode == vbe768pInd) return vg_draw_rectangle(x, y, width, height, color);
-    return vg_draw_rectangle(x, y, width, height, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawRectColor(float px, float py, float width, float height, uint32_t color){
+    if (currentMode == vbe768pInd) return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), color);
+    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
-int drawRectRGB(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t red, uint8_t green, uint8_t blue) {
+int drawRectRGB(float px, float py, float width, float height, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawRectRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_rectangle(x, y, width, height, direct_mode(red, green, blue));
+    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), direct_mode(red, green, blue));
 }
 
-int _draw5x7(uint16_t x, uint16_t y, const bool c[7][5], uint32_t color) {
-    for (uint16_t dy = 0; dy < currentFontSize.height; dy++){
-        for (uint16_t dx = 0; dx < currentFontSize.width; dx++){
-            if (c[dy / currentPixelSize][dx / currentPixelSize]) {
+int _draw5x7(uint16_t x, uint16_t y, const bool c[7][5], uint32_t color, font_size_t size) {
+    for (uint16_t dy = 0; dy < size.height; dy++){
+        for (uint16_t dx = 0; dx < size.width; dx++){
+            if (c[dy / size.pixel][dx / size.pixel]) {
                 if (vg_draw_pixel(x + dx, y + dy, color)) return 1;
             }
         }
     }
     return 0;
 }
-int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color){
+int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color, font_size_t size){
     // Only called when color is already calculated
     int index = getCharIndex(c);
     if (index < 0) return 1;
-    return _draw5x7(x, y, alphabet[index], color);
+    return _draw5x7(x, y, alphabet[index], color, size);
 }
-int drawCharColor(uint16_t x, uint16_t y, const char c, uint32_t color){
-    if (currentMode == vbe768pInd) return _drawChar(x, y, c, color);
-    return _drawChar(x, y, c, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawCharColor(float px, float py, const char c, uint32_t color, font_size_t size){
+    if (currentMode == vbe768pInd) return _drawChar(getXFromPercent(px), getYFromPercent(py), c, color, size);
+    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
-int drawCharRGB(uint16_t x, uint16_t y, const char c, uint8_t red, uint8_t green, uint8_t blue){
+int drawCharRGB(float px, float py, const char c, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
     if (currentMode == vbe768pInd) { printf("drawCharRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawChar(x, y, c, direct_mode(red, green, blue));
+    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, direct_mode(red, green, blue), size);
 }
 
-int _drawText(uint16_t x, uint16_t y, const char* str, uint32_t color){
+int _drawText(uint16_t x, uint16_t y, const char* str, uint32_t color, font_size_t size){
     // Only called when color is already calculated
     for (int i = 0; str[i] != 0; i++){
-        uint16_t dx = i * (currentFontSize.width + currentPixelSize);
-        if (_drawChar(x + dx, y, str[i], color)) return 1;
+        uint16_t dx = i * (size.width + size.pixel);
+        if (_drawChar(x + dx, y, str[i], color, size)) return 1;
     }
     return 0;
 }
-int drawTextColor(uint16_t x, uint16_t y, const char* str, uint32_t color){
-    if (currentMode == vbe768pInd) return _drawText(x, y, str, color);
-    return _drawText(x, y, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+int drawTextColor(float cx, float cy, const char* str, uint32_t color, font_size_t size) {
+    uint16_t x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
+    uint16_t y = getYFromPercent(cy) - (size.height >> 1);
+    if (currentMode == vbe768pInd) return _drawText(x, y, str, color, size);
+    return _drawText(x, y, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
-int drawTextRGB(uint16_t x, uint16_t y, const char* str, uint8_t red, uint8_t green, uint8_t blue){
+int drawTextRGB(float cx, float cy, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
+    uint16_t x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
+    uint16_t y = getXFromPercent(cy) - (size.height >> 1);
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawText(x, y, str, direct_mode(red, green, blue));
+    return _drawText(x, y, str, direct_mode(red, green, blue), size);
 }
-uint16_t getTextWidth(const char* str) {
-    return strlen(str) * (currentFontSize.width + currentPixelSize) - currentPixelSize;
+uint16_t getTextWidth(const char* str, font_size_t size) {
+    return strlen(str) * (size.width + size.pixel) - size.pixel;
 }
