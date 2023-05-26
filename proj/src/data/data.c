@@ -19,9 +19,9 @@ int loadDictionary(const char* filename) {
     size_t lineNum = 0;
     
     while ((lineNum < MAX_WORD_AMMOUNT) && ((lineLen = getline(&line, &bufferLen, file)) != -1)) {
-        dictionary[lineNum] = (char*) malloc(lineLen);
-        memcpy(dictionary[lineNum], line, lineLen - 1);
-        dictionary[lineNum][lineLen - 1] = '\0';
+        dictionary[lineNum] = (char*) malloc(lineLen - 1);
+        memcpy(dictionary[lineNum], line, lineLen - 2);
+        dictionary[lineNum][lineLen - 2] = '\0';
         lineNum++;
     }
     dictionarySize = lineNum;

@@ -11,6 +11,10 @@
 int hookIdKeyboard = 1;
 uint32_t counter_KB = 0;
 bool isTwoBytes = false;
+bool isShiftPressed = false;
+bool isCtrlPressed = false;
+bool isAltPressed = false;
+bool isCapsLockActive = false;
 
 int (keyboard_subscribe_int)() {
     irqSetKeyboard = BIT(hookIdKeyboard);
@@ -32,6 +36,23 @@ int (keyboard_ih)() {
         isTwoBytes = true;
         return 0;
     } else {
+        switch (scancode) {
+        case LEFT_SHIFT_SCANCODE: case RIGHT_SHIFT_SCANCODE:
+            isShiftPressed = true; return 0;
+        case LEFT_SHIFT_SCANCODE | BREAK_CODE: case RIGHT_SHIFT_SCANCODE | BREAK_CODE:
+            isShiftPressed = false; return 0;
+        case LEFT_CTRL_SCANCODE:
+            isCtrlPressed = true; return 0;
+        case LEFT_CTRL_SCANCODE | BREAK_CODE:
+            isCtrlPressed = false; return 0;
+        case LEFT_ALT_SCANCODE:
+            isAltPressed = true; return 0;
+        case LEFT_ALT_SCANCODE | BREAK_CODE:
+            isAltPressed = false; return 0;
+        case CAPSLOCK_SCANCODE:
+            isCapsLockActive = !isCapsLockActive; return 0;
+        default: break;
+        }
         isScancodeTwoBytes = isTwoBytes;
         isTwoBytes = false;
         return 1;

@@ -1,6 +1,15 @@
 
 #include "lib.h"
 
+const uint8_t numberRowScancode[10] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+const uint8_t firstRowScancode [10] = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
+const uint8_t secondRowScancode [9] = {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'};
+const uint8_t thirdRowScancode [10] = {'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '-'};
+const uint8_t numberRowShiftScancode[10] = {'!', '"', '#', '$', '%', '&', '/', '(', ')', '='};
+const uint8_t firstRowShiftScancode [10] = {'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'};
+const uint8_t secondRowShiftScancode [9] = {'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'};
+const uint8_t thirdRowShiftScancode [10] = {'Z', 'X', 'C', 'V', 'B', 'N', 'M', ';', ':', '_'};
+
 int initAllDrivers(){
     isScancodeTwoBytes = false;
     currentMode = textMode;
@@ -160,7 +169,7 @@ int _drawText(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32
     char* nextWord = strchr(str, ' ');
     uint16_t dx = 0, dy = 0;
     const uint16_t xStep = size.width + size.pixel;
-    const uint16_t yStep = size.height + size.pixel;
+    const uint16_t yStep = size.height + 3 * size.pixel;
     for (; *str != 0; str++) {
         if (str == nextWord) {
             nextWord = strchr(str + 1, ' ');
@@ -210,6 +219,69 @@ int drawTextXYRGB(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, ui
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
     return _drawText(x, y, maxWidth, str, direct_mode(red, green, blue), size);
 }
+int drawTextWithCursor(float cx, float cy, float maxWidth, uint16_t cursorIndex, const char* str, uint32_t color, font_size_t size) {
+    uint16_t x, y, maxW;
+    if (maxWidth < 0) {
+        x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
+        maxW = (uint16_t) -1;
+    } else {
+        x = getXFromPercent(cx) - (getXFromPercent(maxWidth) >> 1);
+        maxW = getXFromPercent(maxWidth);
+    }
+    y = getYFromPercent(cy) - (size.height >> 1);
+    uint32_t filterColor = (currentMode == vbe768pInd) ? color : direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color);
+    char* nextWord = strchr(str, ' ');
+    uint16_t dx = 0, dy = 0;
+    const uint16_t xStep = size.width + size.pixel;
+    const uint16_t yStep = size.height + 3 * size.pixel;
+    const size_t strLen = strlen(str);
+    for (uint16_t i = 0; *str != 0; str++, i++) {
+        if (cursorIndex == i) {
+            for (uint16_t dy = 0; dy < size.pixel; dy++)
+                for (uint16_t dx = 0; dx < size.width; dx++)
+                    if (vg_draw_pixel(x + dx, y + dy + size.height + size.pixel, color)) return 1;
+            printf("Draw on index %d\n", i);
+        }    
+        if (str == nextWord) {
+            nextWord = strchr(str + 1, ' ');
+            uint16_t wordWidth = (nextWord == NULL) ? strlen(str) * xStep : (nextWord - str) * xStep;
+            if (dx + wordWidth > maxW) {
+                dx = 0;
+                dy += yStep;
+                continue;
+            }
+        }
+        if (_drawChar(x + dx, y + dy, *str, filterColor, size)) return 1;
+        dx += xStep;
+    }
+    if (cursorIndex == strLen) {
+        for (uint16_t ddy = 0; ddy < size.pixel; ddy++)
+            for (uint16_t ddx = 0; ddx < size.width; ddx++)
+                if (vg_draw_pixel(x + dx + ddx, y + dy + ddy + size.height + size.pixel, color)) return 1;
+        printf("Draw in the end strLen: %d\n", strLen);
+    }
+
+    return 0;
+}
 uint16_t getTextWidth(const char* str, font_size_t size) {
     return strlen(str) * (size.width + size.pixel) - size.pixel;
+}
+
+char getCharFromMakecode(uint8_t makecode) {
+    if (makecode == SPACE_SCANCODE) return ' ';
+    if (makecode == ENTER_SCANCODE) return '\n';
+    if (isShiftPressed) {
+        if      (KEY_SCANCODE_1 <= makecode && makecode <= KEY_SCANCODE_0)    return numberRowShiftScancode[makecode - KEY_SCANCODE_1];
+        else if (KEY_SCANCODE_Q <= makecode && makecode <= KEY_SCANCODE_P)    return (isCapsLockActive ? firstRowScancode  : firstRowShiftScancode )[makecode - KEY_SCANCODE_Q];
+        else if (KEY_SCANCODE_A <= makecode && makecode <= KEY_SCANCODE_L)    return (isCapsLockActive ? secondRowScancode : secondRowShiftScancode)[makecode - KEY_SCANCODE_A];
+        else if (KEY_SCANCODE_Z <= makecode && makecode <= KEY_SCANCODE_M)    return (isCapsLockActive ? thirdRowScancode  : thirdRowShiftScancode )[makecode - KEY_SCANCODE_Z];
+        else if (KEY_SCANCODE_M <  makecode && makecode <= KEY_SCANCODE_DASH) return thirdRowShiftScancode [makecode - KEY_SCANCODE_Z];
+    } else {
+        if      (KEY_SCANCODE_1 <= makecode && makecode <= KEY_SCANCODE_0)    return numberRowScancode[makecode - KEY_SCANCODE_1];
+        else if (KEY_SCANCODE_Q <= makecode && makecode <= KEY_SCANCODE_P)    return (isCapsLockActive ? firstRowShiftScancode  : firstRowScancode )[makecode - KEY_SCANCODE_Q];
+        else if (KEY_SCANCODE_A <= makecode && makecode <= KEY_SCANCODE_L)    return (isCapsLockActive ? secondRowShiftScancode : secondRowScancode)[makecode - KEY_SCANCODE_A];
+        else if (KEY_SCANCODE_Z <= makecode && makecode <= KEY_SCANCODE_M)    return (isCapsLockActive ? thirdRowShiftScancode  : thirdRowScancode )[makecode - KEY_SCANCODE_Z];
+        else if (KEY_SCANCODE_M <  makecode && makecode <= KEY_SCANCODE_DASH) return thirdRowScancode [makecode - KEY_SCANCODE_Z];
+    }
+    return -1;
 }

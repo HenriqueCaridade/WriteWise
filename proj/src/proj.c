@@ -42,7 +42,6 @@ typedef enum {
     settingsState,
     endState,
 } app_state_t;
-
 app_state_t currAppState = startState;
 
 typedef enum {
@@ -90,6 +89,20 @@ int drawScreen();
 int loadScreen();
 int changeState();
 void keyboardScancodeHandler();
+char* generatedText = NULL;
+char* typedText = NULL;
+size_t generatedTextSize = 0;
+size_t typingCursor = 0;
+void generateText(uint32_t wordAmmount);
+
+int exitAll(int code) {
+    free(generatedText);
+    free(typedText);
+    freeDictionary();
+    exitGraphMode(code);
+    exitAllDrivers();
+    return code;
+}
 
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
@@ -97,15 +110,11 @@ int(proj_main_loop)(int argc, char *argv[]){
     if (setMinixMode(vbe600pDc)) { exitAllDrivers(); return 1; }
     if (initUI() || loadScreen() || setTheme(darkTheme)) {
         printf("Failed Initializing UI.\n");
-        exitGraphMode(1);
-        exitAllDrivers();
-        return 1;
+        return exitAll(1);
     }
     if (loadDictionary("/home/lcom/labs/proj/src/data/english.dict")) {
         printf("Failed Initializing Dictionary.\n");
-        exitGraphMode(1);
-        exitAllDrivers();
-        return 1;
+        return exitAll(1);
     }
     while (currAppState != endState) {
         if (driver_receive(ANY, &msg, &ipcStatus)) {
@@ -119,7 +128,7 @@ int(proj_main_loop)(int argc, char *argv[]){
                 // Timer Interrupt
                 timer_int_handler();
                 // Draw screen
-                if (drawScreen(currAppState)) { exitGraphMode(1); exitAllDrivers(); return 1; }
+                if (drawScreen(currAppState)) return exitAll(1);
             }
             if (msg.m_notify.interrupts & irqSetMouse) {
                 // Mouse Interrupt
@@ -139,18 +148,21 @@ int(proj_main_loop)(int argc, char *argv[]){
         }
         }
     }
-    exitGraphMode(0);
-    return exitAllDrivers();
+    return exitAll(0);
 }
 int changeState(app_state_t newState){
     printf("Changed From %d to %d.\n", currAppState, newState);
     currAppState = newState;
-    if (newState == endState) return 0;
+    switch (newState) {
+    case endState: return 0;
+    case trainingState: generateText(25); break;
+    default: break;
+    }
     return loadScreen();
 }
 
 void keyboardScancodeHandler() {
-    if (scancode & MAKE_CODE) {
+    if (scancode & BREAK_CODE) {
         // BREAK CODE
         if (!isScancodeTwoBytes && scancode == BREAK_ESC) {
             switch(currAppState) {
@@ -161,9 +173,19 @@ void keyboardScancodeHandler() {
         }
     } else {
         // MAKE CODE
+        if (!isScancodeTwoBytes && scancode == MAKE_ESC) return;
         if (currAppState == startState) {
             changeState(mainState);
             return;
+        }
+        if (currAppState == trainingState) {
+            if (scancode == BACKSPACE_SCANCODE) {
+                if (typingCursor) typedText[--typingCursor] = 0;
+            } else {
+                char c = getCharFromMakecode(scancode);
+                if (c > 0) typedText[typingCursor++] = c;
+                if (generatedTextSize && typingCursor >= generatedTextSize) typingCursor--;
+            }
         }
         if (isScancodeTwoBytes) {
             switch (scancode) {
@@ -211,6 +233,7 @@ int trainingScreenLoad() {
     if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xlarge))) return 1;
     if (drawTextXYColor(10, 15 + getFontSize(xlarge).height, -1, "Training", getThemeColor(subtleColor), getFontSize(medium))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawTextColor(0.5f, 0.4f, 0.8f, generatedText, getThemeColor(subtleColor), getFontSize(medium))) return 1;
     printf("Traning Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -281,7 +304,13 @@ int drawScreen() {
 
     // TODO: Non-static components here...
     switch (currAppState) {
-        default: break;
+    case trainingState: {
+        char text[10] = {0};
+        sprintf(text, "%d/%d", typingCursor, generatedTextSize);
+        if (drawTextWithCursor(0.5f, 0.4f, 0.8f, typingCursor, typedText, getThemeColor(textColor), getFontSize(medium))) return 1;
+        if (drawTextColor(0.5f, 0.2f, -1.0f, text, getThemeColor(textColor), getFontSize(medium))) return 1;
+    }   break;
+    default: break;
     }
     
     if (drawCursor()) return 1;
@@ -300,4 +329,26 @@ int loadScreen(){
     case settingsState:     return settingsScreenLoad();
     case endState:          return 1;
     }
+}
+
+// LOGIC FUNCTIONS //
+
+void generateText(uint32_t wordAmmount) {
+    srand(time(NULL));
+    typingCursor = 0;
+    generatedText = realloc(generatedText, 1);
+    generatedText[0] = 0;
+    generatedTextSize = (wordAmmount == 0) ? 1 : 0;
+    for (uint32_t i = 0; i < wordAmmount; i++) {
+        float r = ((float) rand()) / RAND_MAX;
+        size_t ind = (size_t)(r * dictionarySize);
+        char* word = dictionary[ind];
+        generatedTextSize += strlen(word) + 1;
+        generatedText = realloc(generatedText, generatedTextSize);
+        if (i) strcat(generatedText, " ");
+        strcat(generatedText, word);
+    }
+    typedText = realloc(typedText, generatedTextSize);
+    memset(typedText, 0, generatedTextSize);
+    generatedTextSize--;
 }

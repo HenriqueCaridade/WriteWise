@@ -38,6 +38,15 @@ typedef enum {
 } app_theme_t;
 app_theme_t currentTheme;
 
+const uint8_t numberRowScancode[10];
+const uint8_t firstRowScancode [10];
+const uint8_t secondRowScancode [9];
+const uint8_t thirdRowScancode [10];
+const uint8_t numberRowShiftScancode[10];
+const uint8_t firstRowShiftScancode [10];
+const uint8_t secondRowShiftScancode [9];
+const uint8_t thirdRowShiftScancode [10];
+
 int initAllDrivers();
 int exitAllDrivers();
 
@@ -68,6 +77,9 @@ int drawTextColor (float cx, float cy, float maxWidth, const char* str, uint32_t
 int drawTextRGB   (float cx, float cy, float maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
 int drawTextXYColor(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size);
 int drawTextXYRGB  (uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
+int drawTextWithCursor(float cx, float cy, float maxWidth, uint16_t cursorIndex, const char* str, uint32_t color, font_size_t size);
 uint16_t getTextWidth(const char* str, font_size_t size);
+
+char getCharFromMakecode(uint8_t makecode);
 
 #endif // _PROJ_LIB_H
