@@ -4,19 +4,21 @@
 int initAllDrivers(){
     isScancodeTwoBytes = false;
     currentMode = textMode;
-    if (timer_subscribe_interrupt()) return 1;
-    if (keyboard_subscribe_int()) return 1;
-    if (mouse_subscribe_int()) return 1;
-    if (serial_port_init()) return 1;
-    if (serial_port_subscribe_int()) return 1;
+    if (timer_subscribe_interrupt()) { printf("Timer Interrupt Subscription FAILED.\n"); return 1; }
+    if (keyboard_subscribe_int()) { printf("Keyboard Interrupt Subscription FAILED.\n"); return 1; }
+    if (mouse_subscribe_int()) { printf("Mouse Interrupt Subscription FAILED.\n"); return 1; }
+    if (serial_port_init())  { printf("Serial Port Interrupt Enable FAILED.\n"); return 1; }
+    if (serial_port_subscribe_int()) { printf("Serial Port Interrupt Subscription FAILED.\n"); return 1; }
+    printf("All Drivers Initialized Correctly!\n");
     return 0;
 }
 
 int exitAllDrivers(){
-    if (serial_port_unsubscribe_int()) return 1;
-    if (mouse_unsubscribe_int()) return 1;
-    if (keyboard_unsubscribe_int()) return 1;
-    if (timer_unsubscribe_int()) return 1;
+    if (serial_port_unsubscribe_int()) { printf("Serial Port Interrupt Unsubscription FAILED.\n"); return 1; }
+    if (mouse_unsubscribe_int()) { printf("Keyboard Interrupt Unsubscription FAILED.\n"); return 1; }
+    if (keyboard_unsubscribe_int()) { printf("Mouse Interrupt Unsubscription FAILED.\n"); return 1; }
+    if (timer_unsubscribe_int()) { printf("Timer Interrupt Unsubscription FAILED.\n"); return 1; }
+    printf("All Drivers Exited Correctly!\n");
     return 0;
 }
 

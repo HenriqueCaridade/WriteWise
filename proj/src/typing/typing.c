@@ -2,9 +2,10 @@
 #include "typing.h"
 
 typing_info_t typingInfo = {NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.0, 100.0, unready};
+racing_info_t racingInfo = {false, false, 0};
 
-void generateText(uint32_t wordAmmount) {
-    srand(time(NULL));
+void generateText(uint32_t wordAmmount, unsigned seed) {
+    srand(seed);
     resetTypingInfo();
     typingInfo.typingCursor = 0;
     typingInfo.generatedText = (char *) malloc(1);
@@ -44,6 +45,13 @@ void resetTypingInfo() {
     typingInfo.cpm = 0.0;
     typingInfo.acc = 100.0;
     typingInfo.status = unready;
+}
+
+void resetRacingInfo() {
+    racingInfo.readyMe = false;
+    racingInfo.readyYou = false;
+    racingInfo.seedMe = 0;
+    racingInfo.seedYou = 0;
 }
 
 void typingInputHandler() {
@@ -134,6 +142,7 @@ int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint
     const uint16_t xStep = size.width + size.pixel;
     const uint16_t yStep = size.height + 3 * size.pixel;
     uint16_t i = 0;
+    bool isWrongFromHere = false;
     for (; typingInfo.typedText[i] != 0; i++) {
         if (typingInfo.typingCursor == i) if (vg_draw_rectangle(x + dx, y + dy + size.height + size.pixel, size.width, size.pixel, filteredRightColor)) return 1;
         const char *currChar = typingInfo.generatedText + i;
@@ -149,9 +158,10 @@ int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint
         if (typingInfo.typedText[i] == typingInfo.generatedText[i]) {
             if (_drawChar(x + dx, y + dy, typingInfo.generatedText[i], filteredRightColor, size)) return 1;  
         } else {
-            if (_drawChar(x + dx, y + dy, typingInfo.generatedText[i], filteredWrongColor, size)) return 1; 
-            if (vg_draw_rectangle(x + dx, y + dy + size.height + size.pixel, size.width, size.pixel, filteredWrongColor)) return 1;
+            isWrongFromHere = true;
+            if (_drawChar(x + dx, y + dy, typingInfo.generatedText[i], filteredWrongColor, size)) return 1;
         }
+        if (isWrongFromHere) if (vg_draw_rectangle(x + dx, y + dy + size.height + size.pixel, size.width, size.pixel, filteredWrongColor)) return 1;
         dx += xStep;
     }
     for (; typingInfo.generatedText[i] != 0; i++) {

@@ -65,6 +65,6 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
     return 0;
 }
 
-uint64_t(timer_get_elapsed_count)(){
+uint64_t (timer_get_elapsed_count)(){
     return timerCounter;
 }

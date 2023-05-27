@@ -876,7 +876,7 @@ int getCharIndex(const char c) {
 
 font_size_t getFontSize(font_type_t fontType) {
     switch (currentMode){
-    case vbe480pDc: case vbe600pDc:
+    case vbe480pDc:
         switch (fontType) {
         case small:     return (font_size_t){ 5,  7, 1};
         case medium:    return (font_size_t){ 5,  7, 1};
@@ -884,6 +884,15 @@ font_size_t getFontSize(font_type_t fontType) {
         case xlarge:    return (font_size_t){10, 14, 2};
         case xxlarge:   return (font_size_t){15, 21, 3};
         case xxxlarge:  return (font_size_t){15, 21, 3};
+        }
+    case vbe600pDc:
+        switch (fontType) {
+        case small:     return (font_size_t){ 5,  7, 1};
+        case medium:    return (font_size_t){10, 14, 2};
+        case large:     return (font_size_t){10, 14, 2};
+        case xlarge:    return (font_size_t){15, 21, 3};
+        case xxlarge:   return (font_size_t){20, 28, 4};
+        case xxxlarge:  return (font_size_t){20, 28, 4};
         }
     default:
         switch (fontType) {

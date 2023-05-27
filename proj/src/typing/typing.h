@@ -32,7 +32,15 @@ typedef struct {
 } typing_info_t;
 typing_info_t typingInfo;
 
-void generateText(uint32_t wordAmmount);
+typedef struct {
+    bool readyMe;
+    bool readyYou;
+    uint64_t seedMe;
+    uint64_t seedYou;
+} racing_info_t;
+racing_info_t racingInfo;
+
+void generateText(uint32_t wordAmmount, unsigned seed);
 void typingInputHandler();
 void updateTypingInfo();
 void resetTypingInfo();
