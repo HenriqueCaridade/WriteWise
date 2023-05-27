@@ -7,6 +7,6 @@
 uint8_t irqSetTimer;
 
 int (timer_subscribe_interrupt)();
-uint64_t(timer_get_elapsed_count)();
+uint64_t (timer_get_elapsed_count)();
 
 #endif // _PROJ_TIMER_H

@@ -13,4 +13,4 @@ DPADD += ${LIBLCF}
 LDADD += -llcf
 
 # include LCOM's makefile that does all the "heavy lifting"
-.include <minix.lcom.mk>
+.include <minix.lcom.mk> 

@@ -18,8 +18,8 @@ int (set_graphic_mode)(uint16_t submode) {
         printf("vbe_get_mode_info failed.");
         return 1;
     }
-    bytes_pp = (modeInfo.BitsPerPixel + 7) >> 3;
-    frameSize = modeInfo.XResolution * modeInfo.YResolution * bytes_pp;
+    bytesPP = (modeInfo.BitsPerPixel + 7) >> 3;
+    frameSize = modeInfo.XResolution * modeInfo.YResolution * bytesPP;
     return 0;
 }
 
@@ -69,8 +69,8 @@ void (flip_frame)() {
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     if (x >= modeInfo.XResolution || y >= modeInfo.YResolution) return 1;
-    size_t i = (modeInfo.XResolution * y + x) * bytes_pp;
-    memcpy(frameBuffer + i, &color, bytes_pp);
+    size_t i = (modeInfo.XResolution * y + x) * bytesPP;
+    memcpy(frameBuffer + i, &color, bytesPP);
     return 0;
 }
 
@@ -89,7 +89,7 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
     return 0;
 }
 
-uint32_t (direct_mode)(uint8_t red, uint8_t green, uint8_t blue) {
+uint32_t (rgbToColor)(uint8_t red, uint8_t green, uint8_t blue) {
     return ((uint32_t)(red   >> (8 - modeInfo.RedMaskSize))   << modeInfo.RedFieldPosition) |
            ((uint32_t)(green >> (8 - modeInfo.GreenMaskSize)) << modeInfo.GreenFieldPosition) |
            ((uint32_t)(blue  >> (8 - modeInfo.BlueMaskSize))  << modeInfo.BlueFieldPosition);

@@ -3,17 +3,17 @@
 #include "i8042.h"
 #include "KBC.h"
 
-int (read_KBC_status)(uint8_t* status){
+int readKBCStatus(uint8_t* status){
     return util_sys_inb(KBC_STATUS_REG, status);
 }
 
-int (read_KBC_output)(uint8_t port, uint8_t *output, bool mouse){
+int readKBCOutput(uint8_t port, uint8_t *output, bool mouse){
     uint8_t status;
-    uint8_t attempts = MAX_ATTEMPTS;
+    uint8_t attempts = MAX_ATTEMPTS_KBC;
 
     while (attempts--){
-        if (read_KBC_status(&status)) {
-            printf("(read_KBC_output) read_KBC_status failed.\n");
+        if (readKBCStatus(&status)) {
+            printf("(readKBCOutput) readKBCStatus failed.\n");
             return 1;
         }
         if (status & FULL_OUT_BUFFER) {
@@ -26,28 +26,28 @@ int (read_KBC_output)(uint8_t port, uint8_t *output, bool mouse){
                 return 1;
             }
             if (mouse && !(status & MOUSE_BIT)) {
-                printf("read_KBC_output expected mouse but keyboard info found.\n");
+                printf("readKBCOutput expected mouse but keyboard info found.\n");
                 return 1;
             }
             if (!mouse && (status & MOUSE_BIT)) {
-                printf("read_KBC_output expected keyboard but mouse info found.\n");
+                printf("readKBCOutput expected keyboard but mouse info found.\n");
                 return 1;
             }
             return util_sys_inb(port, output);
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
     }
-    printf("read_KBC_output attempted %d times but failed.\n", MAX_ATTEMPTS);
+    printf("readKBCOutput attempted %d times but failed.\n", MAX_ATTEMPTS_KBC);
     return 1;
 }
 
-int (write_KBC_command)(uint8_t port, uint8_t commandByte){
+int writeKBCCommand(uint8_t port, uint8_t commandByte){
     uint8_t status;
-    uint8_t attempts = MAX_ATTEMPTS;
+    uint8_t attempts = MAX_ATTEMPTS_KBC;
 
     while (attempts--) {
-        if (read_KBC_status(&status)) {
-            printf("(write_KBC_command) read_KBC_status failed.\n");
+        if (readKBCStatus(&status)) {
+            printf("(writeKBCCommand) readKBCStatus failed.\n");
             return 1;
         }
         if (!(status & FULL_IN_BUFFER)) { // ATIVADO A ZERO
@@ -56,6 +56,6 @@ int (write_KBC_command)(uint8_t port, uint8_t commandByte){
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
     }
-    printf("read_KBC_output attempted %d times but failed.\n", MAX_ATTEMPTS);
+    printf("writeKBCCommand attempted %d times but failed.\n", MAX_ATTEMPTS_KBC);
     return 1;
 }

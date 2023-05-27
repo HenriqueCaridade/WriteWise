@@ -8,11 +8,11 @@
 # Labs' Files
 !lab0/bitwise/bitwise.c
 !lab0/helloworld/hello.c
-!lab[0-9]/.vscode
-!lab[0-9]/.clang-format
-!lab[0-9]/*.c
-!lab[0-9]/*.h
-!lab[0-9]/Makefile
+!lab[0-5]/.vscode
+!lab[0-5]/.clang-format
+!lab[0-5]/*.c
+!lab[0-5]/*.h
+!lab[0-5]/Makefile
 
 # Project Files
 !proj/src/.vscode
@@ -34,10 +34,16 @@
 !proj/src/lib/drivers/KBC/*.h
 !proj/src/lib/drivers/timer/*.c
 !proj/src/lib/drivers/timer/*.h
+!proj/src/lib/scancode/*.c
+!proj/src/lib/scancode/*.h
 
 # UI Files
 !proj/src/ui/*.c
 !proj/src/ui/*.h
+
+# Typing Files
+!proj/src/typing/*.c
+!proj/src/typing/*.h
 
 # Data Files
 !proj/src/data/*.c

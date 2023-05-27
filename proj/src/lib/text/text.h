@@ -3,8 +3,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 typedef struct {
     uint32_t width;
@@ -21,7 +19,7 @@ typedef enum {
     xxxlarge,
 } font_type_t;
 
-#define ALPHABET_SIZE 69
+#define ALPHABET_SIZE 96
 const bool alphabet[ALPHABET_SIZE][7][5];
 
 int getCharIndex(const char c);

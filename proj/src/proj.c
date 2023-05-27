@@ -5,9 +5,9 @@
 #include <stdio.h>
 
 // Any header files included below this line should have been created by you
+#include "typing/typing.h"
 #include "lib/lib.h"
 #include "ui/ui.h"
-#include "data/data.h"
 
 int main(int argc, char *argv[]) {
     // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -45,39 +45,42 @@ typedef enum {
 app_state_t currAppState = startState;
 
 typedef enum {
-    textColor = 0,
+    backColor = 0,
+    textColor,
     subtleColor,
     buttonBackColor,
     buttonTextColor,
     selectedButtonColor,
+    errorColor,
     trainingColor,
-    trainingSubtleColor,
     raceColor,
-    raceSubtleColor,
+    infoColor,
 } theme_color_index_t;
 
 uint32_t darkThemeColorArray[] = {
+    0x000000,
     0xFFFFFF,
     0x505050,
     0x303030,
     0xDDDDDD,
     0x606060,
-    0x4ecfc4,
-    0xa2e0db,
-    0xa670e0,
-    0xb79ad6,
+    0xFF4040,
+    0xFFDB58,
+    0x9B4FF0,
+    0x4050FF,
 };
 
 uint32_t lightThemeColorArray[] = {
+    0xFFFFFF,
     0x000000,
     0xA0A0A0,
     0xC0C0C0,
     0x222222,
     0x909090,
-    0x4ecfc4,
-    0xa2e0db,
-    0xa670e0,
-    0xb79ad6,
+    0xAA3030,
+    0xCCA854,
+    0x8B4FC0,
+    0x4040CC,
 };
 
 uint32_t getThemeColor(theme_color_index_t color) {
@@ -89,15 +92,8 @@ int drawScreen();
 int loadScreen();
 int changeState();
 void keyboardScancodeHandler();
-char* generatedText = NULL;
-char* typedText = NULL;
-size_t generatedTextSize = 0;
-size_t typingCursor = 0;
-void generateText(uint32_t wordAmmount);
-
 int exitAll(int code) {
-    free(generatedText);
-    free(typedText);
+    resetTypingInfo();
     freeDictionary();
     exitGraphMode(code);
     exitAllDrivers();
@@ -106,7 +102,7 @@ int exitAll(int code) {
 
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
-    if (setFrameRate(30)) { exitAllDrivers(); return 1; }
+    if (setFrameRate(60)) { exitAllDrivers(); return 1; }
     if (setMinixMode(vbe600pDc)) { exitAllDrivers(); return 1; }
     if (initUI() || loadScreen() || setTheme(darkTheme)) {
         printf("Failed Initializing UI.\n");
@@ -114,6 +110,10 @@ int(proj_main_loop)(int argc, char *argv[]){
     }
     if (loadDictionary("/home/lcom/labs/proj/src/data/english.dict")) {
         printf("Failed Initializing Dictionary.\n");
+        return exitAll(1);
+    }
+    if (setKeyboardLayout(portuguese)) {
+        printf("Failed Setting Keyboard Layout.\n");
         return exitAll(1);
     }
     while (currAppState != endState) {
@@ -127,6 +127,10 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
+                if (timer_get_elapsed_count() % (frameRate >> 1) == 0)
+                    if (currAppState == trainingState) 
+                        updateTypingInfo();
+
                 // Draw screen
                 if (drawScreen(currAppState)) return exitAll(1);
             }
@@ -143,6 +147,15 @@ int(proj_main_loop)(int argc, char *argv[]){
                     // New Scancode
                     keyboardScancodeHandler();
                 }
+            }
+            if (msg.m_notify.interrupts & irqSetSerialPort) {
+                // Serial Port Interrupt
+                if (serial_port_ih()) {
+                    // New Data
+                    // TODO: DO SOMETHING... (INFO in serialPortByte)
+                }
+                // SENDING INFO WITH:
+                // serialPortSendByte();
             }
             break;
         }
@@ -179,13 +192,7 @@ void keyboardScancodeHandler() {
             return;
         }
         if (currAppState == trainingState) {
-            if (scancode == BACKSPACE_SCANCODE) {
-                if (typingCursor) typedText[--typingCursor] = 0;
-            } else {
-                char c = getCharFromMakecode(scancode);
-                if (c > 0) typedText[typingCursor++] = c;
-                if (generatedTextSize && typingCursor >= generatedTextSize) typingCursor--;
-            }
+            typingInputHandler();
         }
         if (isScancodeTwoBytes) {
             switch (scancode) {
@@ -216,33 +223,34 @@ int mainScreenLoad() {
     clearScreen();
     clearButtons();
     printf("Main Started Drawing.\n");
-    if (drawTextColor(0.5f, 0.15f, -1.0f, "Write Wise", getThemeColor(textColor), getFontSize(xxlarge))) return 1;
+    if (drawTextColor(0.5f, 0.15f, -1.0f, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to exit...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
-    if (addButton((button_t){0.3f, 0.30f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Training"    , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonTraining    }, 0)) return 1;
-    if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Race"        , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonRace        }, 1)) return 1;
-    if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Instructions", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonInstructions}, 2)) return 1;
+    if (addButton((button_t){0.3f, 0.30f, 0.4f, 0.1f, getThemeColor(trainingColor)  , "Training"    , getThemeColor(backColor), getFontSize(medium), getThemeColor(textColor), _mainButtonTraining    }, 0)) return 1;
+    if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, getThemeColor(raceColor)      , "Race"        , getThemeColor(backColor), getFontSize(medium), getThemeColor(textColor), _mainButtonRace        }, 1)) return 1;
+    if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, getThemeColor(infoColor)      , "Instructions", getThemeColor(backColor), getFontSize(medium), getThemeColor(textColor), _mainButtonInstructions}, 2)) return 1;
     if (addButton((button_t){0.3f, 0.75f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Settings"    , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonSettings    }, 3)) return 1;
     printf("Main Screen Drawn.\n");
     return calcStaticUI();
 }
 
+void _trainingButtonReset(void) { generateText(25); }
 int trainingScreenLoad() {
     clearScreen();
     clearButtons();
-    printf("Traning Started Drawing.\n");
-    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xlarge))) return 1;
-    if (drawTextXYColor(10, 15 + getFontSize(xlarge).height, -1, "Training", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    printf("Training Started Drawing.\n");
+    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
+    if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Training", getThemeColor(trainingColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
-    if (drawTextColor(0.5f, 0.4f, 0.8f, generatedText, getThemeColor(subtleColor), getFontSize(medium))) return 1;
-    printf("Traning Screen Drawn.\n");
+    if (addButton((button_t){0.4f, 0.70f, 0.2f, 0.1f, getThemeColor(buttonBackColor), "New Test", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _trainingButtonReset}, 0)) return 1;
+    printf("Training Screen Drawn.\n"); 
     return calcStaticUI();
 }
 int raceScreenLoad() {
     clearScreen();
     clearButtons();
     printf("Race Started Drawing.\n");
-    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xlarge))) return 1;
-    if (drawTextXYColor(10, 15 + getFontSize(xlarge).height, -1, "Race", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
+    if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Race", getThemeColor(raceColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
     printf("Race Screen Drawn.\n");
     return calcStaticUI();
@@ -251,17 +259,17 @@ int instructionScreenLoad() {
     clearScreen();
     clearButtons();
     printf("Instructions Started Drawing.\n");
-    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xlarge))) return 1;
-    if (drawTextXYColor(10, 15 + getFontSize(xlarge).height, -1, "Instructions", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
+    if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Instructions", getThemeColor(infoColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
-    if (drawTextColor(0.5f, 0.2f, -1.0f, "Training", getThemeColor(trainingColor), getFontSize(large))) return 1;
+    if (drawTextColor(0.5f, 0.2f, -1.0f, "Training", getThemeColor(trainingColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.3f,  0.8f,
         "In the Training section you can train your typing speed before you race others. It provides a safe environment where you can practice without worring about others.",
-        getThemeColor(trainingSubtleColor), getFontSize(medium))) return 1;
-    if (drawTextColor(0.5f, 0.5f, -1.0f, "Race", getThemeColor(raceColor), getFontSize(large))) return 1;
+        getThemeColor(textColor), getFontSize(large))) return 1;
+    if (drawTextColor(0.5f, 0.5f, -1.0f, "Race", getThemeColor(raceColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.6f,  0.8f,
         "In the Race section you will race an opponent and the first to finish typing the given words will win!",
-        getThemeColor(raceSubtleColor), getFontSize(medium))) return 1;
+        getThemeColor(textColor), getFontSize(large))) return 1;
     printf("Instructions Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -277,8 +285,8 @@ int settingsScreenLoad() {
     clearScreen();
     clearButtons();
     printf("Settings Started Drawing.\n");
-    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xlarge))) return 1;
-    if (drawTextXYColor(10, 15 + getFontSize(xlarge).height, -1, "Settings", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
+    if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Settings", getThemeColor(subtleColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
     if (drawTextColor(0.25f, 0.15f, -1.0f, "Resolution", getThemeColor(textColor), getFontSize(medium))) return 1;
     if (addButton((button_t){0.1f, 0.30f, 0.3f, 0.1f, getThemeColor(currentMode == vbe480pDc  ? selectedButtonColor : buttonBackColor),
@@ -300,16 +308,15 @@ int settingsScreenLoad() {
 
 int drawScreen() {
     if (loadStaticUI()) return 1;
-    //if (drawSelectedButton()) return 1;
-
-    // TODO: Non-static components here...
+    if (drawSelectedButton()) return 1;
+    
     switch (currAppState) {
     case trainingState: {
-        char text[10] = {0};
-        sprintf(text, "%d/%d", typingCursor, generatedTextSize);
-        if (drawTextWithCursor(0.5f, 0.4f, 0.8f, typingCursor, typedText, getThemeColor(textColor), getFontSize(medium))) return 1;
-        if (drawTextColor(0.5f, 0.2f, -1.0f, text, getThemeColor(textColor), getFontSize(medium))) return 1;
-    }   break;
+        char infoText[50] = {0};
+        sprintf(infoText, "%.2lf%% %.2lfwpm %d/%d", typingInfo.acc, typingInfo.wpm, typingInfo.typedChars, typingInfo.generatedTextSize);
+        if (drawTypingTest(0.5f, 0.3f, 0.8f, getThemeColor(textColor), getThemeColor(errorColor), getThemeColor(subtleColor), getFontSize(medium))) return 1;
+        if (drawTextColor(0.5f, 0.2f, -1.0f, infoText, getThemeColor(trainingColor), getFontSize(large))) return 1;
+    } break;
     default: break;
     }
     
@@ -329,26 +336,4 @@ int loadScreen(){
     case settingsState:     return settingsScreenLoad();
     case endState:          return 1;
     }
-}
-
-// LOGIC FUNCTIONS //
-
-void generateText(uint32_t wordAmmount) {
-    srand(time(NULL));
-    typingCursor = 0;
-    generatedText = realloc(generatedText, 1);
-    generatedText[0] = 0;
-    generatedTextSize = (wordAmmount == 0) ? 1 : 0;
-    for (uint32_t i = 0; i < wordAmmount; i++) {
-        float r = ((float) rand()) / RAND_MAX;
-        size_t ind = (size_t)(r * dictionarySize);
-        char* word = dictionary[ind];
-        generatedTextSize += strlen(word) + 1;
-        generatedText = realloc(generatedText, generatedTextSize);
-        if (i) strcat(generatedText, " ");
-        strcat(generatedText, word);
-    }
-    typedText = realloc(typedText, generatedTextSize);
-    memset(typedText, 0, generatedTextSize);
-    generatedTextSize--;
 }

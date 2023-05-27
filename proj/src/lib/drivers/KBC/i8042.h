@@ -4,12 +4,9 @@
 #define IRQ_KEYBOARD    1
 #define IRQ_MOUSE       12
 
-#define WAIT_KBC        20000
-#define MAX_ATTEMPTS     10
+#define WAIT_KBC 20000
+#define MAX_ATTEMPTS_KBC 10
 
-#define BREAK_ESC       0x81
-#define MAKE_ESC        0x01
-#define BREAK_CODE       BIT(7)
 #define TWO_BYTES       0xE0
 #define ENABLE_INT      BIT(0)
 
@@ -39,7 +36,7 @@
 #define MOUSE_READ_DATA     0xEB
 #define WRITE_BYTE_MOUSE    0xD4
 
-#define ACK 0xFA    
+#define ACK 0xFA
 #define NACK 0xFE
 
 #endif // _LCOM_I8042_H_

@@ -1,25 +1,19 @@
 
 #include "lib.h"
 
-const uint8_t numberRowScancode[10] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-const uint8_t firstRowScancode [10] = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
-const uint8_t secondRowScancode [9] = {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'};
-const uint8_t thirdRowScancode [10] = {'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '-'};
-const uint8_t numberRowShiftScancode[10] = {'!', '"', '#', '$', '%', '&', '/', '(', ')', '='};
-const uint8_t firstRowShiftScancode [10] = {'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'};
-const uint8_t secondRowShiftScancode [9] = {'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'};
-const uint8_t thirdRowShiftScancode [10] = {'Z', 'X', 'C', 'V', 'B', 'N', 'M', ';', ':', '_'};
-
 int initAllDrivers(){
     isScancodeTwoBytes = false;
     currentMode = textMode;
     if (timer_subscribe_interrupt()) return 1;
     if (keyboard_subscribe_int()) return 1;
     if (mouse_subscribe_int()) return 1;
+    if (serial_port_init()) return 1;
+    if (serial_port_subscribe_int()) return 1;
     return 0;
 }
 
 int exitAllDrivers(){
+    if (serial_port_unsubscribe_int()) return 1;
     if (mouse_unsubscribe_int()) return 1;
     if (keyboard_unsubscribe_int()) return 1;
     if (timer_unsubscribe_int()) return 1;
@@ -31,6 +25,7 @@ int setFrameRate(uint16_t fps){
         printf("Frame Rate must be set between 20 and 60.\n");
         return 0;
     }
+    frameRate = fps;
     return timer_set_frequency(0, fps);
 }
 
@@ -102,29 +97,29 @@ void clearScreen(){
 
 int drawPixelColor(float px, float py, uint32_t color){
     if (currentMode == vbe768pInd) return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), color);
-    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
 int drawPixelRGB(float px, float py, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawPixelRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), direct_mode(red, green, blue));
+    return vg_draw_pixel(getXFromPercent(px), getYFromPercent(py), rgbToColor(red, green, blue));
 }
 
 int drawHLineColor(float px, float py, float len, uint32_t color){
     if (currentMode == vbe768pInd) return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len), color);
-    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len) , direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len) , rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
 int drawHLineRGB(float px, float py, float len, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawHLineRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len), direct_mode(red, green, blue));
+    return vg_draw_hline(getXFromPercent(px), getYFromPercent(py), getXFromPercent(len), rgbToColor(red, green, blue));
 }
 
 int drawVLineColor(float px, float py, float len, uint32_t color){
     if (currentMode == vbe768pInd) return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), color);
-    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
 int drawVLineRGB(float px, float py, float len, uint8_t red, uint8_t green, uint8_t blue){
     if (currentMode == vbe768pInd) { printf("drawVLineRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), direct_mode(red, green, blue));
+    return vg_draw_vline(getXFromPercent(px), getYFromPercent(py), getYFromPercent(len), rgbToColor(red, green, blue));
 }
 
 int _drawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
@@ -132,36 +127,31 @@ int _drawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t 
 }
 int drawRectColor(float px, float py, float width, float height, uint32_t color){
     if (currentMode == vbe768pInd) return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), color);
-    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
+    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color));
 }
 int drawRectRGB(float px, float py, float width, float height, uint8_t red, uint8_t green, uint8_t blue) {
     if (currentMode == vbe768pInd) { printf("drawRectRGB function called when in Indexed Mode.\n"); return 1; }
-    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), direct_mode(red, green, blue));
+    return vg_draw_rectangle(getXFromPercent(px), getYFromPercent(py), getXFromPercent(width), getYFromPercent(height), rgbToColor(red, green, blue));
 }
 
 int _draw5x7(uint16_t x, uint16_t y, const bool c[7][5], uint32_t color, font_size_t size) {
-    for (uint16_t dy = 0; dy < size.height; dy++){
-        for (uint16_t dx = 0; dx < size.width; dx++){
-            if (c[dy / size.pixel][dx / size.pixel]) {
+    for (uint16_t dy = 0; dy < size.height; dy++)
+        for (uint16_t dx = 0; dx < size.width; dx++)
+            if (c[dy / size.pixel][dx / size.pixel])
                 if (vg_draw_pixel(x + dx, y + dy, color)) return 1;
-            }
-        }
-    }
     return 0;
 }
 int _drawChar(uint16_t x, uint16_t y, const char c, uint32_t color, font_size_t size){
     // Only called when color is already calculated
-    int index = getCharIndex(c);
-    if (index < 0) return 1;
-    return _draw5x7(x, y, alphabet[index], color, size);
+    return _draw5x7(x, y, alphabet[getCharIndex(c)], color, size);
 }
 int drawCharColor(float px, float py, const char c, uint32_t color, font_size_t size){
     if (currentMode == vbe768pInd) return _drawChar(getXFromPercent(px), getYFromPercent(py), c, color, size);
-    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
+    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
 int drawCharRGB(float px, float py, const char c, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
     if (currentMode == vbe768pInd) { printf("drawCharRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, direct_mode(red, green, blue), size);
+    return _drawChar(getXFromPercent(px), getYFromPercent(py), c, rgbToColor(red, green, blue), size);
 }
 
 int _drawText(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size){
@@ -196,7 +186,7 @@ int drawTextColor(float cx, float cy, float maxWidth, const char* str, uint32_t 
     }
     y = getYFromPercent(cy) - (size.height >> 1);
     if (currentMode == vbe768pInd) return _drawText(x, y, maxW, str, color, size);
-    return _drawText(x, y, maxW, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
+    return _drawText(x, y, maxW, str, rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
 int drawTextRGB(float cx, float cy, float maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
     uint16_t x, y, maxW;
@@ -209,79 +199,17 @@ int drawTextRGB(float cx, float cy, float maxWidth, const char* str, uint8_t red
     }
     y = getYFromPercent(cy) - (size.height >> 1);
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawText(x, y, maxW, str, direct_mode(red, green, blue), size);
+    return _drawText(x, y, maxW, str, rgbToColor(red, green, blue), size);
 }
 int drawTextXYColor(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size) {
     if (currentMode == vbe768pInd) return _drawText(x, y, maxWidth, str, color, size);
-    return _drawText(x, y, maxWidth, str, direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
+    return _drawText(x, y, maxWidth, str, rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size);
 }
 int drawTextXYRGB(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size){
     if (currentMode == vbe768pInd) { printf("drawTextRGB function called when in Indexed Mode.\n"); return 1; }
-    return _drawText(x, y, maxWidth, str, direct_mode(red, green, blue), size);
+    return _drawText(x, y, maxWidth, str, rgbToColor(red, green, blue), size);
 }
-int drawTextWithCursor(float cx, float cy, float maxWidth, uint16_t cursorIndex, const char* str, uint32_t color, font_size_t size) {
-    uint16_t x, y, maxW;
-    if (maxWidth < 0) {
-        x = getXFromPercent(cx) - (getTextWidth(str, size) >> 1);
-        maxW = (uint16_t) -1;
-    } else {
-        x = getXFromPercent(cx) - (getXFromPercent(maxWidth) >> 1);
-        maxW = getXFromPercent(maxWidth);
-    }
-    y = getYFromPercent(cy) - (size.height >> 1);
-    uint32_t filterColor = (currentMode == vbe768pInd) ? color : direct_mode((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color);
-    char* nextWord = strchr(str, ' ');
-    uint16_t dx = 0, dy = 0;
-    const uint16_t xStep = size.width + size.pixel;
-    const uint16_t yStep = size.height + 3 * size.pixel;
-    const size_t strLen = strlen(str);
-    for (uint16_t i = 0; *str != 0; str++, i++) {
-        if (cursorIndex == i) {
-            for (uint16_t dy = 0; dy < size.pixel; dy++)
-                for (uint16_t dx = 0; dx < size.width; dx++)
-                    if (vg_draw_pixel(x + dx, y + dy + size.height + size.pixel, color)) return 1;
-            printf("Draw on index %d\n", i);
-        }    
-        if (str == nextWord) {
-            nextWord = strchr(str + 1, ' ');
-            uint16_t wordWidth = (nextWord == NULL) ? strlen(str) * xStep : (nextWord - str) * xStep;
-            if (dx + wordWidth > maxW) {
-                dx = 0;
-                dy += yStep;
-                continue;
-            }
-        }
-        if (_drawChar(x + dx, y + dy, *str, filterColor, size)) return 1;
-        dx += xStep;
-    }
-    if (cursorIndex == strLen) {
-        for (uint16_t ddy = 0; ddy < size.pixel; ddy++)
-            for (uint16_t ddx = 0; ddx < size.width; ddx++)
-                if (vg_draw_pixel(x + dx + ddx, y + dy + ddy + size.height + size.pixel, color)) return 1;
-        printf("Draw in the end strLen: %d\n", strLen);
-    }
 
-    return 0;
-}
 uint16_t getTextWidth(const char* str, font_size_t size) {
     return strlen(str) * (size.width + size.pixel) - size.pixel;
-}
-
-char getCharFromMakecode(uint8_t makecode) {
-    if (makecode == SPACE_SCANCODE) return ' ';
-    if (makecode == ENTER_SCANCODE) return '\n';
-    if (isShiftPressed) {
-        if      (KEY_SCANCODE_1 <= makecode && makecode <= KEY_SCANCODE_0)    return numberRowShiftScancode[makecode - KEY_SCANCODE_1];
-        else if (KEY_SCANCODE_Q <= makecode && makecode <= KEY_SCANCODE_P)    return (isCapsLockActive ? firstRowScancode  : firstRowShiftScancode )[makecode - KEY_SCANCODE_Q];
-        else if (KEY_SCANCODE_A <= makecode && makecode <= KEY_SCANCODE_L)    return (isCapsLockActive ? secondRowScancode : secondRowShiftScancode)[makecode - KEY_SCANCODE_A];
-        else if (KEY_SCANCODE_Z <= makecode && makecode <= KEY_SCANCODE_M)    return (isCapsLockActive ? thirdRowScancode  : thirdRowShiftScancode )[makecode - KEY_SCANCODE_Z];
-        else if (KEY_SCANCODE_M <  makecode && makecode <= KEY_SCANCODE_DASH) return thirdRowShiftScancode [makecode - KEY_SCANCODE_Z];
-    } else {
-        if      (KEY_SCANCODE_1 <= makecode && makecode <= KEY_SCANCODE_0)    return numberRowScancode[makecode - KEY_SCANCODE_1];
-        else if (KEY_SCANCODE_Q <= makecode && makecode <= KEY_SCANCODE_P)    return (isCapsLockActive ? firstRowShiftScancode  : firstRowScancode )[makecode - KEY_SCANCODE_Q];
-        else if (KEY_SCANCODE_A <= makecode && makecode <= KEY_SCANCODE_L)    return (isCapsLockActive ? secondRowShiftScancode : secondRowScancode)[makecode - KEY_SCANCODE_A];
-        else if (KEY_SCANCODE_Z <= makecode && makecode <= KEY_SCANCODE_M)    return (isCapsLockActive ? thirdRowShiftScancode  : thirdRowScancode )[makecode - KEY_SCANCODE_Z];
-        else if (KEY_SCANCODE_M <  makecode && makecode <= KEY_SCANCODE_DASH) return thirdRowScancode [makecode - KEY_SCANCODE_Z];
-    }
-    return -1;
 }

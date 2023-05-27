@@ -4,7 +4,7 @@
 #include "timer.h"
 #include "i8254.h"
 
-uint64_t counter = 0;
+uint64_t timerCounter = 0;
 int hookIdTimer = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
@@ -37,7 +37,7 @@ int (timer_unsubscribe_int)() {
 }
 
 void (timer_int_handler)() {
-  counter++;
+  timerCounter++;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
@@ -49,29 +49,22 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
-  union timer_status_field_val conf;
-
-  switch (field) {
-    case tsf_all:
-      conf.byte = st;
-      break;
-    case tsf_initial:
-      conf.in_mode = (st >> 4) & 3;
-      break;
+    union timer_status_field_val conf;
+    switch (field) {
+    case tsf_all: conf.byte = st; break;
+    case tsf_initial: conf.in_mode = (st >> 4) & 3; break;
     case tsf_mode:
-      conf.count_mode = (st >> 1) & 7;
-      if(conf.count_mode >= 7) {
-        conf.count_mode ^= 4;
-      }
-      break;
-    case tsf_base:
-      conf.bcd = (st & 1);
-  }
-
-  timer_print_config(timer, field, conf);
-  return 0;
+        conf.count_mode = (st >> 1) & 7;
+        if(conf.count_mode >= 7) {
+            conf.count_mode ^= 4;
+        }
+        break;
+    case tsf_base: conf.bcd = (st & 1);
+    }
+    timer_print_config(timer, field, conf);
+    return 0;
 }
 
 uint64_t(timer_get_elapsed_count)(){
-    return counter;
+    return timerCounter;
 }
