@@ -298,6 +298,14 @@ int(proj_main_loop)(int argc, char *argv[]){
     }
     return exitAll(0);
 }
+/**
+ * Changes the current state of the application.
+ *
+ * This function is responsible for changing the state of the application based on the provided new state.
+ *
+ * @param newState new state to transition to.
+ * @return 0 on success, 1 on failure.
+ */
 int changeState(app_state_t newState) {
     printf("Changed From %d to %d.\n", currAppState, newState);
     if (currAppState == raceState) serialPortSendExit();
@@ -333,7 +341,13 @@ void keyboardScancodeHandler() {
         }
     }
 }
-
+/**
+ * @brief Loads the start screen.
+ *
+ * This function is responsible for loading and displaying the start screen of the application.
+ *
+ * @return 0 on success, 1 on failure.
+ */
 int startScreenLoad() {
     // TEST UI
     clearScreen();
@@ -342,11 +356,36 @@ int startScreenLoad() {
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press any key to start...", getThemeColor(subtleColor), getFontSize(medium))) return 1;
     return calcStaticUI();
 }
-
+/**
+ * @brief function for the Training button in the main screen.
+ *
+ * This function is called when the Training button is clicked. It changes the state to the training state, which typically leads to the display of the training screen.
+ */
 void _mainButtonTraining    (void) { changeState(trainingState);     }
+/**
+ * @brief Callback function for the Race button in the main screen.
+ *
+ * This function is called when the Race button is clicked. It changes the state to the race state, which typically leads to the display of the race screen.
+ */
 void _mainButtonRace        (void) { changeState(raceState);         }
+/**
+ * @brief Callback function for the Instructions button in the main screen.
+ *
+ * This function is called when the Instructions button is clicked. It changes the state to the instructions state, which typically leads to the display of the instructions screen.
+ */
 void _mainButtonInstructions(void) { changeState(instructionsState); }
+/**
+ * @brief Callback function for the Settings button in the main screen.
+ *
+ * This function is called when the Settings button is clicked. It changes the state to the settings state, which typically leads to the display of the settings screen.
+ */
 void _mainButtonSettings    (void) { changeState(settingsState);     }
+/**
+ * @brief Loads the main screen.
+ *
+ * This function clears the screen and buttons, and then proceeds to draw various elements on the screen such as text and buttons.
+ * @return 0 on success, 1 on failure.
+ */
 int mainScreenLoad() {
     clearScreen();
     clearButtons();
@@ -363,6 +402,13 @@ int mainScreenLoad() {
 }
 
 void _trainingButtonReset(void) { generateText(25, time(NULL)); }
+/**
+ * @brief Loads the training screen.
+ *
+ * This function clears the screen and buttons, and then proceeds to draw various elements on the screen such as text and buttons.
+ *
+ * @return 0 on success, 1 on failure.
+ */
 int trainingScreenLoad() {
     clearScreen();
     clearButtons();
@@ -375,7 +421,13 @@ int trainingScreenLoad() {
     printf("Training Screen Drawn.\n"); 
     return calcStaticUI();
 }
-
+/**
+ * @brief Race ready button handler.
+ * 
+ * This function is called when the "Ready" button is clicked.
+ * It checks the typing status and performs the corresponding actions.
+ * If the typing status is "unready", it either sends a "Not Ready" signal or sends the "Ready" signal along with the seed.
+ */
 void _raceReadyButton(void) {
     if (typingInfo.status == unready) {
         if (racingInfo.readyMe) serialPortSendNReady();
@@ -387,12 +439,27 @@ void _raceReadyButton(void) {
         }
     }
 }
+/**
+ * @brief Race reset button handler.
+ * 
+ * This function is called when the "New Race" button is clicked.
+ */
 void _raceResetButton(void) {
     if (typingInfo.status == finished) {
         resetTypingInfo();
         resetRacingInfo();
     }
 }
+/**
+ * @brief Loads the race screen.
+ * 
+ * This function clears the screen, clears the buttons, and then proceeds to draw the race screen UI elements.
+ * It displays the "Write Wise" and "Race" text, along with the ready button.
+ * It also adds the "Ready" and "New Race" buttons.
+ * Finally, it calculates the static UI elements.
+ * 
+ * @return 0 on success, 1 on failure.
+ */
 int raceScreenLoad() {
     clearScreen();
     clearButtons();
@@ -406,6 +473,12 @@ int raceScreenLoad() {
     printf("Race Screen Drawn.\n");
     return calcStaticUI();
 }
+/**
+ * @brief Loads the instructions screen.
+ * 
+ * This function clears the screen, clears the buttons, and then proceeds to draw the instructions screen UI elements.
+ * @return 0 on success, 1 on failure.
+ */
 int instructionScreenLoad() {
     clearScreen();
     clearButtons();
@@ -425,13 +498,48 @@ int instructionScreenLoad() {
     printf("Instructions Screen Drawn.\n");
     return calcStaticUI();
 }
-
+/**
+ * @brief Loads the settings screen.
+ * 
+ * This function clears the screen, clears the buttons, and then proceeds to draw the settings screen UI elements.
+ * @return 0 on success, 1 on failure.
+ */
 int settingsScreenLoad();
+/**
+ * @brief Sets the screen resolution to 480p, initializes the UI, and loads the settings screen.
+ * 
+ * This function sets the screen resolution to 480p, initializes the UI, and then loads the settings screen.
+ */
 void _settingsButton480p      (void) { exitUI(); setMinixMode(vbe480pDc);  initUI(); settingsScreenLoad(); }
+/**
+ * @brief Sets the screen resolution to 600p, initializes the UI, and loads the settings screen.
+ * 
+ * This function sets the screen resolution to 600p, initializes the UI, and then loads the settings screen.
+ */
 void _settingsButton600p      (void) { exitUI(); setMinixMode(vbe600pDc);  initUI(); settingsScreenLoad(); }
+/**
+ * @brief Sets the screen resolution to 864p, initializes the UI, and loads the settings screen.
+ * 
+ * This function sets the screen resolution to 864p, initializes the UI, and then loads the settings screen.
+ */
 void _settingsButton864p      (void) { exitUI(); setMinixMode(vbe864pDc);  initUI(); settingsScreenLoad(); }
+/**
+ * @brief Sets the screen resolution to 1024p, initializes the UI, and loads the settings screen.
+ * 
+ * This function sets the screen resolution to 1024p, initializes the UI, and then loads the settings screen.
+ */
 void _settingsButton1024p     (void) { exitUI(); setMinixMode(vbe1024pDc); initUI(); settingsScreenLoad(); }
+/**
+ * @brief Sets the dark theme and loads the settings screen.
+ * 
+ * This function sets the theme to the dark theme and then loads the settings screen.
+ */
 void _settingsButtonDarkTheme (void) { setTheme(darkTheme);  settingsScreenLoad(); }
+/**
+ * @brief Sets the light theme and loads the settings screen.
+ * 
+ * This function sets the theme to the light theme and then loads the settings screen.
+ */
 void _settingsButtonLightTheme(void) { setTheme(lightTheme); settingsScreenLoad(); }
 int settingsScreenLoad() {
     clearScreen();
@@ -519,7 +627,6 @@ int drawScreen() {
     flip_frame(); // Update Screen
     return 0;
 }
-
 int loadScreen(){
     printf("Loading Screen...\n");
     switch (currAppState){
