@@ -1,6 +1,5 @@
 var graphics_8h =
 [
-    [ "_vg_draw_pixel", "graphics_8h.html#ad0560a88f4893d5d805c68f670252472", null ],
     [ "exit_graphic_mode", "graphics_8h.html#aeddd6e4c5bc00f0f1c054cd3486c72dd", null ],
     [ "flip_frame", "graphics_8h.html#ab3b868fbc0b28e9a2ab9fd95b2cbe4db", null ],
     [ "rgbToColor", "graphics_8h.html#afd7d81a3a51261e5f2fa8d7284ad0957", null ],

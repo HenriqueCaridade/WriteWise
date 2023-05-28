@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"lib_8c.html#ab6fdf5bea02afd06677d5b44316531f1":[1,0,0,1,3,14],
 "lib_8c.html#ac63e705118045e52280f0fca28ab7d25":[1,0,0,1,3,3],
 "lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b":[1,0,0,1,3,1],
 "lib_8c.html#ac98ca31a724998e6f9001e48ef05a5ad":[1,0,0,1,3,11],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "serialPort_8h.html#a0aeaca6f89e1201699b3875038174d44":[1,0,0,1,0,2,1,35],
 "serialPort_8h.html#a0f7d69b738ed89b95181c49c98831c38":[1,0,0,1,0,2,1,27],
 "serialPort_8h.html#a152dcde4b0c1c2bb87fc9a3be3ea9d50":[1,0,0,1,0,2,1,41],
-"serialPort_8h.html#a228964d41da99e5f8e8dd296770120e2":[1,0,0,1,0,2,1,47]
+"serialPort_8h.html#a228964d41da99e5f8e8dd296770120e2":[1,0,0,1,0,2,1,47],
+"serialPort_8h.html#a2ae49fccede6f003c419b937c9be3ddd":[1,0,0,1,0,2,1,48]
 };

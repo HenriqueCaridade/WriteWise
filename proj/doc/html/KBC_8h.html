@@ -105,10 +105,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac15822ae85d903cbbd741e0d128c6d9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KBC_8h.html#ac15822ae85d903cbbd741e0d128c6d9d">readKBCStatus</a> (uint8_t *status)</td></tr>
+<tr class="memdesc:ac15822ae85d903cbbd741e0d128c6d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the status from the Keyboard Controller.  <br /></td></tr>
 <tr class="separator:ac15822ae85d903cbbd741e0d128c6d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88618e19011d35fc000235c4a7ed6b9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KBC_8h.html#a88618e19011d35fc000235c4a7ed6b9e">readKBCOutput</a> (uint8_t port, uint8_t *output, bool mouse)</td></tr>
+<tr class="memdesc:a88618e19011d35fc000235c4a7ed6b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the Keyboard Controller output buffer.  <br /></td></tr>
 <tr class="separator:a88618e19011d35fc000235c4a7ed6b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff8640e03ef10dff9e4632125438403d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KBC_8h.html#aff8640e03ef10dff9e4632125438403d">writeKBCCommand</a> (uint8_t port, uint8_t commandByte)</td></tr>
+<tr class="memdesc:aff8640e03ef10dff9e4632125438403d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a command byte to the Keyboard Controller input buffer.  <br /></td></tr>
 <tr class="separator:aff8640e03ef10dff9e4632125438403d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -144,6 +147,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads data from the Keyboard Controller output buffer. </p>
+<p>This function reads data from the output buffer of the keyboard controller using the specified port. It checks the status byte of the Keyboard Controller for errors and verifies if the expected device type (keyboard or mouse) matches the received data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>The port to read the data from. </td></tr>
+    <tr><td class="paramname">output</td><td>Pointer to a variable where the read data will be stored. </td></tr>
+    <tr><td class="paramname">mouse</td><td>Indicates whether the expected device type is a mouse (true) or keyboard (false). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="ac15822ae85d903cbbd741e0d128c6d9d" name="ac15822ae85d903cbbd741e0d128c6d9d"></a>
@@ -161,6 +175,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads the status from the Keyboard Controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>Pointer to a variable where the read status byte will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -189,6 +212,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes a command byte to the Keyboard Controller input buffer. </p>
+<p>This function writes a command byte to the input buffer of the keyboard controller using the specified port. It checks the status byte of the keyboard controller to ensure that the input buffer is not full. If the input buffer is not full, the command byte is sent to the specified port with sys_outb.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>The port to write the command byte to. </td></tr>
+    <tr><td class="paramname">commandByte</td><td>The command byte to be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>

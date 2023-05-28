@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"serialPort_8h.html#a2ae49fccede6f003c419b937c9be3ddd":[1,0,0,1,0,2,1,48],
 "serialPort_8h.html#a2b8fb32ff4b2c7b68e6a9c2491976153":[1,0,0,1,0,2,1,28],
 "serialPort_8h.html#a2e479c57173cc2666f780113883ffd38":[1,0,0,1,0,2,1,46],
 "serialPort_8h.html#a30d2bdf684f0e26f5060952776ce302b":[1,0,0,1,0,2,1,16],

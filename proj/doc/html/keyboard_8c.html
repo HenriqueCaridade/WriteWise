@@ -111,12 +111,16 @@ Include dependency graph for keyboard.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa23b07fa2192ce772fe143de1bc99695"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#aa23b07fa2192ce772fe143de1bc99695">keyboard_subscribe_int</a> ()</td></tr>
+<tr class="memdesc:aa23b07fa2192ce772fe143de1bc99695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the keyboard interrupts.  <br /></td></tr>
 <tr class="separator:aa23b07fa2192ce772fe143de1bc99695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32cc4de66854f8a7bd909e7aa8b901ed"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed">keyboard_unsubscribe_int</a> ()</td></tr>
+<tr class="memdesc:a32cc4de66854f8a7bd909e7aa8b901ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes from the keyboard interrupts.  <br /></td></tr>
 <tr class="separator:a32cc4de66854f8a7bd909e7aa8b901ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba896157528456bcc6c82d7856f5eb4"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#a1ba896157528456bcc6c82d7856f5eb4">keyboard_ih</a> ()</td></tr>
+<tr class="memdesc:a1ba896157528456bcc6c82d7856f5eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard interrupt handler.  <br /></td></tr>
 <tr class="separator:a1ba896157528456bcc6c82d7856f5eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58017421d19bb2004825d339ebb600fa"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#a58017421d19bb2004825d339ebb600fa">keyboard_restore</a> ()</td></tr>
+<tr class="memdesc:a58017421d19bb2004825d339ebb600fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the keyboard configuration.  <br /></td></tr>
 <tr class="separator:a58017421d19bb2004825d339ebb600fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -152,6 +156,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Keyboard interrupt handler. </p>
+<p>This function reads the scancode from the keyboard output buffer using readKBCOutput function. If a two-byte scancode is detected, the corresponding flag is set. Otherwise, the scancode is processed to update the state of various keyboard-related flags. The appropriate flags are set or cleared based on the received scancode.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a58017421d19bb2004825d339ebb600fa" name="a58017421d19bb2004825d339ebb600fa"></a>
@@ -168,6 +176,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Restores the keyboard configuration. </p>
+<p>This function first sends the read command to obtain the current configuration from the controller. The obtained configuration is then modified to enable interrupts by setting the appropriate flag. Next, the write command is sent to inform the controller that a write operation will follow. Finally, the modified configuration is written back to the controller.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -186,6 +198,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Subscribes to the keyboard interrupts. </p>
+<p>This function uses sys_irqsetpolicy() to set the IRQ policy for the keyboard interrupt line, enabling IRQ re-enabling and exclusive mode. The interrupt request line (IRQ) number 1 is used for the keyboard interrupts.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a32cc4de66854f8a7bd909e7aa8b901ed" name="a32cc4de66854f8a7bd909e7aa8b901ed"></a>
@@ -202,6 +218,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Unsubscribes from the keyboard interrupts. </p>
+<p>This function unsubscribes from the keyboard interrupts by removing the IRQ policy associated with the keyboard interrupt line using sys_irqrmpolicy.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>

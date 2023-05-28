@@ -30,13 +30,13 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}{keyboard\+\_\+subscribe\+\_\+int}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Subscribes to the keyboard interrupts. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}{keyboard\+\_\+unsubscribe\+\_\+int}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Unsubscribes from the keyboard interrupts. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}{keyboard\+\_\+ih}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Keyboard interrupt handler. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{keyboard_8h_a58017421d19bb2004825d339ebb600fa}{keyboard\+\_\+restore}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Restores the keyboard configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,24 +120,60 @@ bool \mbox{\hyperlink{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 \doxysubsubsection{\texorpdfstring{keyboard\_ih()}{keyboard\_ih()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Keyboard interrupt handler. 
+
+This function reads the scancode from the keyboard output buffer using read\+KBCOutput function. If a two-\/byte scancode is detected, the corresponding flag is set. Otherwise, the scancode is processed to update the state of various keyboard-\/related flags. The appropriate flags are set or cleared based on the received scancode.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{keyboard_8h_a58017421d19bb2004825d339ebb600fa}\label{keyboard_8h_a58017421d19bb2004825d339ebb600fa} 
 \index{keyboard.h@{keyboard.h}!keyboard\_restore@{keyboard\_restore}}
 \index{keyboard\_restore@{keyboard\_restore}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_restore()}{keyboard\_restore()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Restores the keyboard configuration. 
+
+This function first sends the read command to obtain the current configuration from the controller. The obtained configuration is then modified to enable interrupts by setting the appropriate flag. Next, the write command is sent to inform the controller that a write operation will follow. Finally, the modified configuration is written back to the controller.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}\label{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695} 
 \index{keyboard.h@{keyboard.h}!keyboard\_subscribe\_int@{keyboard\_subscribe\_int}}
 \index{keyboard\_subscribe\_int@{keyboard\_subscribe\_int}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_subscribe\_int()}{keyboard\_subscribe\_int()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Subscribes to the keyboard interrupts. 
+
+This function uses sys\+\_\+irqsetpolicy() to set the IRQ policy for the keyboard interrupt line, enabling IRQ re-\/enabling and exclusive mode. The interrupt request line (IRQ) number 1 is used for the keyboard interrupts.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed} 
 \index{keyboard.h@{keyboard.h}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
 \index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_unsubscribe\_int()}{keyboard\_unsubscribe\_int()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Unsubscribes from the keyboard interrupts. 
+
+This function unsubscribes from the keyboard interrupts by removing the IRQ policy associated with the keyboard interrupt line using sys\+\_\+irqrmpolicy.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

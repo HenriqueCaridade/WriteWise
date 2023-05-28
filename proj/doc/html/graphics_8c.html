@@ -115,18 +115,25 @@ Functions</h2></td></tr>
 <tr class="memdesc:a92983a6764917e6ddae9db456571407a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the frame buffer for the graphic mode.  <br /></td></tr>
 <tr class="separator:a92983a6764917e6ddae9db456571407a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeddd6e4c5bc00f0f1c054cd3486c72dd"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#aeddd6e4c5bc00f0f1c054cd3486c72dd">exit_graphic_mode</a> ()</td></tr>
+<tr class="memdesc:aeddd6e4c5bc00f0f1c054cd3486c72dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the graphic mode and cleans up resources.  <br /></td></tr>
 <tr class="separator:aeddd6e4c5bc00f0f1c054cd3486c72dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3b868fbc0b28e9a2ab9fd95b2cbe4db"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#ab3b868fbc0b28e9a2ab9fd95b2cbe4db">flip_frame</a> ()</td></tr>
+<tr class="memdesc:ab3b868fbc0b28e9a2ab9fd95b2cbe4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the current frame.  <br /></td></tr>
 <tr class="separator:ab3b868fbc0b28e9a2ab9fd95b2cbe4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08c498ffeb0a3962e3b7711b57397741"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741">vg_draw_pixel</a> (uint16_t x, uint16_t y, uint32_t color)</td></tr>
+<tr class="memdesc:a08c498ffeb0a3962e3b7711b57397741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a pixel of a specified color at the given coordinates.  <br /></td></tr>
 <tr class="separator:a08c498ffeb0a3962e3b7711b57397741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e5b25bd525250f61f40b9e9f212d5e6"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a5e5b25bd525250f61f40b9e9f212d5e6">vg_draw_hline</a> (uint16_t x, uint16_t y, uint16_t len, uint32_t color)</td></tr>
+<tr class="memdesc:a5e5b25bd525250f61f40b9e9f212d5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a horizontal line of a specified color starting from the given coordinates.  <br /></td></tr>
 <tr class="separator:a5e5b25bd525250f61f40b9e9f212d5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1135e6421577648c6d1c0abc1e971663"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a1135e6421577648c6d1c0abc1e971663">vg_draw_vline</a> (uint16_t x, uint16_t y, uint16_t len, uint32_t color)</td></tr>
+<tr class="memdesc:a1135e6421577648c6d1c0abc1e971663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a vertical line of a specified color starting from the given coordinates.  <br /></td></tr>
 <tr class="separator:a1135e6421577648c6d1c0abc1e971663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d2da2559e11200c6b40c469e9977ec"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a99d2da2559e11200c6b40c469e9977ec">vg_draw_rectangle</a> (uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color)</td></tr>
+<tr class="memdesc:a99d2da2559e11200c6b40c469e9977ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a filled rectangle of a specified color starting from the given coordinates.  <br /></td></tr>
 <tr class="separator:a99d2da2559e11200c6b40c469e9977ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd7d81a3a51261e5f2fa8d7284ad0957"><td class="memItemLeft" align="right" valign="top">uint32_t()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957">rgbToColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
+<tr class="memdesc:afd7d81a3a51261e5f2fa8d7284ad0957"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function takes the individual red, green, and blue color components as input and combines them into a 32-bit color value according to the current mode information.  <br /></td></tr>
 <tr class="separator:afd7d81a3a51261e5f2fa8d7284ad0957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -145,6 +152,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Exits the graphic mode and cleans up resources. </p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="ab3b868fbc0b28e9a2ab9fd95b2cbe4db" name="ab3b868fbc0b28e9a2ab9fd95b2cbe4db"></a>
@@ -161,6 +171,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Changes the current frame. </p>
 
 </div>
 </div>
@@ -196,6 +208,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This function takes the individual red, green, and blue color components as input and combines them into a 32-bit color value according to the current mode information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">red</td><td>The red color component value (0-255). </td></tr>
+    <tr><td class="paramname">green</td><td>The green color component value (0-255). </td></tr>
+    <tr><td class="paramname">blue</td><td>The blue color component value (0-255). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting 32-bit color value. </dd></dl>
+
 </div>
 </div>
 <a id="a92983a6764917e6ddae9db456571407a" name="a92983a6764917e6ddae9db456571407a"></a>
@@ -214,8 +237,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets up the frame buffer for the graphic mode. </p>
-<p>This function is called after the graphic mode has been set using <a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a>. It sets up the frame buffer by allocating physical and virtual memory for the frame buffer based on the mode information obtained from <a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a>. It also allocates memory for the frame buffer using <code>malloc()</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function should only be called after calling <code><a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a></code>.</dd></dl>
+<p>This function is called after the graphic mode has been set. It sets up the frame buffer by allocating physical and virtual memory.</p>
 <dl class="section return"><dt>Returns</dt><dd>0 if the frame buffer was set up successfully, otherwise 1 if an error occurred. </dd></dl>
 
 </div>
@@ -243,7 +265,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if the graphic mode was set successfully, otherwise 1 if an error occurred. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -264,7 +286,7 @@ Functions</h2></td></tr>
 
 <p>Sets the text mode. </p>
 <p>This function sets the minix mode to text mode. After setting the text mode, it clears the mode information structure.</p>
-<dl class="section return"><dt>Returns</dt><dd>0 if the text mode was set successfully, otherwise 1 if an error occurred. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -306,6 +328,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draws a horizontal line of a specified color starting from the given coordinates. </p>
+<p>This function draws a horizontal line of the specified color starting from the given coordinates (x, y) with the specified length. It uses the <a class="el" href="graphics_8h.html#a08c498ffeb0a3962e3b7711b57397741" title="Draws a pixel of a specified color at the given coordinates.">vg_draw_pixel()</a> function to draw each pixel along the line.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The starting x-coordinate of the line. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the line. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line in pixels. </td></tr>
+    <tr><td class="paramname">color</td><td>The color value to be set for each pixel in the line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the line was drawn successfully, otherwise 1 if an error occurred. </dd></dl>
+
 </div>
 </div>
 <a id="a08c498ffeb0a3962e3b7711b57397741" name="a08c498ffeb0a3962e3b7711b57397741"></a>
@@ -339,6 +374,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws a pixel of a specified color at the given coordinates. </p>
+<p>This function draws a pixel of the specified color at (x, y) coordinates on the screen. It first checks if the coordinates are within the screen resolution boundaries. It then calculates the index in the frame buffer based on the coordinates and the bytes per pixel and copies the color value into the frame buffer at the calculated index.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">color</td><td>The color value to be set for the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the pixel was drawn successfully, otherwise 1 if an error occurred. </dd></dl>
 
 </div>
 </div>
@@ -386,6 +433,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draws a filled rectangle of a specified color starting from the given coordinates. </p>
+<p>This function draws a filled rectangle of the specified color starting from the given coordinates (x, y) with the specified width and height. It uses the <a class="el" href="graphics_8h.html#a5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line of a specified color starting from the given coordinates.">vg_draw_hline()</a> function to draw each horizontal line of the rectangle by iterating over the y-axis.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate of the top-left corner of the rectangle. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the top-left corner of the rectangle. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the rectangle in pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the rectangle in pixels. </td></tr>
+    <tr><td class="paramname">color</td><td>The color value to be set for each pixel in the rectangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the rectangle was drawn successfully, otherwise 1 if an error occurred. </dd></dl>
+
 </div>
 </div>
 <a id="a1135e6421577648c6d1c0abc1e971663" name="a1135e6421577648c6d1c0abc1e971663"></a>
@@ -425,6 +486,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws a vertical line of a specified color starting from the given coordinates. </p>
+<p>This function draws a vertical line of the specified color starting from the given coordinates (x, y) with the specified length. It uses the <a class="el" href="graphics_8h.html#a08c498ffeb0a3962e3b7711b57397741" title="Draws a pixel of a specified color at the given coordinates.">vg_draw_pixel()</a> function to draw each pixel along the line.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The starting x-coordinate of the line. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the line. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line in pixels. </td></tr>
+    <tr><td class="paramname">color</td><td>The color value to be set for each pixel in the line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the line was drawn successfully, otherwise 1 if an error occurred. </dd></dl>
 
 </div>
 </div>

@@ -106,16 +106,22 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a08895a8a691590216c1e72bbf1b2d333"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a08895a8a691590216c1e72bbf1b2d333">mouse_subscribe_int</a> ()</td></tr>
+<tr class="memdesc:a08895a8a691590216c1e72bbf1b2d333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes mouse interrupts.  <br /></td></tr>
 <tr class="separator:a08895a8a691590216c1e72bbf1b2d333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ecf823d80520009ae5e0d76ae40a3c3"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a3ecf823d80520009ae5e0d76ae40a3c3">mouse_unsubscribe_int</a> ()</td></tr>
+<tr class="memdesc:a3ecf823d80520009ae5e0d76ae40a3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes mouse interrupts.  <br /></td></tr>
 <tr class="separator:a3ecf823d80520009ae5e0d76ae40a3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1538254b8ccba2f68e02cc3d5547722c"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a1538254b8ccba2f68e02cc3d5547722c">mouse_sync_bytes</a> ()</td></tr>
+<tr class="memdesc:a1538254b8ccba2f68e02cc3d5547722c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes mouse synchronization bytes.  <br /></td></tr>
 <tr class="separator:a1538254b8ccba2f68e02cc3d5547722c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e235868a79d1a554279c352e8a19f59"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a2e235868a79d1a554279c352e8a19f59">mouse_bytes_to_packet</a> ()</td></tr>
+<tr class="memdesc:a2e235868a79d1a554279c352e8a19f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts mouse bytes to a mouse packet.  <br /></td></tr>
 <tr class="separator:a2e235868a79d1a554279c352e8a19f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f71cbe6a40c250b92b67faa3e2e2302"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a3f71cbe6a40c250b92b67faa3e2e2302">mouse_int_h</a> ()</td></tr>
+<tr class="memdesc:a3f71cbe6a40c250b92b67faa3e2e2302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse interrupt handler.  <br /></td></tr>
 <tr class="separator:a3f71cbe6a40c250b92b67faa3e2e2302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1703c3c5b61eef30d724b15cafd1d75e"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a1703c3c5b61eef30d724b15cafd1d75e">mouse_write</a> (uint8_t command)</td></tr>
+<tr class="memdesc:a1703c3c5b61eef30d724b15cafd1d75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a command to the mouse.  <br /></td></tr>
 <tr class="separator:a1703c3c5b61eef30d724b15cafd1d75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -141,6 +147,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Converts mouse bytes to a mouse packet. </p>
+<p>This function converts the mouse bytes stored in the <code>mouseBytes</code> array into a mouse packet. It assigns the corresponding bytes from <code>mouseBytes</code> to the <code>mousePacket</code> structure's <code>bytes</code> array. Additionally, it extracts specific bits from the first byte of <code>mouseBytes</code> and assigns them to the relevant fields of <code>mousePacket</code> for button status, overflow flags, and delta values for the x and y axes. </p>
+
 </div>
 </div>
 <a id="a3f71cbe6a40c250b92b67faa3e2e2302" name="a3f71cbe6a40c250b92b67faa3e2e2302"></a>
@@ -157,6 +166,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Mouse interrupt handler. </p>
+<p>This function is the interrupt handler for the mouse. It reads the byte from the mouse and performs the necessary actions based on the received data. If a complete packet is received, it converts the bytes to a mouse packet structure.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 if the byte was read successfully but a complete packet is not yet received, 1 if a complete packet is received and processed successfully, or an error code indicating the failure. </dd></dl>
 
 </div>
 </div>
@@ -175,6 +188,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Subscribes mouse interrupts. </p>
+<p>This function subscribes to mouse interrupts by setting the IRQ policy for the mouse interrupt line. The function sets the irqSetMouse flag to indicate that the mouse interrupt is subscribed. The IRQ policy is set to re-enable the interrupts and exclusive. The hook ID is updated with the assigned value by the system.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a1538254b8ccba2f68e02cc3d5547722c" name="a1538254b8ccba2f68e02cc3d5547722c"></a>
@@ -191,6 +208,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Processes mouse synchronization bytes. </p>
+<p>This function processes mouse synchronization bytes received from the mouse controller. It checks the byte index and the value of the current byte to determine whether it is the first byte or a subsequent byte. If it is the first byte, it is stored in the mouseBytes array at index 0. If it is a subsequent byte, it is stored in the <code>mouseBytes</code> array at the current byte index. The byte index is incremented accordingly. </p>
 
 </div>
 </div>
@@ -209,6 +229,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Unsubscribes mouse interrupts. </p>
+<p>This function unsubscribes mouse interrupts by removing the IRQ policy of the mouse interrupt line. The function retrieves the hook ID associated with the mouse interrupt and passes it to sys_irqrmpolicy to remove the policy. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a1703c3c5b61eef30d724b15cafd1d75e" name="a1703c3c5b61eef30d724b15cafd1d75e"></a>
@@ -226,6 +249,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes a command to the mouse. </p>
+<p>This function writes a command to the mouse by sending the command byte to the Keyboard Controller. It waits for the mouse response and checks if the response is an acknowledgement (ACK). The function retries the write operation a maximum number of attempts if the acknowledgement is not received.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command byte to be sent to the mouse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the command was written and acknowledged successfully, or 1 if an error occurred during the write operation. </dd></dl>
 
 </div>
 </div>
