@@ -55,8 +55,8 @@
 # Documentation
 !proj/doc/html/*
 !proj/doc/latex/*
-!proj/src/Doxyfile
-!proj/src/Doxyfile.bak
+!proj/doc/Doxyfile
+!proj/doc/Doxyfile.bak
 
 !.gitignore
 !README.md
