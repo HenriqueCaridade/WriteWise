@@ -215,6 +215,7 @@ int serialPortReadDouble(double* doubleValue) {
 }
 
 int serialPortSendAck() {
+    serialPortClearFIFO();
     return serialPortSendByte(INFO_ACK);
 }
 
@@ -229,10 +230,12 @@ int serialPortSendNReady() {
 }
 
 int serialPortSendReadyAck() {
+    serialPortClearFIFO();
     return serialPortSendByte(INFO_READY_ACK);
 }
 
 int serialPortSendNReadyAck() {
+    serialPortClearFIFO();
     return serialPortSendByte(INFO_NREADY_ACK);
 }
 

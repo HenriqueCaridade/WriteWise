@@ -301,7 +301,7 @@ int changeState(app_state_t newState) {
     switch (newState) {
     case endState: return 0;
     case trainingState: generateText(25, time(NULL)); break;
-    case raceState: resetTypingInfo(); resetRacingInfo(); break;
+    case raceState: resetTypingInfo(); resetRacingInfo(); serialPortClearFIFO(); break;
     default: break;
     }
     return loadScreen();
@@ -411,7 +411,7 @@ int instructionScreenLoad() {
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(small))) return 1;
     if (drawTextColor(0.5f, 0.2f, -1.0f, "Training", getThemeColor(trainingColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.3f,  0.8f,
-        "In the Training section you can train your typing speed before you race others. It provides a safe environment where you can practice without worring about others.",
+        "In the Training section you can train your typing speed before you race others. It provides a safe environment where you can practice without worrying about others.",
         getThemeColor(textColor), getFontSize(large))) return 1;
     if (drawTextColor(0.5f, 0.5f, -1.0f, "Race", getThemeColor(raceColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.6f,  0.8f,
