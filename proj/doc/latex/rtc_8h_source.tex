@@ -28,26 +28,23 @@
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ RTC\_REGISTER\_B\ \ \ \ \ \ 11}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ RTC\_REGISTER\_C\ \ \ \ \ \ 12}}
 \DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ RTC\_REGISTER\_D\ \ \ \ \ \ 13}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00029\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a8459fc4e94de7eefc74991e41779c8fc}{second}};}
-\DoxyCodeLine{00030\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a8ff981ec55c945940f4a0da7d8709b3c}{minute}};}
-\DoxyCodeLine{00031\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_ae5af4ff48939d13d480f87e56a9385d6}{hour}};}
-\DoxyCodeLine{00032\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a72369a1087b2aeffe374bb054cb97c12}{day}};}
-\DoxyCodeLine{00033\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a3e00faf7fbf9805e9ec4d2edd6339050}{month}};}
-\DoxyCodeLine{00034\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a7af2065789bc84419b8d5fe109be83b5}{year}};}
-\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}};}
-\DoxyCodeLine{00036\ \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}}\ \mbox{\hyperlink{rtc_8h_ad8080461a28df066feb036dfb800950b}{rtcInfo}};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}{rtc\_init}}();}
-\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_abd8de825e876e8ef94c64ac616f68a11}{rtc\_subscribe\_int}}();}
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}{rtc\_unsubscribe\_int}}();}
-\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_af52c476187dd39a58930d74ad187ec50}{rtcIN}}(uint8\_t\ command,\ uint8\_t\ *output);}
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ac221f25ef3837098295722092bd03eb6}{rtcOUT}}(uint8\_t\ command,\ uint8\_t\ output);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rtc_8h_ae4c2eccc59963cb4d3c54881c214abbd}{rtcIsUpdating}}();}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ac19059d4296ae449b72fc52e6326bae9}{rtcUpdate}}();}
-\DoxyCodeLine{00045\ uint8\_t\ \mbox{\hyperlink{rtc_8h_a53a35ec560d829db41ca144e062e9ffd}{\_bcdToBinary}}(uint8\_t\ bcd);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_RTC\_H}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a8459fc4e94de7eefc74991e41779c8fc}{second}};}
+\DoxyCodeLine{00032\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a8ff981ec55c945940f4a0da7d8709b3c}{minute}};}
+\DoxyCodeLine{00033\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_ae5af4ff48939d13d480f87e56a9385d6}{hour}};}
+\DoxyCodeLine{00034\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a72369a1087b2aeffe374bb054cb97c12}{day}};}
+\DoxyCodeLine{00035\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a3e00faf7fbf9805e9ec4d2edd6339050}{month}};}
+\DoxyCodeLine{00036\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrtc__info__t_a7af2065789bc84419b8d5fe109be83b5}{year}};}
+\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}};}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}}\ \mbox{\hyperlink{rtc_8h_ad8080461a28df066feb036dfb800950b}{rtcInfo}};}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}{rtc\_init}}();}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_abd8de825e876e8ef94c64ac616f68a11}{rtc\_subscribe\_int}}();}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}{rtc\_unsubscribe\_int}}();}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_af52c476187dd39a58930d74ad187ec50}{rtcIN}}(uint8\_t\ command,\ uint8\_t\ *output);}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rtc_8h_ae4c2eccc59963cb4d3c54881c214abbd}{rtcIsUpdating}}();}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ac19059d4296ae449b72fc52e6326bae9}{rtcUpdate}}();}
+\DoxyCodeLine{00091\ uint8\_t\ \mbox{\hyperlink{rtc_8h_a53a35ec560d829db41ca144e062e9ffd}{\_bcdToBinary}}(uint8\_t\ bcd);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_RTC\_H}}
 
 \end{DoxyCode}

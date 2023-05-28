@@ -24,7 +24,6 @@ var rtc_8h =
     [ "rtc_unsubscribe_int", "rtc_8h.html#ab8f17bf5280c908c8b199a90fefcc758", null ],
     [ "rtcIN", "rtc_8h.html#af52c476187dd39a58930d74ad187ec50", null ],
     [ "rtcIsUpdating", "rtc_8h.html#ae4c2eccc59963cb4d3c54881c214abbd", null ],
-    [ "rtcOUT", "rtc_8h.html#ac221f25ef3837098295722092bd03eb6", null ],
     [ "rtcUpdate", "rtc_8h.html#ac19059d4296ae449b72fc52e6326bae9", null ],
     [ "rtcInfo", "rtc_8h.html#ad8080461a28df066feb036dfb800950b", null ]
 ];

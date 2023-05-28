@@ -205,8 +205,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae581111c441c4b4f3e8a108822e90511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the text width.  <br /></td></tr>
 <tr class="separator:ae581111c441c4b4f3e8a108822e90511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a640cee868597a386a0135fb31e5cd3b3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lib_8c.html#a640cee868597a386a0135fb31e5cd3b3">_getRealTime</a> ()</td></tr>
+<tr class="memdesc:a640cee868597a386a0135fb31e5cd3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current real-time as a formatted string.  <br /></td></tr>
 <tr class="separator:a640cee868597a386a0135fb31e5cd3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6e6ba24767ec51a82b53eeb5d9eb80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lib_8c.html#a8d6e6ba24767ec51a82b53eeb5d9eb80">drawRealTime</a> (uint32_t color, <a class="el" href="structfont__size__t.html">font_size_t</a> size)</td></tr>
+<tr class="memdesc:a8d6e6ba24767ec51a82b53eeb5d9eb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the current real-time on the screen.  <br /></td></tr>
 <tr class="separator:a8d6e6ba24767ec51a82b53eeb5d9eb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -468,6 +470,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retrieves the current real-time as a formatted string. </p>
+<p>This function allocates memory for a string and formats the current real-time information into the string. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -872,6 +877,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws the current real-time on the screen. </p>
+<p>This function retrieves the current real-time information using the _getRealTime function and draws it on the screen at a specified position. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>color of the text. </td></tr>
+    <tr><td class="paramname">size</td><td>font size of the text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if an error occured. </dd></dl>
 
 </div>
 </div>

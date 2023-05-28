@@ -69,9 +69,9 @@ int \mbox{\hyperlink{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}{draw\+Text\+XYRGB
 uint16\+\_\+t \mbox{\hyperlink{lib_8c_ae581111c441c4b4f3e8a108822e90511}{get\+Text\+Width}} (const char \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Gets the text width. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lib_8c_a640cee868597a386a0135fb31e5cd3b3}{\+\_\+get\+Real\+Time}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the current real-\/time as a formatted string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}{draw\+Real\+Time}} (uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws the current real-\/time on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -188,6 +188,13 @@ Non-\/zero if error occured.
 \doxysubsubsection{\texorpdfstring{\_getRealTime()}{\_getRealTime()}}
 {\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} \+\_\+get\+Real\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Retrieves the current real-\/time as a formatted string. 
+
+This function allocates memory for a string and formats the current real-\/time information into the string. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f}\label{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f} 
 \index{lib.c@{lib.c}!clearScreen@{clearScreen}}
 \index{clearScreen@{clearScreen}!lib.c@{lib.c}}
@@ -362,6 +369,20 @@ Non-\/zero if error occured.
 \doxysubsubsection{\texorpdfstring{drawRealTime()}{drawRealTime()}}
 {\footnotesize\ttfamily int draw\+Real\+Time (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
+
+
+Draws the current real-\/time on the screen. 
+
+This function retrieves the current real-\/time information using the \+\_\+get\+Real\+Time function and draws it on the screen at a specified position. 
+\begin{DoxyParams}{Parameters}
+{\em color} & color of the text. \\
+\hline
+{\em size} & font size of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if an error occured. 
+\end{DoxyReturn}
 \Hypertarget{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}\label{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad} 
 \index{lib.c@{lib.c}!drawRectColor@{drawRectColor}}
 \index{drawRectColor@{drawRectColor}!lib.c@{lib.c}}
