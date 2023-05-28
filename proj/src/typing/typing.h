@@ -92,70 +92,73 @@ racing_info_t racingInfo;
 /**
  * @brief Generates a text given a word ammount and a creation seed.
  * 
- * @param wordAmmount 
- * @param seed 
+ * This function generates a text by randomly selecting words from a dictionary based on the given word amount and creation seed.
+ * @param wordAmmount desired word amount in the generated text.
+ * @param seed creation seed used for randomization.
  */
 void generateText(uint32_t wordAmmount, unsigned seed);
 
 /**
  * @brief Resets typing info variable.
+ * This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status.
  * 
  */
 void resetTypingInfo();
 /**
  * @brief Resets racing info variable.
  * 
+ * This function resets the racing information variables to their default values. It sets the "readyMe" and "readyYou" flags to false, resets the seed values for both players, sets the start time to zero, and sets the "won" flag to false.
  */
 void resetRacingInfo();
 /**
  * @brief Handles typing.
  * 
+ * This function handles the input during a typing session.
  */
 void typingInputHandler(bool isRace);
 /**
  * @brief Updates Typing variable.
  * 
- * @param isRace
- * true when the typing is for a race, false otherwise. 
+ *  This function updates the typing information based on the current typing status.
+ * @param isRace true when the typing is for a race, false otherwise. 
  */
 void updateTypingInfo();
 /**
  * @brief Does the typing status calculations. (WPM, ACC, etc)
  * 
+ * This function calculates the typing statistics based on the provided typing information.
  */
 void calcTypingStatus();
 /**
  * @brief Updates typing status in the beginning of typing.
  * 
+ * This function sets the status of the typing information to indicate that typing has started.
  */
 void startTyping();
 /**
  * @brief Updates typing status in the end of typing.
  * 
+ * This function updates the `timeEnd` field of the `typingInfo` structure with the current elapsed time, sets the status of the typing information to indicate that typing has finished, and calculates the typing statistics such as CPM, WPM, and accuracy by calling the `calcTypingStatus` function.
  */
 void endTyping();
 /**
  * @brief Sends INFO_WON code through the serial port.
  * 
+ * This function sets the `won` flag in the `racingInfo` structure to true and sends the INFO_WON code through the serial port by calling the `serialPortSendWon` function.
  */
 void endRace();
 
 /**
  * @brief Draws the text which the player must write.
- * @param cx
- * X coordinate in percentage(0 to 1) starting from the center. 
- * @param cy 
- * Y coordinate in percentage(0 to 1) starting from the center. 
- * @param maxWidth
- * Text max width.
- * @param rightColor 
- * Color of the text when the characters are correctly written.
- * @param wrongColor 
- * Color of the text when the characters are incorrectly written.
- * @param unwrittenColor 
- * Color of unwritten text.
- * @param size 
- * Font size
+ * 
+ * This function draws the text that the player needs to type on the screen. The text is positioned based on the provided center coordinates (cx, cy) as a percentage of the screen width and height.
+ * @param cx x coordinate in percentage(0 to 1) starting from the center. 
+ * @param cy y coordinate in percentage(0 to 1) starting from the center. 
+ * @param maxWidth text max width.
+ * @param rightColor color of the text when the characters are correctly written.
+ * @param wrongColor color of the text when the characters are incorrectly written.
+ * @param unwrittenColor color of unwritten text.
+ * @param size font size
  * @return Non-zero if error occured. 
  */
 int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint32_t wrongColor, uint32_t unwrittenColor, font_size_t size);

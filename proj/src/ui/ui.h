@@ -99,6 +99,7 @@ cursor_t cursor;
 /**
  * @brief Initializes UI data-structures and allocates static-buffer memory.
  * 
+ * This function initializes the UI data structures and sets the initial values for the cursor position, color, and background color.
  * @return Non-zero if error occured.
  */
 int initUI();
@@ -106,6 +107,7 @@ int initUI();
 /**
  * @brief Frees static-buffer allocated memory.
  * 
+ * This function frees the memory allocated for the static buffer using the `free` function.
  * @return Non-zero if error occured.
  */
 int exitUI();
@@ -113,6 +115,7 @@ int exitUI();
 /**
  * @brief Copies frame-buffer to the static-buffer.
  * 
+ * This function copies the content of the frame buffer to the static buffer using the `memcpy` function.
  * @return Non-zero if error occured.
  */
 int calcStaticUI();
@@ -120,6 +123,7 @@ int calcStaticUI();
 /**
  * @brief Copies static-buffer to the frame-buffer.
  * 
+ * This function copies the content of the static buffer to the frame buffer using the `memcpy` function.
  * @return Non-zero if error occured.
  */
 int loadStaticUI();
@@ -127,6 +131,7 @@ int loadStaticUI();
 /**
  * @brief Clears the memory used by the buttons.
  * 
+ * This function clears the memory used by the buttons by setting the `_buttons` array to all zeros using the `memset` function.
  * @return Non-zero if error occured.
  */
 int clearButtons();
@@ -134,7 +139,8 @@ int clearButtons();
 /**
  * @brief Adds a new button.
  * 
- * @param button 
+ * This function adds a new button to the button array at the specified index.
+ * @param button button to be added.
  * @param index Index of the array where new buttton will be placed.
  * @return Non-zero if error occured.
  */
@@ -143,7 +149,8 @@ int addButton(button_t button, int index);
 /**
  * @brief Removes button.
  * 
- * @param index Index of the array where the buttton will be removed.
+ * This function removes a button at the specified index from the button array.
+ * @param index index of the button to be removed.
  * @return int 
  */
 int removeButton(int index);
@@ -151,13 +158,15 @@ int removeButton(int index);
 /**
  * @brief Draws cursor.
  * 
+ * This function draws the cursor on the screen based on the current cursor position.
  * @return Non-zero if error occured.
  */
 int drawCursor();
 /**
  * @brief Auxiliary function for drawButton and drawButtons.
  * 
- * @param index 
+ * This is an auxiliary function used by the `drawButton` and `drawButtons` functions.
+ * @param index index of the button to be drawn.
  * @return Non-zero if error occured. 
  */
 int _drawButton(int index);
@@ -165,7 +174,8 @@ int _drawButton(int index);
 /**
  * @brief Draws button.
  * 
- * @param index 
+ * This function draws a button based on the provided index.
+ * @param index index of the button to be drawn.
  * @return Non-zero if error occured. 
  */
 int drawButton(int index);
@@ -173,6 +183,7 @@ int drawButton(int index);
 /**
  * @brief Auxiliary function for drawSelectedButton.
  * 
+ * This function iterates through the available buttons and checks if the mouse cursor is positioned over each button using the _isClickOnButton function.
  * @return Non-zero if error occured. 
  */
 int _getSelectedButton();
@@ -180,12 +191,14 @@ int _getSelectedButton();
 /**
  * @brief Highlights selected button.
  * 
+ * This function retrieves the index of the selected button using the _getSelectedButton function.
  * @return Non-zero if error occured. 
  */
 int drawSelectedButton();
 /**
  * @brief Draws multiple buttons.
  * 
+ * This function iterates over the available buttons and draws each one that is active.
  * @return Non-zero if error occured. 
  */
 int drawButtons();
@@ -193,17 +206,17 @@ int drawButtons();
 /**
  * @brief Checks if mouse clicked on a button.
  * 
- * @param x 
- * X position of the click in pixels.
- * @param y 
- * Y position of the click in pixels.
- * @param button 
+ * This function checks if a mouse click event occurred at the specified position (x, y) and determines if it falls within the boundaries of the given button.
+ * @param x x position of the click in pixels.
+ * @param y y position of the click in pixels.
+ * @param button pointer to the button structure to check against.
  * @return Non-zero if error occured. 
  */
 int _isClickOnButton(uint16_t x, uint16_t y, button_t* button);
 /**
  * @brief Function that updates mouse every mouse interrupt.
  * 
+ * It reads the mouse packet and performs the necessary calculations and actions based on the mouse input.
  * @return Non-zero if error occured. 
  */
 int mouseUpdate();
