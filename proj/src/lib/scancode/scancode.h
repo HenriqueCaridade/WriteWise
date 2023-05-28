@@ -92,8 +92,8 @@ keyboard_layout_t currentKeyboardLayout;
  *
  * This function sets the keyboard layout based on the provided keyboardLayout parameter.
  *
- * @param keyboardLayout The keyboard layout to be set.
- * @return 0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided.
+ * @param keyboardLayout keyboard layout to be set.
+ * @return Non-zero if error occured.
  */
 int setKeyboardLayout(keyboard_layout_t keyboardLayout);
 
@@ -102,8 +102,8 @@ int setKeyboardLayout(keyboard_layout_t keyboardLayout);
  *
  * This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.
  *
- * @param makecode The makecode to retrieve the character from.
- * @return The corresponding character if found, ' ' (space) if makecode matches SPACE_SCANCODE, '\n' (newline) if makecode matches ENTER_SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none.
+ * @param makecode makecode to retrieve the character from.
+ * @return The corresponding character if found.
  */
 char getCharFromMakecode(uint8_t makecode);
 
