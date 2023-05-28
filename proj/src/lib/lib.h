@@ -17,6 +17,7 @@
 #include "drivers/KBC/keyboard.h"
 #include "drivers/KBC/mouse.h"
 #include "drivers/serialPort/serialPort.h"
+#include "drivers/rtc/rtc.h"
 
 uint16_t frameRate;
 message msg;
@@ -103,5 +104,9 @@ int drawTextRGB   (float cx, float cy, float maxWidth, const char* str, uint8_t 
 int drawTextXYColor(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint32_t color, font_size_t size);
 int drawTextXYRGB  (uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, uint8_t red, uint8_t green, uint8_t blue, font_size_t size);
 uint16_t getTextWidth(const char* str, font_size_t size);
+
+char *_getRealTime();
+int drawRealTime(uint32_t color, font_size_t size);
+
 
 #endif // _PROJ_LIB_H

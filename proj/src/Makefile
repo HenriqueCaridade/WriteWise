@@ -8,6 +8,7 @@ PROG=proj
 .PATH: ${.CURDIR}/lib/drivers/graphics
 .PATH: ${.CURDIR}/lib/drivers/KBC
 .PATH: ${.CURDIR}/lib/drivers/timer
+.PATH: ${.CURDIR}/lib/drivers/rtc
 .PATH: ${.CURDIR}/lib/scancode
 .PATH: ${.CURDIR}/ui/
 .PATH: ${.CURDIR}/data/
@@ -16,7 +17,7 @@ PROG=proj
 # lib and driver files
 TEXT_FILES = text.c
 SCANCODE_FILES = scancode.c
-DRIVER_FILES = graphics.c KBC.c keyboard.c mouse.c timer.c utils.c serialPort.c
+DRIVER_FILES = graphics.c KBC.c keyboard.c mouse.c timer.c utils.c serialPort.c rtc.c
 LIB_FILES = lib.c $(TEXT_FILES) $(DRIVER_FILES) $(SCANCODE_FILES)
 UI_FILES = ui.c
 DATA_FILES = data.c
