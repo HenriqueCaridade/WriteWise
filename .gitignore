@@ -52,5 +52,11 @@
 !proj/src/data/*.h
 !proj/src/data/*.dict
 
+# Documentation
+!proj/doc/html/*
+!proj/doc/latex/*
+!proj/src/Doxyfile
+!proj/src/Doxyfile.bak
+
 !.gitignore
 !README.md

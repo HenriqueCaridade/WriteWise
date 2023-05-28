@@ -1,0 +1,36 @@
+\doxysection{keyboard.\+h}
+\hypertarget{keyboard_8h_source}{}\label{keyboard_8h_source}\index{lib/drivers/KBC/keyboard.h@{lib/drivers/KBC/keyboard.h}}
+\mbox{\hyperlink{keyboard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_KEYBOARD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROJ\_KEYBOARD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BREAK\_CODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ BIT(7)}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BREAK\_ESC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x81}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAKE\_ESC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LEFT\_SHIFT\_SCANCODE\ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ LEFT\_CTRL\_SCANCODE\ \ \ \ \ \ 0x1D}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LEFT\_ALT\_SCANCODE\ \ \ \ \ \ \ 0x38}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SPACE\_SCANCODE\ \ \ \ \ \ \ \ \ \ 0x39}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ RIGHT\_SHIFT\_SCANCODE\ \ \ \ 0x36}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CAPSLOCK\_SCANCODE\ \ \ \ \ \ \ 0X3A}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ uint8\_t\ \mbox{\hyperlink{keyboard_8h_aa146321463936a50906515420709c7ac}{irqSetKeyboard}};}
+\DoxyCodeLine{00018\ uint8\_t\ \mbox{\hyperlink{keyboard_8h_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}};}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keyboard_8h_ac1f5c34ea3c80f50b7faa51e85c0c6d0}{isScancodeTwoBytes}};}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keyboard_8h_a8b52d0c7736944e422a464e8168f82e7}{isShiftPressed}};}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keyboard_8h_ac4f0110b9bfdca2661e9fa0f422f016d}{isCtrlPressed}};}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keyboard_8h_aefec5fd961ddef7e203a9bfe7f93fb17}{isAltPressed}};}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}{isCapsLockActive}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ int\ (\mbox{\hyperlink{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}{keyboard\_subscribe\_int}})();}
+\DoxyCodeLine{00026\ int\ (\mbox{\hyperlink{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}{keyboard\_unsubscribe\_int}})();}
+\DoxyCodeLine{00027\ int\ (\mbox{\hyperlink{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}{keyboard\_ih}})();}
+\DoxyCodeLine{00028\ int\ (\mbox{\hyperlink{keyboard_8h_a58017421d19bb2004825d339ebb600fa}{keyboard\_restore}})();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_KEYBOARD\_H}}
+
+\end{DoxyCode}

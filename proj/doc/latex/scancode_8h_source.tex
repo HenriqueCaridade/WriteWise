@@ -1,0 +1,96 @@
+\doxysection{scancode.\+h}
+\hypertarget{scancode_8h_source}{}\label{scancode_8h_source}\index{lib/scancode/scancode.h@{lib/scancode/scancode.h}}
+\mbox{\hyperlink{scancode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_SCANCODE\_LIST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROJ\_SCANCODE\_LIST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../drivers/KBC/keyboard.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ BACKSPACE\_SCANCODE\ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ENTER\_SCANCODE\ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ROW1\_KEY\_AMMOUT\ \ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_1\ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_2\ \ \ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_3\ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_4\ \ \ \ \ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_5\ \ \ \ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_6\ \ \ \ \ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_7\ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_8\ \ \ \ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_9\ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_0\ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_APOSTROPHE\ 0x0C}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW1\_FIRST\ KEY\_SCANCODE\_1}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW1\_LAST\ \ KEY\_SCANCODE\_APOSTROPHE}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ROW2\_KEY\_AMMOUT\ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_Q\ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_W\ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_E\ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_R\ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_T\ \ \ \ \ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_Y\ \ \ \ \ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_U\ \ \ \ \ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_I\ \ \ \ \ \ \ \ \ \ 0x17}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_O\ \ \ \ \ \ \ \ \ \ 0x18}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_P\ \ \ \ \ \ \ \ \ \ 0x19}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW2\_FIRST\ KEY\_SCANCODE\_Q}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW2\_LAST\ \ KEY\_SCANCODE\_P}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ ROW3\_KEY\_AMMOUT\ \ \ \ \ \ \ \ \ 9}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_A\ \ \ \ \ \ \ \ \ \ 0x1E}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_S\ \ \ \ \ \ \ \ \ \ 0x1F}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_D\ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_F\ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_G\ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_H\ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_J\ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_K\ \ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_L\ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW3\_FIRST\ KEY\_SCANCODE\_A}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW3\_LAST\ \ KEY\_SCANCODE\_L}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ROW4\_KEY\_AMMOUT\ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_Z\ \ \ \ \ \ \ \ \ \ 0x2C}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_X\ \ \ \ \ \ \ \ \ \ 0x2D}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_C\ \ \ \ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_V\ \ \ \ \ \ \ \ \ \ 0x2F}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_B\ \ \ \ \ \ \ \ \ \ 0x30}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_N\ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_M\ \ \ \ \ \ \ \ \ \ 0X32}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_COMMA\ \ \ \ \ \ 0X33}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_PERIOD\ \ \ \ \ 0X34}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_DASH\ \ \ \ \ \ \ 0x35}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW4\_FIRST\ KEY\_SCANCODE\_Z}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ KEY\_SCANCODE\_ROW4\_LAST\ \ KEY\_SCANCODE\_DASH}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ uint8\_t\ row1[\mbox{\hyperlink{scancode_8h_a3e1ca60ce8d8330cd58cd4f28dcd61fe}{ROW1\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00069\ \ \ \ \ uint8\_t\ row2[\mbox{\hyperlink{scancode_8h_a7052d97d66345f091e0a743cfd5ddb6f}{ROW2\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00070\ \ \ \ \ uint8\_t\ row3[\mbox{\hyperlink{scancode_8h_a91274c4d6c3c48539af01b85ecd35dec}{ROW3\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00071\ \ \ \ \ uint8\_t\ row4[\mbox{\hyperlink{scancode_8h_ad4625e612bbc727a57ead570fcc26f1f}{ROW4\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00072\ \ \ \ \ uint8\_t\ row1Shift[\mbox{\hyperlink{scancode_8h_a3e1ca60ce8d8330cd58cd4f28dcd61fe}{ROW1\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00073\ \ \ \ \ uint8\_t\ row2Shift[\mbox{\hyperlink{scancode_8h_a7052d97d66345f091e0a743cfd5ddb6f}{ROW2\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00074\ \ \ \ \ uint8\_t\ row3Shift[\mbox{\hyperlink{scancode_8h_a91274c4d6c3c48539af01b85ecd35dec}{ROW3\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00075\ \ \ \ \ uint8\_t\ row4Shift[\mbox{\hyperlink{scancode_8h_ad4625e612bbc727a57ead570fcc26f1f}{ROW4\_KEY\_AMMOUT}}];}
+\DoxyCodeLine{00076\ \}\ \mbox{\hyperlink{structkeyboard__t}{keyboard\_t}};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structkeyboard__t}{keyboard\_t}}\ \mbox{\hyperlink{scancode_8h_a8d9a8aedae5976c054e784d68cbf42d0}{portugueseKeyboard}};}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{structkeyboard__t}{keyboard\_t}}\ \mbox{\hyperlink{scancode_8h_ac0699b9296f691623167332042a42feb}{currentKeyboard}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9ab7e4e0120a041dbe6528b050c04269e0}{none}},}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9af2e82f3a4ac276b6846c94adf1fc761b}{portuguese}}}
+\DoxyCodeLine{00083\ \}\ \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\_layout\_t}};}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\_layout\_t}}\ \mbox{\hyperlink{scancode_8h_a94bbb2676a6cdea775312d333108e712}{currentKeyboardLayout}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}{setKeyboardLayout}}(\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\_layout\_t}}\ keyboardLayout);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{scancode_8h_ada8187b2c0a1eed5dc772fe2c64db5b2}{getCharFromMakecode}}(uint8\_t\ makecode);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_SCANCODE\_LIST\_H}}
+
+\end{DoxyCode}
