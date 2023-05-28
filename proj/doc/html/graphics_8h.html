@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Write Wise: lib/drivers/graphics/graphics.h File Reference</title>
+<title>Write Wise: C:/Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,12 +99,12 @@ $(document).ready(function(){initNavTree('graphics_8h.html',''); initResizable()
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for graphics.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="graphics_8h__incl.png" border="0" usemap="#alib_2drivers_2graphics_2graphics_8h" alt=""/></div>
+<div class="center"><img src="graphics_8h__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2graphics_2graphics_8h" alt=""/></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="graphics_8h__dep__incl.png" border="0" usemap="#alib_2drivers_2graphics_2graphics_8hdep" alt=""/></div>
+<div class="center"><img src="graphics_8h__dep__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2graphics_2graphics_8hdep" alt=""/></div>
 </div>
 </div>
 <p><a href="graphics_8h_source.html">Go to the source code of this file.</a></p>
@@ -112,10 +112,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a967432a6c8128a907b937b0f3f4b4472"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472">set_graphic_mode</a> (uint16_t submode)</td></tr>
+<tr class="memdesc:a967432a6c8128a907b937b0f3f4b4472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graphic mode with the specified submode.  <br /></td></tr>
 <tr class="separator:a967432a6c8128a907b937b0f3f4b4472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62f63672fd06c462a0873e30f5e32ef8"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a62f63672fd06c462a0873e30f5e32ef8">set_text_mode</a> ()</td></tr>
+<tr class="memdesc:a62f63672fd06c462a0873e30f5e32ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text mode.  <br /></td></tr>
 <tr class="separator:a62f63672fd06c462a0873e30f5e32ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92983a6764917e6ddae9db456571407a"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a92983a6764917e6ddae9db456571407a">set_frame_buffer</a> ()</td></tr>
+<tr class="memdesc:a92983a6764917e6ddae9db456571407a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the frame buffer for the graphic mode.  <br /></td></tr>
 <tr class="separator:a92983a6764917e6ddae9db456571407a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeddd6e4c5bc00f0f1c054cd3486c72dd"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#aeddd6e4c5bc00f0f1c054cd3486c72dd">exit_graphic_mode</a> ()</td></tr>
 <tr class="separator:aeddd6e4c5bc00f0f1c054cd3486c72dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +274,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets up the frame buffer for the graphic mode. </p>
+<p>This function is called after the graphic mode has been set using <a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a>. It sets up the frame buffer by allocating physical and virtual memory for the frame buffer based on the mode information obtained from <a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a>. It also allocates memory for the frame buffer using <code>malloc()</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>This function should only be called after calling <code><a class="el" href="graphics_8h.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode.">set_graphic_mode()</a></code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the frame buffer was set up successfully, otherwise 1 if an error occurred. </dd></dl>
+
 </div>
 </div>
 <a id="a967432a6c8128a907b937b0f3f4b4472" name="a967432a6c8128a907b937b0f3f4b4472"></a>
@@ -289,6 +297,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the graphic mode with the specified submode. </p>
+<p>This function sets the graphic mode using the specified submode. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">submode</td><td>The submode value to set for the graphic mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the graphic mode was set successfully, otherwise 1 if an error occurred. </dd></dl>
+
 </div>
 </div>
 <a id="a62f63672fd06c462a0873e30f5e32ef8" name="a62f63672fd06c462a0873e30f5e32ef8"></a>
@@ -305,6 +322,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the text mode. </p>
+<p>This function sets the minix mode to text mode. After setting the text mode, it clears the mode information structure.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 if the text mode was set successfully, otherwise 1 if an error occurred. </dd></dl>
 
 </div>
 </div>
@@ -544,7 +565,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_47dd3e7e38a2e0ce703a37c1012486e7.html">drivers</a></li><li class="navelem"><a class="el" href="dir_af29ab96caadf4e95761d082cfae7187.html">graphics</a></li><li class="navelem"><a class="el" href="graphics_8h.html">graphics.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_ae0e849d495154be21d419b82c842e8e.html">drivers</a></li><li class="navelem"><a class="el" href="dir_6ee552b249cb2ba80408174fbe5fc7b2.html">graphics</a></li><li class="navelem"><a class="el" href="graphics_8h.html">graphics.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

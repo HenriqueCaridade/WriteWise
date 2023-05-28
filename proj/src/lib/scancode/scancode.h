@@ -63,7 +63,11 @@
 #define KEY_SCANCODE_ROW4_FIRST KEY_SCANCODE_Z
 #define KEY_SCANCODE_ROW4_LAST  KEY_SCANCODE_DASH
 
-
+/**
+ * @struct keyboard_t
+ * @brief Struct that holds each of the key's corresponding letter
+ * 
+ */
 typedef struct {
     uint8_t row1[ROW1_KEY_AMMOUT];
     uint8_t row2[ROW2_KEY_AMMOUT];
@@ -83,8 +87,24 @@ typedef enum {
 } keyboard_layout_t;
 keyboard_layout_t currentKeyboardLayout;
 
+/**
+ * @brief Sets the keyboard layout.
+ *
+ * This function sets the keyboard layout based on the provided keyboardLayout parameter.
+ *
+ * @param keyboardLayout The keyboard layout to be set.
+ * @return 0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided.
+ */
 int setKeyboardLayout(keyboard_layout_t keyboardLayout);
 
+/**
+ * @brief Retrieves a character from a given makecode.
+ *
+ * This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.
+ *
+ * @param makecode The makecode to retrieve the character from.
+ * @return The corresponding character if found, ' ' (space) if makecode matches SPACE_SCANCODE, '\n' (newline) if makecode matches ENTER_SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none.
+ */
 char getCharFromMakecode(uint8_t makecode);
 
 #endif // _PROJ_SCANCODE_LIST_H

@@ -1,5 +1,5 @@
 \doxysection{typing.\+h}
-\hypertarget{typing_8h_source}{}\label{typing_8h_source}\index{typing/typing.h@{typing/typing.h}}
+\hypertarget{typing_8h_source}{}\label{typing_8h_source}\index{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h@{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h}}
 \mbox{\hyperlink{typing_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -42,22 +42,25 @@
 \DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structracing__info__t_ae7ad5c5c3596018af55eefa558d4dd93}{readyYou}};}
 \DoxyCodeLine{00084\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_a729306e6aa52402c184e5c71eda8e8c6}{seedMe}};}
 \DoxyCodeLine{00085\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_a923c8cecdf5229253a1d0864a176468f}{seedYou}};}
-\DoxyCodeLine{00086\ \}\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}}\ \mbox{\hyperlink{typing_8h_a1d5909d9080edef2f87755c282fa8833}{racingInfo}};}
+\DoxyCodeLine{00086\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_ac10ecee7f82c1bbe01ce5a56ceaa55e8}{startTime}};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structracing__info__t_a3e75feb3349ca4d088a303072d41a8f0}{won}};}
+\DoxyCodeLine{00088\ \}\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}};}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generateText}}(uint32\_t\ wordAmmount,\ \textcolor{keywordtype}{unsigned}\ seed);}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{resetTypingInfo}}();}
-\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{resetRacingInfo}}();}
-\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a4668a9a826030f7eea4b33ce3b0f80cb}{typingInputHandler}}();}
-\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}{updateTypingInfo}}();}
-\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}{calcTypingStatus}}();}
-\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af565201f1899ebd4381b1314be13f0f2}{startTyping}}();}
-\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af20c241f9cd9e758424e745645759650}{endTyping}}();}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00152\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{drawTypingTest}}(\textcolor{keywordtype}{float}\ cx,\ \textcolor{keywordtype}{float}\ cy,\ \textcolor{keywordtype}{float}\ maxWidth,\ uint32\_t\ rightColor,\ uint32\_t\ wrongColor,\ uint32\_t\ unwrittenColor,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_TYPING\_H}}
+\DoxyCodeLine{00090\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}}\ \mbox{\hyperlink{typing_8h_a1d5909d9080edef2f87755c282fa8833}{racingInfo}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generateText}}(uint32\_t\ wordAmmount,\ \textcolor{keywordtype}{unsigned}\ seed);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{resetTypingInfo}}();}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{resetRacingInfo}}();}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typingInputHandler}}(\textcolor{keywordtype}{bool}\ isRace);}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}{updateTypingInfo}}();}
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}{calcTypingStatus}}();}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af565201f1899ebd4381b1314be13f0f2}{startTyping}}();}
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af20c241f9cd9e758424e745645759650}{endTyping}}();}
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}{endRace}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{drawTypingTest}}(\textcolor{keywordtype}{float}\ cx,\ \textcolor{keywordtype}{float}\ cy,\ \textcolor{keywordtype}{float}\ maxWidth,\ uint32\_t\ rightColor,\ uint32\_t\ wrongColor,\ uint32\_t\ unwrittenColor,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_TYPING\_H}}
 
 \end{DoxyCode}

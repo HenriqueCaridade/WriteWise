@@ -50,8 +50,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "KBC_8c.html",
-"lib_8c.html#ac63e705118045e52280f0fca28ab7d25",
-"serialPort_8h.html#a4978642e70801296e523bc2cb99d392b"
+"lib_8c.html#ab6fdf5bea02afd06677d5b44316531f1",
+"serialPort_8h.html#a2ae49fccede6f003c419b937c9be3ddd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,8 +1,8 @@
 var ui_8h =
 [
     [ "button_t", "structbutton__t.html", "structbutton__t" ],
-    [ "moreMouseInfo", "structmoreMouseInfo.html", "structmoreMouseInfo" ],
-    [ "cursor", "structcursor.html", "structcursor" ],
+    [ "mouse_info_t", "structmouse__info__t.html", "structmouse__info__t" ],
+    [ "cursor_t", "structcursor__t.html", "structcursor__t" ],
     [ "CLICK_PX_THRESHOULD", "ui_8h.html#a9aed81df67f08c1976dcf05c5d528aac", null ],
     [ "CURSOR_HEIGHT", "ui_8h.html#a7f913fcf73aaf5db0a9f07665b6f71b1", null ],
     [ "CURSOR_WIDTH", "ui_8h.html#a8a051b8695b4004fdadadd7ab10f7bef", null ],
@@ -24,7 +24,9 @@ var ui_8h =
     [ "removeButton", "ui_8h.html#a8feb5e615d6d11a3411274d071e64bf9", null ],
     [ "_buttonPlaces", "ui_8h.html#aba57c938626988d30ff9ca8d15b90ca1", null ],
     [ "_buttons", "ui_8h.html#a6f915a03c20cf45c7c62931dc78cfb14", null ],
+    [ "cursor", "ui_8h.html#ab254f5b3929dd17a37def4de0622f3e9", null ],
     [ "cursorMapBorder", "ui_8h.html#a63145f18bd01d2914d0eda2524d13a3a", null ],
     [ "cursorMapMain", "ui_8h.html#ac0a34f0631c24c102f650290c264d68a", null ],
+    [ "moreMouseInfo", "ui_8h.html#a32a952af4cff0228bbd23cc712bf13cf", null ],
     [ "staticBuffer", "ui_8h.html#aea939a8a96481fb6fce3298e8d0341b6", null ]
 ];

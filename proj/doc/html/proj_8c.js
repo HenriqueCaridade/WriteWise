@@ -26,6 +26,7 @@ var proj_8c =
     [ "_mainButtonSettings", "proj_8c.html#aec29e3759e0267e1fadc8d6a89a1ea28", null ],
     [ "_mainButtonTraining", "proj_8c.html#a4394b5cbc183d99b5b641570e22bf2cb", null ],
     [ "_raceReadyButton", "proj_8c.html#ab9d75267a1f1cbbf999b3fe2e8685c14", null ],
+    [ "_raceResetButton", "proj_8c.html#a969b977525433b77df9b43b7b153e097", null ],
     [ "_settingsButton1024p", "proj_8c.html#a49243f23d63e3216bf32cb209523e79d", null ],
     [ "_settingsButton480p", "proj_8c.html#a308950be5cfb404b76002a160af9a08a", null ],
     [ "_settingsButton600p", "proj_8c.html#a5ef76ccc42c251018d8e645f7f21e9ad", null ],
@@ -35,6 +36,7 @@ var proj_8c =
     [ "_trainingButtonReset", "proj_8c.html#a4cd5df256d365f59536bdc5429286014", null ],
     [ "changeState", "proj_8c.html#a966b6df6da3fefa81cf52f6a6b68bce6", null ],
     [ "changeState", "proj_8c.html#ab8a63e79c3eb75997bee12a52ded04b4", null ],
+    [ "checkIfReady", "proj_8c.html#aa14e5c55821f0a4742d5b2992c855fd1", null ],
     [ "drawScreen", "proj_8c.html#a49ec2dfa736580020278194b77d72f33", null ],
     [ "exitAll", "proj_8c.html#abf39a6e85845f60b60d8086d8095c97b", null ],
     [ "getThemeColor", "proj_8c.html#aa8dae723987ff8095c723602a30acf92", null ],
@@ -51,11 +53,13 @@ var proj_8c =
     [ "currAppState", "proj_8c.html#a4c418c07b659a6a55509b84502e8be08", null ],
     [ "darkThemeColorArray", "proj_8c.html#a2a1de804996e48f046ff70e86d19a560", null ],
     [ "lightThemeColorArray", "proj_8c.html#a920ebf5dfbabdd90ec6766e733742e72", null ],
+    [ "popupText", "proj_8c.html#abc9288a5a03b5baae06033882d73ba7a", null ],
+    [ "readyButtonText", "proj_8c.html#a432182e7f54ced798570aba502bfc452", null ],
     [ "receivedDouble", "proj_8c.html#a075ecf29a35444fd0a4fc3002deb2279", null ],
     [ "receivedFloat", "proj_8c.html#a7fd040abb130135b94ba08b754e1256b", null ],
-    [ "receivedInfo", "proj_8c.html#a004a2ebbbd5465932b88e7e9cf0f6274", null ],
     [ "receivedInt", "proj_8c.html#ad8e74ca0963db159320ea9a5904c1423", null ],
     [ "receivedLong", "proj_8c.html#acf1db7b9843e04995832bfd6defee3ff", null ],
     [ "receivedUInt", "proj_8c.html#aa728b31acb5710a4a6efbe7a91fba5c9", null ],
-    [ "receivedULong", "proj_8c.html#a1298165576a45d12d99e8bc482bb28dd", null ]
+    [ "receivedULong", "proj_8c.html#a1298165576a45d12d99e8bc482bb28dd", null ],
+    [ "waitingForSeed", "proj_8c.html#a2ebb0f218b219464c706fa7ab5263716", null ]
 ];

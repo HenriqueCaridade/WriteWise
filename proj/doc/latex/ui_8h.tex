@@ -1,5 +1,5 @@
-\doxysection{ui/ui.h File Reference}
-\hypertarget{ui_8h}{}\label{ui_8h}\index{ui/ui.h@{ui/ui.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/ui/ui.h File Reference}
+\hypertarget{ui_8h}{}\label{ui_8h}\index{C:/Users/igorc/lcom/g2/proj/src/ui/ui.h@{C:/Users/igorc/lcom/g2/proj/src/ui/ui.h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include \"{}../lib/lib.\+h\"{}}\newline
@@ -12,10 +12,10 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 struct \mbox{\hyperlink{structbutton__t}{button\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em This struct holds the properties of each button of our game. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structmoreMouseInfo}{more\+Mouse\+Info}}
-\begin{DoxyCompactList}\small\item\em Struct that holds the last known mouse information. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structcursor}{cursor}}
-\begin{DoxyCompactList}\small\item\em Struct that holds cursor information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{structmouse__info__t}{mouse\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structcursor__t}{cursor\+\_\+t}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,9 +69,13 @@ bool \mbox{\hyperlink{ui_8h_aba57c938626988d30ff9ca8d15b90ca1}{\+\_\+button\+Pla
 \item 
 uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ui_8h_aea939a8a96481fb6fce3298e8d0341b6}{static\+Buffer}}
 \item 
+\mbox{\hyperlink{structmouse__info__t}{mouse\+\_\+info\+\_\+t}} \mbox{\hyperlink{ui_8h_a32a952af4cff0228bbd23cc712bf13cf}{more\+Mouse\+Info}}
+\item 
 const bool \mbox{\hyperlink{ui_8h_ac0a34f0631c24c102f650290c264d68a}{cursor\+Map\+Main}} \mbox{[}\mbox{\hyperlink{ui_8h_a7f913fcf73aaf5db0a9f07665b6f71b1}{CURSOR\+\_\+\+HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{ui_8h_a8a051b8695b4004fdadadd7ab10f7bef}{CURSOR\+\_\+\+WIDTH}}\mbox{]}
 \item 
 const bool \mbox{\hyperlink{ui_8h_a63145f18bd01d2914d0eda2524d13a3a}{cursor\+Map\+Border}} \mbox{[}\mbox{\hyperlink{ui_8h_a7f913fcf73aaf5db0a9f07665b6f71b1}{CURSOR\+\_\+\+HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{ui_8h_a8a051b8695b4004fdadadd7ab10f7bef}{CURSOR\+\_\+\+WIDTH}}\mbox{]}
+\item 
+\mbox{\hyperlink{structcursor__t}{cursor\+\_\+t}} \mbox{\hyperlink{ui_8h_ab254f5b3929dd17a37def4de0622f3e9}{cursor}}
 \end{DoxyCompactItemize}
 
 
@@ -344,6 +348,12 @@ int
 \doxysubsubsection{\texorpdfstring{\_buttons}{\_buttons}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structbutton__t}{button\+\_\+t}} \+\_\+buttons\mbox{[}\mbox{\hyperlink{ui_8h_ab156b22ab47140f4a5ed2ff0b666bf3e}{MAX\+\_\+\+AMOUNT\+\_\+\+OF\+\_\+\+BUTTONS}}\mbox{]}}
 
+\Hypertarget{ui_8h_ab254f5b3929dd17a37def4de0622f3e9}\label{ui_8h_ab254f5b3929dd17a37def4de0622f3e9} 
+\index{ui.h@{ui.h}!cursor@{cursor}}
+\index{cursor@{cursor}!ui.h@{ui.h}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcursor__t}{cursor\+\_\+t}} \mbox{\hyperlink{structcursor}{cursor}}}
+
 \Hypertarget{ui_8h_a63145f18bd01d2914d0eda2524d13a3a}\label{ui_8h_a63145f18bd01d2914d0eda2524d13a3a} 
 \index{ui.h@{ui.h}!cursorMapBorder@{cursorMapBorder}}
 \index{cursorMapBorder@{cursorMapBorder}!ui.h@{ui.h}}
@@ -355,6 +365,12 @@ int
 \index{cursorMapMain@{cursorMapMain}!ui.h@{ui.h}}
 \doxysubsubsection{\texorpdfstring{cursorMapMain}{cursorMapMain}}
 {\footnotesize\ttfamily const bool cursor\+Map\+Main\mbox{[}\mbox{\hyperlink{ui_8h_a7f913fcf73aaf5db0a9f07665b6f71b1}{CURSOR\+\_\+\+HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{ui_8h_a8a051b8695b4004fdadadd7ab10f7bef}{CURSOR\+\_\+\+WIDTH}}\mbox{]}}
+
+\Hypertarget{ui_8h_a32a952af4cff0228bbd23cc712bf13cf}\label{ui_8h_a32a952af4cff0228bbd23cc712bf13cf} 
+\index{ui.h@{ui.h}!moreMouseInfo@{moreMouseInfo}}
+\index{moreMouseInfo@{moreMouseInfo}!ui.h@{ui.h}}
+\doxysubsubsection{\texorpdfstring{moreMouseInfo}{moreMouseInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmouse__info__t}{mouse\+\_\+info\+\_\+t}} \mbox{\hyperlink{structmoreMouseInfo}{more\+Mouse\+Info}}}
 
 \Hypertarget{ui_8h_aea939a8a96481fb6fce3298e8d0341b6}\label{ui_8h_aea939a8a96481fb6fce3298e8d0341b6} 
 \index{ui.h@{ui.h}!staticBuffer@{staticBuffer}}

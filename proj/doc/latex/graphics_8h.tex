@@ -1,5 +1,5 @@
-\doxysection{lib/drivers/graphics/graphics.h File Reference}
-\hypertarget{graphics_8h}{}\label{graphics_8h}\index{lib/drivers/graphics/graphics.h@{lib/drivers/graphics/graphics.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h File Reference}
+\hypertarget{graphics_8h}{}\label{graphics_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 Include dependency graph for graphics.\+h\+:
 % FIG 0
@@ -9,11 +9,11 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode}} (uint16\+\_\+t submode)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the graphic mode with the specified submode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}{set\+\_\+text\+\_\+mode}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the text mode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_a92983a6764917e6ddae9db456571407a}{set\+\_\+frame\+\_\+buffer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sets up the frame buffer for the graphic mode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}{exit\+\_\+graphic\+\_\+mode}} ()
 \item 
 void() \mbox{\hyperlink{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}{flip\+\_\+frame}} ()
@@ -76,18 +76,51 @@ uint16\+\_\+t \mbox{\hyperlink{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}{by
 \doxysubsubsection{\texorpdfstring{set\_frame\_buffer()}{set\_frame\_buffer()}}
 {\footnotesize\ttfamily int() set\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sets up the frame buffer for the graphic mode. 
+
+This function is called after the graphic mode has been set using \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}. It sets up the frame buffer by allocating physical and virtual memory for the frame buffer based on the mode information obtained from \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}. It also allocates memory for the frame buffer using {\ttfamily malloc()}.
+
+\begin{DoxyNote}{Note}
+This function should only be called after calling {\ttfamily \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if the frame buffer was set up successfully, otherwise 1 if an error occurred. 
+\end{DoxyReturn}
 \Hypertarget{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}\label{graphics_8h_a967432a6c8128a907b937b0f3f4b4472} 
 \index{graphics.h@{graphics.h}!set\_graphic\_mode@{set\_graphic\_mode}}
 \index{set\_graphic\_mode@{set\_graphic\_mode}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{set\_graphic\_mode()}{set\_graphic\_mode()}}
 {\footnotesize\ttfamily int() set\+\_\+graphic\+\_\+mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{submode }\end{DoxyParamCaption})}
 
+
+
+Sets the graphic mode with the specified submode. 
+
+This function sets the graphic mode using the specified submode. 
+\begin{DoxyParams}{Parameters}
+{\em submode} & The submode value to set for the graphic mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the graphic mode was set successfully, otherwise 1 if an error occurred. 
+\end{DoxyReturn}
 \Hypertarget{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}\label{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8} 
 \index{graphics.h@{graphics.h}!set\_text\_mode@{set\_text\_mode}}
 \index{set\_text\_mode@{set\_text\_mode}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{set\_text\_mode()}{set\_text\_mode()}}
 {\footnotesize\ttfamily int() set\+\_\+text\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sets the text mode. 
+
+This function sets the minix mode to text mode. After setting the text mode, it clears the mode information structure.
+
+\begin{DoxyReturn}{Returns}
+0 if the text mode was set successfully, otherwise 1 if an error occurred. 
+\end{DoxyReturn}
 \Hypertarget{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}\label{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6} 
 \index{graphics.h@{graphics.h}!vg\_draw\_hline@{vg\_draw\_hline}}
 \index{vg\_draw\_hline@{vg\_draw\_hline}!graphics.h@{graphics.h}}

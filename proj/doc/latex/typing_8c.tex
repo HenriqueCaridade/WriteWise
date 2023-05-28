@@ -1,5 +1,5 @@
-\doxysection{typing/typing.c File Reference}
-\hypertarget{typing_8c}{}\label{typing_8c}\index{typing/typing.c@{typing/typing.c}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/typing/typing.c File Reference}
+\hypertarget{typing_8c}{}\label{typing_8c}\index{C:/Users/igorc/lcom/g2/proj/src/typing/typing.c@{C:/Users/igorc/lcom/g2/proj/src/typing/typing.c}}
 {\ttfamily \#include \"{}typing.\+h\"{}}\newline
 Include dependency graph for typing.\+c\+:
 % FIG 0
@@ -12,16 +12,18 @@ void \mbox{\hyperlink{typing_8c_a61a5ec9381d677e8b9be1604fad28bc9}{reset\+Typing
 \begin{DoxyCompactList}\small\item\em Resets typing info variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8c_aa240e1a1bfad4e107b57a0f664cd684e}{reset\+Racing\+Info}} ()
 \begin{DoxyCompactList}\small\item\em Resets racing info variable. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb}{typing\+Input\+Handler}} ()
+void \mbox{\hyperlink{typing_8c_a0a8a6c7245a63c8bbf72185c8be02e30}{typing\+Input\+Handler}} (bool is\+Race)
 \begin{DoxyCompactList}\small\item\em Handles typing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{typing_8c_a075b28f53a26e139b72c4e06dc3e2ab9}{update\+Typing\+Info}} ()
-\begin{DoxyCompactList}\small\item\em Updates Typing variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8c_a3450b0c5eb5b5804836eec3e3a8d724f}{calc\+Typing\+Status}} ()
 \begin{DoxyCompactList}\small\item\em Does the typing status calculations. (WPM, ACC, etc) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8c_af565201f1899ebd4381b1314be13f0f2}{start\+Typing}} ()
 \begin{DoxyCompactList}\small\item\em Updates typing status in the beginning of typing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a075b28f53a26e139b72c4e06dc3e2ab9}{update\+Typing\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Updates Typing variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8c_af20c241f9cd9e758424e745645759650}{end\+Typing}} ()
 \begin{DoxyCompactList}\small\item\em Updates typing status in the end of typing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a6b99a11f00bf1abd3080772426d56c1e}{end\+Race}} ()
+\begin{DoxyCompactList}\small\item\em Sends INFO\+\_\+\+WON code through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{typing_8c_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+Test}} (float cx, float cy, float max\+Width, uint32\+\_\+t right\+Color, uint32\+\_\+t wrong\+Color, uint32\+\_\+t unwritten\+Color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws the text which the player must write. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
@@ -29,7 +31,7 @@ int \mbox{\hyperlink{typing_8c_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+
 \item 
 \mbox{\hyperlink{structtyping__info__t}{typing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8c_aa699a3114ec15155bf95591f59a91f1c}{typing\+Info}} = \{NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0.\+0, 0.\+0, 100.\+0, \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}}\}
 \item 
-\mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8c_a1d5909d9080edef2f87755c282fa8833}{racing\+Info}} = \{false, false, 0\}
+\mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8c_a1d5909d9080edef2f87755c282fa8833}{racing\+Info}} = \{false, false, 0, 0, 0, false\}
 \end{DoxyCompactItemize}
 
 
@@ -74,6 +76,16 @@ Draws the text which the player must write.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
+\Hypertarget{typing_8c_a6b99a11f00bf1abd3080772426d56c1e}\label{typing_8c_a6b99a11f00bf1abd3080772426d56c1e} 
+\index{typing.c@{typing.c}!endRace@{endRace}}
+\index{endRace@{endRace}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{endRace()}{endRace()}}
+{\footnotesize\ttfamily void end\+Race (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends INFO\+\_\+\+WON code through the serial port. 
+
 \Hypertarget{typing_8c_af20c241f9cd9e758424e745645759650}\label{typing_8c_af20c241f9cd9e758424e745645759650} 
 \index{typing.c@{typing.c}!endTyping@{endTyping}}
 \index{endTyping@{endTyping}!typing.c@{typing.c}}
@@ -131,11 +143,11 @@ Resets typing info variable.
 
 Updates typing status in the beginning of typing. 
 
-\Hypertarget{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb}\label{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb} 
+\Hypertarget{typing_8c_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8c_a0a8a6c7245a63c8bbf72185c8be02e30} 
 \index{typing.c@{typing.c}!typingInputHandler@{typingInputHandler}}
 \index{typingInputHandler@{typingInputHandler}!typing.c@{typing.c}}
 \doxysubsubsection{\texorpdfstring{typingInputHandler()}{typingInputHandler()}}
-{\footnotesize\ttfamily void typing\+Input\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void typing\+Input\+Handler (\begin{DoxyParamCaption}\item[{bool}]{is\+Race }\end{DoxyParamCaption})}
 
 
 
@@ -152,13 +164,18 @@ Handles typing.
 Updates Typing variable. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em is\+Race} & true when the typing is for a race, false otherwise. \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Variable Documentation}
 \Hypertarget{typing_8c_a1d5909d9080edef2f87755c282fa8833}\label{typing_8c_a1d5909d9080edef2f87755c282fa8833} 
 \index{typing.c@{typing.c}!racingInfo@{racingInfo}}
 \index{racingInfo@{racingInfo}!typing.c@{typing.c}}
 \doxysubsubsection{\texorpdfstring{racingInfo}{racingInfo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} racing\+Info = \{false, false, 0\}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} racing\+Info = \{false, false, 0, 0, 0, false\}}
 
 \Hypertarget{typing_8c_aa699a3114ec15155bf95591f59a91f1c}\label{typing_8c_aa699a3114ec15155bf95591f59a91f1c} 
 \index{typing.c@{typing.c}!typingInfo@{typingInfo}}

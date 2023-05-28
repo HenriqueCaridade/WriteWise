@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include <math.h>
 
+
 int (set_graphic_mode)(uint16_t submode) {
     reg86_t reg86;
     memset(&reg86, 0, sizeof(reg86));

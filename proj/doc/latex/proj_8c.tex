@@ -1,8 +1,9 @@
-\doxysection{proj.\+c File Reference}
-\hypertarget{proj_8c}{}\label{proj_8c}\index{proj.c@{proj.c}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/proj.c File Reference}
+\hypertarget{proj_8c}{}\label{proj_8c}\index{C:/Users/igorc/lcom/g2/proj/src/proj.c@{C:/Users/igorc/lcom/g2/proj/src/proj.c}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include \"{}typing/typing.\+h\"{}}\newline
 {\ttfamily \#include \"{}lib/lib.\+h\"{}}\newline
 {\ttfamily \#include \"{}ui/ui.\+h\"{}}\newline
@@ -54,6 +55,8 @@ void \mbox{\hyperlink{proj_8c_a24b06f2006c10abf3489fb220edbd04c}{keyboard\+Scanc
 \item 
 int \mbox{\hyperlink{proj_8c_abf39a6e85845f60b60d8086d8095c97b}{exit\+All}} (int code)
 \item 
+void \mbox{\hyperlink{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1}{check\+If\+Ready}} ()
+\item 
 int() \mbox{\hyperlink{proj_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
 \item 
 int \mbox{\hyperlink{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}{change\+State}} (\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} new\+State)
@@ -75,6 +78,8 @@ void \mbox{\hyperlink{proj_8c_a4cd5df256d365f59536bdc5429286014}{\+\_\+training\
 int \mbox{\hyperlink{proj_8c_aebd79db36d9395299d0cff301abdc365}{training\+Screen\+Load}} ()
 \item 
 void \mbox{\hyperlink{proj_8c_ab9d75267a1f1cbbf999b3fe2e8685c14}{\+\_\+race\+Ready\+Button}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a969b977525433b77df9b43b7b153e097}{\+\_\+race\+Reset\+Button}} (void)
 \item 
 int \mbox{\hyperlink{proj_8c_a435bdccbfff155e4e1babe4c3ad2ecd2}{race\+Screen\+Load}} ()
 \item 
@@ -103,8 +108,6 @@ uint32\+\_\+t \mbox{\hyperlink{proj_8c_a2a1de804996e48f046ff70e86d19a560}{dark\+
 \item 
 uint32\+\_\+t \mbox{\hyperlink{proj_8c_a920ebf5dfbabdd90ec6766e733742e72}{light\+Theme\+Color\+Array}} \mbox{[}$\,$\mbox{]}
 \item 
-char \mbox{\hyperlink{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274}{received\+Info}} \mbox{[}20\mbox{]} = \{0\}
-\item 
 uint64\+\_\+t \mbox{\hyperlink{proj_8c_a1298165576a45d12d99e8bc482bb28dd}{received\+ULong}}
 \item 
 uint32\+\_\+t \mbox{\hyperlink{proj_8c_aa728b31acb5710a4a6efbe7a91fba5c9}{received\+UInt}}
@@ -116,6 +119,12 @@ int32\+\_\+t \mbox{\hyperlink{proj_8c_ad8e74ca0963db159320ea9a5904c1423}{receive
 double \mbox{\hyperlink{proj_8c_a075ecf29a35444fd0a4fc3002deb2279}{received\+Double}}
 \item 
 float \mbox{\hyperlink{proj_8c_a7fd040abb130135b94ba08b754e1256b}{received\+Float}}
+\item 
+char \mbox{\hyperlink{proj_8c_a432182e7f54ced798570aba502bfc452}{ready\+Button\+Text}} \mbox{[}8\mbox{]} = \{0\}
+\item 
+char \mbox{\hyperlink{proj_8c_abc9288a5a03b5baae06033882d73ba7a}{popup\+Text}} \mbox{[}5\mbox{]} = \{0\}
+\item 
+bool \mbox{\hyperlink{proj_8c_a2ebb0f218b219464c706fa7ab5263716}{waiting\+For\+Seed}} = false
 \end{DoxyCompactItemize}
 
 
@@ -237,6 +246,12 @@ info\+Color&\\
 \doxysubsubsection{\texorpdfstring{\_raceReadyButton()}{\_raceReadyButton()}}
 {\footnotesize\ttfamily void \+\_\+race\+Ready\+Button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\Hypertarget{proj_8c_a969b977525433b77df9b43b7b153e097}\label{proj_8c_a969b977525433b77df9b43b7b153e097} 
+\index{proj.c@{proj.c}!\_raceResetButton@{\_raceResetButton}}
+\index{\_raceResetButton@{\_raceResetButton}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_raceResetButton()}{\_raceResetButton()}}
+{\footnotesize\ttfamily void \+\_\+race\+Reset\+Button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 \Hypertarget{proj_8c_a49243f23d63e3216bf32cb209523e79d}\label{proj_8c_a49243f23d63e3216bf32cb209523e79d} 
 \index{proj.c@{proj.c}!\_settingsButton1024p@{\_settingsButton1024p}}
 \index{\_settingsButton1024p@{\_settingsButton1024p}!proj.c@{proj.c}}
@@ -290,6 +305,12 @@ info\+Color&\\
 \index{changeState@{changeState}!proj.c@{proj.c}}
 \doxysubsubsection{\texorpdfstring{changeState()}{changeState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily int change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}}}]{new\+State }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1}\label{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1} 
+\index{proj.c@{proj.c}!checkIfReady@{checkIfReady}}
+\index{checkIfReady@{checkIfReady}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{checkIfReady()}{checkIfReady()}}
+{\footnotesize\ttfamily void check\+If\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \Hypertarget{proj_8c_a49ec2dfa736580020278194b77d72f33}\label{proj_8c_a49ec2dfa736580020278194b77d72f33} 
 \index{proj.c@{proj.c}!drawScreen@{drawScreen}}
@@ -422,6 +443,18 @@ info\+Color&\\
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
+\Hypertarget{proj_8c_abc9288a5a03b5baae06033882d73ba7a}\label{proj_8c_abc9288a5a03b5baae06033882d73ba7a} 
+\index{proj.c@{proj.c}!popupText@{popupText}}
+\index{popupText@{popupText}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{popupText}{popupText}}
+{\footnotesize\ttfamily char popup\+Text\mbox{[}5\mbox{]} = \{0\}}
+
+\Hypertarget{proj_8c_a432182e7f54ced798570aba502bfc452}\label{proj_8c_a432182e7f54ced798570aba502bfc452} 
+\index{proj.c@{proj.c}!readyButtonText@{readyButtonText}}
+\index{readyButtonText@{readyButtonText}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{readyButtonText}{readyButtonText}}
+{\footnotesize\ttfamily char ready\+Button\+Text\mbox{[}8\mbox{]} = \{0\}}
+
 \Hypertarget{proj_8c_a075ecf29a35444fd0a4fc3002deb2279}\label{proj_8c_a075ecf29a35444fd0a4fc3002deb2279} 
 \index{proj.c@{proj.c}!receivedDouble@{receivedDouble}}
 \index{receivedDouble@{receivedDouble}!proj.c@{proj.c}}
@@ -433,12 +466,6 @@ info\+Color&\\
 \index{receivedFloat@{receivedFloat}!proj.c@{proj.c}}
 \doxysubsubsection{\texorpdfstring{receivedFloat}{receivedFloat}}
 {\footnotesize\ttfamily float received\+Float}
-
-\Hypertarget{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274}\label{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274} 
-\index{proj.c@{proj.c}!receivedInfo@{receivedInfo}}
-\index{receivedInfo@{receivedInfo}!proj.c@{proj.c}}
-\doxysubsubsection{\texorpdfstring{receivedInfo}{receivedInfo}}
-{\footnotesize\ttfamily char received\+Info\mbox{[}20\mbox{]} = \{0\}}
 
 \Hypertarget{proj_8c_ad8e74ca0963db159320ea9a5904c1423}\label{proj_8c_ad8e74ca0963db159320ea9a5904c1423} 
 \index{proj.c@{proj.c}!receivedInt@{receivedInt}}
@@ -463,4 +490,10 @@ info\+Color&\\
 \index{receivedULong@{receivedULong}!proj.c@{proj.c}}
 \doxysubsubsection{\texorpdfstring{receivedULong}{receivedULong}}
 {\footnotesize\ttfamily uint64\+\_\+t received\+ULong}
+
+\Hypertarget{proj_8c_a2ebb0f218b219464c706fa7ab5263716}\label{proj_8c_a2ebb0f218b219464c706fa7ab5263716} 
+\index{proj.c@{proj.c}!waitingForSeed@{waitingForSeed}}
+\index{waitingForSeed@{waitingForSeed}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{waitingForSeed}{waitingForSeed}}
+{\footnotesize\ttfamily bool waiting\+For\+Seed = false}
 
