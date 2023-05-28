@@ -70,7 +70,8 @@ typedef struct {
     bool middlePressed;
     bool rightPressed;
     uint16_t leftX, leftY;
-} moreMouseInfo;
+} mouse_info_t;
+mouse_info_t moreMouseInfo;
 
 const bool cursorMapMain[CURSOR_HEIGHT][CURSOR_WIDTH];
 const bool cursorMapBorder[CURSOR_HEIGHT][CURSOR_WIDTH];
@@ -92,7 +93,8 @@ typedef struct {
     uint16_t x, y;
     uint32_t color;
     uint32_t bColor;
-} cursor;
+} cursor_t;
+cursor_t cursor;
 
 /**
  * @brief Initializes UI data-structures and allocates static-buffer memory.

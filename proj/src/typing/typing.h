@@ -97,7 +97,6 @@ racing_info_t racingInfo;
  */
 void generateText(uint32_t wordAmmount, unsigned seed);
 
-void typingInputHandler(bool isRace);
 /**
  * @brief Resets typing info variable.
  * 
@@ -112,10 +111,12 @@ void resetRacingInfo();
  * @brief Handles typing.
  * 
  */
-void typingInputHandler();
+void typingInputHandler(bool isRace);
 /**
  * @brief Updates Typing variable.
  * 
+ * @param isRace
+ * true when the typing is for a race, false otherwise. 
  */
 void updateTypingInfo();
 /**

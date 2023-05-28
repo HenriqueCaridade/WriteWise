@@ -97,12 +97,6 @@ void typingInputHandler(bool isRace) {
     }
 }
 
-void updateTypingInfo() {
-    if (typingInfo.status == typing) {
-        typingInfo.timeEnd = timer_get_elapsed_count();
-        calcTypingStatus();
-    }
-}
 void calcTypingStatus() {
     uint64_t timeDiff = typingInfo.timeEnd - typingInfo.timeStart;
     if (timeDiff == 0) {
@@ -122,6 +116,13 @@ void startTyping() {
     typingInfo.timeEnd = timer_get_elapsed_count();
 }
 
+void updateTypingInfo() {
+    if (typingInfo.status == typing) {
+        typingInfo.timeEnd = timer_get_elapsed_count();
+        calcTypingStatus();
+    }
+}
+
 void endTyping() {
     typingInfo.timeEnd = timer_get_elapsed_count();
     typingInfo.status = finished;
@@ -131,13 +132,6 @@ void endTyping() {
 void endRace() {
     racingInfo.won = true;
     serialPortSendWon();
-}
-
-void updateTypingInfo() {
-    if (typingInfo.status == typing) {
-        typingInfo.timeEnd = timer_get_elapsed_count();
-        calcTypingStatus();
-    }
 }
 
 int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint32_t wrongColor, uint32_t unwrittenColor, font_size_t size) {
