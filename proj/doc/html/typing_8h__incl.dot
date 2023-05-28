@@ -42,9 +42,12 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/typing/typing.h"
   Node14 -> Node11 [id="edge22_Node000014_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node15 [id="edge23_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="UART.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$UART_8h.html",tooltip=" "];
-  Node1 -> Node16 [id="edge24_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="../data/data.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$data_8h.html",tooltip=" "];
-  Node16 -> Node3 [id="edge25_Node000016_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node16 -> Node7 [id="edge26_Node000016_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node16 -> Node4 [id="edge27_Node000016_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node16 [id="edge24_Node000004_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="drivers/rtc/rtc.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$rtc_8h.html",tooltip=" "];
+  Node16 -> Node5 [id="edge25_Node000016_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node17 [id="edge26_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="../data/data.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$data_8h.html",tooltip=" "];
+  Node17 -> Node3 [id="edge27_Node000017_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node7 [id="edge28_Node000017_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node4 [id="edge29_Node000017_Node000004",color="steelblue1",style="solid",tooltip=" "];
 }

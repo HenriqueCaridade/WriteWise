@@ -1,0 +1,9 @@
+<map id="drawRectRGB" name="drawRectRGB">
+<area shape="rect" id="node1" title="Draws a rect." alt="" coords="5,81,109,108"/>
+<area shape="rect" id="node2" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="160,5,281,32"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="159,56,282,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957" title=" " alt="" coords="179,107,262,133"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a99d2da2559e11200c6b40c469e9977ec" title=" " alt="" coords="157,157,284,184"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a5e5b25bd525250f61f40b9e9f212d5e6" title=" " alt="" coords="332,157,433,184"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="481,157,583,184"/>
+</map>

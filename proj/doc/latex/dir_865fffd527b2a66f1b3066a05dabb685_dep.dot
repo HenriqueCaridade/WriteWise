@@ -10,5 +10,5 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort"
   dir_e9f939a1f1819b415e593d42c4844772 [label="timer", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_e9f939a1f1819b415e593d42c4844772.html",tooltip=""];
   dir_865fffd527b2a66f1b3066a05dabb685 [label="serialPort", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_865fffd527b2a66f1b3066a05dabb685.html",tooltip=""];
   }
-  dir_865fffd527b2a66f1b3066a05dabb685->dir_e9f939a1f1819b415e593d42c4844772 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000009.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_865fffd527b2a66f1b3066a05dabb685->dir_e9f939a1f1819b415e593d42c4844772 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000010.html" color="steelblue1" fontcolor="steelblue1"];
 }

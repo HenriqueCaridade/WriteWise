@@ -6,14 +6,20 @@
 {\ttfamily \#include \"{}timer.\+h\"{}}\newline
 {\ttfamily \#include \"{}i8254.\+h\"{}}\newline
 Include dependency graph for timer.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{timer_8c_af2c04fa8e97ffa748fd3f612886a92a7}{timer\+\_\+set\+\_\+frequency}} (uint8\+\_\+t timer, uint32\+\_\+t freq)
 \item 
 int() \mbox{\hyperlink{timer_8c_ab64a18a4ee46308ba2ea9480ac62b5a4}{timer\+\_\+subscribe\+\_\+interrupt}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Subscribes to Timer interrupts. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{timer_8c_afabd21de449be154dd65d5fdb2d8045d}{timer\+\_\+unsubscribe\+\_\+int}} ()
 \item 
 void() \mbox{\hyperlink{timer_8c_a91a2072306c68353712a6b771287dc2c}{timer\+\_\+int\+\_\+handler}} ()
@@ -23,7 +29,7 @@ int() \mbox{\hyperlink{timer_8c_a703c60b40c8c49607d6ecb6fef82d27a}{timer\+\_\+ge
 int() \mbox{\hyperlink{timer_8c_a140d8f092c0913cabdca949c4a1cc650}{timer\+\_\+display\+\_\+conf}} (uint8\+\_\+t timer, uint8\+\_\+t st, enum timer\+\_\+status\+\_\+field field)
 \item 
 uint64\+\_\+t() \mbox{\hyperlink{timer_8c_a4158c6b92acd61ce9ef52913cfff9aca}{timer\+\_\+get\+\_\+elapsed\+\_\+count}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the elapsed count of the Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,6 +58,13 @@ int \mbox{\hyperlink{timer_8c_a78b855dd6cdfdea10a6e6233fef1b877}{hook\+Id\+Timer
 \doxysubsubsection{\texorpdfstring{timer\_get\_elapsed\_count()}{timer\_get\_elapsed\_count()}}
 {\footnotesize\ttfamily uint64\+\_\+t() timer\+\_\+get\+\_\+elapsed\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the elapsed count of the Timer. 
+
+\begin{DoxyReturn}{Returns}
+The elapsed count of the Timer. 
+\end{DoxyReturn}
 \Hypertarget{timer_8c_a91a2072306c68353712a6b771287dc2c}\label{timer_8c_a91a2072306c68353712a6b771287dc2c} 
 \index{timer.c@{timer.c}!timer\_int\_handler@{timer\_int\_handler}}
 \index{timer\_int\_handler@{timer\_int\_handler}!timer.c@{timer.c}}
@@ -70,6 +83,15 @@ int \mbox{\hyperlink{timer_8c_a78b855dd6cdfdea10a6e6233fef1b877}{hook\+Id\+Timer
 \doxysubsubsection{\texorpdfstring{timer\_subscribe\_interrupt()}{timer\_subscribe\_interrupt()}}
 {\footnotesize\ttfamily int() timer\+\_\+subscribe\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Subscribes to Timer interrupts. 
+
+This function subscribes to Timer interrupts by using {\ttfamily sys\+\_\+irqsetpolicy} function.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{timer_8c_afabd21de449be154dd65d5fdb2d8045d}\label{timer_8c_afabd21de449be154dd65d5fdb2d8045d} 
 \index{timer.c@{timer.c}!timer\_unsubscribe\_int@{timer\_unsubscribe\_int}}
 \index{timer\_unsubscribe\_int@{timer\_unsubscribe\_int}!timer.c@{timer.c}}

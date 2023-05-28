@@ -5,9 +5,21 @@
 {\ttfamily \#include \"{}../lib/lib.\+h\"{}}\newline
 {\ttfamily \#include \"{}../data/data.\+h\"{}}\newline
 Include dependency graph for typing.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typing_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{typing_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,7 +42,7 @@ enum \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\+\_\+s
 void \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generate\+Text}} (uint32\+\_\+t word\+Ammount, unsigned seed)
 \begin{DoxyCompactList}\small\item\em Generates a text given a word ammount and a creation seed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{reset\+Typing\+Info}} ()
-\begin{DoxyCompactList}\small\item\em Resets typing info variable. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{reset\+Racing\+Info}} ()
 \begin{DoxyCompactList}\small\item\em Resets racing info variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typing\+Input\+Handler}} (bool is\+Race)
@@ -94,7 +106,7 @@ finished&\\
 
 Does the typing status calculations. (WPM, ACC, etc) 
 
-\Hypertarget{typing_8h_ab2158f31af29aef2460da7d67d217de1}\label{typing_8h_ab2158f31af29aef2460da7d67d217de1} 
+This function calculates the typing statistics based on the provided typing information. \Hypertarget{typing_8h_ab2158f31af29aef2460da7d67d217de1}\label{typing_8h_ab2158f31af29aef2460da7d67d217de1} 
 \index{typing.h@{typing.h}!drawTypingTest@{drawTypingTest}}
 \index{drawTypingTest@{drawTypingTest}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{drawTypingTest()}{drawTypingTest()}}
@@ -104,21 +116,21 @@ Does the typing status calculations. (WPM, ACC, etc)
 
 Draws the text which the player must write. 
 
-
+This function draws the text that the player needs to type on the screen. The text is positioned based on the provided center coordinates (cx, cy) as a percentage of the screen width and height. 
 \begin{DoxyParams}{Parameters}
-{\em cx} & X coordinate in percentage(0 to 1) starting from the center. \\
+{\em cx} & x coordinate in percentage(0 to 1) starting from the center. \\
 \hline
-{\em cy} & Y coordinate in percentage(0 to 1) starting from the center. \\
+{\em cy} & y coordinate in percentage(0 to 1) starting from the center. \\
 \hline
-{\em max\+Width} & Text max width. \\
+{\em max\+Width} & text max width. \\
 \hline
-{\em right\+Color} & Color of the text when the characters are correctly written. \\
+{\em right\+Color} & color of the text when the characters are correctly written. \\
 \hline
-{\em wrong\+Color} & Color of the text when the characters are incorrectly written. \\
+{\em wrong\+Color} & color of the text when the characters are incorrectly written. \\
 \hline
-{\em unwritten\+Color} & Color of unwritten text. \\
+{\em unwritten\+Color} & color of unwritten text. \\
 \hline
-{\em size} & Font size \\
+{\em size} & font size \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -134,7 +146,7 @@ Non-\/zero if error occured.
 
 Sends INFO\+\_\+\+WON code through the serial port. 
 
-\Hypertarget{typing_8h_af20c241f9cd9e758424e745645759650}\label{typing_8h_af20c241f9cd9e758424e745645759650} 
+This function sets the {\ttfamily won} flag in the {\ttfamily racing\+Info} structure to true and sends the INFO\+\_\+\+WON code through the serial port by calling the {\ttfamily serial\+Port\+Send\+Won} function. \Hypertarget{typing_8h_af20c241f9cd9e758424e745645759650}\label{typing_8h_af20c241f9cd9e758424e745645759650} 
 \index{typing.h@{typing.h}!endTyping@{endTyping}}
 \index{endTyping@{endTyping}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{endTyping()}{endTyping()}}
@@ -144,7 +156,7 @@ Sends INFO\+\_\+\+WON code through the serial port.
 
 Updates typing status in the end of typing. 
 
-\Hypertarget{typing_8h_a18851fac97afb33c7b6afb48db123db9}\label{typing_8h_a18851fac97afb33c7b6afb48db123db9} 
+This function updates the {\ttfamily time\+End} field of the {\ttfamily typing\+Info} structure with the current elapsed time, sets the status of the typing information to indicate that typing has finished, and calculates the typing statistics such as CPM, WPM, and accuracy by calling the {\ttfamily calc\+Typing\+Status} function. \Hypertarget{typing_8h_a18851fac97afb33c7b6afb48db123db9}\label{typing_8h_a18851fac97afb33c7b6afb48db123db9} 
 \index{typing.h@{typing.h}!generateText@{generateText}}
 \index{generateText@{generateText}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{generateText()}{generateText()}}
@@ -154,11 +166,11 @@ Updates typing status in the end of typing.
 
 Generates a text given a word ammount and a creation seed. 
 
-
+This function generates a text by randomly selecting words from a dictionary based on the given word amount and creation seed. 
 \begin{DoxyParams}{Parameters}
-{\em word\+Ammount} & \\
+{\em word\+Ammount} & desired word amount in the generated text. \\
 \hline
-{\em seed} & \\
+{\em seed} & creation seed used for randomization. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}\label{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e} 
@@ -171,7 +183,7 @@ Generates a text given a word ammount and a creation seed.
 
 Resets racing info variable. 
 
-\Hypertarget{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}\label{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9} 
+This function resets the racing information variables to their default values. It sets the \"{}ready\+Me\"{} and \"{}ready\+You\"{} flags to false, resets the seed values for both players, sets the start time to zero, and sets the \"{}won\"{} flag to false. \Hypertarget{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}\label{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9} 
 \index{typing.h@{typing.h}!resetTypingInfo@{resetTypingInfo}}
 \index{resetTypingInfo@{resetTypingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{resetTypingInfo()}{resetTypingInfo()}}
@@ -179,7 +191,7 @@ Resets racing info variable.
 
 
 
-Resets typing info variable. 
+Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status. 
 
 \Hypertarget{typing_8h_af565201f1899ebd4381b1314be13f0f2}\label{typing_8h_af565201f1899ebd4381b1314be13f0f2} 
 \index{typing.h@{typing.h}!startTyping@{startTyping}}
@@ -191,7 +203,7 @@ Resets typing info variable.
 
 Updates typing status in the beginning of typing. 
 
-\Hypertarget{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30} 
+This function sets the status of the typing information to indicate that typing has started. \Hypertarget{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30} 
 \index{typing.h@{typing.h}!typingInputHandler@{typingInputHandler}}
 \index{typingInputHandler@{typingInputHandler}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{typingInputHandler()}{typingInputHandler()}}
@@ -201,7 +213,7 @@ Updates typing status in the beginning of typing.
 
 Handles typing. 
 
-\Hypertarget{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}\label{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9} 
+This function handles the input during a typing session. \Hypertarget{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}\label{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9} 
 \index{typing.h@{typing.h}!updateTypingInfo@{updateTypingInfo}}
 \index{updateTypingInfo@{updateTypingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{updateTypingInfo()}{updateTypingInfo()}}
@@ -211,7 +223,7 @@ Handles typing.
 
 Updates Typing variable. 
 
-
+This function updates the typing information based on the current typing status. 
 \begin{DoxyParams}{Parameters}
 {\em is\+Race} & true when the typing is for a race, false otherwise. \\
 \hline

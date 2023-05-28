@@ -3,9 +3,21 @@
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include \"{}../drivers/\+KBC/keyboard.\+h\"{}}\newline
 Include dependency graph for scancode.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{scancode_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scancode_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -508,12 +520,11 @@ This function returns the corresponding character based on the provided makecode
 
 
 \begin{DoxyParams}{Parameters}
-{\em makecode} & The makecode to retrieve the character from. \\
+{\em makecode} & makecode to retrieve the character from. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The corresponding character if found, \textquotesingle{} \textquotesingle{} (space) if makecode matches SPACE\+\_\+\+SCANCODE, \textquotesingle{}~\newline
-\textquotesingle{} (newline) if makecode matches ENTER\+\_\+\+SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none. 
+The corresponding character if found. 
 \end{DoxyReturn}
 \Hypertarget{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}\label{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5} 
 \index{scancode.h@{scancode.h}!setKeyboardLayout@{setKeyboardLayout}}
@@ -529,11 +540,11 @@ This function sets the keyboard layout based on the provided keyboard\+Layout pa
 
 
 \begin{DoxyParams}{Parameters}
-{\em keyboard\+Layout} & The keyboard layout to be set. \\
+{\em keyboard\+Layout} & keyboard layout to be set. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided. 
+Non-\/zero if error occured. 
 \end{DoxyReturn}
 
 

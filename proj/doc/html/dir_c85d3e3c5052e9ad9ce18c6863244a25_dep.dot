@@ -15,8 +15,8 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/lib"
   dir_d9ce91df3ed48bd8d5294b5147f8e182 [label="text", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d9ce91df3ed48bd8d5294b5147f8e182.html",tooltip=""];
   }
   }
-  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_7e19df4349fd0348dce6f141908bb821 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000005.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_ae0e849d495154be21d419b82c842e8e [headlabel="7", labeldistance=1.5 headhref="dir_000004_000001.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_d9ce91df3ed48bd8d5294b5147f8e182 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000008.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_7e19df4349fd0348dce6f141908bb821->dir_ae0e849d495154be21d419b82c842e8e [headlabel="1", labeldistance=1.5 headhref="dir_000005_000001.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_7e19df4349fd0348dce6f141908bb821 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000006.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_ae0e849d495154be21d419b82c842e8e [headlabel="8", labeldistance=1.5 headhref="dir_000004_000001.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_c85d3e3c5052e9ad9ce18c6863244a25->dir_d9ce91df3ed48bd8d5294b5147f8e182 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000009.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7e19df4349fd0348dce6f141908bb821->dir_ae0e849d495154be21d419b82c842e8e [headlabel="1", labeldistance=1.5 headhref="dir_000006_000001.html" color="steelblue1" fontcolor="steelblue1"];
 }

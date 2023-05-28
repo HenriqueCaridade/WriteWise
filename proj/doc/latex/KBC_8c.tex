@@ -5,3 +5,84 @@
 {\ttfamily \#include \"{}i8042.\+h\"{}}\newline
 {\ttfamily \#include \"{}KBC.\+h\"{}}\newline
 Include dependency graph for KBC.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KBC_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d}{read\+KBCStatus}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Reads the status from the Keyboard Controller. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e}{read\+KBCOutput}} (uint8\+\_\+t port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}output, bool mouse)
+\begin{DoxyCompactList}\small\item\em Reads data from the Keyboard Controller output buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{KBC_8c_aff8640e03ef10dff9e4632125438403d}{write\+KBCCommand}} (uint8\+\_\+t port, uint8\+\_\+t command\+Byte)
+\begin{DoxyCompactList}\small\item\em Writes a command byte to the Keyboard Controller input buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e}\label{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e} 
+\index{KBC.c@{KBC.c}!readKBCOutput@{readKBCOutput}}
+\index{readKBCOutput@{readKBCOutput}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{readKBCOutput()}{readKBCOutput()}}
+{\footnotesize\ttfamily int read\+KBCOutput (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{output,  }\item[{bool}]{mouse }\end{DoxyParamCaption})}
+
+
+
+Reads data from the Keyboard Controller output buffer. 
+
+This function reads data from the output buffer of the keyboard controller using the specified port. It checks the status byte of the Keyboard Controller for errors and verifies if the expected device type (keyboard or mouse) matches the received data. 
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to read the data from. \\
+\hline
+{\em output} & Pointer to a variable where the read data will be stored. \\
+\hline
+{\em mouse} & Indicates whether the expected device type is a mouse (true) or keyboard (false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
+\Hypertarget{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d}\label{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d} 
+\index{KBC.c@{KBC.c}!readKBCStatus@{readKBCStatus}}
+\index{readKBCStatus@{readKBCStatus}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{readKBCStatus()}{readKBCStatus()}}
+{\footnotesize\ttfamily int read\+KBCStatus (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+
+
+Reads the status from the Keyboard Controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Pointer to a variable where the read status byte will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
+\Hypertarget{KBC_8c_aff8640e03ef10dff9e4632125438403d}\label{KBC_8c_aff8640e03ef10dff9e4632125438403d} 
+\index{KBC.c@{KBC.c}!writeKBCCommand@{writeKBCCommand}}
+\index{writeKBCCommand@{writeKBCCommand}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{writeKBCCommand()}{writeKBCCommand()}}
+{\footnotesize\ttfamily int write\+KBCCommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{command\+Byte }\end{DoxyParamCaption})}
+
+
+
+Writes a command byte to the Keyboard Controller input buffer. 
+
+This function writes a command byte to the input buffer of the keyboard controller using the specified port. It checks the status byte of the keyboard controller to ensure that the input buffer is not full. If the input buffer is not full, the command byte is sent to the specified port with sys\+\_\+outb.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to write the command byte to. \\
+\hline
+{\em command\+Byte} & The command byte to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}

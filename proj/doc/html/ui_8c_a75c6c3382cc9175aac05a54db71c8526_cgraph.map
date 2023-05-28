@@ -1,0 +1,6 @@
+<map id="_getSelectedButton" name="_getSelectedButton">
+<area shape="rect" id="node1" title="Auxiliary function for drawSelectedButton." alt="" coords="5,31,141,57"/>
+<area shape="rect" id="node2" href="$ui_8c.html#a8d29d5c6158fa93fbae7424c5fb4378b" title="Checks if mouse clicked on a button." alt="" coords="189,31,311,57"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="360,5,481,32"/>
+<area shape="rect" id="node4" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="359,56,482,83"/>
+</map>

@@ -39,4 +39,7 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/lib/lib.c"
   Node13 -> Node10 [id="edge20_Node000013_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node14 [id="edge21_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="UART.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$UART_8h.html",tooltip=" "];
+  Node2 -> Node15 [id="edge22_Node000002_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="drivers/rtc/rtc.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$rtc_8h.html",tooltip=" "];
+  Node15 -> Node3 [id="edge23_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
 }

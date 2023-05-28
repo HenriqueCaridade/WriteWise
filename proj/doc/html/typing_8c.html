@@ -100,6 +100,26 @@ $(document).ready(function(){initNavTree('typing_8c.html',''); initResizable(); 
 Include dependency graph for typing.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="typing_8c__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2typing_2typing_8c" alt=""/></div>
+<map name="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2typing_2typing_8c" id="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2typing_2typing_8c">
+<area shape="rect" title=" " alt="" coords="160,5,317,48"/>
+<area shape="rect" href="typing_8h.html" title=" " alt="" coords="205,96,272,123"/>
+<area shape="rect" title=" " alt="" coords="5,171,69,197"/>
+<area shape="rect" title=" " alt="" coords="772,485,836,512"/>
+<area shape="rect" href="lib_8h.html" title=" " alt="" coords="645,245,720,272"/>
+<area shape="rect" href="data_8h.html" title=" " alt="" coords="280,171,378,197"/>
+<area shape="rect" title=" " alt="" coords="362,411,440,437"/>
+<area shape="rect" href="text_8h.html" title=" " alt="" coords="946,411,1027,437"/>
+<area shape="rect" href="scancode_8h.html" title=" " alt="" coords="1104,328,1253,355"/>
+<area shape="rect" href="keyboard_8h.html" title=" " alt="" coords="1094,411,1263,437"/>
+<area shape="rect" title=" " alt="" coords="768,328,861,355"/>
+<area shape="rect" href="timer_8h.html" title=" " alt="" coords="736,411,871,437"/>
+<area shape="rect" href="graphics_8h.html" title=" " alt="" coords="376,328,551,355"/>
+<area shape="rect" href="mouse_8h.html" title=" " alt="" coords="885,328,1029,355"/>
+<area shape="rect" href="serialPort_8h.html" title=" " alt="" coords="576,320,693,363"/>
+<area shape="rect" href="rtc_8h.html" title=" " alt="" coords="194,328,301,355"/>
+<area shape="rect" title=" " alt="" coords="1045,485,1120,512"/>
+<area shape="rect" href="UART_8h.html" title=" " alt="" coords="601,411,668,437"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -108,7 +128,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a18851fac97afb33c7b6afb48db123db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a text given a word ammount and a creation seed.  <br /></td></tr>
 <tr class="separator:a18851fac97afb33c7b6afb48db123db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a5ec9381d677e8b9be1604fad28bc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9">resetTypingInfo</a> ()</td></tr>
-<tr class="memdesc:a61a5ec9381d677e8b9be1604fad28bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets typing info variable.  <br /></td></tr>
+<tr class="memdesc:a61a5ec9381d677e8b9be1604fad28bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status.  <br /></td></tr>
 <tr class="separator:a61a5ec9381d677e8b9be1604fad28bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa240e1a1bfad4e107b57a0f664cd684e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typing_8c.html#aa240e1a1bfad4e107b57a0f664cd684e">resetRacingInfo</a> ()</td></tr>
 <tr class="memdesc:aa240e1a1bfad4e107b57a0f664cd684e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets racing info variable.  <br /></td></tr>
@@ -159,6 +179,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Does the typing status calculations. (WPM, ACC, etc) </p>
+<p>This function calculates the typing statistics based on the provided typing information. </p>
 
 </div>
 </div>
@@ -219,15 +240,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws the text which the player must write. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function draws the text that the player needs to type on the screen. The text is positioned based on the provided center coordinates (cx, cy) as a percentage of the screen width and height. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cx</td><td>X coordinate in percentage(0 to 1) starting from the center. </td></tr>
-    <tr><td class="paramname">cy</td><td>Y coordinate in percentage(0 to 1) starting from the center. </td></tr>
-    <tr><td class="paramname">maxWidth</td><td>Text max width. </td></tr>
-    <tr><td class="paramname">rightColor</td><td>Color of the text when the characters are correctly written. </td></tr>
-    <tr><td class="paramname">wrongColor</td><td>Color of the text when the characters are incorrectly written. </td></tr>
-    <tr><td class="paramname">unwrittenColor</td><td>Color of unwritten text. </td></tr>
-    <tr><td class="paramname">size</td><td>Font size </td></tr>
+    <tr><td class="paramname">cx</td><td>x coordinate in percentage(0 to 1) starting from the center. </td></tr>
+    <tr><td class="paramname">cy</td><td>y coordinate in percentage(0 to 1) starting from the center. </td></tr>
+    <tr><td class="paramname">maxWidth</td><td>text max width. </td></tr>
+    <tr><td class="paramname">rightColor</td><td>color of the text when the characters are correctly written. </td></tr>
+    <tr><td class="paramname">wrongColor</td><td>color of the text when the characters are incorrectly written. </td></tr>
+    <tr><td class="paramname">unwrittenColor</td><td>color of unwritten text. </td></tr>
+    <tr><td class="paramname">size</td><td>font size </td></tr>
   </table>
   </dd>
 </dl>
@@ -251,6 +272,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends INFO_WON code through the serial port. </p>
+<p>This function sets the <code>won</code> flag in the <code>racingInfo</code> structure to true and sends the INFO_WON code through the serial port by calling the <code>serialPortSendWon</code> function. </p>
 
 </div>
 </div>
@@ -270,6 +292,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates typing status in the end of typing. </p>
+<p>This function updates the <code>timeEnd</code> field of the <code>typingInfo</code> structure with the current elapsed time, sets the status of the typing information to indicate that typing has finished, and calculates the typing statistics such as CPM, WPM, and accuracy by calling the <code>calcTypingStatus</code> function. </p>
 
 </div>
 </div>
@@ -300,10 +323,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generates a text given a word ammount and a creation seed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function generates a text by randomly selecting words from a dictionary based on the given word amount and creation seed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wordAmmount</td><td></td></tr>
-    <tr><td class="paramname">seed</td><td></td></tr>
+    <tr><td class="paramname">wordAmmount</td><td>desired word amount in the generated text. </td></tr>
+    <tr><td class="paramname">seed</td><td>creation seed used for randomization. </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,6 +349,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resets racing info variable. </p>
+<p>This function resets the racing information variables to their default values. It sets the "readyMe" and "readyYou" flags to false, resets the seed values for both players, sets the start time to zero, and sets the "won" flag to false. </p>
 
 </div>
 </div>
@@ -344,7 +368,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets typing info variable. </p>
+<p>Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status. </p>
 
 </div>
 </div>
@@ -364,6 +388,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates typing status in the beginning of typing. </p>
+<p>This function sets the status of the typing information to indicate that typing has started. </p>
 
 </div>
 </div>
@@ -384,6 +409,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles typing. </p>
+<p>This function handles the input during a typing session. </p>
 
 </div>
 </div>
@@ -403,7 +429,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates Typing variable. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function updates the typing information based on the current typing status. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isRace</td><td>true when the typing is for a race, false otherwise. </td></tr>
   </table>

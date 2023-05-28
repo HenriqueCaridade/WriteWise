@@ -1,0 +1,4 @@
+<map id="loadDictionary" name="loadDictionary">
+<area shape="rect" id="node1" title="Creates a new dictionary from a file." alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node2" href="$data_8c.html#af9c02c3165aac6d0c8af8c77e8a946b7" title="Frees dictionary." alt="" coords="157,5,257,32"/>
+</map>

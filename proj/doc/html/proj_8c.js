@@ -34,7 +34,6 @@ var proj_8c =
     [ "_settingsButtonDarkTheme", "proj_8c.html#aeb6e5170edd25975e6df2021c0be1b4a", null ],
     [ "_settingsButtonLightTheme", "proj_8c.html#a4a788000a8f03ff3953bd019f6312320", null ],
     [ "_trainingButtonReset", "proj_8c.html#a4cd5df256d365f59536bdc5429286014", null ],
-    [ "changeState", "proj_8c.html#a966b6df6da3fefa81cf52f6a6b68bce6", null ],
     [ "changeState", "proj_8c.html#ab8a63e79c3eb75997bee12a52ded04b4", null ],
     [ "checkIfReady", "proj_8c.html#aa14e5c55821f0a4742d5b2992c855fd1", null ],
     [ "drawScreen", "proj_8c.html#a49ec2dfa736580020278194b77d72f33", null ],

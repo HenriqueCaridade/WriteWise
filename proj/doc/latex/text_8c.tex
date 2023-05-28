@@ -3,7 +3,13 @@
 {\ttfamily \#include \"{}text.\+h\"{}}\newline
 {\ttfamily \#include \"{}../lib.\+h\"{}}\newline
 Include dependency graph for text.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{text_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,13 +35,13 @@ const bool \mbox{\hyperlink{text_8c_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}
 
 Gets the index of the character in the alphabet array. 
 
-
+This function takes a character as input and returns its index in the alphabet array. 
 \begin{DoxyParams}{Parameters}
-{\em c} & character \\
+{\em c} & character for which the index is retrieved. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-index 
+index of the character in the alphabet array. 
 \end{DoxyReturn}
 \Hypertarget{text_8c_ad0d48f6dd01a3d197a1ee285afaaf6a4}\label{text_8c_ad0d48f6dd01a3d197a1ee285afaaf6a4} 
 \index{text.c@{text.c}!getFontSize@{getFontSize}}
@@ -47,9 +53,9 @@ index
 
 Font-\/size getter. 
 
-
+This function returns the font size based on the current display mode and the specified font type. 
 \begin{DoxyParams}{Parameters}
-{\em font\+Type} & \\
+{\em font\+Type} & type of the font. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

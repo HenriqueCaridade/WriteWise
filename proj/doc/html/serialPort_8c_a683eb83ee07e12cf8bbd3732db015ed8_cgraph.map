@@ -1,0 +1,7 @@
+<map id="serialPortSendByte" name="serialPortSendByte">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$serialPort_8c.html#ab20bfb08015238b37b134b565bd3dac1" title=" " alt="" coords="187,5,336,32"/>
+<area shape="rect" id="node5" href="$trace_8txt.html#a08c23a080ccba15ab4e20f4fac3a33bf" title=" " alt="" coords="224,56,299,83"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="384,5,474,32"/>
+<area shape="rect" id="node4" href="$trace_8txt.html#a86c9af6392f13bddc9d77c0fbc055e35" title=" " alt="" coords="522,5,589,32"/>
+</map>

@@ -12,9 +12,10 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/lib/drivers"
     dir_ae0e849d495154be21d419b82c842e8e [shape=plaintext, label="drivers"];
   dir_6ee552b249cb2ba80408174fbe5fc7b2 [label="graphics", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_6ee552b249cb2ba80408174fbe5fc7b2.html",tooltip=""];
   dir_9f23c763fccc042bcbd0062e19cc9f66 [label="KBC", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_9f23c763fccc042bcbd0062e19cc9f66.html",tooltip=""];
+  dir_f125b28f76c84241d18f2a8b37ea9a27 [label="rtc", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_f125b28f76c84241d18f2a8b37ea9a27.html",tooltip=""];
   dir_865fffd527b2a66f1b3066a05dabb685 [label="serialPort", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_865fffd527b2a66f1b3066a05dabb685.html",tooltip=""];
   dir_e9f939a1f1819b415e593d42c4844772 [label="timer", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_e9f939a1f1819b415e593d42c4844772.html",tooltip=""];
   }
   }
-  dir_865fffd527b2a66f1b3066a05dabb685->dir_e9f939a1f1819b415e593d42c4844772 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000009.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_865fffd527b2a66f1b3066a05dabb685->dir_e9f939a1f1819b415e593d42c4844772 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000010.html" color="steelblue1" fontcolor="steelblue1"];
 }

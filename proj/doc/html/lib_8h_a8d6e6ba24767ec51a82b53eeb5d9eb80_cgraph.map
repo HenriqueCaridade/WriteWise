@@ -1,0 +1,12 @@
+<map id="drawRealTime" name="drawRealTime">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,108,159"/>
+<area shape="rect" id="node2" href="$lib_8c.html#ac63e705118045e52280f0fca28ab7d25" title="Draws a colored text of characters. Only called when color is in the current mode format." alt="" coords="176,31,257,57"/>
+<area shape="rect" id="node7" href="$lib_8c.html#a640cee868597a386a0135fb31e5cd3b3" title=" " alt="" coords="166,81,267,108"/>
+<area shape="rect" id="node8" href="$lib_8c.html#ae581111c441c4b4f3e8a108822e90511" title="Gets the text width." alt="" coords="167,132,266,159"/>
+<area shape="rect" id="node9" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="156,183,277,209"/>
+<area shape="rect" id="node10" href="$graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957" title=" " alt="" coords="175,233,258,260"/>
+<area shape="rect" id="node3" href="$lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b" title="Draws a character. Only called when color is in the current mode format." alt="" coords="325,31,407,57"/>
+<area shape="rect" id="node4" href="$lib_8c.html#a482296901383ca6738e028621a11fa1c" title="Draws a 5 by 7 character." alt="" coords="466,5,542,32"/>
+<area shape="rect" id="node6" href="$text_8c.html#a3f9c40149fc1dd28faac93188796baef" title="Gets the index of the character in the alphabet array." alt="" coords="455,56,553,83"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="601,5,702,32"/>
+</map>

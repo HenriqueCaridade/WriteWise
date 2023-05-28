@@ -4,9 +4,21 @@
 {\ttfamily \#include \"{}../timer/timer.\+h\"{}}\newline
 {\ttfamily \#include \"{}UART.\+h\"{}}\newline
 Include dependency graph for serial\+Port.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{serialPort_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serialPort_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,61 +60,61 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{serialPort_8h_a4dbaad04d44889711cb19a089a6921e8}{serial\+\_\+port\+\_\+subscribe\+\_\+int}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Subscribes to interrupts from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_afd52bd27bbf8c2323c4f5e2dddc7bc11}{serial\+\_\+port\+\_\+unsubscribe\+\_\+int}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Unsubscribes from interrupts of the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a3828a2b30eef59f8079080044d5bc908}{serial\+\_\+port\+\_\+init}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_aeb45773771775f22abeffc9725b0f484}{serial\+\_\+port\+\_\+ih}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Interrupt handler for the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_ab20bfb08015238b37b134b565bd3dac1}{serial\+\_\+port\+\_\+get\+\_\+status}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}status)
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the status of the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_abf25dff6e2968ea4f9ba559a03ebbeb4}{serial\+Port\+Send\+Byte}} (uint8\+\_\+t byte\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a byte of data through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_ac3a25795e25b6f8fc1bc5fb7b143d40c}{serial\+Port\+Send\+ULong}} (uint64\+\_\+t long\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends an unsigned long value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_adda3660984971c372ef1e1f0a360bd6a}{serial\+Port\+Send\+Long}} (int64\+\_\+t long\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a long value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a77ea10edffbb359ce0853c9b1e94740f}{serial\+Port\+Send\+UInt}} (uint32\+\_\+t int\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends an unsigned integer value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a0aeaca6f89e1201699b3875038174d44}{serial\+Port\+Send\+Int}} (int32\+\_\+t int\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a signed integer value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a0134693fd4a7d6a123305129712792b8}{serial\+Port\+Send\+Float}} (float float\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a floating-\/point value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a9c190994ea13b53a9b6aa49389c912a4}{serial\+Port\+Send\+Double}} (double double\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a double-\/precision floating-\/point value through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_af20ae10009c6de1a2c4e6f763f7f72b9}{serial\+Port\+Read\+Byte}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a byte from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a52ada979206bc06251dda2490315a1c0}{serial\+Port\+Read\+ULong}} (uint64\+\_\+t \texorpdfstring{$\ast$}{*}long\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads an unsigned long (uint64\+\_\+t) value from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a0f7d69b738ed89b95181c49c98831c38}{serial\+Port\+Read\+Long}} (int64\+\_\+t \texorpdfstring{$\ast$}{*}long\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a long (int64\+\_\+t) value from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a2b8fb32ff4b2c7b68e6a9c2491976153}{serial\+Port\+Read\+UInt}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}int\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads an unsigned integer (uint32\+\_\+t) value from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_af35cdc050e3f74b0bebda76996742714}{serial\+Port\+Read\+Int}} (int32\+\_\+t \texorpdfstring{$\ast$}{*}int\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a signed integer (int32\+\_\+t) value from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_ad612d0d0a938ba98a9d6fc9fe1d2ad19}{serial\+Port\+Read\+Float}} (float \texorpdfstring{$\ast$}{*}float\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a floating-\/point value (float) from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_aa34c79dc8f929aed059070fb3a44a117}{serial\+Port\+Read\+Double}} (double \texorpdfstring{$\ast$}{*}double\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a double precision value (double) from the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a35ac75b09a38e8b2784ca723644b0200}{serial\+Port\+Send\+Ack}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends an acknowledgment (ACK) signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a734235b3664aed710838355e8866a9fc}{serial\+Port\+Send\+Ready}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}ready\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_ab7bc0d7bea9c6dbc7a7262e88e4ce600}{serial\+Port\+Send\+NReady}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}not ready\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a152dcde4b0c1c2bb87fc9a3be3ea9d50}{serial\+Port\+Send\+Ready\+Ack}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}ready acknowledgment\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_ab276142b3c1078569432d047f28846a2}{serial\+Port\+Send\+NReady\+Ack}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}not ready acknowledgment\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20}{serial\+Port\+Send\+Won}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}win\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0}{serial\+Port\+Send\+Exit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends an \"{}exit\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a9589a68172d56e3652a6746e5d454e87}{serial\+Port\+Send\+Nack}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a \"{}negative acknowledgment\"{} signal over the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{serialPort_8h_a3fe05b675294d1c1aec1e95afdd054d4}{serial\+Port\+Clear\+FIFO}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clears the FIFO (First-\/\+In-\/\+First-\/\+Out) of the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -230,168 +242,424 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \doxysubsubsection{\texorpdfstring{serial\_port\_get\_status()}{serial\_port\_get\_status()}}
 {\footnotesize\ttfamily int serial\+\_\+port\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
 
+
+
+Retrieves the status of the serial port. 
+
+This function retrieves the status of the serial port by reading the Line Status Register (LSR) and storing the result in the specified status variable. It uses util\+\_\+sys\+\_\+inb to perform the register read operation. 
+\begin{DoxyParams}{Parameters}
+{\em status} & Pointer to a variable where the serial port status will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the status is successfully retrieved, or 1 if there is an error during the register read operation. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_aeb45773771775f22abeffc9725b0f484}\label{serialPort_8h_aeb45773771775f22abeffc9725b0f484} 
 \index{serialPort.h@{serialPort.h}!serial\_port\_ih@{serial\_port\_ih}}
 \index{serial\_port\_ih@{serial\_port\_ih}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serial\_port\_ih()}{serial\_port\_ih()}}
 {\footnotesize\ttfamily int serial\+\_\+port\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Interrupt handler for the serial port. 
+
+This function is the interrupt handler for the serial port. It reads the Interrupt Identification Register (IIR) to determine the type of interrupt and performs the necessary actions accordingly.
+
+\begin{DoxyReturn}{Returns}
+0 if a byte was successfully read, 1 if an error occurred during the read operation, or if no interrupt is pending or no data is available. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a3828a2b30eef59f8079080044d5bc908}\label{serialPort_8h_a3828a2b30eef59f8079080044d5bc908} 
 \index{serialPort.h@{serialPort.h}!serial\_port\_init@{serial\_port\_init}}
 \index{serial\_port\_init@{serial\_port\_init}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serial\_port\_init()}{serial\_port\_init()}}
 {\footnotesize\ttfamily int serial\+\_\+port\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Initializes the serial port. 
+
+This function initializes the serial port by clearing the Interrupt Enable Register (IER) and enabling received data interrupts.
+
+\begin{DoxyReturn}{Returns}
+0 if the initialization is successful, 1 if there is an error during the register read/write operations. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a4dbaad04d44889711cb19a089a6921e8}\label{serialPort_8h_a4dbaad04d44889711cb19a089a6921e8} 
 \index{serialPort.h@{serialPort.h}!serial\_port\_subscribe\_int@{serial\_port\_subscribe\_int}}
 \index{serial\_port\_subscribe\_int@{serial\_port\_subscribe\_int}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serial\_port\_subscribe\_int()}{serial\_port\_subscribe\_int()}}
 {\footnotesize\ttfamily int serial\+\_\+port\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Subscribes to interrupts from the serial port. 
+
+This function subscribes interrupts from the serial port specified by COM1\+\_\+\+IRQ. It sets the IRQ\+\_\+\+REENABLE and IRQ\+\_\+\+EXCLUSIVE flags in the sys\+\_\+irqsetpolicy function to enable and exclusively allocate the interrupt line for this driver.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_afd52bd27bbf8c2323c4f5e2dddc7bc11}\label{serialPort_8h_afd52bd27bbf8c2323c4f5e2dddc7bc11} 
 \index{serialPort.h@{serialPort.h}!serial\_port\_unsubscribe\_int@{serial\_port\_unsubscribe\_int}}
 \index{serial\_port\_unsubscribe\_int@{serial\_port\_unsubscribe\_int}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serial\_port\_unsubscribe\_int()}{serial\_port\_unsubscribe\_int()}}
 {\footnotesize\ttfamily int serial\+\_\+port\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Unsubscribes from interrupts of the serial port. 
+
+This function unsubscribes from interrupts of the serial port that was previously subscribed using {\ttfamily serial\+\_\+port\+\_\+subscribe\+\_\+int}. It releases the interrupt line allocated for this driver.
+
+\begin{DoxyReturn}{Returns}
+0 upon success, or a non-\/zero value if the unsubscription fails. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a3fe05b675294d1c1aec1e95afdd054d4}\label{serialPort_8h_a3fe05b675294d1c1aec1e95afdd054d4} 
 \index{serialPort.h@{serialPort.h}!serialPortClearFIFO@{serialPortClearFIFO}}
 \index{serialPortClearFIFO@{serialPortClearFIFO}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortClearFIFO()}{serialPortClearFIFO()}}
 {\footnotesize\ttfamily int serial\+Port\+Clear\+FIFO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Clears the FIFO (First-\/\+In-\/\+First-\/\+Out) of the serial port. 
+
+This function clears the FIFO of the serial port by writing the clear command to the FIFO Control Register (FCR). It uses sys\+\_\+outb to perform the write operation. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_af20ae10009c6de1a2c4e6f763f7f72b9}\label{serialPort_8h_af20ae10009c6de1a2c4e6f763f7f72b9} 
 \index{serialPort.h@{serialPort.h}!serialPortReadByte@{serialPortReadByte}}
 \index{serialPortReadByte@{serialPortReadByte}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadByte()}{serialPortReadByte()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Reads a byte from the serial port. 
+
+This function reads a byte from the serial port. It first checks the status of the serial port using the serial\+\_\+port\+\_\+get\+\_\+status function. If there is an error condition it returns 1. It also checks if the received data is ready to be read from the Receiver Buffer Register (RBR). If the data is ready, it reads the byte from the RBR and stores it in the serial\+Port\+Byte variable.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_aa34c79dc8f929aed059070fb3a44a117}\label{serialPort_8h_aa34c79dc8f929aed059070fb3a44a117} 
 \index{serialPort.h@{serialPort.h}!serialPortReadDouble@{serialPortReadDouble}}
 \index{serialPortReadDouble@{serialPortReadDouble}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadDouble()}{serialPortReadDouble()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+Double (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{double\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads a double precision value (double) from the serial port. 
+
+This function reads a double precision value (double) from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as a double value and stores it in the {\ttfamily double\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_ad612d0d0a938ba98a9d6fc9fe1d2ad19}\label{serialPort_8h_ad612d0d0a938ba98a9d6fc9fe1d2ad19} 
 \index{serialPort.h@{serialPort.h}!serialPortReadFloat@{serialPortReadFloat}}
 \index{serialPortReadFloat@{serialPortReadFloat}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadFloat()}{serialPortReadFloat()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+Float (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{float\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads a floating-\/point value (float) from the serial port. 
+
+This function reads a floating-\/point value (float) from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as a float value and stores it in the {\ttfamily float\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_af35cdc050e3f74b0bebda76996742714}\label{serialPort_8h_af35cdc050e3f74b0bebda76996742714} 
 \index{serialPort.h@{serialPort.h}!serialPortReadInt@{serialPortReadInt}}
 \index{serialPortReadInt@{serialPortReadInt}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadInt()}{serialPortReadInt()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+Int (\begin{DoxyParamCaption}\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{int\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads a signed integer (int32\+\_\+t) value from the serial port. 
+
+This function reads a signed integer (int32\+\_\+t) value from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as an int32\+\_\+t value and stores it in the {\ttfamily int\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a0f7d69b738ed89b95181c49c98831c38}\label{serialPort_8h_a0f7d69b738ed89b95181c49c98831c38} 
 \index{serialPort.h@{serialPort.h}!serialPortReadLong@{serialPortReadLong}}
 \index{serialPortReadLong@{serialPortReadLong}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadLong()}{serialPortReadLong()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+Long (\begin{DoxyParamCaption}\item[{int64\+\_\+t \texorpdfstring{$\ast$}{*}}]{long\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads a long (int64\+\_\+t) value from the serial port. 
+
+This function reads a long (int64\+\_\+t) value from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as an int64\+\_\+t value and stores it in the {\ttfamily long\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a2b8fb32ff4b2c7b68e6a9c2491976153}\label{serialPort_8h_a2b8fb32ff4b2c7b68e6a9c2491976153} 
 \index{serialPort.h@{serialPort.h}!serialPortReadUInt@{serialPortReadUInt}}
 \index{serialPortReadUInt@{serialPortReadUInt}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadUInt()}{serialPortReadUInt()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+UInt (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{int\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads an unsigned integer (uint32\+\_\+t) value from the serial port. 
+
+This function reads an unsigned integer (uint32\+\_\+t) value from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as a uint32\+\_\+t value and stores it in the {\ttfamily int\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a52ada979206bc06251dda2490315a1c0}\label{serialPort_8h_a52ada979206bc06251dda2490315a1c0} 
 \index{serialPort.h@{serialPort.h}!serialPortReadULong@{serialPortReadULong}}
 \index{serialPortReadULong@{serialPortReadULong}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortReadULong()}{serialPortReadULong()}}
 {\footnotesize\ttfamily int serial\+Port\+Read\+ULong (\begin{DoxyParamCaption}\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{long\+Value }\end{DoxyParamCaption})}
 
+
+
+Reads an unsigned long (uint64\+\_\+t) value from the serial port. 
+
+This function reads an unsigned long (uint64\+\_\+t) value from the serial port. It stores the received bytes in the {\ttfamily bits\+Serial\+Port} array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as a uint64\+\_\+t value and stores it in the {\ttfamily long\+Value} variable. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a35ac75b09a38e8b2784ca723644b0200}\label{serialPort_8h_a35ac75b09a38e8b2784ca723644b0200} 
 \index{serialPort.h@{serialPort.h}!serialPortSendAck@{serialPortSendAck}}
 \index{serialPortSendAck@{serialPortSendAck}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendAck()}{serialPortSendAck()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Ack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends an acknowledgment (ACK) signal over the serial port. 
+
+This function sends an acknowledgment (ACK) signal over the serial port. It first clears the FIFO buffer using the {\ttfamily serial\+Port\+Clear\+FIFO} function, and then sends the ACK byte using {\ttfamily serial\+Port\+Send\+Byte}. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_abf25dff6e2968ea4f9ba559a03ebbeb4}\label{serialPort_8h_abf25dff6e2968ea4f9ba559a03ebbeb4} 
 \index{serialPort.h@{serialPort.h}!serialPortSendByte@{serialPortSendByte}}
 \index{serialPortSendByte@{serialPortSendByte}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendByte()}{serialPortSendByte()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends a byte of data through the serial port. 
+
+This function sends a byte of data through the serial port by writing it to the Transmitter Holding Register (THR). It first checks the status of the serial port to ensure that the THR is empty before writing the data. If the THR is not empty, the function waits for a certain amount of time and retries the operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte} & The byte of data to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a9c190994ea13b53a9b6aa49389c912a4}\label{serialPort_8h_a9c190994ea13b53a9b6aa49389c912a4} 
 \index{serialPort.h@{serialPort.h}!serialPortSendDouble@{serialPortSendDouble}}
 \index{serialPortSendDouble@{serialPortSendDouble}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendDouble()}{serialPortSendDouble()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Double (\begin{DoxyParamCaption}\item[{double}]{double\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends a double-\/precision floating-\/point value through the serial port. 
+
+This function sends a double-\/precision floating-\/point value through the serial port. It first sends an indicator byte (INFO\+\_\+\+DOUBLE) to indicate the type of data being sent. Then, it sends each byte of the double-\/precision value sequentially.
+
+
+\begin{DoxyParams}{Parameters}
+{\em double\+Value} & The double-\/precision floating-\/point value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0}\label{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0} 
 \index{serialPort.h@{serialPort.h}!serialPortSendExit@{serialPortSendExit}}
 \index{serialPortSendExit@{serialPortSendExit}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendExit()}{serialPortSendExit()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends an \"{}exit\"{} signal over the serial port. 
+
+This function sends an \"{}exit\"{} signal over the serial port by using the {\ttfamily serial\+Port\+Send\+Byte} function to send the corresponding byte. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a0134693fd4a7d6a123305129712792b8}\label{serialPort_8h_a0134693fd4a7d6a123305129712792b8} 
 \index{serialPort.h@{serialPort.h}!serialPortSendFloat@{serialPortSendFloat}}
 \index{serialPortSendFloat@{serialPortSendFloat}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendFloat()}{serialPortSendFloat()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Float (\begin{DoxyParamCaption}\item[{float}]{float\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends a floating-\/point value through the serial port. 
+
+This function sends a floating-\/point value through the serial port. It first sends an indicator byte (INFO\+\_\+\+FLOAT) to indicate the type of data being sent. Then, it sends each byte of the floating-\/point value sequentially. The function uses the serial\+Port\+Send\+Byte function to send each byte. 
+\begin{DoxyParams}{Parameters}
+{\em float\+Value} & The floating-\/point value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a0aeaca6f89e1201699b3875038174d44}\label{serialPort_8h_a0aeaca6f89e1201699b3875038174d44} 
 \index{serialPort.h@{serialPort.h}!serialPortSendInt@{serialPortSendInt}}
 \index{serialPortSendInt@{serialPortSendInt}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendInt()}{serialPortSendInt()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Int (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{int\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends a signed integer value through the serial port. 
+
+This function sends a signed integer value through the serial port. It first sends an indicator byte (INFO\+\_\+\+INT) to indicate the type of data being sent. Then, it sends each byte of the signed integer value sequentially. The function uses the serial\+Port\+Send\+Byte function to send each byte.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int\+Value} & The signed integer value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_adda3660984971c372ef1e1f0a360bd6a}\label{serialPort_8h_adda3660984971c372ef1e1f0a360bd6a} 
 \index{serialPort.h@{serialPort.h}!serialPortSendLong@{serialPortSendLong}}
 \index{serialPortSendLong@{serialPortSendLong}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendLong()}{serialPortSendLong()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Long (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{long\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends a long value through the serial port. 
+
+This function sends a long value through the serial port. It first sends an indicator byte (INFO\+\_\+\+LONG) to indicate the type of data being sent. Then, it sends each byte of the long value sequentially. The function uses the serial\+Port\+Send\+Byte function to send each byte.
+
+
+\begin{DoxyParams}{Parameters}
+{\em long\+Value} & The long value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a9589a68172d56e3652a6746e5d454e87}\label{serialPort_8h_a9589a68172d56e3652a6746e5d454e87} 
 \index{serialPort.h@{serialPort.h}!serialPortSendNack@{serialPortSendNack}}
 \index{serialPortSendNack@{serialPortSendNack}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendNack()}{serialPortSendNack()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Nack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}negative acknowledgment\"{} signal over the serial port. 
+
+This function sends a \"{}negative acknowledgment\"{} signal over the serial port by using the {\ttfamily serial\+Port\+Send\+Byte} function to send the corresponding byte. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_ab7bc0d7bea9c6dbc7a7262e88e4ce600}\label{serialPort_8h_ab7bc0d7bea9c6dbc7a7262e88e4ce600} 
 \index{serialPort.h@{serialPort.h}!serialPortSendNReady@{serialPortSendNReady}}
 \index{serialPortSendNReady@{serialPortSendNReady}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendNReady()}{serialPortSendNReady()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+NReady (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}not ready\"{} signal over the serial port. 
+
+This function sends a \"{}not ready\"{} signal over the serial port. It sets the {\ttfamily waiting\+Ack\+Serial\+Port} flag to true and sends the \"{}not ready\"{} byte using {\ttfamily serial\+Port\+Send\+Byte}. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_ab276142b3c1078569432d047f28846a2}\label{serialPort_8h_ab276142b3c1078569432d047f28846a2} 
 \index{serialPort.h@{serialPort.h}!serialPortSendNReadyAck@{serialPortSendNReadyAck}}
 \index{serialPortSendNReadyAck@{serialPortSendNReadyAck}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendNReadyAck()}{serialPortSendNReadyAck()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+NReady\+Ack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}not ready acknowledgment\"{} signal over the serial port. 
+
+This function sends a \"{}not ready acknowledgment\"{} signal over the serial port. It clears the FIFO using the {\ttfamily serial\+Port\+Clear\+FIFO} function and sends the \"{}not ready acknowledgment\"{} byte using {\ttfamily serial\+Port\+Send\+Byte}. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a734235b3664aed710838355e8866a9fc}\label{serialPort_8h_a734235b3664aed710838355e8866a9fc} 
 \index{serialPort.h@{serialPort.h}!serialPortSendReady@{serialPortSendReady}}
 \index{serialPortSendReady@{serialPortSendReady}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendReady()}{serialPortSendReady()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}ready\"{} signal over the serial port. 
+
+This function sends a \"{}ready\"{} signal over the serial port. It sets the {\ttfamily waiting\+Ack\+Serial\+Port} flag to true and sends the \"{}ready\"{} byte using {\ttfamily serial\+Port\+Send\+Byte}. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a152dcde4b0c1c2bb87fc9a3be3ea9d50}\label{serialPort_8h_a152dcde4b0c1c2bb87fc9a3be3ea9d50} 
 \index{serialPort.h@{serialPort.h}!serialPortSendReadyAck@{serialPortSendReadyAck}}
 \index{serialPortSendReadyAck@{serialPortSendReadyAck}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendReadyAck()}{serialPortSendReadyAck()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Ready\+Ack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}ready acknowledgment\"{} signal over the serial port. 
+
+This function sends a \"{}ready acknowledgment\"{} signal over the serial port. It clears the FIFO using the {\ttfamily serial\+Port\+Clear\+FIFO} function and sends the \"{}ready acknowledgment\"{} byte using {\ttfamily serial\+Port\+Send\+Byte}. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_a77ea10edffbb359ce0853c9b1e94740f}\label{serialPort_8h_a77ea10edffbb359ce0853c9b1e94740f} 
 \index{serialPort.h@{serialPort.h}!serialPortSendUInt@{serialPortSendUInt}}
 \index{serialPortSendUInt@{serialPortSendUInt}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendUInt()}{serialPortSendUInt()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+UInt (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{int\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends an unsigned integer value through the serial port. 
+
+This function sends an unsigned integer value through the serial port. It first sends an indicator byte (INFO\+\_\+\+UINT) to indicate the type of data being sent. Then, it sends each byte of the unsigned integer value sequentially. The function uses the serial\+Port\+Send\+Byte function to send each byte. 
+\begin{DoxyParams}{Parameters}
+{\em int\+Value} & The unsigned integer value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_ac3a25795e25b6f8fc1bc5fb7b143d40c}\label{serialPort_8h_ac3a25795e25b6f8fc1bc5fb7b143d40c} 
 \index{serialPort.h@{serialPort.h}!serialPortSendULong@{serialPortSendULong}}
 \index{serialPortSendULong@{serialPortSendULong}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendULong()}{serialPortSendULong()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+ULong (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{long\+Value }\end{DoxyParamCaption})}
 
+
+
+Sends an unsigned long value through the serial port. 
+
+This function sends an unsigned long value through the serial port. It first sends an indicator byte (INFO\+\_\+\+ULONG) to indicate the type of data being sent. Then, it sends each byte of the long value sequentially.
+
+
+\begin{DoxyParams}{Parameters}
+{\em long\+Value} & The unsigned long value to be sent through the serial port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 \Hypertarget{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20}\label{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20} 
 \index{serialPort.h@{serialPort.h}!serialPortSendWon@{serialPortSendWon}}
 \index{serialPortSendWon@{serialPortSendWon}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendWon()}{serialPortSendWon()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Won (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Sends a \"{}win\"{} signal over the serial port. 
+
+This function sends a \"{}win\"{} signal over the serial port by using the {\ttfamily serial\+Port\+Send\+Byte} function to send the corresponding byte. \begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

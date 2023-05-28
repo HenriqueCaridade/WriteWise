@@ -2,7 +2,13 @@
 \hypertarget{lib_8c}{}\label{lib_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/lib.c@{C:/Users/igorc/lcom/g2/proj/src/lib/lib.c}}
 {\ttfamily \#include \"{}lib.\+h\"{}}\newline
 Include dependency graph for lib.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,7 +53,7 @@ int \mbox{\hyperlink{lib_8c_a482296901383ca6738e028621a11fa1c}{\+\_\+draw5x7}} (
 int \mbox{\hyperlink{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}{\+\_\+draw\+Char}} (uint16\+\_\+t x, uint16\+\_\+t y, const char c, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a character. Only called when color is in the current mode format. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lib_8c_a9d6d4da3a54857268afee85a6761f027}{draw\+Char\+Color}} (float px, float py, const char c, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
-\begin{DoxyCompactList}\small\item\em Draws a colored character. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Draws a colored character at the specified coordinates. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}{draw\+Char\+RGB}} (float px, float py, const char c, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lib_8c_ac63e705118045e52280f0fca28ab7d25}{\+\_\+draw\+Text}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
@@ -61,7 +67,11 @@ int \mbox{\hyperlink{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}{draw\+Text\+XYCol
 int \mbox{\hyperlink{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}{draw\+Text\+XYRGB}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{lib_8c_ae581111c441c4b4f3e8a108822e90511}{get\+Text\+Width}} (const char \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
-\begin{DoxyCompactList}\small\item\em Gets the text width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the text width. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lib_8c_a640cee868597a386a0135fb31e5cd3b3}{\+\_\+get\+Real\+Time}} ()
+\item 
+int \mbox{\hyperlink{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}{draw\+Real\+Time}} (uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -75,15 +85,15 @@ uint16\+\_\+t \mbox{\hyperlink{lib_8c_ae581111c441c4b4f3e8a108822e90511}{get\+Te
 
 Draws a 5 by 7 character. 
 
-
+This function draws a 5 by 7 character at the specified coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em x} & in pixels counting from top left corner. \\
 \hline
 {\em y} & in pixels counting from top left corner. \\
 \hline
-{\em c} & \\
+{\em c} & boolean array representing the 5 by 7 character. \\
 \hline
-{\em color} & \\
+{\em color} & the color of the character. \\
 \hline
 {\em size} & font size \\
 \hline
@@ -101,13 +111,13 @@ Non-\/zero if error occured.
 
 Draws a character. Only called when color is in the current mode format. 
 
-
+This function draws a single character at the specified coordinates using the current color format. 
 \begin{DoxyParams}{Parameters}
 {\em x} & in pixels counting from top left corner. \\
 \hline
 {\em y} & in pixels counting from top left corner. \\
 \hline
-{\em c} & \\
+{\em c} & the character to be drawn. \\
 \hline
 {\em color} & mode formatted \\
 \hline
@@ -127,15 +137,15 @@ Non-\/zero if error occured.
 
 Draws a rectangle receiving x and y in pixels. 
 
-
+This function draws a rectangle at the given {\ttfamily x} and {\ttfamily y} coordinates in pixels. 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em x} & in pixels counting from top left corner. \\
 \hline
-{\em y} & \\
+{\em y} & in pixels counting from top left corner. \\
 \hline
-{\em width} & \\
+{\em width} & width of the rectangle, in pixels. \\
 \hline
-{\em height} & \\
+{\em height} & height of the rectangle, in pixels. \\
 \hline
 {\em color} & Format RGB (8 8 8) \\
 \hline
@@ -154,24 +164,30 @@ Non-\/zero if error occured. ~\newline
 
 Draws a colored text of characters. Only called when color is in the current mode format. 
 
-
+This function draws a text string with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em x} & in pixels counting from top left corner. \\
 \hline
 {\em y} & in pixels counting from top left corner. \\
 \hline
-{\em max\+Width} & \\
+{\em max\+Width} & maximum width of the text. \\
 \hline
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
-{\em color} & mode formatted \\
+{\em color} & mode formatted. \\
 \hline
-{\em size} & font size \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
+\Hypertarget{lib_8c_a640cee868597a386a0135fb31e5cd3b3}\label{lib_8c_a640cee868597a386a0135fb31e5cd3b3} 
+\index{lib.c@{lib.c}!\_getRealTime@{\_getRealTime}}
+\index{\_getRealTime@{\_getRealTime}!lib.c@{lib.c}}
+\doxysubsubsection{\texorpdfstring{\_getRealTime()}{\_getRealTime()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} \+\_\+get\+Real\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \Hypertarget{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f}\label{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f} 
 \index{lib.c@{lib.c}!clearScreen@{clearScreen}}
 \index{clearScreen@{clearScreen}!lib.c@{lib.c}}
@@ -182,7 +198,7 @@ Non-\/zero if error occured.
 
 Clears the screen by clearing frame-\/buffer. 
 
-\Hypertarget{lib_8c_a9d6d4da3a54857268afee85a6761f027}\label{lib_8c_a9d6d4da3a54857268afee85a6761f027} 
+This function clears the screen by setting all the pixels in the frame buffer to either 0x00 (dark theme) or 0x\+FF (light theme), depending on the current theme. \Hypertarget{lib_8c_a9d6d4da3a54857268afee85a6761f027}\label{lib_8c_a9d6d4da3a54857268afee85a6761f027} 
 \index{lib.c@{lib.c}!drawCharColor@{drawCharColor}}
 \index{drawCharColor@{drawCharColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawCharColor()}{drawCharColor()}}
@@ -190,19 +206,19 @@ Clears the screen by clearing frame-\/buffer.
 
 
 
-Draws a colored character. 
+Draws a colored character at the specified coordinates. 
 
-
+This function draws a single character with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em px} & percentage of x counting from top left corner. \\
 \hline
 {\em py} & percentage of y counting from top left corner. \\
 \hline
-{\em c} & \\
+{\em c} & represents the character to be drawn. \\
 \hline
-{\em color} & format RGB (8 8 8) \\
+{\em color} & format RGB (8 8 8). \\
 \hline
-{\em size} & font size \\
+{\em size} & font size. This function checks the current display mode and uses the appropriate color format for drawing the character. If the current mode is in Indexed Mode, it directly uses the color parameter. Otherwise, it converts the RGB color components extracted from the color parameter using bitwise operations and passes it to the underlying drawing function \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -218,21 +234,21 @@ Non-\/zero if error occured.
 
 Draws a colored character. 
 
-
+This function draws a single character with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em px} & percentage of x counting from top left corner. \\
 \hline
 {\em py} & percentage of y counting from top left corner. \\
 \hline
-{\em c} & \\
+{\em c} & character to be drawn. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the color. \\
 \hline
-{\em size} & font size \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -248,13 +264,13 @@ Non-\/zero if error occured.
 
 Draws a horizontal colored line. 
 
-
+This function draws a horizontal line starting from the position specified by {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em len} & \\
+{\em len} & The length of the line. \\
 \hline
 {\em color} & Format RGB (8 8 8) \\
 \hline
@@ -273,19 +289,19 @@ Non-\/zero if error occured. ~\newline
 
 Draws a horizontal colored line. 
 
-
+This function draws a horizontal line starting from the position specified by {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em len} & \\
+{\em len} & The length of the line. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the line color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the line color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the line color. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -302,11 +318,11 @@ Non-\/zero if error occured. ~\newline
 
 Draws a colored pixel. 
 
-
+This function draws a pixel at the specified coordinates {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the pixel, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the pixel, in percentage. \\
 \hline
 {\em color} & Format RGB (8 8 8) \\
 \hline
@@ -324,22 +340,28 @@ Non-\/zero if error occured.
 
 Draws a colored pixel. 
 
-
+This function draws a pixel at the specified coordinates {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the pixel, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the pixel, in percentage. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the pixel color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the pixel color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the pixel color. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
+\Hypertarget{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}\label{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80} 
+\index{lib.c@{lib.c}!drawRealTime@{drawRealTime}}
+\index{drawRealTime@{drawRealTime}!lib.c@{lib.c}}
+\doxysubsubsection{\texorpdfstring{drawRealTime()}{drawRealTime()}}
+{\footnotesize\ttfamily int draw\+Real\+Time (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
 \Hypertarget{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}\label{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad} 
 \index{lib.c@{lib.c}!drawRectColor@{drawRectColor}}
 \index{drawRectColor@{drawRectColor}!lib.c@{lib.c}}
@@ -350,15 +372,15 @@ Non-\/zero if error occured.
 
 Draws a rectangle receiving x and y in percentage. 
 
-
+This function draws a rectangle at the specified position and dimensions. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the top-\/left corner of the rectangle, in pixels counting from the top left corner. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the top-\/left corner of the rectangle, in pixels counting from the top left corner. \\
 \hline
-{\em width} & \\
+{\em width} & width of the rectangle, in pixels. \\
 \hline
-{\em height} & \\
+{\em height} & height of the rectangle, in pixels. \\
 \hline
 {\em color} & Format RGB (8 8 8) \\
 \hline
@@ -377,21 +399,21 @@ Non-\/zero if error occured. ~\newline
 
 Draws a rect. 
 
-
+This function draws a rectangle at the specified position and dimensions. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the top-\/left corner of the rectangle, in pixels counting from the top left corner. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the top-\/left corner of the rectangle, in pixels counting from the top left corner. \\
 \hline
-{\em width} & \\
+{\em width} & width of the rectangle, in pixels. \\
 \hline
-{\em height} & \\
+{\em height} & height of the rectangle, in pixels. \\
 \hline
-{\em red} & \\
+{\em red} & red component of the rectangle\textquotesingle{}s color. \\
 \hline
-{\em green} & \\
+{\em green} & green component of the rectangle\textquotesingle{}s color. \\
 \hline
-{\em blue} & \\
+{\em blue} & blue component of the rectangle\textquotesingle{}s color. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -407,19 +429,19 @@ Non-\/zero if error occured.
 
 Draws a colored text of characters. 
 
-
+This function draws a text string with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
-{\em cx} & x coordinate of the placed center \\
+{\em cx} & x coordinate of the placed center. \\
 \hline
-{\em cy} & y coordinate of the placed center \\
+{\em cy} & y coordinate of the placed center. \\
 \hline
-{\em max\+Width} & \\
+{\em max\+Width} & maximum width of the text. \\
 \hline
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
-{\em color} & \\
+{\em color} & mode formatted. \\
 \hline
-{\em size} & \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -435,23 +457,23 @@ Non-\/zero if error occured.
 
 Draws a colored text of characters. 
 
-
+This function draws a text string with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em cx} & x coordinate of the placed center \\
 \hline
 {\em cy} & y coordinate of the placed center \\
 \hline
-{\em max\+Width} & \\
+{\em max\+Width} & maximum width of the text. \\
 \hline
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the color. \\
 \hline
-{\em size} & \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -468,19 +490,19 @@ Non-\/zero if error occured. ~\newline
 
 Draws a colored text of characters. 
 
-
+This function draws a text string with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em x} & in pixels counting from top left corner. \\
 \hline
 {\em y} & in pixels counting from top left corner. \\
 \hline
-{\em max\+Width} & \\
+{\em max\+Width} & maximum width of the text. \\
 \hline
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
 {\em color} & format RGB (8 8 8) \\
 \hline
-{\em size} & \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -496,23 +518,23 @@ Non-\/zero if error occured.
 
 Draws a colored text of characters. 
 
-
+This function draws a text string with the specified color and font size at the given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em x} & in pixels counting from top left corner. \\
 \hline
 {\em y} & in pixels counting from top left corner. \\
 \hline
-{\em max\+Width} & \\
+{\em max\+Width} & maximum width of the text. \\
 \hline
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the color. \\
 \hline
-{\em size} & \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -528,15 +550,15 @@ Non-\/zero if error occured.
 
 Draws a vertical colored line. 
 
-
+This function draws a vertical line starting from the position specified by {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em len} & \\
+{\em len} & The length of the line. \\
 \hline
-{\em color} & Format RGB (8 8 8) \\
+{\em color} & Format RGB (8 8 8). \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -553,19 +575,19 @@ Non-\/zero if error occured. ~\newline
 
 Draws a vertical colored line. 
 
-
+This function draws a vertical line starting from the position specified by {\ttfamily px} and {\ttfamily py} in percentage values. 
 \begin{DoxyParams}{Parameters}
-{\em px} & \\
+{\em px} & x coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em py} & \\
+{\em py} & y coordinate of the starting point of the line, in percentage. \\
 \hline
-{\em len} & \\
+{\em len} & The length of the line. \\
 \hline
-{\em uint8\+\_\+t} & red \\
+{\em red} & red component of the line color. \\
 \hline
-{\em uint8\+\_\+t} & green \\
+{\em green} & green component of the line color. \\
 \hline
-{\em uint8\+\_\+t} & blue \\
+{\em blue} & blue component of the line color. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -582,7 +604,7 @@ Non-\/zero if error occured. ~\newline
 
 Unsubscribes all devices\textquotesingle{} interrupts. 
 
-\begin{DoxyReturn}{Returns}
+This function unsubscribes the interrupts of all devices used in the application, including the serial port, mouse, keyboard, and timer. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{lib_8c_a50b2244488c03440d32eb6911ec25718}\label{lib_8c_a50b2244488c03440d32eb6911ec25718} 
@@ -595,9 +617,9 @@ Non-\/zero if error occured.
 
 Exits graphics mode. 
 
-
+This function attempts to exit the graphics mode by calling the {\ttfamily exit\+\_\+graphic\+\_\+mode} function multiple times with a delay between each attempt. 
 \begin{DoxyParams}{Parameters}
-{\em code} & \\
+{\em code} & exit code to return. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -613,11 +635,11 @@ Non-\/zero if error occured.
 
 Gets the text width. 
 
-
+This function calculates the width of the text string by multiplying the length of the string with the total width of each character, including the pixel spacing. 
 \begin{DoxyParams}{Parameters}
-{\em str} & \\
+{\em str} & text string to be drawn. \\
 \hline
-{\em size} & \\
+{\em size} & font size. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -633,9 +655,9 @@ uint16\+\_\+t width
 
 Gets x coordinate in pixels from a percentage. 
 
-
+This function calculates the x coordinate in pixels based on the given percentage value (px) and the current display mode. 
 \begin{DoxyParams}{Parameters}
-{\em px} & x percentage \\
+{\em px} & x coordinate in percentage. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -651,13 +673,13 @@ x in pixels
 
 Gets y coordinate in pixels from a percentage. 
 
-
+This function calculates the y coordinate in pixels based on the given percentage value (py) and the current display mode. 
 \begin{DoxyParams}{Parameters}
-{\em px} & x percentage \\
+{\em py} & y coordinate in percentage. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-x in pixels 
+y in pixels 
 \end{DoxyReturn}
 \Hypertarget{lib_8c_ad84f587f3f9bfb1453e47024478e53c1}\label{lib_8c_ad84f587f3f9bfb1453e47024478e53c1} 
 \index{lib.c@{lib.c}!initAllDrivers@{initAllDrivers}}
@@ -669,7 +691,7 @@ x in pixels
 
 Initiates all device drivers. 
 
-\begin{DoxyReturn}{Returns}
+This function initializes the drivers for all devices used in the application. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{lib_8c_a84f7237bb532d71424716feccd37304e}\label{lib_8c_a84f7237bb532d71424716feccd37304e} 
@@ -682,9 +704,9 @@ Non-\/zero if error occured.
 
 Set the desired framerate. 
 
-
+This function sets the desired frame rate based on the provided {\ttfamily fps} parameter. 
 \begin{DoxyParams}{Parameters}
-{\em fps} & \\
+{\em fps} & desired frame rate to set. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -700,9 +722,9 @@ Non-\/zero if error occured.
 
 Set the desired minix mode. 
 
-
+This function sets the desired Minix mode based on the provided {\ttfamily mode} parameter. 
 \begin{DoxyParams}{Parameters}
-{\em mode} & \\
+{\em mode} & desired Minix mode to set. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -718,9 +740,9 @@ Non-\/zero if error occured.
 
 Sets application theme. 
 
-
+This function sets the theme of the application to the specified new\+Theme value. 
 \begin{DoxyParams}{Parameters}
-{\em new\+Theme} & \\
+{\em new\+Theme} & new theme value to set. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

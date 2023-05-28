@@ -2,7 +2,13 @@
 \hypertarget{ui_8c}{}\label{ui_8c}\index{C:/Users/igorc/lcom/g2/proj/src/ui/ui.c@{C:/Users/igorc/lcom/g2/proj/src/ui/ui.c}}
 {\ttfamily \#include \"{}ui.\+h\"{}}\newline
 Include dependency graph for ui.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,9 +80,9 @@ const bool \mbox{\hyperlink{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}{cursor\+Map
 
 Auxiliary function for draw\+Button and draw\+Buttons. 
 
-
+This is an auxiliary function used by the {\ttfamily draw\+Button} and {\ttfamily draw\+Buttons} functions. 
 \begin{DoxyParams}{Parameters}
-{\em index} & \\
+{\em index} & index of the button to be drawn. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -92,7 +98,7 @@ Non-\/zero if error occured.
 
 Auxiliary function for draw\+Selected\+Button. 
 
-\begin{DoxyReturn}{Returns}
+This function iterates through the available buttons and checks if the mouse cursor is positioned over each button using the \+\_\+is\+Click\+On\+Button function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}\label{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b} 
@@ -105,13 +111,13 @@ Non-\/zero if error occured.
 
 Checks if mouse clicked on a button. 
 
-
+This function checks if a mouse click event occurred at the specified position (x, y) and determines if it falls within the boundaries of the given button. 
 \begin{DoxyParams}{Parameters}
-{\em x} & X position of the click in pixels. \\
+{\em x} & x position of the click in pixels. \\
 \hline
-{\em y} & Y position of the click in pixels. \\
+{\em y} & y position of the click in pixels. \\
 \hline
-{\em button} & \\
+{\em button} & pointer to the button structure to check against. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -127,9 +133,9 @@ Non-\/zero if error occured.
 
 Adds a new button. 
 
-
+This function adds a new button to the button array at the specified index. 
 \begin{DoxyParams}{Parameters}
-{\em button} & \\
+{\em button} & button to be added. \\
 \hline
 {\em index} & Index of the array where new buttton will be placed. \\
 \hline
@@ -147,7 +153,7 @@ Non-\/zero if error occured.
 
 Copies frame-\/buffer to the static-\/buffer. 
 
-\begin{DoxyReturn}{Returns}
+This function copies the content of the frame buffer to the static buffer using the {\ttfamily memcpy} function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a9265a8ce3890d8507144b8ea922e7146}\label{ui_8c_a9265a8ce3890d8507144b8ea922e7146} 
@@ -160,7 +166,7 @@ Non-\/zero if error occured.
 
 Clears the memory used by the buttons. 
 
-\begin{DoxyReturn}{Returns}
+This function clears the memory used by the buttons by setting the {\ttfamily \+\_\+buttons} array to all zeros using the {\ttfamily memset} function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3}\label{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3} 
@@ -173,9 +179,9 @@ Non-\/zero if error occured.
 
 Draws button. 
 
-
+This function draws a button based on the provided index. 
 \begin{DoxyParams}{Parameters}
-{\em index} & \\
+{\em index} & index of the button to be drawn. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -191,7 +197,7 @@ Non-\/zero if error occured.
 
 Draws multiple buttons. 
 
-\begin{DoxyReturn}{Returns}
+This function iterates over the available buttons and draws each one that is active. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a03617d69c890839ae77389d5bcc2dde8}\label{ui_8c_a03617d69c890839ae77389d5bcc2dde8} 
@@ -204,7 +210,7 @@ Non-\/zero if error occured.
 
 Draws cursor. 
 
-\begin{DoxyReturn}{Returns}
+This function draws the cursor on the screen based on the current cursor position. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b}\label{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b} 
@@ -217,7 +223,7 @@ Non-\/zero if error occured.
 
 Highlights selected button. 
 
-\begin{DoxyReturn}{Returns}
+This function retrieves the index of the selected button using the \+\_\+get\+Selected\+Button function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91}\label{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91} 
@@ -230,7 +236,7 @@ Non-\/zero if error occured.
 
 Frees static-\/buffer allocated memory. 
 
-\begin{DoxyReturn}{Returns}
+This function frees the memory allocated for the static buffer using the {\ttfamily free} function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a3a8845a85f0243935a8d592a8de6e916}\label{ui_8c_a3a8845a85f0243935a8d592a8de6e916} 
@@ -243,7 +249,7 @@ Non-\/zero if error occured.
 
 Initializes UI data-\/structures and allocates static-\/buffer memory. 
 
-\begin{DoxyReturn}{Returns}
+This function initializes the UI data structures and sets the initial values for the cursor position, color, and background color. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca}\label{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca} 
@@ -256,7 +262,7 @@ Non-\/zero if error occured.
 
 Copies static-\/buffer to the frame-\/buffer. 
 
-\begin{DoxyReturn}{Returns}
+This function copies the content of the static buffer to the frame buffer using the {\ttfamily memcpy} function. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a5dc33d742b7e68e69d61af445a94247c}\label{ui_8c_a5dc33d742b7e68e69d61af445a94247c} 
@@ -269,7 +275,7 @@ Non-\/zero if error occured.
 
 Function that updates mouse every mouse interrupt. 
 
-\begin{DoxyReturn}{Returns}
+It reads the mouse packet and performs the necessary calculations and actions based on the mouse input. \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
 \Hypertarget{ui_8c_a8feb5e615d6d11a3411274d071e64bf9}\label{ui_8c_a8feb5e615d6d11a3411274d071e64bf9} 
@@ -282,9 +288,9 @@ Non-\/zero if error occured.
 
 Removes button. 
 
-
+This function removes a button at the specified index from the button array. 
 \begin{DoxyParams}{Parameters}
-{\em index} & Index of the array where the buttton will be removed. \\
+{\em index} & index of the button to be removed. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

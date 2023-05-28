@@ -90,15 +90,60 @@ uint32_t lightThemeColorArray[] = {
     0x4040CC,
 };
 
+/**
+ * @brief Retrieves the color value for a specific theme color index.
+ *
+ * This function returns the color value associated with the specified theme color index. The color value is determined based on the currently selected theme (dark or light).
+ *
+ * @param color The theme color index.
+ * @return The color value corresponding to the theme color index.
+ */
 uint32_t getThemeColor(theme_color_index_t color) {
     if (currentTheme == darkTheme) return darkThemeColorArray[color];
     else return lightThemeColorArray[color];
 }
-
+/**
+ * @brief Draws the user interface on the screen.
+ *
+ * This function is responsible for drawing the UI on the screen. It handles drawing various UI elements such as static UI components, real-time information, selected buttons, typing test, countdown and the cursor. The appearance and layout of the UI elements depend on the current theme and state.
+ *
+ * @return 0 on success, 1 on failure.
+ */
 int drawScreen();
+/**
+ * @brief Loads the appropriate screen based on the current application state.
+ *
+ * This function determines the screen to load based on the value of `currAppState` and calls the corresponding screen loading function for each application state.
+ *
+ * @return 0 if the screen was loaded successfully, 1 otherwise.
+ */
 int loadScreen();
-int changeState();
+
+/**
+ * @brief Changes the current application state to the specified new state.
+ *
+ * @param newState The new application state to transition to.
+ * @return 0 if successful, 1 otherwise.
+ */
+int changeState(app_state_t newState);
+
+/**
+ * @brief Handles keyboard scancodes and performs corresponding actions.
+ *
+ * This function is responsible for handling keyboard scancodes and taking appropriate actions based on the scancode received. It distinguishes between make codes and break codes and performs specific actions accordingly.
+ *
+ * @return void
+ */
 void keyboardScancodeHandler();
+/**
+ * @brief Exits the program and performs cleanup operations.
+ *
+ * It resets the typing information, frees the allocated dictionary memory, exits the graphics mode,
+ * and shuts down all drivers before returning the exit code.
+ *
+ * @param code The exit code to be returned.
+ * @return The exit code provided as input.
+ */
 int exitAll(int code) {
     resetTypingInfo();
     freeDictionary();
@@ -119,18 +164,33 @@ char popupText[5] = {0};
 
 bool waitingForSeed = false;
 
+/**
+ * @brief Checks if both players are ready and generates text for the race.
+ *
+ * This function checks if both the local player and the opponent are ready, and if their respective
+ * seed values are non-zero. If all conditions are met, it calculates the seed value, generates text
+ * for the race using the calculated seed, and sets the start time for the race.
+ */
 void checkIfReady() {
     if (racingInfo.readyMe && racingInfo.readyYou && racingInfo.seedMe != 0 && racingInfo.seedYou != 0) {
         uint64_t seed = racingInfo.seedMe + racingInfo.seedYou;
-        printf("Seed Me: %016llx\n", racingInfo.seedMe);
-        printf("Seed You: %016llx\n", racingInfo.seedYou);
-        printf("Seed Calculated: %016llx\n", seed);
         generateText(25, seed);
         racingInfo.startTime = 5 * frameRate + timer_get_elapsed_count();
-        printf("Start Time Set To: %ld\n", racingInfo.startTime);
     }
 }
-
+/**
+ * @brief Main loop of the project.
+ *
+ * This function initializes all necessary drivers, sets the frame rate, and initializes the user interface.
+ * It also loads the initial screen and theme, as well as the dictionary for text generation.
+ * The function has a loop where it waits for various interrupts and handles them accordingly.
+ * The function continues to run until the current application state is set to the end state, at which point it
+ * returns the exit code.
+ *
+ * @param argc The number of command line arguments.
+ * @param argv The array of command line arguments.
+ * @return The exit code of the program.
+ */
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
     if (setFrameRate(60)) { exitAllDrivers(); return 1; }
@@ -158,6 +218,10 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
+                if (timer_get_elapsed_count() % frameRate == 0) {
+                    // Update every second.
+                    rtcUpdate();
+                }
                 if (currAppState == trainingState) {
                     if (timer_get_elapsed_count() % (frameRate >> 1) == 0) {
                         updateTypingInfo();
@@ -457,7 +521,8 @@ int settingsScreenLoad() {
 
 int drawScreen() {
     if (loadStaticUI()) return 1;
-    // if (drawSelectedButton()) return 1;
+    if (currAppState != startState) if (drawRealTime(getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawSelectedButton()) return 1;
     
     switch (currAppState) {
     case trainingState: {

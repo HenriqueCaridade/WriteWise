@@ -10,5 +10,5 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/ui"
   dir_c85d3e3c5052e9ad9ce18c6863244a25 [label="lib", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_c85d3e3c5052e9ad9ce18c6863244a25.html",tooltip=""];
   dir_da5c6b39c0a2f54e57df6799511cd3ab [label="ui", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_da5c6b39c0a2f54e57df6799511cd3ab.html",tooltip=""];
   }
-  dir_da5c6b39c0a2f54e57df6799511cd3ab->dir_c85d3e3c5052e9ad9ce18c6863244a25 [headlabel="1", labeldistance=1.5 headhref="dir_000011_000004.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_da5c6b39c0a2f54e57df6799511cd3ab->dir_c85d3e3c5052e9ad9ce18c6863244a25 [headlabel="1", labeldistance=1.5 headhref="dir_000012_000004.html" color="steelblue1" fontcolor="steelblue1"];
 }

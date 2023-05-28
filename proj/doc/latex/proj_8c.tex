@@ -8,7 +8,13 @@
 {\ttfamily \#include \"{}lib/lib.\+h\"{}}\newline
 {\ttfamily \#include \"{}ui/ui.\+h\"{}}\newline
 Include dependency graph for proj.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,22 +50,20 @@ enum \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+colo
 int \mbox{\hyperlink{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
 \item 
 uint32\+\_\+t \mbox{\hyperlink{proj_8c_aa8dae723987ff8095c723602a30acf92}{get\+Theme\+Color}} (\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}} color)
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the color value for a specific theme color index. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{proj_8c_a49ec2dfa736580020278194b77d72f33}{draw\+Screen}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Draws the user interface on the screen. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{proj_8c_a911c7e963bbb29b147c59b47bbb99a48}{load\+Screen}} ()
-\item 
-int \mbox{\hyperlink{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6}{change\+State}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Loads the appropriate screen based on the current application state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}{change\+State}} (\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} new\+State)
+\begin{DoxyCompactList}\small\item\em Changes the current application state to the specified new state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{proj_8c_a24b06f2006c10abf3489fb220edbd04c}{keyboard\+Scancode\+Handler}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes and performs corresponding actions. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{proj_8c_abf39a6e85845f60b60d8086d8095c97b}{exit\+All}} (int code)
 \item 
 void \mbox{\hyperlink{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1}{check\+If\+Ready}} ()
 \item 
 int() \mbox{\hyperlink{proj_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
-\item 
-int \mbox{\hyperlink{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}{change\+State}} (\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} new\+State)
 \item 
 int \mbox{\hyperlink{proj_8c_ac17b3dba3079806ebcdac5dc839b41d2}{start\+Screen\+Load}} ()
 \item 
@@ -294,18 +298,24 @@ info\+Color&\\
 \doxysubsubsection{\texorpdfstring{\_trainingButtonReset()}{\_trainingButtonReset()}}
 {\footnotesize\ttfamily void \+\_\+training\+Button\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6}\label{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6} 
-\index{proj.c@{proj.c}!changeState@{changeState}}
-\index{changeState@{changeState}!proj.c@{proj.c}}
-\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily int change\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \Hypertarget{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}\label{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4} 
 \index{proj.c@{proj.c}!changeState@{changeState}}
 \index{changeState@{changeState}!proj.c@{proj.c}}
-\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
 {\footnotesize\ttfamily int change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}}}]{new\+State }\end{DoxyParamCaption})}
 
+
+
+Changes the current application state to the specified new state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & The new application state to transition to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise. 
+\end{DoxyReturn}
 \Hypertarget{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1}\label{proj_8c_aa14e5c55821f0a4742d5b2992c855fd1} 
 \index{proj.c@{proj.c}!checkIfReady@{checkIfReady}}
 \index{checkIfReady@{checkIfReady}!proj.c@{proj.c}}
@@ -318,6 +328,15 @@ info\+Color&\\
 \doxysubsubsection{\texorpdfstring{drawScreen()}{drawScreen()}}
 {\footnotesize\ttfamily int draw\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Draws the user interface on the screen. 
+
+This function is responsible for drawing the UI on the screen. It handles drawing various UI elements such as static UI components, real-\/time information, selected buttons, typing test, countdown and the cursor. The appearance and layout of the UI elements depend on the current theme and state.
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
 \Hypertarget{proj_8c_abf39a6e85845f60b60d8086d8095c97b}\label{proj_8c_abf39a6e85845f60b60d8086d8095c97b} 
 \index{proj.c@{proj.c}!exitAll@{exitAll}}
 \index{exitAll@{exitAll}!proj.c@{proj.c}}
@@ -330,6 +349,20 @@ info\+Color&\\
 \doxysubsubsection{\texorpdfstring{getThemeColor()}{getThemeColor()}}
 {\footnotesize\ttfamily uint32\+\_\+t get\+Theme\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}}}]{color }\end{DoxyParamCaption})}
 
+
+
+Retrieves the color value for a specific theme color index. 
+
+This function returns the color value associated with the specified theme color index. The color value is determined based on the currently selected theme (dark or light).
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The theme color index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color value corresponding to the theme color index. 
+\end{DoxyReturn}
 \Hypertarget{proj_8c_af9a1525df94c9b95692eaf77bd40daae}\label{proj_8c_af9a1525df94c9b95692eaf77bd40daae} 
 \index{proj.c@{proj.c}!instructionScreenLoad@{instructionScreenLoad}}
 \index{instructionScreenLoad@{instructionScreenLoad}!proj.c@{proj.c}}
@@ -342,12 +375,30 @@ info\+Color&\\
 \doxysubsubsection{\texorpdfstring{keyboardScancodeHandler()}{keyboardScancodeHandler()}}
 {\footnotesize\ttfamily void keyboard\+Scancode\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Handles keyboard scancodes and performs corresponding actions. 
+
+This function is responsible for handling keyboard scancodes and taking appropriate actions based on the scancode received. It distinguishes between make codes and break codes and performs specific actions accordingly.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{proj_8c_a911c7e963bbb29b147c59b47bbb99a48}\label{proj_8c_a911c7e963bbb29b147c59b47bbb99a48} 
 \index{proj.c@{proj.c}!loadScreen@{loadScreen}}
 \index{loadScreen@{loadScreen}!proj.c@{proj.c}}
 \doxysubsubsection{\texorpdfstring{loadScreen()}{loadScreen()}}
 {\footnotesize\ttfamily int load\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Loads the appropriate screen based on the current application state. 
+
+This function determines the screen to load based on the value of {\ttfamily curr\+App\+State} and calls the corresponding screen loading function for each application state.
+
+\begin{DoxyReturn}{Returns}
+0 if the screen was loaded successfully, 1 otherwise. 
+\end{DoxyReturn}
 \Hypertarget{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{proj_8c_a0ddf1224851353fc92bfbff6f499fa97} 
 \index{proj.c@{proj.c}!main@{main}}
 \index{main@{main}!proj.c@{proj.c}}

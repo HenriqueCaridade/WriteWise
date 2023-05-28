@@ -104,11 +104,33 @@ $(document).ready(function(){initNavTree('ui_8h.html',''); initResizable(); });
 Include dependency graph for ui.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="ui_8h__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8h" alt=""/></div>
+<map name="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8h" id="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8h">
+<area shape="rect" title=" " alt="" coords="595,5,753,48"/>
+<area shape="rect" title=" " alt="" coords="810,336,874,363"/>
+<area shape="rect" title=" " alt="" coords="917,336,991,363"/>
+<area shape="rect" href="lib_8h.html" title=" " alt="" coords="637,96,711,123"/>
+<area shape="rect" title=" " alt="" coords="286,261,363,288"/>
+<area shape="rect" href="text_8h.html" title=" " alt="" coords="858,261,938,288"/>
+<area shape="rect" href="scancode_8h.html" title=" " alt="" coords="936,179,1084,205"/>
+<area shape="rect" href="keyboard_8h.html" title=" " alt="" coords="1013,261,1183,288"/>
+<area shape="rect" title=" " alt="" coords="407,179,501,205"/>
+<area shape="rect" href="timer_8h.html" title=" " alt="" coords="698,261,834,288"/>
+<area shape="rect" href="graphics_8h.html" title=" " alt="" coords="26,179,202,205"/>
+<area shape="rect" href="mouse_8h.html" title=" " alt="" coords="525,179,668,205"/>
+<area shape="rect" href="serialPort_8h.html" title=" " alt="" coords="693,171,810,213"/>
+<area shape="rect" href="rtc_8h.html" title=" " alt="" coords="226,179,333,205"/>
+<area shape="rect" href="UART_8h.html" title=" " alt="" coords="608,261,674,288"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ui_8h__dep__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8hdep" alt=""/></div>
+<map name="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8hdep" id="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2ui_2ui_8hdep">
+<area shape="rect" title=" " alt="" coords="96,5,253,48"/>
+<area shape="rect" href="proj_8c.html" title=" " alt="" coords="5,96,163,139"/>
+<area shape="rect" href="ui_8c.html" title=" " alt="" coords="187,96,344,139"/>
+</map>
 </div>
 </div>
 <p><a href="ui_8h_source.html">Go to the source code of this file.</a></p>
@@ -119,8 +141,10 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct holds the properties of each button of our game.  <a href="structbutton__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmouse__info__t.html">mouse_info_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that holds the last known mouse information.  <a href="structmouse__info__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursor__t.html">cursor_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that holds cursor information.  <a href="structcursor__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -274,9 +298,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Auxiliary function for drawButton and drawButtons. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This is an auxiliary function used by the <code>drawButton</code> and <code>drawButtons</code> functions. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be drawn. </td></tr>
   </table>
   </dd>
 </dl>
@@ -300,7 +324,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Auxiliary function for drawSelectedButton. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function iterates through the available buttons and checks if the mouse cursor is positioned over each button using the _isClickOnButton function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -337,11 +361,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if mouse clicked on a button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function checks if a mouse click event occurred at the specified position (x, y) and determines if it falls within the boundaries of the given button. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>X position of the click in pixels. </td></tr>
-    <tr><td class="paramname">y</td><td>Y position of the click in pixels. </td></tr>
-    <tr><td class="paramname">button</td><td></td></tr>
+    <tr><td class="paramname">x</td><td>x position of the click in pixels. </td></tr>
+    <tr><td class="paramname">y</td><td>y position of the click in pixels. </td></tr>
+    <tr><td class="paramname">button</td><td>pointer to the button structure to check against. </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,9 +400,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a new button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function adds a new button to the button array at the specified index. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">button</td><td></td></tr>
+    <tr><td class="paramname">button</td><td>button to be added. </td></tr>
     <tr><td class="paramname">index</td><td>Index of the array where new buttton will be placed. </td></tr>
   </table>
   </dd>
@@ -403,7 +427,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copies frame-buffer to the static-buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function copies the content of the frame buffer to the static buffer using the <code>memcpy</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -423,7 +447,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clears the memory used by the buttons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function clears the memory used by the buttons by setting the <code>_buttons</code> array to all zeros using the <code>memset</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -444,9 +468,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function draws a button based on the provided index. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be drawn. </td></tr>
   </table>
   </dd>
 </dl>
@@ -470,7 +494,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws multiple buttons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function iterates over the available buttons and draws each one that is active. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -490,7 +514,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws cursor. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function draws the cursor on the screen based on the current cursor position. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -510,7 +534,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Highlights selected button. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function retrieves the index of the selected button using the _getSelectedButton function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -530,7 +554,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees static-buffer allocated memory. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function frees the memory allocated for the static buffer using the <code>free</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -550,7 +574,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes UI data-structures and allocates static-buffer memory. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function initializes the UI data structures and sets the initial values for the cursor position, color, and background color. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -570,7 +594,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copies static-buffer to the frame-buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>This function copies the content of the static buffer to the frame buffer using the <code>memcpy</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -590,7 +614,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function that updates mouse every mouse interrupt. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p>It reads the mouse packet and performs the necessary calculations and actions based on the mouse input. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -611,9 +635,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This function removes a button at the specified index from the button array. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>Index of the array where the buttton will be removed. </td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be removed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -657,7 +681,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structcursor__t.html">cursor_t</a> <a class="el" href="structcursor.html">cursor</a></td>
+          <td class="memname"><a class="el" href="structcursor__t.html">cursor_t</a> cursor</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -699,7 +723,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmouse__info__t.html">mouse_info_t</a> <a class="el" href="structmoreMouseInfo.html">moreMouseInfo</a></td>
+          <td class="memname"><a class="el" href="structmouse__info__t.html">mouse_info_t</a> moreMouseInfo</td>
         </tr>
       </table>
 </div><div class="memdoc">

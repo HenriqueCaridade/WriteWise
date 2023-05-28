@@ -10,5 +10,5 @@ digraph "C:/Users/igorc/lcom/g2/proj/src/lib/scancode"
   dir_ae0e849d495154be21d419b82c842e8e [label="drivers", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_ae0e849d495154be21d419b82c842e8e.html",tooltip=""];
   dir_7e19df4349fd0348dce6f141908bb821 [label="scancode", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_7e19df4349fd0348dce6f141908bb821.html",tooltip=""];
   }
-  dir_7e19df4349fd0348dce6f141908bb821->dir_ae0e849d495154be21d419b82c842e8e [headlabel="1", labeldistance=1.5 headhref="dir_000005_000001.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7e19df4349fd0348dce6f141908bb821->dir_ae0e849d495154be21d419b82c842e8e [headlabel="1", labeldistance=1.5 headhref="dir_000006_000001.html" color="steelblue1" fontcolor="steelblue1"];
 }

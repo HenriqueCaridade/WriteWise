@@ -3,16 +3,28 @@
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 Include dependency graph for timer.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{timer_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{timer_8h_ab64a18a4ee46308ba2ea9480ac62b5a4}{timer\+\_\+subscribe\+\_\+interrupt}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Subscribes to Timer interrupts. \end{DoxyCompactList}\item 
 uint64\+\_\+t() \mbox{\hyperlink{timer_8h_a4158c6b92acd61ce9ef52913cfff9aca}{timer\+\_\+get\+\_\+elapsed\+\_\+count}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the elapsed count of the Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,12 +39,28 @@ uint8\+\_\+t \mbox{\hyperlink{timer_8h_abac383e965d80642331c2b92a073994b}{irq\+S
 \doxysubsubsection{\texorpdfstring{timer\_get\_elapsed\_count()}{timer\_get\_elapsed\_count()}}
 {\footnotesize\ttfamily uint64\+\_\+t() timer\+\_\+get\+\_\+elapsed\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the elapsed count of the Timer. 
+
+\begin{DoxyReturn}{Returns}
+The elapsed count of the Timer. 
+\end{DoxyReturn}
 \Hypertarget{timer_8h_ab64a18a4ee46308ba2ea9480ac62b5a4}\label{timer_8h_ab64a18a4ee46308ba2ea9480ac62b5a4} 
 \index{timer.h@{timer.h}!timer\_subscribe\_interrupt@{timer\_subscribe\_interrupt}}
 \index{timer\_subscribe\_interrupt@{timer\_subscribe\_interrupt}!timer.h@{timer.h}}
 \doxysubsubsection{\texorpdfstring{timer\_subscribe\_interrupt()}{timer\_subscribe\_interrupt()}}
 {\footnotesize\ttfamily int() timer\+\_\+subscribe\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Subscribes to Timer interrupts. 
+
+This function subscribes to Timer interrupts by using {\ttfamily sys\+\_\+irqsetpolicy} function.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

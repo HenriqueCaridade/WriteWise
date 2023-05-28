@@ -1,0 +1,103 @@
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/rtc/rtc.c File Reference}
+\hypertarget{rtc_8c}{}\label{rtc_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/rtc/rtc.c@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/rtc/rtc.c}}
+{\ttfamily \#include \"{}rtc.\+h\"{}}\newline
+Include dependency graph for rtc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{rtc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rtc_8c_a023cfe181f8a45fabb033751cb4356dc}{rtc\+\_\+init}} ()
+\item 
+int \mbox{\hyperlink{rtc_8c_abd8de825e876e8ef94c64ac616f68a11}{rtc\+\_\+subscribe\+\_\+int}} ()
+\item 
+int \mbox{\hyperlink{rtc_8c_ab8f17bf5280c908c8b199a90fefcc758}{rtc\+\_\+unsubscribe\+\_\+int}} ()
+\item 
+int \mbox{\hyperlink{rtc_8c_af52c476187dd39a58930d74ad187ec50}{rtc\+IN}} (uint8\+\_\+t command, uint8\+\_\+t \texorpdfstring{$\ast$}{*}output)
+\item 
+int \mbox{\hyperlink{rtc_8c_ac221f25ef3837098295722092bd03eb6}{rtc\+OUT}} (uint8\+\_\+t command, uint8\+\_\+t output)
+\item 
+bool \mbox{\hyperlink{rtc_8c_ae4c2eccc59963cb4d3c54881c214abbd}{rtc\+Is\+Updating}} ()
+\item 
+int \mbox{\hyperlink{rtc_8c_ac19059d4296ae449b72fc52e6326bae9}{rtc\+Update}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{rtc_8c_a53a35ec560d829db41ca144e062e9ffd}{\+\_\+bcd\+To\+Binary}} (uint8\+\_\+t bcd)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rtc_8c_acb6a2ad8c367ab473f266d0c9ed3bafc}{hook\+Id\+RTC}} = 5
+\item 
+bool \mbox{\hyperlink{rtc_8c_a02882488ec31703802c61a1f054cc89d}{is\+Rtc\+Binary}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rtc_8c_a53a35ec560d829db41ca144e062e9ffd}\label{rtc_8c_a53a35ec560d829db41ca144e062e9ffd} 
+\index{rtc.c@{rtc.c}!\_bcdToBinary@{\_bcdToBinary}}
+\index{\_bcdToBinary@{\_bcdToBinary}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{\_bcdToBinary()}{\_bcdToBinary()}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+bcd\+To\+Binary (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bcd }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_a023cfe181f8a45fabb033751cb4356dc}\label{rtc_8c_a023cfe181f8a45fabb033751cb4356dc} 
+\index{rtc.c@{rtc.c}!rtc\_init@{rtc\_init}}
+\index{rtc\_init@{rtc\_init}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_init()}{rtc\_init()}}
+{\footnotesize\ttfamily int rtc\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_abd8de825e876e8ef94c64ac616f68a11}\label{rtc_8c_abd8de825e876e8ef94c64ac616f68a11} 
+\index{rtc.c@{rtc.c}!rtc\_subscribe\_int@{rtc\_subscribe\_int}}
+\index{rtc\_subscribe\_int@{rtc\_subscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscribe\_int()}{rtc\_subscribe\_int()}}
+{\footnotesize\ttfamily int rtc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_ab8f17bf5280c908c8b199a90fefcc758}\label{rtc_8c_ab8f17bf5280c908c8b199a90fefcc758} 
+\index{rtc.c@{rtc.c}!rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}}
+\index{rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_unsubscribe\_int()}{rtc\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int rtc\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_af52c476187dd39a58930d74ad187ec50}\label{rtc_8c_af52c476187dd39a58930d74ad187ec50} 
+\index{rtc.c@{rtc.c}!rtcIN@{rtcIN}}
+\index{rtcIN@{rtcIN}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtcIN()}{rtcIN()}}
+{\footnotesize\ttfamily int rtc\+IN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{command,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{output }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_ae4c2eccc59963cb4d3c54881c214abbd}\label{rtc_8c_ae4c2eccc59963cb4d3c54881c214abbd} 
+\index{rtc.c@{rtc.c}!rtcIsUpdating@{rtcIsUpdating}}
+\index{rtcIsUpdating@{rtcIsUpdating}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtcIsUpdating()}{rtcIsUpdating()}}
+{\footnotesize\ttfamily bool rtc\+Is\+Updating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_ac221f25ef3837098295722092bd03eb6}\label{rtc_8c_ac221f25ef3837098295722092bd03eb6} 
+\index{rtc.c@{rtc.c}!rtcOUT@{rtcOUT}}
+\index{rtcOUT@{rtcOUT}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtcOUT()}{rtcOUT()}}
+{\footnotesize\ttfamily int rtc\+OUT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{command,  }\item[{uint8\+\_\+t}]{output }\end{DoxyParamCaption})}
+
+\Hypertarget{rtc_8c_ac19059d4296ae449b72fc52e6326bae9}\label{rtc_8c_ac19059d4296ae449b72fc52e6326bae9} 
+\index{rtc.c@{rtc.c}!rtcUpdate@{rtcUpdate}}
+\index{rtcUpdate@{rtcUpdate}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtcUpdate()}{rtcUpdate()}}
+{\footnotesize\ttfamily int rtc\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{rtc_8c_acb6a2ad8c367ab473f266d0c9ed3bafc}\label{rtc_8c_acb6a2ad8c367ab473f266d0c9ed3bafc} 
+\index{rtc.c@{rtc.c}!hookIdRTC@{hookIdRTC}}
+\index{hookIdRTC@{hookIdRTC}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{hookIdRTC}{hookIdRTC}}
+{\footnotesize\ttfamily int hook\+Id\+RTC = 5}
+
+\Hypertarget{rtc_8c_a02882488ec31703802c61a1f054cc89d}\label{rtc_8c_a02882488ec31703802c61a1f054cc89d} 
+\index{rtc.c@{rtc.c}!isRtcBinary@{isRtcBinary}}
+\index{isRtcBinary@{isRtcBinary}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{isRtcBinary}{isRtcBinary}}
+{\footnotesize\ttfamily bool is\+Rtc\+Binary = false}
+

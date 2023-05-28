@@ -9,11 +9,14 @@ int initAllDrivers(){
     if (mouse_subscribe_int()) { printf("Mouse Interrupt Subscription FAILED.\n"); return 1; }
     if (serial_port_init())  { printf("Serial Port Interrupt Enable FAILED.\n"); return 1; }
     if (serial_port_subscribe_int()) { printf("Serial Port Interrupt Subscription FAILED.\n"); return 1; }
+    if (rtc_init()) { printf("Real Time Clock Initialization FAILED.\n"); return 1; }
+    if (rtc_subscribe_int()) { printf("Real Time Clock Interrupt Subscription FAILED.\n"); return 1; }
     printf("All Drivers Initialized Correctly!\n");
     return 0;
 }
 
 int exitAllDrivers(){
+    if (rtc_unsubscribe_int()) { printf("Real Time Clock Interrupt Unsubscription FAILED.\n"); return 1; }
     if (serial_port_unsubscribe_int()) { printf("Serial Port Interrupt Unsubscription FAILED.\n"); return 1; }
     if (mouse_unsubscribe_int()) { printf("Keyboard Interrupt Unsubscription FAILED.\n"); return 1; }
     if (keyboard_unsubscribe_int()) { printf("Mouse Interrupt Unsubscription FAILED.\n"); return 1; }
@@ -214,4 +217,21 @@ int drawTextXYRGB(uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, ui
 
 uint16_t getTextWidth(const char* str, font_size_t size) {
     return strlen(str) * (size.width + size.pixel) - size.pixel;
+}
+
+char *_getRealTime() {
+    char *realTimeStr = malloc(50);
+    sprintf(realTimeStr, "%02d:%02d:%02d %02d/%02d/20%02d", rtcInfo.hour, rtcInfo.minute, rtcInfo.second, rtcInfo.day, rtcInfo.month, rtcInfo.year);
+    return realTimeStr;
+}
+
+int drawRealTime(uint32_t color, font_size_t size) {
+    char* realTimeStr = _getRealTime();
+    uint16_t x = getXFromPercent(1) - getTextWidth(realTimeStr, size) - 10;
+    uint16_t y = 10;
+    uint16_t maxW = (uint16_t) -1;
+    if (currentMode == vbe768pInd) { if (_drawText(x, y, maxW, realTimeStr, color, size)) return 1;
+    } else if (_drawText(x, y, maxW, realTimeStr, rgbToColor((uint8_t)(color >> 16), (uint8_t)(color >> 8), (uint8_t)color), size)) return 1;
+    free(realTimeStr);
+    return 0;
 }

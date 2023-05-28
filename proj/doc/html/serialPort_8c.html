@@ -100,65 +100,102 @@ $(document).ready(function(){initNavTree('serialPort_8c.html',''); initResizable
 Include dependency graph for serialPort.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="serialPort_8c__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2serialPort_2serialPort_8c" alt=""/></div>
+<map name="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2serialPort_2serialPort_8c" id="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2serialPort_2serialPort_8c">
+<area shape="rect" title=" " alt="" coords="80,5,240,64"/>
+<area shape="rect" href="serialPort_8h.html" title=" " alt="" coords="116,112,204,139"/>
+<area shape="rect" title=" " alt="" coords="5,187,83,213"/>
+<area shape="rect" href="timer_8h.html" title=" " alt="" coords="107,187,213,213"/>
+<area shape="rect" href="UART_8h.html" title=" " alt="" coords="238,187,304,213"/>
+<area shape="rect" title=" " alt="" coords="76,261,151,288"/>
+<area shape="rect" title=" " alt="" coords="175,261,239,288"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4dbaad04d44889711cb19a089a6921e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a4dbaad04d44889711cb19a089a6921e8">serial_port_subscribe_int</a> ()</td></tr>
+<tr class="memdesc:a4dbaad04d44889711cb19a089a6921e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to interrupts from the serial port.  <br /></td></tr>
 <tr class="separator:a4dbaad04d44889711cb19a089a6921e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd52bd27bbf8c2323c4f5e2dddc7bc11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#afd52bd27bbf8c2323c4f5e2dddc7bc11">serial_port_unsubscribe_int</a> ()</td></tr>
+<tr class="memdesc:afd52bd27bbf8c2323c4f5e2dddc7bc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes from interrupts of the serial port.  <br /></td></tr>
 <tr class="separator:afd52bd27bbf8c2323c4f5e2dddc7bc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3828a2b30eef59f8079080044d5bc908"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a3828a2b30eef59f8079080044d5bc908">serial_port_init</a> ()</td></tr>
+<tr class="memdesc:a3828a2b30eef59f8079080044d5bc908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the serial port.  <br /></td></tr>
 <tr class="separator:a3828a2b30eef59f8079080044d5bc908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab20bfb08015238b37b134b565bd3dac1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#ab20bfb08015238b37b134b565bd3dac1">serial_port_get_status</a> (uint8_t *status)</td></tr>
+<tr class="memdesc:ab20bfb08015238b37b134b565bd3dac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the status of the serial port.  <br /></td></tr>
 <tr class="separator:ab20bfb08015238b37b134b565bd3dac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb45773771775f22abeffc9725b0f484"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#aeb45773771775f22abeffc9725b0f484">serial_port_ih</a> ()</td></tr>
+<tr class="memdesc:aeb45773771775f22abeffc9725b0f484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the serial port.  <br /></td></tr>
 <tr class="separator:aeb45773771775f22abeffc9725b0f484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683eb83ee07e12cf8bbd3732db015ed8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a683eb83ee07e12cf8bbd3732db015ed8">serialPortSendByte</a> (uint8_t byte)</td></tr>
+<tr class="memdesc:a683eb83ee07e12cf8bbd3732db015ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a byte of data through the serial port.  <br /></td></tr>
 <tr class="separator:a683eb83ee07e12cf8bbd3732db015ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af20ae10009c6de1a2c4e6f763f7f72b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#af20ae10009c6de1a2c4e6f763f7f72b9">serialPortReadByte</a> ()</td></tr>
+<tr class="memdesc:af20ae10009c6de1a2c4e6f763f7f72b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a byte from the serial port.  <br /></td></tr>
 <tr class="separator:af20ae10009c6de1a2c4e6f763f7f72b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3a25795e25b6f8fc1bc5fb7b143d40c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#ac3a25795e25b6f8fc1bc5fb7b143d40c">serialPortSendULong</a> (uint64_t longValue)</td></tr>
+<tr class="memdesc:ac3a25795e25b6f8fc1bc5fb7b143d40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an unsigned long value through the serial port.  <br /></td></tr>
 <tr class="separator:ac3a25795e25b6f8fc1bc5fb7b143d40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adda3660984971c372ef1e1f0a360bd6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#adda3660984971c372ef1e1f0a360bd6a">serialPortSendLong</a> (int64_t longValue)</td></tr>
+<tr class="memdesc:adda3660984971c372ef1e1f0a360bd6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a long value through the serial port.  <br /></td></tr>
 <tr class="separator:adda3660984971c372ef1e1f0a360bd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ea10edffbb359ce0853c9b1e94740f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a77ea10edffbb359ce0853c9b1e94740f">serialPortSendUInt</a> (uint32_t intValue)</td></tr>
+<tr class="memdesc:a77ea10edffbb359ce0853c9b1e94740f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an unsigned integer value through the serial port.  <br /></td></tr>
 <tr class="separator:a77ea10edffbb359ce0853c9b1e94740f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aeaca6f89e1201699b3875038174d44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a0aeaca6f89e1201699b3875038174d44">serialPortSendInt</a> (int32_t intValue)</td></tr>
+<tr class="memdesc:a0aeaca6f89e1201699b3875038174d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a signed integer value through the serial port.  <br /></td></tr>
 <tr class="separator:a0aeaca6f89e1201699b3875038174d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0134693fd4a7d6a123305129712792b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a0134693fd4a7d6a123305129712792b8">serialPortSendFloat</a> (float floatValue)</td></tr>
+<tr class="memdesc:a0134693fd4a7d6a123305129712792b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a floating-point value through the serial port.  <br /></td></tr>
 <tr class="separator:a0134693fd4a7d6a123305129712792b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c190994ea13b53a9b6aa49389c912a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a9c190994ea13b53a9b6aa49389c912a4">serialPortSendDouble</a> (double doubleValue)</td></tr>
+<tr class="memdesc:a9c190994ea13b53a9b6aa49389c912a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a double-precision floating-point value through the serial port.  <br /></td></tr>
 <tr class="separator:a9c190994ea13b53a9b6aa49389c912a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ada979206bc06251dda2490315a1c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a52ada979206bc06251dda2490315a1c0">serialPortReadULong</a> (uint64_t *longValue)</td></tr>
+<tr class="memdesc:a52ada979206bc06251dda2490315a1c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an unsigned long (uint64_t) value from the serial port.  <br /></td></tr>
 <tr class="separator:a52ada979206bc06251dda2490315a1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f7d69b738ed89b95181c49c98831c38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a0f7d69b738ed89b95181c49c98831c38">serialPortReadLong</a> (int64_t *longValue)</td></tr>
+<tr class="memdesc:a0f7d69b738ed89b95181c49c98831c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a long (int64_t) value from the serial port.  <br /></td></tr>
 <tr class="separator:a0f7d69b738ed89b95181c49c98831c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b8fb32ff4b2c7b68e6a9c2491976153"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a2b8fb32ff4b2c7b68e6a9c2491976153">serialPortReadUInt</a> (uint32_t *intValue)</td></tr>
+<tr class="memdesc:a2b8fb32ff4b2c7b68e6a9c2491976153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an unsigned integer (uint32_t) value from the serial port.  <br /></td></tr>
 <tr class="separator:a2b8fb32ff4b2c7b68e6a9c2491976153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35cdc050e3f74b0bebda76996742714"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#af35cdc050e3f74b0bebda76996742714">serialPortReadInt</a> (int32_t *intValue)</td></tr>
+<tr class="memdesc:af35cdc050e3f74b0bebda76996742714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a signed integer (int32_t) value from the serial port.  <br /></td></tr>
 <tr class="separator:af35cdc050e3f74b0bebda76996742714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad612d0d0a938ba98a9d6fc9fe1d2ad19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#ad612d0d0a938ba98a9d6fc9fe1d2ad19">serialPortReadFloat</a> (float *floatValue)</td></tr>
+<tr class="memdesc:ad612d0d0a938ba98a9d6fc9fe1d2ad19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a floating-point value (float) from the serial port.  <br /></td></tr>
 <tr class="separator:ad612d0d0a938ba98a9d6fc9fe1d2ad19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34c79dc8f929aed059070fb3a44a117"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#aa34c79dc8f929aed059070fb3a44a117">serialPortReadDouble</a> (double *doubleValue)</td></tr>
+<tr class="memdesc:aa34c79dc8f929aed059070fb3a44a117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a double precision value (double) from the serial port.  <br /></td></tr>
 <tr class="separator:aa34c79dc8f929aed059070fb3a44a117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ac75b09a38e8b2784ca723644b0200"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a35ac75b09a38e8b2784ca723644b0200">serialPortSendAck</a> ()</td></tr>
+<tr class="memdesc:a35ac75b09a38e8b2784ca723644b0200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an acknowledgment (ACK) signal over the serial port.  <br /></td></tr>
 <tr class="separator:a35ac75b09a38e8b2784ca723644b0200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a734235b3664aed710838355e8866a9fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a734235b3664aed710838355e8866a9fc">serialPortSendReady</a> ()</td></tr>
+<tr class="memdesc:a734235b3664aed710838355e8866a9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "ready" signal over the serial port.  <br /></td></tr>
 <tr class="separator:a734235b3664aed710838355e8866a9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7bc0d7bea9c6dbc7a7262e88e4ce600"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#ab7bc0d7bea9c6dbc7a7262e88e4ce600">serialPortSendNReady</a> ()</td></tr>
+<tr class="memdesc:ab7bc0d7bea9c6dbc7a7262e88e4ce600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "not ready" signal over the serial port.  <br /></td></tr>
 <tr class="separator:ab7bc0d7bea9c6dbc7a7262e88e4ce600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a152dcde4b0c1c2bb87fc9a3be3ea9d50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a152dcde4b0c1c2bb87fc9a3be3ea9d50">serialPortSendReadyAck</a> ()</td></tr>
+<tr class="memdesc:a152dcde4b0c1c2bb87fc9a3be3ea9d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "ready acknowledgment" signal over the serial port.  <br /></td></tr>
 <tr class="separator:a152dcde4b0c1c2bb87fc9a3be3ea9d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab276142b3c1078569432d047f28846a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#ab276142b3c1078569432d047f28846a2">serialPortSendNReadyAck</a> ()</td></tr>
+<tr class="memdesc:ab276142b3c1078569432d047f28846a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "not ready acknowledgment" signal over the serial port.  <br /></td></tr>
 <tr class="separator:ab276142b3c1078569432d047f28846a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa305fdf9b8c353ffa49dcba64a64ab20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#aa305fdf9b8c353ffa49dcba64a64ab20">serialPortSendWon</a> ()</td></tr>
+<tr class="memdesc:aa305fdf9b8c353ffa49dcba64a64ab20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "win" signal over the serial port.  <br /></td></tr>
 <tr class="separator:aa305fdf9b8c353ffa49dcba64a64ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e0f1f128a6b66e79663d3f90f6349f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a7e0f1f128a6b66e79663d3f90f6349f0">serialPortSendExit</a> ()</td></tr>
+<tr class="memdesc:a7e0f1f128a6b66e79663d3f90f6349f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an "exit" signal over the serial port.  <br /></td></tr>
 <tr class="separator:a7e0f1f128a6b66e79663d3f90f6349f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9589a68172d56e3652a6746e5d454e87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a9589a68172d56e3652a6746e5d454e87">serialPortSendNack</a> ()</td></tr>
+<tr class="memdesc:a9589a68172d56e3652a6746e5d454e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a "negative acknowledgment" signal over the serial port.  <br /></td></tr>
 <tr class="separator:a9589a68172d56e3652a6746e5d454e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fe05b675294d1c1aec1e95afdd054d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serialPort_8c.html#a3fe05b675294d1c1aec1e95afdd054d4">serialPortClearFIFO</a> ()</td></tr>
+<tr class="memdesc:a3fe05b675294d1c1aec1e95afdd054d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the FIFO (First-In-First-Out) of the serial port.  <br /></td></tr>
 <tr class="separator:a3fe05b675294d1c1aec1e95afdd054d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -191,6 +228,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retrieves the status of the serial port. </p>
+<p>This function retrieves the status of the serial port by reading the Line Status Register (LSR) and storing the result in the specified status variable. It uses util_sys_inb to perform the register read operation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>Pointer to a variable where the serial port status will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the status is successfully retrieved, or 1 if there is an error during the register read operation. </dd></dl>
+
 </div>
 </div>
 <a id="aeb45773771775f22abeffc9725b0f484" name="aeb45773771775f22abeffc9725b0f484"></a>
@@ -207,6 +253,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Interrupt handler for the serial port. </p>
+<p>This function is the interrupt handler for the serial port. It reads the Interrupt Identification Register (IIR) to determine the type of interrupt and performs the necessary actions accordingly.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 if a byte was successfully read, 1 if an error occurred during the read operation, or if no interrupt is pending or no data is available. </dd></dl>
 
 </div>
 </div>
@@ -225,6 +275,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the serial port. </p>
+<p>This function initializes the serial port by clearing the Interrupt Enable Register (IER) and enabling received data interrupts.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 if the initialization is successful, 1 if there is an error during the register read/write operations. </dd></dl>
+
 </div>
 </div>
 <a id="a4dbaad04d44889711cb19a089a6921e8" name="a4dbaad04d44889711cb19a089a6921e8"></a>
@@ -241,6 +295,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Subscribes to interrupts from the serial port. </p>
+<p>This function subscribes interrupts from the serial port specified by COM1_IRQ. It sets the IRQ_REENABLE and IRQ_EXCLUSIVE flags in the sys_irqsetpolicy function to enable and exclusively allocate the interrupt line for this driver.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -259,6 +317,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Unsubscribes from interrupts of the serial port. </p>
+<p>This function unsubscribes from interrupts of the serial port that was previously subscribed using <code>serial_port_subscribe_int</code>. It releases the interrupt line allocated for this driver.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 upon success, or a non-zero value if the unsubscription fails. </dd></dl>
+
 </div>
 </div>
 <a id="a3fe05b675294d1c1aec1e95afdd054d4" name="a3fe05b675294d1c1aec1e95afdd054d4"></a>
@@ -276,6 +338,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Clears the FIFO (First-In-First-Out) of the serial port. </p>
+<p>This function clears the FIFO of the serial port by writing the clear command to the FIFO Control Register (FCR). It uses sys_outb to perform the write operation. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="af20ae10009c6de1a2c4e6f763f7f72b9" name="af20ae10009c6de1a2c4e6f763f7f72b9"></a>
@@ -292,6 +357,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads a byte from the serial port. </p>
+<p>This function reads a byte from the serial port. It first checks the status of the serial port using the serial_port_get_status function. If there is an error condition it returns 1. It also checks if the received data is ready to be read from the Receiver Buffer Register (RBR). If the data is ready, it reads the byte from the RBR and stores it in the serialPortByte variable.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -311,6 +380,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads a double precision value (double) from the serial port. </p>
+<p>This function reads a double precision value (double) from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as a double value and stores it in the <code>doubleValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="ad612d0d0a938ba98a9d6fc9fe1d2ad19" name="ad612d0d0a938ba98a9d6fc9fe1d2ad19"></a>
@@ -328,6 +400,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads a floating-point value (float) from the serial port. </p>
+<p>This function reads a floating-point value (float) from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as a float value and stores it in the <code>floatValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -347,6 +422,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads a signed integer (int32_t) value from the serial port. </p>
+<p>This function reads a signed integer (int32_t) value from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as an int32_t value and stores it in the <code>intValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a0f7d69b738ed89b95181c49c98831c38" name="a0f7d69b738ed89b95181c49c98831c38"></a>
@@ -364,6 +442,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads a long (int64_t) value from the serial port. </p>
+<p>This function reads a long (int64_t) value from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as an int64_t value and stores it in the <code>longValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -383,6 +464,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads an unsigned integer (uint32_t) value from the serial port. </p>
+<p>This function reads an unsigned integer (uint32_t) value from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 4 bytes have been received. Once all bytes have been received, the function interprets them as a uint32_t value and stores it in the <code>intValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a52ada979206bc06251dda2490315a1c0" name="a52ada979206bc06251dda2490315a1c0"></a>
@@ -401,6 +485,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads an unsigned long (uint64_t) value from the serial port. </p>
+<p>This function reads an unsigned long (uint64_t) value from the serial port. It stores the received bytes in the <code>bitsSerialPort</code> array and checks if all 8 bytes have been received. Once all bytes have been received, the function interprets them as a uint64_t value and stores it in the <code>longValue</code> variable. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a35ac75b09a38e8b2784ca723644b0200" name="a35ac75b09a38e8b2784ca723644b0200"></a>
@@ -418,6 +505,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends an acknowledgment (ACK) signal over the serial port. </p>
+<p>This function sends an acknowledgment (ACK) signal over the serial port. It first clears the FIFO buffer using the <code>serialPortClearFIFO</code> function, and then sends the ACK byte using <code>serialPortSendByte</code>. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a683eb83ee07e12cf8bbd3732db015ed8" name="a683eb83ee07e12cf8bbd3732db015ed8"></a>
@@ -430,11 +520,21 @@ Variables</h2></td></tr>
           <td class="memname">int serialPortSendByte </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>byte</em></td><td>)</td>
+          <td class="paramname"><em>byteValue</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a byte of data through the serial port. </p>
+<p>This function sends a byte of data through the serial port by writing it to the Transmitter Holding Register (THR). It first checks the status of the serial port to ensure that the THR is empty before writing the data. If the THR is not empty, the function waits for a certain amount of time and retries the operation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td>The byte of data to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -454,6 +554,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends a double-precision floating-point value through the serial port. </p>
+<p>This function sends a double-precision floating-point value through the serial port. It first sends an indicator byte (INFO_DOUBLE) to indicate the type of data being sent. Then, it sends each byte of the double-precision value sequentially.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doubleValue</td><td>The double-precision floating-point value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a7e0f1f128a6b66e79663d3f90f6349f0" name="a7e0f1f128a6b66e79663d3f90f6349f0"></a>
@@ -470,6 +580,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends an "exit" signal over the serial port. </p>
+<p>This function sends an "exit" signal over the serial port by using the <code>serialPortSendByte</code> function to send the corresponding byte. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -489,6 +602,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends a floating-point value through the serial port. </p>
+<p>This function sends a floating-point value through the serial port. It first sends an indicator byte (INFO_FLOAT) to indicate the type of data being sent. Then, it sends each byte of the floating-point value sequentially. The function uses the serialPortSendByte function to send each byte. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">floatValue</td><td>The floating-point value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a0aeaca6f89e1201699b3875038174d44" name="a0aeaca6f89e1201699b3875038174d44"></a>
@@ -506,6 +628,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a signed integer value through the serial port. </p>
+<p>This function sends a signed integer value through the serial port. It first sends an indicator byte (INFO_INT) to indicate the type of data being sent. Then, it sends each byte of the signed integer value sequentially. The function uses the serialPortSendByte function to send each byte.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">intValue</td><td>The signed integer value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -525,6 +657,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends a long value through the serial port. </p>
+<p>This function sends a long value through the serial port. It first sends an indicator byte (INFO_LONG) to indicate the type of data being sent. Then, it sends each byte of the long value sequentially. The function uses the serialPortSendByte function to send each byte.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">longValue</td><td>The long value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a9589a68172d56e3652a6746e5d454e87" name="a9589a68172d56e3652a6746e5d454e87"></a>
@@ -541,6 +683,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a "negative acknowledgment" signal over the serial port. </p>
+<p>This function sends a "negative acknowledgment" signal over the serial port by using the <code>serialPortSendByte</code> function to send the corresponding byte. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -559,6 +704,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends a "not ready" signal over the serial port. </p>
+<p>This function sends a "not ready" signal over the serial port. It sets the <code>waitingAckSerialPort</code> flag to true and sends the "not ready" byte using <code>serialPortSendByte</code>. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="ab276142b3c1078569432d047f28846a2" name="ab276142b3c1078569432d047f28846a2"></a>
@@ -575,6 +723,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a "not ready acknowledgment" signal over the serial port. </p>
+<p>This function sends a "not ready acknowledgment" signal over the serial port. It clears the FIFO using the <code>serialPortClearFIFO</code> function and sends the "not ready acknowledgment" byte using <code>serialPortSendByte</code>. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -593,6 +744,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends a "ready" signal over the serial port. </p>
+<p>This function sends a "ready" signal over the serial port. It sets the <code>waitingAckSerialPort</code> flag to true and sends the "ready" byte using <code>serialPortSendByte</code>. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="a152dcde4b0c1c2bb87fc9a3be3ea9d50" name="a152dcde4b0c1c2bb87fc9a3be3ea9d50"></a>
@@ -609,6 +763,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a "ready acknowledgment" signal over the serial port. </p>
+<p>This function sends a "ready acknowledgment" signal over the serial port. It clears the FIFO using the <code>serialPortClearFIFO</code> function and sends the "ready acknowledgment" byte using <code>serialPortSendByte</code>. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -628,6 +785,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends an unsigned integer value through the serial port. </p>
+<p>This function sends an unsigned integer value through the serial port. It first sends an indicator byte (INFO_UINT) to indicate the type of data being sent. Then, it sends each byte of the unsigned integer value sequentially. The function uses the serialPortSendByte function to send each byte. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">intValue</td><td>The unsigned integer value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="ac3a25795e25b6f8fc1bc5fb7b143d40c" name="ac3a25795e25b6f8fc1bc5fb7b143d40c"></a>
@@ -646,6 +812,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends an unsigned long value through the serial port. </p>
+<p>This function sends an unsigned long value through the serial port. It first sends an indicator byte (INFO_ULONG) to indicate the type of data being sent. Then, it sends each byte of the long value sequentially.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">longValue</td><td>The unsigned long value to be sent through the serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+
 </div>
 </div>
 <a id="aa305fdf9b8c353ffa49dcba64a64ab20" name="aa305fdf9b8c353ffa49dcba64a64ab20"></a>
@@ -662,6 +838,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sends a "win" signal over the serial port. </p>
+<p>This function sends a "win" signal over the serial port by using the <code>serialPortSendByte</code> function to send the corresponding byte. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>

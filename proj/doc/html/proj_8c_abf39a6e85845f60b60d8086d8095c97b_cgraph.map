@@ -1,0 +1,13 @@
+<map id="exitAll" name="exitAll">
+<area shape="rect" id="node1" title=" " alt="" coords="5,245,63,272"/>
+<area shape="rect" id="node2" href="$lib_8c.html#a2b8ea982c737c5e3bd7718792e5ce53e" title="Unsubscribes all devices&#39; interrupts." alt="" coords="117,132,214,159"/>
+<area shape="rect" id="node8" href="$lib_8c.html#a50b2244488c03440d32eb6911ec25718" title="Exits graphics mode." alt="" coords="111,220,220,247"/>
+<area shape="rect" id="node10" href="$data_8c.html#af9c02c3165aac6d0c8af8c77e8a946b7" title="Frees dictionary." alt="" coords="115,271,216,297"/>
+<area shape="rect" id="node11" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="111,321,220,348"/>
+<area shape="rect" id="node3" href="$keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed" title=" " alt="" coords="272,5,444,32"/>
+<area shape="rect" id="node4" href="$mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3" title=" " alt="" coords="279,56,437,83"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#ab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="291,107,425,133"/>
+<area shape="rect" id="node6" href="$serialPort_8c.html#afd52bd27bbf8c2323c4f5e2dddc7bc11" title=" " alt="" coords="268,157,447,184"/>
+<area shape="rect" id="node7" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="284,208,432,235"/>
+<area shape="rect" id="node9" href="$graphics_8c.html#aeddd6e4c5bc00f0f1c054cd3486c72dd" title="Exits the graphic mode and cleans up resources." alt="" coords="293,259,423,285"/>
+</map>

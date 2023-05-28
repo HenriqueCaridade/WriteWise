@@ -6,6 +6,7 @@
 
 uint8_t irqSetTimer;
 
+
 /**
  * @brief Subscribes to Timer interrupts.
  *

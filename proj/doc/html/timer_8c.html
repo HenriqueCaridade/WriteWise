@@ -104,6 +104,15 @@ $(document).ready(function(){initNavTree('timer_8c.html',''); initResizable(); }
 Include dependency graph for timer.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="timer_8c__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2timer_2timer_8c" alt=""/></div>
+<map name="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2timer_2timer_8c" id="aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2drivers_2timer_2timer_8c">
+<area shape="rect" title=" " alt="" coords="93,5,250,64"/>
+<area shape="rect" title=" " alt="" coords="28,187,105,213"/>
+<area shape="rect" title=" " alt="" coords="22,112,116,139"/>
+<area shape="rect" title=" " alt="" coords="209,187,273,213"/>
+<area shape="rect" href="timer_8h.html" title=" " alt="" coords="278,112,340,139"/>
+<area shape="rect" href="i8254_8h.html" title=" " alt="" coords="140,112,203,139"/>
+<area shape="rect" title=" " alt="" coords="297,187,371,213"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -111,6 +120,7 @@ Functions</h2></td></tr>
 <tr class="memitem:af2c04fa8e97ffa748fd3f612886a92a7"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7">timer_set_frequency</a> (uint8_t timer, uint32_t freq)</td></tr>
 <tr class="separator:af2c04fa8e97ffa748fd3f612886a92a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64a18a4ee46308ba2ea9480ac62b5a4"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#ab64a18a4ee46308ba2ea9480ac62b5a4">timer_subscribe_interrupt</a> ()</td></tr>
+<tr class="memdesc:ab64a18a4ee46308ba2ea9480ac62b5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to Timer interrupts.  <br /></td></tr>
 <tr class="separator:ab64a18a4ee46308ba2ea9480ac62b5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afabd21de449be154dd65d5fdb2d8045d"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#afabd21de449be154dd65d5fdb2d8045d">timer_unsubscribe_int</a> ()</td></tr>
 <tr class="separator:afabd21de449be154dd65d5fdb2d8045d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +131,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a140d8f092c0913cabdca949c4a1cc650"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a140d8f092c0913cabdca949c4a1cc650">timer_display_conf</a> (uint8_t timer, uint8_t st, enum timer_status_field field)</td></tr>
 <tr class="separator:a140d8f092c0913cabdca949c4a1cc650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4158c6b92acd61ce9ef52913cfff9aca"><td class="memItemLeft" align="right" valign="top">uint64_t()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a4158c6b92acd61ce9ef52913cfff9aca">timer_get_elapsed_count</a> ()</td></tr>
+<tr class="memdesc:a4158c6b92acd61ce9ef52913cfff9aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the elapsed count of the Timer.  <br /></td></tr>
 <tr class="separator:a4158c6b92acd61ce9ef52913cfff9aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -208,6 +219,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the elapsed count of the Timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The elapsed count of the Timer. </dd></dl>
+
 </div>
 </div>
 <a id="a91a2072306c68353712a6b771287dc2c" name="a91a2072306c68353712a6b771287dc2c"></a>
@@ -269,6 +283,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Subscribes to Timer interrupts. </p>
+<p>This function subscribes to Timer interrupts by using <code>sys_irqsetpolicy</code> function.</p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
