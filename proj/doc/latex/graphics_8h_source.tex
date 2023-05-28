@@ -1,0 +1,31 @@
+\doxysection{graphics.\+h}
+\hypertarget{graphics_8h_source}{}\label{graphics_8h_source}\index{lib/drivers/graphics/graphics.h@{lib/drivers/graphics/graphics.h}}
+\mbox{\hyperlink{graphics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_GRAPHICS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROJ\_GRAPHICS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ vbe\_mode\_info\_t\ \mbox{\hyperlink{graphics_8h_acbcf61ec794276372586878110524b97}{modeInfo}};}
+\DoxyCodeLine{00007\ uint8\_t*\ \mbox{\hyperlink{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}{frameBuffer}};}
+\DoxyCodeLine{00008\ uint8\_t*\ \mbox{\hyperlink{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}{vMem}};}
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{graphics_8h_a04638868263636c3cd761ada604a2fd9}{frameSize}};}
+\DoxyCodeLine{00010\ uint16\_t\ \mbox{\hyperlink{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}{bytesPP}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ int\ (\mbox{\hyperlink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\_graphic\_mode}})(uint16\_t\ submode);}
+\DoxyCodeLine{00013\ int\ (\mbox{\hyperlink{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}{set\_text\_mode}})();}
+\DoxyCodeLine{00014\ int\ (\mbox{\hyperlink{graphics_8h_a92983a6764917e6ddae9db456571407a}{set\_frame\_buffer}})();}
+\DoxyCodeLine{00015\ int\ (\mbox{\hyperlink{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}{exit\_graphic\_mode}})();}
+\DoxyCodeLine{00016\ void\ (\mbox{\hyperlink{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}{flip\_frame}})();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ int\ (\mbox{\hyperlink{graphics_8h_ad0560a88f4893d5d805c68f670252472}{\_vg\_draw\_pixel}})(uint16\_t\ x,\ uint16\_t\ y,\ uint32\_t\ color,\ \textcolor{keywordtype}{int}\ retOutOfBounds);}
+\DoxyCodeLine{00019\ int\ (\mbox{\hyperlink{graphics_8h_a08c498ffeb0a3962e3b7711b57397741}{vg\_draw\_pixel}})(uint16\_t\ x,\ uint16\_t\ y,\ uint32\_t\ color);}
+\DoxyCodeLine{00020\ int\ (\mbox{\hyperlink{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}{vg\_draw\_hline}})(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ len,\ uint32\_t\ color);}
+\DoxyCodeLine{00021\ int\ (\mbox{\hyperlink{graphics_8h_a1135e6421577648c6d1c0abc1e971663}{vg\_draw\_vline}})(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ len,\ uint32\_t\ color);}
+\DoxyCodeLine{00022\ int\ (\mbox{\hyperlink{graphics_8h_a99d2da2559e11200c6b40c469e9977ec}{vg\_draw\_rectangle}})(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ width,\ uint16\_t\ height,\ uint32\_t\ color);}
+\DoxyCodeLine{00023\ uint32\_t\ (\mbox{\hyperlink{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957}{rgbToColor}})(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_GRAPHICS\_H}}
+
+\end{DoxyCode}

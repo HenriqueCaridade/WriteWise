@@ -1,0 +1,168 @@
+\doxysection{typing/typing.c File Reference}
+\hypertarget{typing_8c}{}\label{typing_8c}\index{typing/typing.c@{typing/typing.c}}
+{\ttfamily \#include \"{}typing.\+h\"{}}\newline
+Include dependency graph for typing.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{typing_8c_a18851fac97afb33c7b6afb48db123db9}{generate\+Text}} (uint32\+\_\+t word\+Ammount, unsigned seed)
+\begin{DoxyCompactList}\small\item\em Generates a text given a word ammount and a creation seed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a61a5ec9381d677e8b9be1604fad28bc9}{reset\+Typing\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Resets typing info variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_aa240e1a1bfad4e107b57a0f664cd684e}{reset\+Racing\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Resets racing info variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb}{typing\+Input\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles typing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a075b28f53a26e139b72c4e06dc3e2ab9}{update\+Typing\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Updates Typing variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_a3450b0c5eb5b5804836eec3e3a8d724f}{calc\+Typing\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Does the typing status calculations. (WPM, ACC, etc) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_af565201f1899ebd4381b1314be13f0f2}{start\+Typing}} ()
+\begin{DoxyCompactList}\small\item\em Updates typing status in the beginning of typing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8c_af20c241f9cd9e758424e745645759650}{end\+Typing}} ()
+\begin{DoxyCompactList}\small\item\em Updates typing status in the end of typing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{typing_8c_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+Test}} (float cx, float cy, float max\+Width, uint32\+\_\+t right\+Color, uint32\+\_\+t wrong\+Color, uint32\+\_\+t unwritten\+Color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Draws the text which the player must write. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtyping__info__t}{typing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8c_aa699a3114ec15155bf95591f59a91f1c}{typing\+Info}} = \{NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0.\+0, 0.\+0, 100.\+0, \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}}\}
+\item 
+\mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8c_a1d5909d9080edef2f87755c282fa8833}{racing\+Info}} = \{false, false, 0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{typing_8c_a3450b0c5eb5b5804836eec3e3a8d724f}\label{typing_8c_a3450b0c5eb5b5804836eec3e3a8d724f} 
+\index{typing.c@{typing.c}!calcTypingStatus@{calcTypingStatus}}
+\index{calcTypingStatus@{calcTypingStatus}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{calcTypingStatus()}{calcTypingStatus()}}
+{\footnotesize\ttfamily void calc\+Typing\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Does the typing status calculations. (WPM, ACC, etc) 
+
+\Hypertarget{typing_8c_ab2158f31af29aef2460da7d67d217de1}\label{typing_8c_ab2158f31af29aef2460da7d67d217de1} 
+\index{typing.c@{typing.c}!drawTypingTest@{drawTypingTest}}
+\index{drawTypingTest@{drawTypingTest}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{drawTypingTest()}{drawTypingTest()}}
+{\footnotesize\ttfamily int draw\+Typing\+Test (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{max\+Width,  }\item[{uint32\+\_\+t}]{right\+Color,  }\item[{uint32\+\_\+t}]{wrong\+Color,  }\item[{uint32\+\_\+t}]{unwritten\+Color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Draws the text which the player must write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cx} & X coordinate in percentage(0 to 1) starting from the center. \\
+\hline
+{\em cy} & Y coordinate in percentage(0 to 1) starting from the center. \\
+\hline
+{\em max\+Width} & Text max width. \\
+\hline
+{\em right\+Color} & Color of the text when the characters are correctly written. \\
+\hline
+{\em wrong\+Color} & Color of the text when the characters are incorrectly written. \\
+\hline
+{\em unwritten\+Color} & Color of unwritten text. \\
+\hline
+{\em size} & Font size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
+\Hypertarget{typing_8c_af20c241f9cd9e758424e745645759650}\label{typing_8c_af20c241f9cd9e758424e745645759650} 
+\index{typing.c@{typing.c}!endTyping@{endTyping}}
+\index{endTyping@{endTyping}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{endTyping()}{endTyping()}}
+{\footnotesize\ttfamily void end\+Typing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates typing status in the end of typing. 
+
+\Hypertarget{typing_8c_a18851fac97afb33c7b6afb48db123db9}\label{typing_8c_a18851fac97afb33c7b6afb48db123db9} 
+\index{typing.c@{typing.c}!generateText@{generateText}}
+\index{generateText@{generateText}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{generateText()}{generateText()}}
+{\footnotesize\ttfamily void generate\+Text (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{word\+Ammount,  }\item[{unsigned}]{seed }\end{DoxyParamCaption})}
+
+
+
+Generates a text given a word ammount and a creation seed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word\+Ammount} & \\
+\hline
+{\em seed} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{typing_8c_aa240e1a1bfad4e107b57a0f664cd684e}\label{typing_8c_aa240e1a1bfad4e107b57a0f664cd684e} 
+\index{typing.c@{typing.c}!resetRacingInfo@{resetRacingInfo}}
+\index{resetRacingInfo@{resetRacingInfo}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{resetRacingInfo()}{resetRacingInfo()}}
+{\footnotesize\ttfamily void reset\+Racing\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets racing info variable. 
+
+\Hypertarget{typing_8c_a61a5ec9381d677e8b9be1604fad28bc9}\label{typing_8c_a61a5ec9381d677e8b9be1604fad28bc9} 
+\index{typing.c@{typing.c}!resetTypingInfo@{resetTypingInfo}}
+\index{resetTypingInfo@{resetTypingInfo}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{resetTypingInfo()}{resetTypingInfo()}}
+{\footnotesize\ttfamily void reset\+Typing\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets typing info variable. 
+
+\Hypertarget{typing_8c_af565201f1899ebd4381b1314be13f0f2}\label{typing_8c_af565201f1899ebd4381b1314be13f0f2} 
+\index{typing.c@{typing.c}!startTyping@{startTyping}}
+\index{startTyping@{startTyping}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{startTyping()}{startTyping()}}
+{\footnotesize\ttfamily void start\+Typing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates typing status in the beginning of typing. 
+
+\Hypertarget{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb}\label{typing_8c_a4668a9a826030f7eea4b33ce3b0f80cb} 
+\index{typing.c@{typing.c}!typingInputHandler@{typingInputHandler}}
+\index{typingInputHandler@{typingInputHandler}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{typingInputHandler()}{typingInputHandler()}}
+{\footnotesize\ttfamily void typing\+Input\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles typing. 
+
+\Hypertarget{typing_8c_a075b28f53a26e139b72c4e06dc3e2ab9}\label{typing_8c_a075b28f53a26e139b72c4e06dc3e2ab9} 
+\index{typing.c@{typing.c}!updateTypingInfo@{updateTypingInfo}}
+\index{updateTypingInfo@{updateTypingInfo}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{updateTypingInfo()}{updateTypingInfo()}}
+{\footnotesize\ttfamily void update\+Typing\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates Typing variable. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{typing_8c_a1d5909d9080edef2f87755c282fa8833}\label{typing_8c_a1d5909d9080edef2f87755c282fa8833} 
+\index{typing.c@{typing.c}!racingInfo@{racingInfo}}
+\index{racingInfo@{racingInfo}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{racingInfo}{racingInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} racing\+Info = \{false, false, 0\}}
+
+\Hypertarget{typing_8c_aa699a3114ec15155bf95591f59a91f1c}\label{typing_8c_aa699a3114ec15155bf95591f59a91f1c} 
+\index{typing.c@{typing.c}!typingInfo@{typingInfo}}
+\index{typingInfo@{typingInfo}!typing.c@{typing.c}}
+\doxysubsubsection{\texorpdfstring{typingInfo}{typingInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtyping__info__t}{typing\+\_\+info\+\_\+t}} typing\+Info = \{NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0.\+0, 0.\+0, 100.\+0, \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}}\}}
+

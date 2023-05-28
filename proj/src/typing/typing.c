@@ -97,12 +97,12 @@ void typingInputHandler(bool isRace) {
     }
 }
 
-void startTyping() {
-    typingInfo.status = typing;
-    typingInfo.timeStart = timer_get_elapsed_count();
-    typingInfo.timeEnd = timer_get_elapsed_count();
+void updateTypingInfo() {
+    if (typingInfo.status == typing) {
+        typingInfo.timeEnd = timer_get_elapsed_count();
+        calcTypingStatus();
+    }
 }
-
 void calcTypingStatus() {
     uint64_t timeDiff = typingInfo.timeEnd - typingInfo.timeStart;
     if (timeDiff == 0) {
@@ -112,8 +112,14 @@ void calcTypingStatus() {
         typingInfo.cpm = (typingInfo.typedChars * 60) / timeDiffSeconds;
         typingInfo.wpm = typingInfo.cpm / 5;
     }
-    if (typingInfo.typedChars == 0) typingInfo.acc = typingInfo.totalWrongChars > 0 ? 0.0 : 100.0;
+    if (typingInfo.typedChars == 0) typingInfo.acc = 100.0;
     else typingInfo.acc = (100.0 * (typingInfo.typedChars - typingInfo.totalWrongChars)) / typingInfo.typedChars;
+}
+
+void startTyping() {
+    typingInfo.status = typing;
+    typingInfo.timeStart = timer_get_elapsed_count();
+    typingInfo.timeEnd = timer_get_elapsed_count();
 }
 
 void endTyping() {

@@ -1,0 +1,34 @@
+\doxysection{lib/drivers/\+KBC/\+KBC.h File Reference}
+\hypertarget{KBC_8h}{}\label{KBC_8h}\index{lib/drivers/KBC/KBC.h@{lib/drivers/KBC/KBC.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{KBC_8h_ac15822ae85d903cbbd741e0d128c6d9d}{read\+KBCStatus}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}status)
+\item 
+int \mbox{\hyperlink{KBC_8h_a88618e19011d35fc000235c4a7ed6b9e}{read\+KBCOutput}} (uint8\+\_\+t port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}output, bool mouse)
+\item 
+int \mbox{\hyperlink{KBC_8h_aff8640e03ef10dff9e4632125438403d}{write\+KBCCommand}} (uint8\+\_\+t port, uint8\+\_\+t command\+Byte)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{KBC_8h_a88618e19011d35fc000235c4a7ed6b9e}\label{KBC_8h_a88618e19011d35fc000235c4a7ed6b9e} 
+\index{KBC.h@{KBC.h}!readKBCOutput@{readKBCOutput}}
+\index{readKBCOutput@{readKBCOutput}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{readKBCOutput()}{readKBCOutput()}}
+{\footnotesize\ttfamily int read\+KBCOutput (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{output,  }\item[{bool}]{mouse }\end{DoxyParamCaption})}
+
+\Hypertarget{KBC_8h_ac15822ae85d903cbbd741e0d128c6d9d}\label{KBC_8h_ac15822ae85d903cbbd741e0d128c6d9d} 
+\index{KBC.h@{KBC.h}!readKBCStatus@{readKBCStatus}}
+\index{readKBCStatus@{readKBCStatus}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{readKBCStatus()}{readKBCStatus()}}
+{\footnotesize\ttfamily int read\+KBCStatus (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+\Hypertarget{KBC_8h_aff8640e03ef10dff9e4632125438403d}\label{KBC_8h_aff8640e03ef10dff9e4632125438403d} 
+\index{KBC.h@{KBC.h}!writeKBCCommand@{writeKBCCommand}}
+\index{writeKBCCommand@{writeKBCCommand}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{writeKBCCommand()}{writeKBCCommand()}}
+{\footnotesize\ttfamily int write\+KBCCommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{command\+Byte }\end{DoxyParamCaption})}
+

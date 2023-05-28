@@ -1,0 +1,26 @@
+\doxysection{i8254.\+h}
+\hypertarget{i8254_8h_source}{}\label{i8254_8h_source}\index{lib/drivers/timer/i8254.h@{lib/drivers/timer/i8254.h}}
+\mbox{\hyperlink{i8254_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_LCOM\_I8254\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_LCOM\_I8254\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TIMER\_FREQ\ 1193182}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TIMER0\_IRQ\ 0}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TIMER\_0\ \ \ \ 0x40}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TIMER\_1\ \ \ \ 0x41}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TIMER\_2\ \ \ \ 0x42}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ TIMER\_CTRL\ 0x43}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ TIMER\_RB\_CMD\ (BIT(7)\ |\ BIT(6))}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TIMER\_RB\_COUNT\_\ \ BIT(5)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ TIMER\_RB\_STATUS\_\ BIT(4)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ TIMER\_RB\_SEL(n)\ \ BIT((n)\ +\ 1)}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_LCOM\_I8254\_H\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,529 @@
+\doxysection{lib/scancode/scancode.h File Reference}
+\hypertarget{scancode_8h}{}\label{scancode_8h}\index{lib/scancode/scancode.h@{lib/scancode/scancode.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \"{}../drivers/\+KBC/keyboard.\+h\"{}}\newline
+Include dependency graph for scancode.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a87603dfa2699da37f80802a1edd41e36}{BACKSPACE\+\_\+\+SCANCODE}}~0x0E
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a8bb1229160325026bea25f0cafcc8cf2}{ENTER\+\_\+\+SCANCODE}}~0x1C
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a3e1ca60ce8d8330cd58cd4f28dcd61fe}{ROW1\+\_\+\+KEY\+\_\+\+AMMOUT}}~11
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a0b50979777a26ba7da51b2cd5002a4d7}{KEY\+\_\+\+SCANCODE\+\_\+1}}~0x02
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a42b72855346e805a4ac03d0ee7e614b8}{KEY\+\_\+\+SCANCODE\+\_\+2}}~0x03
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a47c7dc29faf30fbae9ff685f259be153}{KEY\+\_\+\+SCANCODE\+\_\+3}}~0x04
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a3a9542496246ad5d2508ec1637385bee}{KEY\+\_\+\+SCANCODE\+\_\+4}}~0x05
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a39ec880539ec1dde6b4c855cc595c660}{KEY\+\_\+\+SCANCODE\+\_\+5}}~0x06
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ace9737baf831880bfd1637c4199fdbbc}{KEY\+\_\+\+SCANCODE\+\_\+6}}~0x07
+\item 
+\#define \mbox{\hyperlink{scancode_8h_aeef3554e593cc10dc427fd7d3f6f8651}{KEY\+\_\+\+SCANCODE\+\_\+7}}~0x08
+\item 
+\#define \mbox{\hyperlink{scancode_8h_af4bf6314a5a5bf9ebffabd0ce6e3a6d2}{KEY\+\_\+\+SCANCODE\+\_\+8}}~0x09
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a9fbffeaf9929a92e9f638f9557d2b151}{KEY\+\_\+\+SCANCODE\+\_\+9}}~0x0A
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a53c30f32841cac21b33343d580241441}{KEY\+\_\+\+SCANCODE\+\_\+0}}~0x0B
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a68980654a30611704162343645070ee9}{KEY\+\_\+\+SCANCODE\+\_\+\+APOSTROPHE}}~0x0C
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a620e7ec45c3b027771b2b4ee78dab925}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW1\+\_\+\+FIRST}}~\mbox{\hyperlink{scancode_8h_a0b50979777a26ba7da51b2cd5002a4d7}{KEY\+\_\+\+SCANCODE\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_aa997449278453f9498c3bb053b2fed57}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW1\+\_\+\+LAST}}~\mbox{\hyperlink{scancode_8h_a68980654a30611704162343645070ee9}{KEY\+\_\+\+SCANCODE\+\_\+\+APOSTROPHE}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a7052d97d66345f091e0a743cfd5ddb6f}{ROW2\+\_\+\+KEY\+\_\+\+AMMOUT}}~10
+\item 
+\#define \mbox{\hyperlink{scancode_8h_abb50a3014eeacd1564f41e8f2a0a1e1c}{KEY\+\_\+\+SCANCODE\+\_\+Q}}~0x10
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ae525ced1ecbbe3588b1e47e7ba94b9cc}{KEY\+\_\+\+SCANCODE\+\_\+W}}~0x11
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a65637f0bb2edcfc020131977be089bfd}{KEY\+\_\+\+SCANCODE\+\_\+E}}~0x12
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a35de6dda9a4f80d713eb03c04e71880c}{KEY\+\_\+\+SCANCODE\+\_\+R}}~0x13
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a91c4b8ac62389c4c007187ae7697ab13}{KEY\+\_\+\+SCANCODE\+\_\+T}}~0x14
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ae818045ae1a18afc8f2dc89afb4ece4d}{KEY\+\_\+\+SCANCODE\+\_\+Y}}~0x15
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a068c14c011f43ec9a2620d216ed8c06f}{KEY\+\_\+\+SCANCODE\+\_\+U}}~0x16
+\item 
+\#define \mbox{\hyperlink{scancode_8h_add7cfbe2c419bf2acef50a0a2f639f18}{KEY\+\_\+\+SCANCODE\+\_\+I}}~0x17
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a92257971f4d6f49b4a66f198983f2687}{KEY\+\_\+\+SCANCODE\+\_\+O}}~0x18
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ae111c0439ae05ae996d54ad25153b541}{KEY\+\_\+\+SCANCODE\+\_\+P}}~0x19
+\item 
+\#define \mbox{\hyperlink{scancode_8h_af53a709bbca303151b4c40b502b9db63}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW2\+\_\+\+FIRST}}~\mbox{\hyperlink{scancode_8h_abb50a3014eeacd1564f41e8f2a0a1e1c}{KEY\+\_\+\+SCANCODE\+\_\+Q}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a8e67c2442eb7ef746d03e9738ce60d17}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW2\+\_\+\+LAST}}~\mbox{\hyperlink{scancode_8h_ae111c0439ae05ae996d54ad25153b541}{KEY\+\_\+\+SCANCODE\+\_\+P}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a91274c4d6c3c48539af01b85ecd35dec}{ROW3\+\_\+\+KEY\+\_\+\+AMMOUT}}~9
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a1b26ab8e3faf4911f16e1f74ab052f74}{KEY\+\_\+\+SCANCODE\+\_\+A}}~0x1E
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ae4610d73cab43653d93eba0b38a2e48f}{KEY\+\_\+\+SCANCODE\+\_\+S}}~0x1F
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ac68276f0c73d2808a189c661012bf659}{KEY\+\_\+\+SCANCODE\+\_\+D}}~0x20
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a31fc7f905da0838b8740392bb71b6383}{KEY\+\_\+\+SCANCODE\+\_\+F}}~0x21
+\item 
+\#define \mbox{\hyperlink{scancode_8h_afa3ee075e9415e93d6a4d65e42b6ca95}{KEY\+\_\+\+SCANCODE\+\_\+G}}~0x22
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ac3a212ff500711aa1b6363acfdb24aa5}{KEY\+\_\+\+SCANCODE\+\_\+H}}~0x23
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a1f4d0d6e98e8a7bcf4711a051a81851c}{KEY\+\_\+\+SCANCODE\+\_\+J}}~0x24
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a35bf44118428b1d01553a4d015115e5a}{KEY\+\_\+\+SCANCODE\+\_\+K}}~0x25
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a2ce081d556bd55d0225a503fb9fd8f74}{KEY\+\_\+\+SCANCODE\+\_\+L}}~0x26
+\item 
+\#define \mbox{\hyperlink{scancode_8h_aafbacdaa9f4490b1e5953b2abc77532f}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW3\+\_\+\+FIRST}}~\mbox{\hyperlink{scancode_8h_a1b26ab8e3faf4911f16e1f74ab052f74}{KEY\+\_\+\+SCANCODE\+\_\+A}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a47f603b24bf396677169c2365e678314}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW3\+\_\+\+LAST}}~\mbox{\hyperlink{scancode_8h_a2ce081d556bd55d0225a503fb9fd8f74}{KEY\+\_\+\+SCANCODE\+\_\+L}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ad4625e612bbc727a57ead570fcc26f1f}{ROW4\+\_\+\+KEY\+\_\+\+AMMOUT}}~10
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a1a964a36bb3a2945c67eb6c349834ac4}{KEY\+\_\+\+SCANCODE\+\_\+Z}}~0x2C
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a3553fd90244a1ab86fc21542e4b6f76a}{KEY\+\_\+\+SCANCODE\+\_\+X}}~0x2D
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a4bcc1306e25db83fd96c81092de4cbfc}{KEY\+\_\+\+SCANCODE\+\_\+C}}~0x2E
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ac6c61ef04436c0f9c1c53f0b82767af4}{KEY\+\_\+\+SCANCODE\+\_\+V}}~0x2F
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a870e9ee1495eb44bddd22cc7517ab288}{KEY\+\_\+\+SCANCODE\+\_\+B}}~0x30
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ab93f166652d7f6c10b381056cbf8649f}{KEY\+\_\+\+SCANCODE\+\_\+N}}~0x31
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a65b7641afd1a2867d19d283ffb897ec0}{KEY\+\_\+\+SCANCODE\+\_\+M}}~0\+X32
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ab6ef5b3206aaaad06ff7af7c64715869}{KEY\+\_\+\+SCANCODE\+\_\+\+COMMA}}~0\+X33
+\item 
+\#define \mbox{\hyperlink{scancode_8h_ac3bb802af764a1ed5825ab5ec80e2f3f}{KEY\+\_\+\+SCANCODE\+\_\+\+PERIOD}}~0\+X34
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a5c90514aec5c04ef2e1e3ac6ee1c4093}{KEY\+\_\+\+SCANCODE\+\_\+\+DASH}}~0x35
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a94925f9fc75aa7dda3d03e8ef92ca0a0}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW4\+\_\+\+FIRST}}~\mbox{\hyperlink{scancode_8h_a1a964a36bb3a2945c67eb6c349834ac4}{KEY\+\_\+\+SCANCODE\+\_\+Z}}
+\item 
+\#define \mbox{\hyperlink{scancode_8h_a6bc723a9eb3da06416d4e92569c2372c}{KEY\+\_\+\+SCANCODE\+\_\+\+ROW4\+\_\+\+LAST}}~\mbox{\hyperlink{scancode_8h_a5c90514aec5c04ef2e1e3ac6ee1c4093}{KEY\+\_\+\+SCANCODE\+\_\+\+DASH}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}} \{ \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9ab7e4e0120a041dbe6528b050c04269e0}{none}}
+, \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9af2e82f3a4ac276b6846c94adf1fc761b}{portuguese}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}{set\+Keyboard\+Layout}} (\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}} keyboard\+Layout)
+\item 
+char \mbox{\hyperlink{scancode_8h_ada8187b2c0a1eed5dc772fe2c64db5b2}{get\+Char\+From\+Makecode}} (uint8\+\_\+t makecode)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}} \mbox{\hyperlink{scancode_8h_a8d9a8aedae5976c054e784d68cbf42d0}{portuguese\+Keyboard}}
+\item 
+\mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}} \mbox{\hyperlink{scancode_8h_ac0699b9296f691623167332042a42feb}{current\+Keyboard}}
+\item 
+\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}} \mbox{\hyperlink{scancode_8h_a94bbb2676a6cdea775312d333108e712}{current\+Keyboard\+Layout}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{scancode_8h_a87603dfa2699da37f80802a1edd41e36}\label{scancode_8h_a87603dfa2699da37f80802a1edd41e36} 
+\index{scancode.h@{scancode.h}!BACKSPACE\_SCANCODE@{BACKSPACE\_SCANCODE}}
+\index{BACKSPACE\_SCANCODE@{BACKSPACE\_SCANCODE}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{BACKSPACE\_SCANCODE}{BACKSPACE\_SCANCODE}}
+{\footnotesize\ttfamily \#define BACKSPACE\+\_\+\+SCANCODE~0x0E}
+
+\Hypertarget{scancode_8h_a8bb1229160325026bea25f0cafcc8cf2}\label{scancode_8h_a8bb1229160325026bea25f0cafcc8cf2} 
+\index{scancode.h@{scancode.h}!ENTER\_SCANCODE@{ENTER\_SCANCODE}}
+\index{ENTER\_SCANCODE@{ENTER\_SCANCODE}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{ENTER\_SCANCODE}{ENTER\_SCANCODE}}
+{\footnotesize\ttfamily \#define ENTER\+\_\+\+SCANCODE~0x1C}
+
+\Hypertarget{scancode_8h_a53c30f32841cac21b33343d580241441}\label{scancode_8h_a53c30f32841cac21b33343d580241441} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_0@{KEY\_SCANCODE\_0}}
+\index{KEY\_SCANCODE\_0@{KEY\_SCANCODE\_0}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_0}{KEY\_SCANCODE\_0}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+0~0x0B}
+
+\Hypertarget{scancode_8h_a0b50979777a26ba7da51b2cd5002a4d7}\label{scancode_8h_a0b50979777a26ba7da51b2cd5002a4d7} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_1@{KEY\_SCANCODE\_1}}
+\index{KEY\_SCANCODE\_1@{KEY\_SCANCODE\_1}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_1}{KEY\_SCANCODE\_1}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+1~0x02}
+
+\Hypertarget{scancode_8h_a42b72855346e805a4ac03d0ee7e614b8}\label{scancode_8h_a42b72855346e805a4ac03d0ee7e614b8} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_2@{KEY\_SCANCODE\_2}}
+\index{KEY\_SCANCODE\_2@{KEY\_SCANCODE\_2}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_2}{KEY\_SCANCODE\_2}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+2~0x03}
+
+\Hypertarget{scancode_8h_a47c7dc29faf30fbae9ff685f259be153}\label{scancode_8h_a47c7dc29faf30fbae9ff685f259be153} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_3@{KEY\_SCANCODE\_3}}
+\index{KEY\_SCANCODE\_3@{KEY\_SCANCODE\_3}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_3}{KEY\_SCANCODE\_3}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+3~0x04}
+
+\Hypertarget{scancode_8h_a3a9542496246ad5d2508ec1637385bee}\label{scancode_8h_a3a9542496246ad5d2508ec1637385bee} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_4@{KEY\_SCANCODE\_4}}
+\index{KEY\_SCANCODE\_4@{KEY\_SCANCODE\_4}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_4}{KEY\_SCANCODE\_4}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+4~0x05}
+
+\Hypertarget{scancode_8h_a39ec880539ec1dde6b4c855cc595c660}\label{scancode_8h_a39ec880539ec1dde6b4c855cc595c660} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_5@{KEY\_SCANCODE\_5}}
+\index{KEY\_SCANCODE\_5@{KEY\_SCANCODE\_5}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_5}{KEY\_SCANCODE\_5}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+5~0x06}
+
+\Hypertarget{scancode_8h_ace9737baf831880bfd1637c4199fdbbc}\label{scancode_8h_ace9737baf831880bfd1637c4199fdbbc} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_6@{KEY\_SCANCODE\_6}}
+\index{KEY\_SCANCODE\_6@{KEY\_SCANCODE\_6}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_6}{KEY\_SCANCODE\_6}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+6~0x07}
+
+\Hypertarget{scancode_8h_aeef3554e593cc10dc427fd7d3f6f8651}\label{scancode_8h_aeef3554e593cc10dc427fd7d3f6f8651} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_7@{KEY\_SCANCODE\_7}}
+\index{KEY\_SCANCODE\_7@{KEY\_SCANCODE\_7}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_7}{KEY\_SCANCODE\_7}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+7~0x08}
+
+\Hypertarget{scancode_8h_af4bf6314a5a5bf9ebffabd0ce6e3a6d2}\label{scancode_8h_af4bf6314a5a5bf9ebffabd0ce6e3a6d2} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_8@{KEY\_SCANCODE\_8}}
+\index{KEY\_SCANCODE\_8@{KEY\_SCANCODE\_8}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_8}{KEY\_SCANCODE\_8}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+8~0x09}
+
+\Hypertarget{scancode_8h_a9fbffeaf9929a92e9f638f9557d2b151}\label{scancode_8h_a9fbffeaf9929a92e9f638f9557d2b151} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_9@{KEY\_SCANCODE\_9}}
+\index{KEY\_SCANCODE\_9@{KEY\_SCANCODE\_9}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_9}{KEY\_SCANCODE\_9}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+9~0x0A}
+
+\Hypertarget{scancode_8h_a1b26ab8e3faf4911f16e1f74ab052f74}\label{scancode_8h_a1b26ab8e3faf4911f16e1f74ab052f74} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_A@{KEY\_SCANCODE\_A}}
+\index{KEY\_SCANCODE\_A@{KEY\_SCANCODE\_A}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_A}{KEY\_SCANCODE\_A}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+A~0x1E}
+
+\Hypertarget{scancode_8h_a68980654a30611704162343645070ee9}\label{scancode_8h_a68980654a30611704162343645070ee9} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_APOSTROPHE@{KEY\_SCANCODE\_APOSTROPHE}}
+\index{KEY\_SCANCODE\_APOSTROPHE@{KEY\_SCANCODE\_APOSTROPHE}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_APOSTROPHE}{KEY\_SCANCODE\_APOSTROPHE}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+APOSTROPHE~0x0C}
+
+\Hypertarget{scancode_8h_a870e9ee1495eb44bddd22cc7517ab288}\label{scancode_8h_a870e9ee1495eb44bddd22cc7517ab288} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_B@{KEY\_SCANCODE\_B}}
+\index{KEY\_SCANCODE\_B@{KEY\_SCANCODE\_B}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_B}{KEY\_SCANCODE\_B}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+B~0x30}
+
+\Hypertarget{scancode_8h_a4bcc1306e25db83fd96c81092de4cbfc}\label{scancode_8h_a4bcc1306e25db83fd96c81092de4cbfc} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_C@{KEY\_SCANCODE\_C}}
+\index{KEY\_SCANCODE\_C@{KEY\_SCANCODE\_C}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_C}{KEY\_SCANCODE\_C}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+C~0x2E}
+
+\Hypertarget{scancode_8h_ab6ef5b3206aaaad06ff7af7c64715869}\label{scancode_8h_ab6ef5b3206aaaad06ff7af7c64715869} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_COMMA@{KEY\_SCANCODE\_COMMA}}
+\index{KEY\_SCANCODE\_COMMA@{KEY\_SCANCODE\_COMMA}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_COMMA}{KEY\_SCANCODE\_COMMA}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+COMMA~0\+X33}
+
+\Hypertarget{scancode_8h_ac68276f0c73d2808a189c661012bf659}\label{scancode_8h_ac68276f0c73d2808a189c661012bf659} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_D@{KEY\_SCANCODE\_D}}
+\index{KEY\_SCANCODE\_D@{KEY\_SCANCODE\_D}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_D}{KEY\_SCANCODE\_D}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+D~0x20}
+
+\Hypertarget{scancode_8h_a5c90514aec5c04ef2e1e3ac6ee1c4093}\label{scancode_8h_a5c90514aec5c04ef2e1e3ac6ee1c4093} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_DASH@{KEY\_SCANCODE\_DASH}}
+\index{KEY\_SCANCODE\_DASH@{KEY\_SCANCODE\_DASH}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_DASH}{KEY\_SCANCODE\_DASH}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+DASH~0x35}
+
+\Hypertarget{scancode_8h_a65637f0bb2edcfc020131977be089bfd}\label{scancode_8h_a65637f0bb2edcfc020131977be089bfd} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_E@{KEY\_SCANCODE\_E}}
+\index{KEY\_SCANCODE\_E@{KEY\_SCANCODE\_E}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_E}{KEY\_SCANCODE\_E}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+E~0x12}
+
+\Hypertarget{scancode_8h_a31fc7f905da0838b8740392bb71b6383}\label{scancode_8h_a31fc7f905da0838b8740392bb71b6383} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_F@{KEY\_SCANCODE\_F}}
+\index{KEY\_SCANCODE\_F@{KEY\_SCANCODE\_F}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_F}{KEY\_SCANCODE\_F}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+F~0x21}
+
+\Hypertarget{scancode_8h_afa3ee075e9415e93d6a4d65e42b6ca95}\label{scancode_8h_afa3ee075e9415e93d6a4d65e42b6ca95} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_G@{KEY\_SCANCODE\_G}}
+\index{KEY\_SCANCODE\_G@{KEY\_SCANCODE\_G}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_G}{KEY\_SCANCODE\_G}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+G~0x22}
+
+\Hypertarget{scancode_8h_ac3a212ff500711aa1b6363acfdb24aa5}\label{scancode_8h_ac3a212ff500711aa1b6363acfdb24aa5} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_H@{KEY\_SCANCODE\_H}}
+\index{KEY\_SCANCODE\_H@{KEY\_SCANCODE\_H}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_H}{KEY\_SCANCODE\_H}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+H~0x23}
+
+\Hypertarget{scancode_8h_add7cfbe2c419bf2acef50a0a2f639f18}\label{scancode_8h_add7cfbe2c419bf2acef50a0a2f639f18} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_I@{KEY\_SCANCODE\_I}}
+\index{KEY\_SCANCODE\_I@{KEY\_SCANCODE\_I}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_I}{KEY\_SCANCODE\_I}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+I~0x17}
+
+\Hypertarget{scancode_8h_a1f4d0d6e98e8a7bcf4711a051a81851c}\label{scancode_8h_a1f4d0d6e98e8a7bcf4711a051a81851c} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_J@{KEY\_SCANCODE\_J}}
+\index{KEY\_SCANCODE\_J@{KEY\_SCANCODE\_J}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_J}{KEY\_SCANCODE\_J}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+J~0x24}
+
+\Hypertarget{scancode_8h_a35bf44118428b1d01553a4d015115e5a}\label{scancode_8h_a35bf44118428b1d01553a4d015115e5a} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_K@{KEY\_SCANCODE\_K}}
+\index{KEY\_SCANCODE\_K@{KEY\_SCANCODE\_K}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_K}{KEY\_SCANCODE\_K}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+K~0x25}
+
+\Hypertarget{scancode_8h_a2ce081d556bd55d0225a503fb9fd8f74}\label{scancode_8h_a2ce081d556bd55d0225a503fb9fd8f74} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_L@{KEY\_SCANCODE\_L}}
+\index{KEY\_SCANCODE\_L@{KEY\_SCANCODE\_L}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_L}{KEY\_SCANCODE\_L}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+L~0x26}
+
+\Hypertarget{scancode_8h_a65b7641afd1a2867d19d283ffb897ec0}\label{scancode_8h_a65b7641afd1a2867d19d283ffb897ec0} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_M@{KEY\_SCANCODE\_M}}
+\index{KEY\_SCANCODE\_M@{KEY\_SCANCODE\_M}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_M}{KEY\_SCANCODE\_M}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+M~0\+X32}
+
+\Hypertarget{scancode_8h_ab93f166652d7f6c10b381056cbf8649f}\label{scancode_8h_ab93f166652d7f6c10b381056cbf8649f} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_N@{KEY\_SCANCODE\_N}}
+\index{KEY\_SCANCODE\_N@{KEY\_SCANCODE\_N}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_N}{KEY\_SCANCODE\_N}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+N~0x31}
+
+\Hypertarget{scancode_8h_a92257971f4d6f49b4a66f198983f2687}\label{scancode_8h_a92257971f4d6f49b4a66f198983f2687} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_O@{KEY\_SCANCODE\_O}}
+\index{KEY\_SCANCODE\_O@{KEY\_SCANCODE\_O}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_O}{KEY\_SCANCODE\_O}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+O~0x18}
+
+\Hypertarget{scancode_8h_ae111c0439ae05ae996d54ad25153b541}\label{scancode_8h_ae111c0439ae05ae996d54ad25153b541} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_P@{KEY\_SCANCODE\_P}}
+\index{KEY\_SCANCODE\_P@{KEY\_SCANCODE\_P}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_P}{KEY\_SCANCODE\_P}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+P~0x19}
+
+\Hypertarget{scancode_8h_ac3bb802af764a1ed5825ab5ec80e2f3f}\label{scancode_8h_ac3bb802af764a1ed5825ab5ec80e2f3f} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_PERIOD@{KEY\_SCANCODE\_PERIOD}}
+\index{KEY\_SCANCODE\_PERIOD@{KEY\_SCANCODE\_PERIOD}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_PERIOD}{KEY\_SCANCODE\_PERIOD}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+PERIOD~0\+X34}
+
+\Hypertarget{scancode_8h_abb50a3014eeacd1564f41e8f2a0a1e1c}\label{scancode_8h_abb50a3014eeacd1564f41e8f2a0a1e1c} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_Q@{KEY\_SCANCODE\_Q}}
+\index{KEY\_SCANCODE\_Q@{KEY\_SCANCODE\_Q}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_Q}{KEY\_SCANCODE\_Q}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+Q~0x10}
+
+\Hypertarget{scancode_8h_a35de6dda9a4f80d713eb03c04e71880c}\label{scancode_8h_a35de6dda9a4f80d713eb03c04e71880c} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_R@{KEY\_SCANCODE\_R}}
+\index{KEY\_SCANCODE\_R@{KEY\_SCANCODE\_R}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_R}{KEY\_SCANCODE\_R}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+R~0x13}
+
+\Hypertarget{scancode_8h_a620e7ec45c3b027771b2b4ee78dab925}\label{scancode_8h_a620e7ec45c3b027771b2b4ee78dab925} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW1\_FIRST@{KEY\_SCANCODE\_ROW1\_FIRST}}
+\index{KEY\_SCANCODE\_ROW1\_FIRST@{KEY\_SCANCODE\_ROW1\_FIRST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW1\_FIRST}{KEY\_SCANCODE\_ROW1\_FIRST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW1\+\_\+\+FIRST~\mbox{\hyperlink{scancode_8h_a0b50979777a26ba7da51b2cd5002a4d7}{KEY\+\_\+\+SCANCODE\+\_\+1}}}
+
+\Hypertarget{scancode_8h_aa997449278453f9498c3bb053b2fed57}\label{scancode_8h_aa997449278453f9498c3bb053b2fed57} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW1\_LAST@{KEY\_SCANCODE\_ROW1\_LAST}}
+\index{KEY\_SCANCODE\_ROW1\_LAST@{KEY\_SCANCODE\_ROW1\_LAST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW1\_LAST}{KEY\_SCANCODE\_ROW1\_LAST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW1\+\_\+\+LAST~\mbox{\hyperlink{scancode_8h_a68980654a30611704162343645070ee9}{KEY\+\_\+\+SCANCODE\+\_\+\+APOSTROPHE}}}
+
+\Hypertarget{scancode_8h_af53a709bbca303151b4c40b502b9db63}\label{scancode_8h_af53a709bbca303151b4c40b502b9db63} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW2\_FIRST@{KEY\_SCANCODE\_ROW2\_FIRST}}
+\index{KEY\_SCANCODE\_ROW2\_FIRST@{KEY\_SCANCODE\_ROW2\_FIRST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW2\_FIRST}{KEY\_SCANCODE\_ROW2\_FIRST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW2\+\_\+\+FIRST~\mbox{\hyperlink{scancode_8h_abb50a3014eeacd1564f41e8f2a0a1e1c}{KEY\+\_\+\+SCANCODE\+\_\+Q}}}
+
+\Hypertarget{scancode_8h_a8e67c2442eb7ef746d03e9738ce60d17}\label{scancode_8h_a8e67c2442eb7ef746d03e9738ce60d17} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW2\_LAST@{KEY\_SCANCODE\_ROW2\_LAST}}
+\index{KEY\_SCANCODE\_ROW2\_LAST@{KEY\_SCANCODE\_ROW2\_LAST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW2\_LAST}{KEY\_SCANCODE\_ROW2\_LAST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW2\+\_\+\+LAST~\mbox{\hyperlink{scancode_8h_ae111c0439ae05ae996d54ad25153b541}{KEY\+\_\+\+SCANCODE\+\_\+P}}}
+
+\Hypertarget{scancode_8h_aafbacdaa9f4490b1e5953b2abc77532f}\label{scancode_8h_aafbacdaa9f4490b1e5953b2abc77532f} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW3\_FIRST@{KEY\_SCANCODE\_ROW3\_FIRST}}
+\index{KEY\_SCANCODE\_ROW3\_FIRST@{KEY\_SCANCODE\_ROW3\_FIRST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW3\_FIRST}{KEY\_SCANCODE\_ROW3\_FIRST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW3\+\_\+\+FIRST~\mbox{\hyperlink{scancode_8h_a1b26ab8e3faf4911f16e1f74ab052f74}{KEY\+\_\+\+SCANCODE\+\_\+A}}}
+
+\Hypertarget{scancode_8h_a47f603b24bf396677169c2365e678314}\label{scancode_8h_a47f603b24bf396677169c2365e678314} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW3\_LAST@{KEY\_SCANCODE\_ROW3\_LAST}}
+\index{KEY\_SCANCODE\_ROW3\_LAST@{KEY\_SCANCODE\_ROW3\_LAST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW3\_LAST}{KEY\_SCANCODE\_ROW3\_LAST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW3\+\_\+\+LAST~\mbox{\hyperlink{scancode_8h_a2ce081d556bd55d0225a503fb9fd8f74}{KEY\+\_\+\+SCANCODE\+\_\+L}}}
+
+\Hypertarget{scancode_8h_a94925f9fc75aa7dda3d03e8ef92ca0a0}\label{scancode_8h_a94925f9fc75aa7dda3d03e8ef92ca0a0} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW4\_FIRST@{KEY\_SCANCODE\_ROW4\_FIRST}}
+\index{KEY\_SCANCODE\_ROW4\_FIRST@{KEY\_SCANCODE\_ROW4\_FIRST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW4\_FIRST}{KEY\_SCANCODE\_ROW4\_FIRST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW4\+\_\+\+FIRST~\mbox{\hyperlink{scancode_8h_a1a964a36bb3a2945c67eb6c349834ac4}{KEY\+\_\+\+SCANCODE\+\_\+Z}}}
+
+\Hypertarget{scancode_8h_a6bc723a9eb3da06416d4e92569c2372c}\label{scancode_8h_a6bc723a9eb3da06416d4e92569c2372c} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_ROW4\_LAST@{KEY\_SCANCODE\_ROW4\_LAST}}
+\index{KEY\_SCANCODE\_ROW4\_LAST@{KEY\_SCANCODE\_ROW4\_LAST}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_ROW4\_LAST}{KEY\_SCANCODE\_ROW4\_LAST}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+\+ROW4\+\_\+\+LAST~\mbox{\hyperlink{scancode_8h_a5c90514aec5c04ef2e1e3ac6ee1c4093}{KEY\+\_\+\+SCANCODE\+\_\+\+DASH}}}
+
+\Hypertarget{scancode_8h_ae4610d73cab43653d93eba0b38a2e48f}\label{scancode_8h_ae4610d73cab43653d93eba0b38a2e48f} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_S@{KEY\_SCANCODE\_S}}
+\index{KEY\_SCANCODE\_S@{KEY\_SCANCODE\_S}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_S}{KEY\_SCANCODE\_S}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+S~0x1F}
+
+\Hypertarget{scancode_8h_a91c4b8ac62389c4c007187ae7697ab13}\label{scancode_8h_a91c4b8ac62389c4c007187ae7697ab13} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_T@{KEY\_SCANCODE\_T}}
+\index{KEY\_SCANCODE\_T@{KEY\_SCANCODE\_T}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_T}{KEY\_SCANCODE\_T}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+T~0x14}
+
+\Hypertarget{scancode_8h_a068c14c011f43ec9a2620d216ed8c06f}\label{scancode_8h_a068c14c011f43ec9a2620d216ed8c06f} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_U@{KEY\_SCANCODE\_U}}
+\index{KEY\_SCANCODE\_U@{KEY\_SCANCODE\_U}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_U}{KEY\_SCANCODE\_U}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+U~0x16}
+
+\Hypertarget{scancode_8h_ac6c61ef04436c0f9c1c53f0b82767af4}\label{scancode_8h_ac6c61ef04436c0f9c1c53f0b82767af4} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_V@{KEY\_SCANCODE\_V}}
+\index{KEY\_SCANCODE\_V@{KEY\_SCANCODE\_V}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_V}{KEY\_SCANCODE\_V}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+V~0x2F}
+
+\Hypertarget{scancode_8h_ae525ced1ecbbe3588b1e47e7ba94b9cc}\label{scancode_8h_ae525ced1ecbbe3588b1e47e7ba94b9cc} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_W@{KEY\_SCANCODE\_W}}
+\index{KEY\_SCANCODE\_W@{KEY\_SCANCODE\_W}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_W}{KEY\_SCANCODE\_W}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+W~0x11}
+
+\Hypertarget{scancode_8h_a3553fd90244a1ab86fc21542e4b6f76a}\label{scancode_8h_a3553fd90244a1ab86fc21542e4b6f76a} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_X@{KEY\_SCANCODE\_X}}
+\index{KEY\_SCANCODE\_X@{KEY\_SCANCODE\_X}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_X}{KEY\_SCANCODE\_X}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+X~0x2D}
+
+\Hypertarget{scancode_8h_ae818045ae1a18afc8f2dc89afb4ece4d}\label{scancode_8h_ae818045ae1a18afc8f2dc89afb4ece4d} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_Y@{KEY\_SCANCODE\_Y}}
+\index{KEY\_SCANCODE\_Y@{KEY\_SCANCODE\_Y}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_Y}{KEY\_SCANCODE\_Y}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+Y~0x15}
+
+\Hypertarget{scancode_8h_a1a964a36bb3a2945c67eb6c349834ac4}\label{scancode_8h_a1a964a36bb3a2945c67eb6c349834ac4} 
+\index{scancode.h@{scancode.h}!KEY\_SCANCODE\_Z@{KEY\_SCANCODE\_Z}}
+\index{KEY\_SCANCODE\_Z@{KEY\_SCANCODE\_Z}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SCANCODE\_Z}{KEY\_SCANCODE\_Z}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SCANCODE\+\_\+Z~0x2C}
+
+\Hypertarget{scancode_8h_a3e1ca60ce8d8330cd58cd4f28dcd61fe}\label{scancode_8h_a3e1ca60ce8d8330cd58cd4f28dcd61fe} 
+\index{scancode.h@{scancode.h}!ROW1\_KEY\_AMMOUT@{ROW1\_KEY\_AMMOUT}}
+\index{ROW1\_KEY\_AMMOUT@{ROW1\_KEY\_AMMOUT}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{ROW1\_KEY\_AMMOUT}{ROW1\_KEY\_AMMOUT}}
+{\footnotesize\ttfamily \#define ROW1\+\_\+\+KEY\+\_\+\+AMMOUT~11}
+
+\Hypertarget{scancode_8h_a7052d97d66345f091e0a743cfd5ddb6f}\label{scancode_8h_a7052d97d66345f091e0a743cfd5ddb6f} 
+\index{scancode.h@{scancode.h}!ROW2\_KEY\_AMMOUT@{ROW2\_KEY\_AMMOUT}}
+\index{ROW2\_KEY\_AMMOUT@{ROW2\_KEY\_AMMOUT}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{ROW2\_KEY\_AMMOUT}{ROW2\_KEY\_AMMOUT}}
+{\footnotesize\ttfamily \#define ROW2\+\_\+\+KEY\+\_\+\+AMMOUT~10}
+
+\Hypertarget{scancode_8h_a91274c4d6c3c48539af01b85ecd35dec}\label{scancode_8h_a91274c4d6c3c48539af01b85ecd35dec} 
+\index{scancode.h@{scancode.h}!ROW3\_KEY\_AMMOUT@{ROW3\_KEY\_AMMOUT}}
+\index{ROW3\_KEY\_AMMOUT@{ROW3\_KEY\_AMMOUT}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{ROW3\_KEY\_AMMOUT}{ROW3\_KEY\_AMMOUT}}
+{\footnotesize\ttfamily \#define ROW3\+\_\+\+KEY\+\_\+\+AMMOUT~9}
+
+\Hypertarget{scancode_8h_ad4625e612bbc727a57ead570fcc26f1f}\label{scancode_8h_ad4625e612bbc727a57ead570fcc26f1f} 
+\index{scancode.h@{scancode.h}!ROW4\_KEY\_AMMOUT@{ROW4\_KEY\_AMMOUT}}
+\index{ROW4\_KEY\_AMMOUT@{ROW4\_KEY\_AMMOUT}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{ROW4\_KEY\_AMMOUT}{ROW4\_KEY\_AMMOUT}}
+{\footnotesize\ttfamily \#define ROW4\+\_\+\+KEY\+\_\+\+AMMOUT~10}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}\label{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9} 
+\index{scancode.h@{scancode.h}!keyboard\_layout\_t@{keyboard\_layout\_t}}
+\index{keyboard\_layout\_t@{keyboard\_layout\_t}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_layout\_t}{keyboard\_layout\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!scancode.h@{scancode.h}}\index{scancode.h@{scancode.h}!none@{none}}}\Hypertarget{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9ab7e4e0120a041dbe6528b050c04269e0}\label{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9ab7e4e0120a041dbe6528b050c04269e0} 
+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{portuguese@{portuguese}!scancode.h@{scancode.h}}\index{scancode.h@{scancode.h}!portuguese@{portuguese}}}\Hypertarget{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9af2e82f3a4ac276b6846c94adf1fc761b}\label{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9af2e82f3a4ac276b6846c94adf1fc761b} 
+portuguese&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{scancode_8h_ada8187b2c0a1eed5dc772fe2c64db5b2}\label{scancode_8h_ada8187b2c0a1eed5dc772fe2c64db5b2} 
+\index{scancode.h@{scancode.h}!getCharFromMakecode@{getCharFromMakecode}}
+\index{getCharFromMakecode@{getCharFromMakecode}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{getCharFromMakecode()}{getCharFromMakecode()}}
+{\footnotesize\ttfamily char get\+Char\+From\+Makecode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{makecode }\end{DoxyParamCaption})}
+
+\Hypertarget{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}\label{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5} 
+\index{scancode.h@{scancode.h}!setKeyboardLayout@{setKeyboardLayout}}
+\index{setKeyboardLayout@{setKeyboardLayout}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{setKeyboardLayout()}{setKeyboardLayout()}}
+{\footnotesize\ttfamily int set\+Keyboard\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}}}]{keyboard\+Layout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{scancode_8h_ac0699b9296f691623167332042a42feb}\label{scancode_8h_ac0699b9296f691623167332042a42feb} 
+\index{scancode.h@{scancode.h}!currentKeyboard@{currentKeyboard}}
+\index{currentKeyboard@{currentKeyboard}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{currentKeyboard}{currentKeyboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}} current\+Keyboard}
+
+\Hypertarget{scancode_8h_a94bbb2676a6cdea775312d333108e712}\label{scancode_8h_a94bbb2676a6cdea775312d333108e712} 
+\index{scancode.h@{scancode.h}!currentKeyboardLayout@{currentKeyboardLayout}}
+\index{currentKeyboardLayout@{currentKeyboardLayout}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{currentKeyboardLayout}{currentKeyboardLayout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}} current\+Keyboard\+Layout}
+
+\Hypertarget{scancode_8h_a8d9a8aedae5976c054e784d68cbf42d0}\label{scancode_8h_a8d9a8aedae5976c054e784d68cbf42d0} 
+\index{scancode.h@{scancode.h}!portugueseKeyboard@{portugueseKeyboard}}
+\index{portugueseKeyboard@{portugueseKeyboard}!scancode.h@{scancode.h}}
+\doxysubsubsection{\texorpdfstring{portugueseKeyboard}{portugueseKeyboard}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}} portuguese\+Keyboard}
+

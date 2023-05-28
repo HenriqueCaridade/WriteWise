@@ -1,0 +1,466 @@
+\doxysection{proj.\+c File Reference}
+\hypertarget{proj_8c}{}\label{proj_8c}\index{proj.c@{proj.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \"{}typing/typing.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/lib.\+h\"{}}\newline
+{\ttfamily \#include \"{}ui/ui.\+h\"{}}\newline
+Include dependency graph for proj.\+c\+:
+% FIG 0
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} \{ \newline
+\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bba4d712f99cdbef2d87025c19d60ab037d}{start\+State}}
+, \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbac5e06486b270c86ad15d9da9435c813f}{main\+State}}
+, \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbac75f52eb229879d25c78d46dc32592fd}{training\+State}}
+, \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbafe92db0c0db0550b5f34dbba90fdea2a}{race\+State}}
+, \newline
+\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbace4ff1a02675d37f94b326481edf1576}{instructions\+State}}
+, \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbac15c530fdd851c71d1c959de0f364c68}{settings\+State}}
+, \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bbaf086a0ce700c30dac657a784a3e0ca93}{end\+State}}
+ \}
+\item 
+enum \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}} \{ \newline
+\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09af84da1f0ccd0a8354d72ac78782682ff}{back\+Color}} = 0
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09aed8ef154bc518624d7d6cbd80ab0e7e6}{text\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09ad54c2349427802735fb4e8e797976717}{subtle\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09a982e4a0520c2d337919c8601ec073768}{button\+Back\+Color}}
+, \newline
+\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09a9ffabaa03b329d1f3a8e6292dc86530b}{button\+Text\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09abc04157ffa9dfeb1100799dbaf2aff16}{selected\+Button\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09ac025cf76b332da5777e8a181822f09e0}{error\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09a36f6cc599722261616c7b550f3e79cee}{training\+Color}}
+, \newline
+\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09af241eda27d288948553a48ad88222ef5}{race\+Color}}
+, \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09a4be1217331065d4e5c6cf60adda0a191}{info\+Color}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{proj_8c_aa8dae723987ff8095c723602a30acf92}{get\+Theme\+Color}} (\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}} color)
+\item 
+int \mbox{\hyperlink{proj_8c_a49ec2dfa736580020278194b77d72f33}{draw\+Screen}} ()
+\item 
+int \mbox{\hyperlink{proj_8c_a911c7e963bbb29b147c59b47bbb99a48}{load\+Screen}} ()
+\item 
+int \mbox{\hyperlink{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6}{change\+State}} ()
+\item 
+void \mbox{\hyperlink{proj_8c_a24b06f2006c10abf3489fb220edbd04c}{keyboard\+Scancode\+Handler}} ()
+\item 
+int \mbox{\hyperlink{proj_8c_abf39a6e85845f60b60d8086d8095c97b}{exit\+All}} (int code)
+\item 
+int() \mbox{\hyperlink{proj_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}{change\+State}} (\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} new\+State)
+\item 
+int \mbox{\hyperlink{proj_8c_ac17b3dba3079806ebcdac5dc839b41d2}{start\+Screen\+Load}} ()
+\item 
+void \mbox{\hyperlink{proj_8c_a4394b5cbc183d99b5b641570e22bf2cb}{\+\_\+main\+Button\+Training}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_ae7648cf435d15fae9ccce00c7dc4c87a}{\+\_\+main\+Button\+Race}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a73093e037698b8abab896e0d1ce17124}{\+\_\+main\+Button\+Instructions}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_aec29e3759e0267e1fadc8d6a89a1ea28}{\+\_\+main\+Button\+Settings}} (void)
+\item 
+int \mbox{\hyperlink{proj_8c_aade01f6f0a27e4b81cd57f04c56b2cb0}{main\+Screen\+Load}} ()
+\item 
+void \mbox{\hyperlink{proj_8c_a4cd5df256d365f59536bdc5429286014}{\+\_\+training\+Button\+Reset}} (void)
+\item 
+int \mbox{\hyperlink{proj_8c_aebd79db36d9395299d0cff301abdc365}{training\+Screen\+Load}} ()
+\item 
+void \mbox{\hyperlink{proj_8c_ab9d75267a1f1cbbf999b3fe2e8685c14}{\+\_\+race\+Ready\+Button}} (void)
+\item 
+int \mbox{\hyperlink{proj_8c_a435bdccbfff155e4e1babe4c3ad2ecd2}{race\+Screen\+Load}} ()
+\item 
+int \mbox{\hyperlink{proj_8c_af9a1525df94c9b95692eaf77bd40daae}{instruction\+Screen\+Load}} ()
+\item 
+int \mbox{\hyperlink{proj_8c_a033519013af351949bed5cffd8da439c}{settings\+Screen\+Load}} ()
+\item 
+void \mbox{\hyperlink{proj_8c_a308950be5cfb404b76002a160af9a08a}{\+\_\+settings\+Button480p}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a5ef76ccc42c251018d8e645f7f21e9ad}{\+\_\+settings\+Button600p}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a385b726855543dd24a79343f37c5dc2d}{\+\_\+settings\+Button864p}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a49243f23d63e3216bf32cb209523e79d}{\+\_\+settings\+Button1024p}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_aeb6e5170edd25975e6df2021c0be1b4a}{\+\_\+settings\+Button\+Dark\+Theme}} (void)
+\item 
+void \mbox{\hyperlink{proj_8c_a4a788000a8f03ff3953bd019f6312320}{\+\_\+settings\+Button\+Light\+Theme}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} \mbox{\hyperlink{proj_8c_a4c418c07b659a6a55509b84502e8be08}{curr\+App\+State}} = \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bba4d712f99cdbef2d87025c19d60ab037d}{start\+State}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{proj_8c_a2a1de804996e48f046ff70e86d19a560}{dark\+Theme\+Color\+Array}} \mbox{[}$\,$\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{proj_8c_a920ebf5dfbabdd90ec6766e733742e72}{light\+Theme\+Color\+Array}} \mbox{[}$\,$\mbox{]}
+\item 
+char \mbox{\hyperlink{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274}{received\+Info}} \mbox{[}20\mbox{]} = \{0\}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{proj_8c_a1298165576a45d12d99e8bc482bb28dd}{received\+ULong}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{proj_8c_aa728b31acb5710a4a6efbe7a91fba5c9}{received\+UInt}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{proj_8c_acf1db7b9843e04995832bfd6defee3ff}{received\+Long}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{proj_8c_ad8e74ca0963db159320ea9a5904c1423}{received\+Int}}
+\item 
+double \mbox{\hyperlink{proj_8c_a075ecf29a35444fd0a4fc3002deb2279}{received\+Double}}
+\item 
+float \mbox{\hyperlink{proj_8c_a7fd040abb130135b94ba08b754e1256b}{received\+Float}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bb}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bb} 
+\index{proj.c@{proj.c}!app\_state\_t@{app\_state\_t}}
+\index{app\_state\_t@{app\_state\_t}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{app\_state\_t}{app\_state\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{startState@{startState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!startState@{startState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bba4d712f99cdbef2d87025c19d60ab037d}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bba4d712f99cdbef2d87025c19d60ab037d} 
+start\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mainState@{mainState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!mainState@{mainState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbac5e06486b270c86ad15d9da9435c813f}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbac5e06486b270c86ad15d9da9435c813f} 
+main\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{trainingState@{trainingState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!trainingState@{trainingState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbac75f52eb229879d25c78d46dc32592fd}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbac75f52eb229879d25c78d46dc32592fd} 
+training\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{raceState@{raceState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!raceState@{raceState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbafe92db0c0db0550b5f34dbba90fdea2a}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbafe92db0c0db0550b5f34dbba90fdea2a} 
+race\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{instructionsState@{instructionsState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!instructionsState@{instructionsState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbace4ff1a02675d37f94b326481edf1576}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbace4ff1a02675d37f94b326481edf1576} 
+instructions\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{settingsState@{settingsState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!settingsState@{settingsState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbac15c530fdd851c71d1c959de0f364c68}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbac15c530fdd851c71d1c959de0f364c68} 
+settings\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{endState@{endState}!proj.c@{proj.c}}\index{proj.c@{proj.c}!endState@{endState}}}\Hypertarget{proj_8c_a5bb27460721cc90620d197fabf50d4bbaf086a0ce700c30dac657a784a3e0ca93}\label{proj_8c_a5bb27460721cc90620d197fabf50d4bbaf086a0ce700c30dac657a784a3e0ca93} 
+end\+State&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09}\label{proj_8c_acfea47ba326db625d7db422c599fdf09} 
+\index{proj.c@{proj.c}!theme\_color\_index\_t@{theme\_color\_index\_t}}
+\index{theme\_color\_index\_t@{theme\_color\_index\_t}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{theme\_color\_index\_t}{theme\_color\_index\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{backColor@{backColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!backColor@{backColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09af84da1f0ccd0a8354d72ac78782682ff}\label{proj_8c_acfea47ba326db625d7db422c599fdf09af84da1f0ccd0a8354d72ac78782682ff} 
+back\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{textColor@{textColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!textColor@{textColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09aed8ef154bc518624d7d6cbd80ab0e7e6}\label{proj_8c_acfea47ba326db625d7db422c599fdf09aed8ef154bc518624d7d6cbd80ab0e7e6} 
+text\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{subtleColor@{subtleColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!subtleColor@{subtleColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09ad54c2349427802735fb4e8e797976717}\label{proj_8c_acfea47ba326db625d7db422c599fdf09ad54c2349427802735fb4e8e797976717} 
+subtle\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{buttonBackColor@{buttonBackColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!buttonBackColor@{buttonBackColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09a982e4a0520c2d337919c8601ec073768}\label{proj_8c_acfea47ba326db625d7db422c599fdf09a982e4a0520c2d337919c8601ec073768} 
+button\+Back\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{buttonTextColor@{buttonTextColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!buttonTextColor@{buttonTextColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09a9ffabaa03b329d1f3a8e6292dc86530b}\label{proj_8c_acfea47ba326db625d7db422c599fdf09a9ffabaa03b329d1f3a8e6292dc86530b} 
+button\+Text\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{selectedButtonColor@{selectedButtonColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!selectedButtonColor@{selectedButtonColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09abc04157ffa9dfeb1100799dbaf2aff16}\label{proj_8c_acfea47ba326db625d7db422c599fdf09abc04157ffa9dfeb1100799dbaf2aff16} 
+selected\+Button\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{errorColor@{errorColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!errorColor@{errorColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09ac025cf76b332da5777e8a181822f09e0}\label{proj_8c_acfea47ba326db625d7db422c599fdf09ac025cf76b332da5777e8a181822f09e0} 
+error\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{trainingColor@{trainingColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!trainingColor@{trainingColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09a36f6cc599722261616c7b550f3e79cee}\label{proj_8c_acfea47ba326db625d7db422c599fdf09a36f6cc599722261616c7b550f3e79cee} 
+training\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{raceColor@{raceColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!raceColor@{raceColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09af241eda27d288948553a48ad88222ef5}\label{proj_8c_acfea47ba326db625d7db422c599fdf09af241eda27d288948553a48ad88222ef5} 
+race\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{infoColor@{infoColor}!proj.c@{proj.c}}\index{proj.c@{proj.c}!infoColor@{infoColor}}}\Hypertarget{proj_8c_acfea47ba326db625d7db422c599fdf09a4be1217331065d4e5c6cf60adda0a191}\label{proj_8c_acfea47ba326db625d7db422c599fdf09a4be1217331065d4e5c6cf60adda0a191} 
+info\+Color&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{proj_8c_a73093e037698b8abab896e0d1ce17124}\label{proj_8c_a73093e037698b8abab896e0d1ce17124} 
+\index{proj.c@{proj.c}!\_mainButtonInstructions@{\_mainButtonInstructions}}
+\index{\_mainButtonInstructions@{\_mainButtonInstructions}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_mainButtonInstructions()}{\_mainButtonInstructions()}}
+{\footnotesize\ttfamily void \+\_\+main\+Button\+Instructions (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_ae7648cf435d15fae9ccce00c7dc4c87a}\label{proj_8c_ae7648cf435d15fae9ccce00c7dc4c87a} 
+\index{proj.c@{proj.c}!\_mainButtonRace@{\_mainButtonRace}}
+\index{\_mainButtonRace@{\_mainButtonRace}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_mainButtonRace()}{\_mainButtonRace()}}
+{\footnotesize\ttfamily void \+\_\+main\+Button\+Race (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aec29e3759e0267e1fadc8d6a89a1ea28}\label{proj_8c_aec29e3759e0267e1fadc8d6a89a1ea28} 
+\index{proj.c@{proj.c}!\_mainButtonSettings@{\_mainButtonSettings}}
+\index{\_mainButtonSettings@{\_mainButtonSettings}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_mainButtonSettings()}{\_mainButtonSettings()}}
+{\footnotesize\ttfamily void \+\_\+main\+Button\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a4394b5cbc183d99b5b641570e22bf2cb}\label{proj_8c_a4394b5cbc183d99b5b641570e22bf2cb} 
+\index{proj.c@{proj.c}!\_mainButtonTraining@{\_mainButtonTraining}}
+\index{\_mainButtonTraining@{\_mainButtonTraining}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_mainButtonTraining()}{\_mainButtonTraining()}}
+{\footnotesize\ttfamily void \+\_\+main\+Button\+Training (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_ab9d75267a1f1cbbf999b3fe2e8685c14}\label{proj_8c_ab9d75267a1f1cbbf999b3fe2e8685c14} 
+\index{proj.c@{proj.c}!\_raceReadyButton@{\_raceReadyButton}}
+\index{\_raceReadyButton@{\_raceReadyButton}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_raceReadyButton()}{\_raceReadyButton()}}
+{\footnotesize\ttfamily void \+\_\+race\+Ready\+Button (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a49243f23d63e3216bf32cb209523e79d}\label{proj_8c_a49243f23d63e3216bf32cb209523e79d} 
+\index{proj.c@{proj.c}!\_settingsButton1024p@{\_settingsButton1024p}}
+\index{\_settingsButton1024p@{\_settingsButton1024p}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButton1024p()}{\_settingsButton1024p()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button1024p (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a308950be5cfb404b76002a160af9a08a}\label{proj_8c_a308950be5cfb404b76002a160af9a08a} 
+\index{proj.c@{proj.c}!\_settingsButton480p@{\_settingsButton480p}}
+\index{\_settingsButton480p@{\_settingsButton480p}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButton480p()}{\_settingsButton480p()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button480p (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a5ef76ccc42c251018d8e645f7f21e9ad}\label{proj_8c_a5ef76ccc42c251018d8e645f7f21e9ad} 
+\index{proj.c@{proj.c}!\_settingsButton600p@{\_settingsButton600p}}
+\index{\_settingsButton600p@{\_settingsButton600p}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButton600p()}{\_settingsButton600p()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button600p (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a385b726855543dd24a79343f37c5dc2d}\label{proj_8c_a385b726855543dd24a79343f37c5dc2d} 
+\index{proj.c@{proj.c}!\_settingsButton864p@{\_settingsButton864p}}
+\index{\_settingsButton864p@{\_settingsButton864p}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButton864p()}{\_settingsButton864p()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button864p (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aeb6e5170edd25975e6df2021c0be1b4a}\label{proj_8c_aeb6e5170edd25975e6df2021c0be1b4a} 
+\index{proj.c@{proj.c}!\_settingsButtonDarkTheme@{\_settingsButtonDarkTheme}}
+\index{\_settingsButtonDarkTheme@{\_settingsButtonDarkTheme}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButtonDarkTheme()}{\_settingsButtonDarkTheme()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button\+Dark\+Theme (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a4a788000a8f03ff3953bd019f6312320}\label{proj_8c_a4a788000a8f03ff3953bd019f6312320} 
+\index{proj.c@{proj.c}!\_settingsButtonLightTheme@{\_settingsButtonLightTheme}}
+\index{\_settingsButtonLightTheme@{\_settingsButtonLightTheme}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_settingsButtonLightTheme()}{\_settingsButtonLightTheme()}}
+{\footnotesize\ttfamily void \+\_\+settings\+Button\+Light\+Theme (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a4cd5df256d365f59536bdc5429286014}\label{proj_8c_a4cd5df256d365f59536bdc5429286014} 
+\index{proj.c@{proj.c}!\_trainingButtonReset@{\_trainingButtonReset}}
+\index{\_trainingButtonReset@{\_trainingButtonReset}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{\_trainingButtonReset()}{\_trainingButtonReset()}}
+{\footnotesize\ttfamily void \+\_\+training\+Button\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6}\label{proj_8c_a966b6df6da3fefa81cf52f6a6b68bce6} 
+\index{proj.c@{proj.c}!changeState@{changeState}}
+\index{changeState@{changeState}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int change\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4}\label{proj_8c_ab8a63e79c3eb75997bee12a52ded04b4} 
+\index{proj.c@{proj.c}!changeState@{changeState}}
+\index{changeState@{changeState}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}}}]{new\+State }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a49ec2dfa736580020278194b77d72f33}\label{proj_8c_a49ec2dfa736580020278194b77d72f33} 
+\index{proj.c@{proj.c}!drawScreen@{drawScreen}}
+\index{drawScreen@{drawScreen}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{drawScreen()}{drawScreen()}}
+{\footnotesize\ttfamily int draw\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_abf39a6e85845f60b60d8086d8095c97b}\label{proj_8c_abf39a6e85845f60b60d8086d8095c97b} 
+\index{proj.c@{proj.c}!exitAll@{exitAll}}
+\index{exitAll@{exitAll}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{exitAll()}{exitAll()}}
+{\footnotesize\ttfamily int exit\+All (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aa8dae723987ff8095c723602a30acf92}\label{proj_8c_aa8dae723987ff8095c723602a30acf92} 
+\index{proj.c@{proj.c}!getThemeColor@{getThemeColor}}
+\index{getThemeColor@{getThemeColor}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{getThemeColor()}{getThemeColor()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+Theme\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{proj_8c_acfea47ba326db625d7db422c599fdf09}{theme\+\_\+color\+\_\+index\+\_\+t}}}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_af9a1525df94c9b95692eaf77bd40daae}\label{proj_8c_af9a1525df94c9b95692eaf77bd40daae} 
+\index{proj.c@{proj.c}!instructionScreenLoad@{instructionScreenLoad}}
+\index{instructionScreenLoad@{instructionScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{instructionScreenLoad()}{instructionScreenLoad()}}
+{\footnotesize\ttfamily int instruction\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a24b06f2006c10abf3489fb220edbd04c}\label{proj_8c_a24b06f2006c10abf3489fb220edbd04c} 
+\index{proj.c@{proj.c}!keyboardScancodeHandler@{keyboardScancodeHandler}}
+\index{keyboardScancodeHandler@{keyboardScancodeHandler}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{keyboardScancodeHandler()}{keyboardScancodeHandler()}}
+{\footnotesize\ttfamily void keyboard\+Scancode\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a911c7e963bbb29b147c59b47bbb99a48}\label{proj_8c_a911c7e963bbb29b147c59b47bbb99a48} 
+\index{proj.c@{proj.c}!loadScreen@{loadScreen}}
+\index{loadScreen@{loadScreen}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{loadScreen()}{loadScreen()}}
+{\footnotesize\ttfamily int load\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{proj_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{proj.c@{proj.c}!main@{main}}
+\index{main@{main}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aade01f6f0a27e4b81cd57f04c56b2cb0}\label{proj_8c_aade01f6f0a27e4b81cd57f04c56b2cb0} 
+\index{proj.c@{proj.c}!mainScreenLoad@{mainScreenLoad}}
+\index{mainScreenLoad@{mainScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{mainScreenLoad()}{mainScreenLoad()}}
+{\footnotesize\ttfamily int main\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a2a16f651eccbd248e1ad3b3b924b143b}\label{proj_8c_a2a16f651eccbd248e1ad3b3b924b143b} 
+\index{proj.c@{proj.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily int() proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a435bdccbfff155e4e1babe4c3ad2ecd2}\label{proj_8c_a435bdccbfff155e4e1babe4c3ad2ecd2} 
+\index{proj.c@{proj.c}!raceScreenLoad@{raceScreenLoad}}
+\index{raceScreenLoad@{raceScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{raceScreenLoad()}{raceScreenLoad()}}
+{\footnotesize\ttfamily int race\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_a033519013af351949bed5cffd8da439c}\label{proj_8c_a033519013af351949bed5cffd8da439c} 
+\index{proj.c@{proj.c}!settingsScreenLoad@{settingsScreenLoad}}
+\index{settingsScreenLoad@{settingsScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{settingsScreenLoad()}{settingsScreenLoad()}}
+{\footnotesize\ttfamily int settings\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_ac17b3dba3079806ebcdac5dc839b41d2}\label{proj_8c_ac17b3dba3079806ebcdac5dc839b41d2} 
+\index{proj.c@{proj.c}!startScreenLoad@{startScreenLoad}}
+\index{startScreenLoad@{startScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{startScreenLoad()}{startScreenLoad()}}
+{\footnotesize\ttfamily int start\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_aebd79db36d9395299d0cff301abdc365}\label{proj_8c_aebd79db36d9395299d0cff301abdc365} 
+\index{proj.c@{proj.c}!trainingScreenLoad@{trainingScreenLoad}}
+\index{trainingScreenLoad@{trainingScreenLoad}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{trainingScreenLoad()}{trainingScreenLoad()}}
+{\footnotesize\ttfamily int training\+Screen\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{proj_8c_a4c418c07b659a6a55509b84502e8be08}\label{proj_8c_a4c418c07b659a6a55509b84502e8be08} 
+\index{proj.c@{proj.c}!currAppState@{currAppState}}
+\index{currAppState@{currAppState}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{currAppState}{currAppState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bb}{app\+\_\+state\+\_\+t}} curr\+App\+State = \mbox{\hyperlink{proj_8c_a5bb27460721cc90620d197fabf50d4bba4d712f99cdbef2d87025c19d60ab037d}{start\+State}}}
+
+\Hypertarget{proj_8c_a2a1de804996e48f046ff70e86d19a560}\label{proj_8c_a2a1de804996e48f046ff70e86d19a560} 
+\index{proj.c@{proj.c}!darkThemeColorArray@{darkThemeColorArray}}
+\index{darkThemeColorArray@{darkThemeColorArray}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{darkThemeColorArray}{darkThemeColorArray}}
+{\footnotesize\ttfamily uint32\+\_\+t dark\+Theme\+Color\+Array\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0x000000,}
+\DoxyCodeLine{\ \ \ \ 0xFFFFFF,}
+\DoxyCodeLine{\ \ \ \ 0x505050,}
+\DoxyCodeLine{\ \ \ \ 0x303030,}
+\DoxyCodeLine{\ \ \ \ 0xDDDDDD,}
+\DoxyCodeLine{\ \ \ \ 0x606060,}
+\DoxyCodeLine{\ \ \ \ 0xFF4040,}
+\DoxyCodeLine{\ \ \ \ 0xFFDB58,}
+\DoxyCodeLine{\ \ \ \ 0x9B4FF0,}
+\DoxyCodeLine{\ \ \ \ 0x4050FF,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{proj_8c_a920ebf5dfbabdd90ec6766e733742e72}\label{proj_8c_a920ebf5dfbabdd90ec6766e733742e72} 
+\index{proj.c@{proj.c}!lightThemeColorArray@{lightThemeColorArray}}
+\index{lightThemeColorArray@{lightThemeColorArray}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{lightThemeColorArray}{lightThemeColorArray}}
+{\footnotesize\ttfamily uint32\+\_\+t light\+Theme\+Color\+Array\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0xFFFFFF,}
+\DoxyCodeLine{\ \ \ \ 0x000000,}
+\DoxyCodeLine{\ \ \ \ 0xA0A0A0,}
+\DoxyCodeLine{\ \ \ \ 0xC0C0C0,}
+\DoxyCodeLine{\ \ \ \ 0x222222,}
+\DoxyCodeLine{\ \ \ \ 0x909090,}
+\DoxyCodeLine{\ \ \ \ 0xAA3030,}
+\DoxyCodeLine{\ \ \ \ 0xCCA854,}
+\DoxyCodeLine{\ \ \ \ 0x8B4FC0,}
+\DoxyCodeLine{\ \ \ \ 0x4040CC,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{proj_8c_a075ecf29a35444fd0a4fc3002deb2279}\label{proj_8c_a075ecf29a35444fd0a4fc3002deb2279} 
+\index{proj.c@{proj.c}!receivedDouble@{receivedDouble}}
+\index{receivedDouble@{receivedDouble}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedDouble}{receivedDouble}}
+{\footnotesize\ttfamily double received\+Double}
+
+\Hypertarget{proj_8c_a7fd040abb130135b94ba08b754e1256b}\label{proj_8c_a7fd040abb130135b94ba08b754e1256b} 
+\index{proj.c@{proj.c}!receivedFloat@{receivedFloat}}
+\index{receivedFloat@{receivedFloat}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedFloat}{receivedFloat}}
+{\footnotesize\ttfamily float received\+Float}
+
+\Hypertarget{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274}\label{proj_8c_a004a2ebbbd5465932b88e7e9cf0f6274} 
+\index{proj.c@{proj.c}!receivedInfo@{receivedInfo}}
+\index{receivedInfo@{receivedInfo}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedInfo}{receivedInfo}}
+{\footnotesize\ttfamily char received\+Info\mbox{[}20\mbox{]} = \{0\}}
+
+\Hypertarget{proj_8c_ad8e74ca0963db159320ea9a5904c1423}\label{proj_8c_ad8e74ca0963db159320ea9a5904c1423} 
+\index{proj.c@{proj.c}!receivedInt@{receivedInt}}
+\index{receivedInt@{receivedInt}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedInt}{receivedInt}}
+{\footnotesize\ttfamily int32\+\_\+t received\+Int}
+
+\Hypertarget{proj_8c_acf1db7b9843e04995832bfd6defee3ff}\label{proj_8c_acf1db7b9843e04995832bfd6defee3ff} 
+\index{proj.c@{proj.c}!receivedLong@{receivedLong}}
+\index{receivedLong@{receivedLong}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedLong}{receivedLong}}
+{\footnotesize\ttfamily int64\+\_\+t received\+Long}
+
+\Hypertarget{proj_8c_aa728b31acb5710a4a6efbe7a91fba5c9}\label{proj_8c_aa728b31acb5710a4a6efbe7a91fba5c9} 
+\index{proj.c@{proj.c}!receivedUInt@{receivedUInt}}
+\index{receivedUInt@{receivedUInt}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedUInt}{receivedUInt}}
+{\footnotesize\ttfamily uint32\+\_\+t received\+UInt}
+
+\Hypertarget{proj_8c_a1298165576a45d12d99e8bc482bb28dd}\label{proj_8c_a1298165576a45d12d99e8bc482bb28dd} 
+\index{proj.c@{proj.c}!receivedULong@{receivedULong}}
+\index{receivedULong@{receivedULong}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{receivedULong}{receivedULong}}
+{\footnotesize\ttfamily uint64\+\_\+t received\+ULong}
+

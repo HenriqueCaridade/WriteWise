@@ -1,0 +1,67 @@
+\doxysection{serial\+Port.\+h}
+\hypertarget{serialPort_8h_source}{}\label{serialPort_8h_source}\index{lib/drivers/serialPort/serialPort.h@{lib/drivers/serialPort/serialPort.h}}
+\mbox{\hyperlink{serialPort_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_SERIAL\_PORT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_PROJ\_SERIAL\_PORT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../timer/timer.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UART_8h}{UART.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ACK\_TIMEOUT\ \ 1}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ INFO\_BITS\ \ \ \ \ \ \ 0xF0}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ INFO\_ACK\ \ \ \ \ \ \ \ (INFO\_BITS\ |\ 0x0)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ INFO\_NACK\ \ \ \ \ \ \ (INFO\_BITS\ |\ 0x1)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ INFO\_ULONG\ \ \ \ \ \ (INFO\_BITS\ |\ 0x2)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ INFO\_LONG\ \ \ \ \ \ \ (INFO\_BITS\ |\ 0x3)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ INFO\_UINT\ \ \ \ \ \ \ (INFO\_BITS\ |\ 0x4)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ INFO\_INT\ \ \ \ \ \ \ \ (INFO\_BITS\ |\ 0x5)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ INFO\_FLOAT\ \ \ \ \ \ (INFO\_BITS\ |\ 0x6)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ INFO\_DOUBLE\ \ \ \ \ (INFO\_BITS\ |\ 0x7)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ INFO\_READY\ \ \ \ \ \ (INFO\_BITS\ |\ 0x8)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ INFO\_NREADY\ \ \ \ \ (INFO\_BITS\ |\ 0x8)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ INFO\_READY\_ACK\ \ (INFO\_BITS\ |\ 0x9)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ INFO\_NREADY\_ACK\ (INFO\_BITS\ |\ 0xA)}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ NORMAL\_BIT\_MAX\ \ (INFO\_BITS\ -\/\ 1)}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ uint8\_t\ \mbox{\hyperlink{serialPort_8h_a69fa8de1f5030e4d8d16d53af255dc78}{irqSetSerialPort}};}
+\DoxyCodeLine{00028\ uint8\_t\ \mbox{\hyperlink{serialPort_8h_a228964d41da99e5f8e8dd296770120e2}{serialPortByte}};}
+\DoxyCodeLine{00029\ uint8\_t\ \mbox{\hyperlink{serialPort_8h_a2e479c57173cc2666f780113883ffd38}{receivingSerialPort}};}
+\DoxyCodeLine{00030\ uint64\_t\ \mbox{\hyperlink{serialPort_8h_a4ae231737eeed7ea518deaf7f68ab1f5}{waitingAckStartTime}};}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waitingAckSerialPort}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a4dbaad04d44889711cb19a089a6921e8}{serial\_port\_subscribe\_int}}();}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_afd52bd27bbf8c2323c4f5e2dddc7bc11}{serial\_port\_unsubscribe\_int}}();}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a3828a2b30eef59f8079080044d5bc908}{serial\_port\_init}}();}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_aeb45773771775f22abeffc9725b0f484}{serial\_port\_ih}}();}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_ab20bfb08015238b37b134b565bd3dac1}{serial\_port\_get\_status}}(uint8\_t*\ status);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_abf25dff6e2968ea4f9ba559a03ebbeb4}{serialPortSendByte}}\ \ \ \ \ \ (uint8\_t\ byteValue);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_ac3a25795e25b6f8fc1bc5fb7b143d40c}{serialPortSendULong}}\ \ \ \ \ (uint64\_t\ longValue);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_adda3660984971c372ef1e1f0a360bd6a}{serialPortSendLong}}\ \ \ \ \ \ (int64\_t\ longValue);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a77ea10edffbb359ce0853c9b1e94740f}{serialPortSendUInt}}\ \ \ \ \ \ (uint32\_t\ intValue);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a0aeaca6f89e1201699b3875038174d44}{serialPortSendInt}}\ \ \ \ \ \ \ (int32\_t\ intValue);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a0134693fd4a7d6a123305129712792b8}{serialPortSendFloat}}\ \ \ \ \ (\textcolor{keywordtype}{float}\ floatValue);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a9c190994ea13b53a9b6aa49389c912a4}{serialPortSendDouble}}\ \ \ \ (\textcolor{keywordtype}{double}\ doubleValue);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_af20ae10009c6de1a2c4e6f763f7f72b9}{serialPortReadByte}}\ \ \ \ \ \ ();}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a52ada979206bc06251dda2490315a1c0}{serialPortReadULong}}\ \ \ \ \ (uint64\_t*\ longValue);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a0f7d69b738ed89b95181c49c98831c38}{serialPortReadLong}}\ \ \ \ \ \ (int64\_t*\ longValue);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a2b8fb32ff4b2c7b68e6a9c2491976153}{serialPortReadUInt}}\ \ \ \ \ \ (uint32\_t*\ intValue);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_af35cdc050e3f74b0bebda76996742714}{serialPortReadInt}}\ \ \ \ \ \ \ (int32\_t*\ intValue);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_ad612d0d0a938ba98a9d6fc9fe1d2ad19}{serialPortReadFloat}}\ \ \ \ \ (\textcolor{keywordtype}{float}*\ floatValue);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_aa34c79dc8f929aed059070fb3a44a117}{serialPortReadDouble}}\ \ \ \ (\textcolor{keywordtype}{double}*\ doubleValue);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a35ac75b09a38e8b2784ca723644b0200}{serialPortSendAck}}\ \ \ \ \ \ \ ();}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a734235b3664aed710838355e8866a9fc}{serialPortSendReady}}\ \ \ \ \ ();}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_ab7bc0d7bea9c6dbc7a7262e88e4ce600}{serialPortSendNReady}}\ \ \ \ ();}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a152dcde4b0c1c2bb87fc9a3be3ea9d50}{serialPortSendReadyAck}}\ \ ();}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_ab276142b3c1078569432d047f28846a2}{serialPortSendNReadyAck}}\ ();}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a9589a68172d56e3652a6746e5d454e87}{serialPortSendNack}}\ \ \ \ \ \ ();}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{serialPort_8h_a3fe05b675294d1c1aec1e95afdd054d4}{serialPortClearFIFO}}\ \ \ \ \ ();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_SERIAL\_PORT\_H}}
+
+\end{DoxyCode}

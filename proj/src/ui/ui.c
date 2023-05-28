@@ -54,8 +54,7 @@ int initUI() {
 }
 
 int exitUI() {
-    free(staticBuffer);
-    return 0;
+    return free(staticBuffer);
 }
 
 int calcStaticUI(){

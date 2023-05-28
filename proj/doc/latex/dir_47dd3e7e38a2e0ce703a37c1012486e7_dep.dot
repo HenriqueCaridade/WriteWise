@@ -1,0 +1,20 @@
+digraph "lib/drivers"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_97aefd0d527b934f1d99a682da8fe6a9 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="lib", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_97aefd0d527b934f1d99a682da8fe6a9.html",tooltip=""]
+  subgraph clusterdir_47dd3e7e38a2e0ce703a37c1012486e7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_47dd3e7e38a2e0ce703a37c1012486e7.html",tooltip=""]
+    dir_47dd3e7e38a2e0ce703a37c1012486e7 [shape=plaintext, label="drivers"];
+  dir_af29ab96caadf4e95761d082cfae7187 [label="graphics", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_af29ab96caadf4e95761d082cfae7187.html",tooltip=""];
+  dir_24946385b101aa71497cd6c74389c7ed [label="KBC", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_24946385b101aa71497cd6c74389c7ed.html",tooltip=""];
+  dir_588c5e4fd88a8cb74b371dfcb252fa06 [label="serialPort", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_588c5e4fd88a8cb74b371dfcb252fa06.html",tooltip=""];
+  dir_ede76fce9384e5a7add0e10ae75c623a [label="timer", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_ede76fce9384e5a7add0e10ae75c623a.html",tooltip=""];
+  }
+  }
+  dir_588c5e4fd88a8cb74b371dfcb252fa06->dir_ede76fce9384e5a7add0e10ae75c623a [headlabel="1", labeldistance=1.5 headhref="dir_000006_000008.html" color="steelblue1" fontcolor="steelblue1"];
+}
