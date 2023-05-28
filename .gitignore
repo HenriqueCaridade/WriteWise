@@ -36,6 +36,8 @@
 !proj/src/lib/drivers/KBC/*.h
 !proj/src/lib/drivers/timer/*.c
 !proj/src/lib/drivers/timer/*.h
+!proj/src/lib/drivers/rtc/*.c
+!proj/src/lib/drivers/rtc/*.h
 !proj/src/lib/scancode/*.c
 !proj/src/lib/scancode/*.h
 

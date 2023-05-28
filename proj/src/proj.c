@@ -158,6 +158,10 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
+                if (timer_get_elapsed_count() % frameRate == 0) {
+                    // Update every second.
+                    rtcUpdate();
+                }
                 if (currAppState == trainingState) {
                     if (timer_get_elapsed_count() % (frameRate >> 1) == 0) {
                         updateTypingInfo();
@@ -457,7 +461,8 @@ int settingsScreenLoad() {
 
 int drawScreen() {
     if (loadStaticUI()) return 1;
-    // if (drawSelectedButton()) return 1;
+    if (currAppState != startState) if (drawRealTime(getThemeColor(subtleColor), getFontSize(medium))) return 1;
+    if (drawSelectedButton()) return 1;
     
     switch (currAppState) {
     case trainingState: {
