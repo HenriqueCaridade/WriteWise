@@ -146,12 +146,11 @@ Variables</h2></td></tr>
 <p >This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">makecode</td><td>The makecode to retrieve the character from. </td></tr>
+    <tr><td class="paramname">makecode</td><td>makecode to retrieve the character from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The corresponding character if found, ' ' (space) if makecode matches SPACE_SCANCODE, '<br  />
-' (newline) if makecode matches ENTER_SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding character if found. </dd></dl>
 
 </div>
 </div>
@@ -175,11 +174,11 @@ Variables</h2></td></tr>
 <p >This function sets the keyboard layout based on the provided keyboardLayout parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">keyboardLayout</td><td>The keyboard layout to be set. </td></tr>
+    <tr><td class="paramname">keyboardLayout</td><td>keyboard layout to be set. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>

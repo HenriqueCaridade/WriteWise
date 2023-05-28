@@ -20,7 +20,7 @@
 <area shape="rect" id="node7" href="$trace_8txt.html#a86c9af6392f13bddc9d77c0fbc055e35" title=" " alt="" coords="1106,31,1173,57"/>
 <area shape="rect" id="node11" href="$timer_8c.html#a4158c6b92acd61ce9ef52913cfff9aca" title=" " alt="" coords="545,5,712,32"/>
 <area shape="rect" id="node13" href="$typing_8c.html#aa240e1a1bfad4e107b57a0f664cd684e" title="Resets racing info variable." alt="" coords="366,157,476,184"/>
-<area shape="rect" id="node14" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="367,208,475,235"/>
+<area shape="rect" id="node14" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="367,208,475,235"/>
 <area shape="rect" id="node20" href="$lib_8c.html#ac63e705118045e52280f0fca28ab7d25" title="Draws a colored text of characters. Only called when color is in the current mode format." alt="" coords="381,360,461,387"/>
 <area shape="rect" id="node25" href="$lib_8c.html#ae581111c441c4b4f3e8a108822e90511" title="Gets the text width." alt="" coords="372,461,470,488"/>
 <area shape="rect" id="node26" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="361,512,482,539"/>

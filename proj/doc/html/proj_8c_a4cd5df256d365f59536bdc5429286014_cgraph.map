@@ -1,5 +1,5 @@
 <map id="_trainingButtonReset" name="_trainingButtonReset">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,148,32"/>
 <area shape="rect" id="node2" href="$typing_8c.html#a18851fac97afb33c7b6afb48db123db9" title="Generates a text given a word ammount and a creation seed." alt="" coords="196,5,292,32"/>
-<area shape="rect" id="node3" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="340,5,448,32"/>
+<area shape="rect" id="node3" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="340,5,448,32"/>
 </map>

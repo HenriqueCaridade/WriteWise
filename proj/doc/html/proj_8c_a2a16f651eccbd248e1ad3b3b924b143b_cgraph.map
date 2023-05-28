@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,894,114,920"/>
 <area shape="rect" id="node2" href="$proj_8c.html#a966b6df6da3fefa81cf52f6a6b68bce6" title=" " alt="" coords="422,32,516,59"/>
 <area shape="rect" id="node3" href="$proj_8c.html#aa14e5c55821f0a4742d5b2992c855fd1" title=" " alt="" coords="200,260,300,287"/>
-<area shape="rect" id="node5" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="600,260,709,287"/>
+<area shape="rect" id="node5" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="600,260,709,287"/>
 <area shape="rect" id="node6" href="$timer_8c.html#a4158c6b92acd61ce9ef52913cfff9aca" title=" " alt="" coords="386,362,552,388"/>
 <area shape="rect" id="node7" href="$proj_8c.html#a49ec2dfa736580020278194b77d72f33" title=" " alt="" coords="205,514,295,540"/>
 <area shape="rect" id="node18" href="$typing_8c.html#af20c241f9cd9e758424e745645759650" title="Updates typing status in the end of typing." alt="" coords="210,412,290,439"/>

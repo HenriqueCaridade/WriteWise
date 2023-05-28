@@ -36,7 +36,7 @@
 <area shape="rect" id="node29" href="$serialPort_8c.html#a683eb83ee07e12cf8bbd3732db015ed8" title=" " alt="" coords="782,1323,916,1349"/>
 <area shape="rect" id="node32" href="$timer_8c.html#a4158c6b92acd61ce9ef52913cfff9aca" title=" " alt="" coords="766,1373,932,1400"/>
 <area shape="rect" id="node34" href="$typing_8c.html#aa240e1a1bfad4e107b57a0f664cd684e" title="Resets racing info variable." alt="" coords="586,1069,697,1096"/>
-<area shape="rect" id="node35" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="795,1095,903,1121"/>
+<area shape="rect" id="node35" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="795,1095,903,1121"/>
 <area shape="rect" id="node37" href="$proj_8c.html#a49243f23d63e3216bf32cb209523e79d" title=" " alt="" coords="354,1448,501,1475"/>
 <area shape="rect" id="node41" href="$proj_8c.html#a308950be5cfb404b76002a160af9a08a" title=" " alt="" coords="358,1499,498,1525"/>
 <area shape="rect" id="node42" href="$proj_8c.html#a5ef76ccc42c251018d8e645f7f21e9ad" title=" " alt="" coords="358,1347,498,1373"/>

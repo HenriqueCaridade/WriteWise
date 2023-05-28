@@ -238,9 +238,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Auxiliary function for drawButton and drawButtons. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This is an auxiliary function used by the <code>drawButton</code> and <code>drawButtons</code> functions. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be drawn. </td></tr>
   </table>
   </dd>
 </dl>
@@ -285,7 +285,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Auxiliary function for drawSelectedButton. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function iterates through the available buttons and checks if the mouse cursor is positioned over each button using the _isClickOnButton function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -333,11 +333,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Checks if mouse clicked on a button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function checks if a mouse click event occurred at the specified position (x, y) and determines if it falls within the boundaries of the given button. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>X position of the click in pixels. </td></tr>
-    <tr><td class="paramname">y</td><td>Y position of the click in pixels. </td></tr>
-    <tr><td class="paramname">button</td><td></td></tr>
+    <tr><td class="paramname">x</td><td>x position of the click in pixels. </td></tr>
+    <tr><td class="paramname">y</td><td>y position of the click in pixels. </td></tr>
+    <tr><td class="paramname">button</td><td>pointer to the button structure to check against. </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,9 +382,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Adds a new button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function adds a new button to the button array at the specified index. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">button</td><td></td></tr>
+    <tr><td class="paramname">button</td><td>button to be added. </td></tr>
     <tr><td class="paramname">index</td><td>Index of the array where new buttton will be placed. </td></tr>
   </table>
   </dd>
@@ -409,7 +409,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Copies frame-buffer to the static-buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function copies the content of the frame buffer to the static buffer using the <code>memcpy</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -429,7 +429,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Clears the memory used by the buttons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function clears the memory used by the buttons by setting the <code>_buttons</code> array to all zeros using the <code>memset</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -450,9 +450,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a button based on the provided index. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be drawn. </td></tr>
   </table>
   </dd>
 </dl>
@@ -498,7 +498,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws multiple buttons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function iterates over the available buttons and draws each one that is active. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -540,7 +540,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws cursor. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function draws the cursor on the screen based on the current cursor position. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -569,7 +569,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Highlights selected button. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function retrieves the index of the selected button using the _getSelectedButton function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -605,7 +605,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Frees static-buffer allocated memory. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function frees the memory allocated for the static buffer using the <code>free</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -625,7 +625,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initializes UI data-structures and allocates static-buffer memory. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function initializes the UI data structures and sets the initial values for the cursor position, color, and background color. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -654,7 +654,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Copies static-buffer to the frame-buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function copies the content of the static buffer to the frame buffer using the <code>memcpy</code> function. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 
 </div>
 </div>
@@ -674,7 +674,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Function that updates mouse every mouse interrupt. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >It reads the mouse packet and performs the necessary calculations and actions based on the mouse input. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -706,9 +706,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Removes button. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function removes a button at the specified index from the button array. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>Index of the array where the buttton will be removed. </td></tr>
+    <tr><td class="paramname">index</td><td>index of the button to be removed. </td></tr>
   </table>
   </dd>
 </dl>

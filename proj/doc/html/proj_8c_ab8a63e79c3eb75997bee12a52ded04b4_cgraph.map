@@ -1,7 +1,7 @@
 <map id="changeState" name="changeState">
 <area shape="rect" id="node1" title=" " alt="" coords="5,1005,100,1032"/>
 <area shape="rect" id="node2" href="$typing_8c.html#a18851fac97afb33c7b6afb48db123db9" title="Generates a text given a word ammount and a creation seed." alt="" coords="785,195,881,221"/>
-<area shape="rect" id="node3" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="970,195,1078,221"/>
+<area shape="rect" id="node3" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable. This function resets the typing information variables to their default v..." alt="" coords="970,195,1078,221"/>
 <area shape="rect" id="node4" href="$proj_8c.html#a911c7e963bbb29b147c59b47bbb99a48" title=" " alt="" coords="172,803,259,829"/>
 <area shape="rect" id="node36" href="$typing_8c.html#aa240e1a1bfad4e107b57a0f664cd684e" title="Resets racing info variable." alt="" coords="778,1005,888,1032"/>
 <area shape="rect" id="node49" href="$serialPort_8c.html#a3fe05b675294d1c1aec1e95afdd054d4" title=" " alt="" coords="148,1689,283,1716"/>

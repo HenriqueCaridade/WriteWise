@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac85ff56f632ec086f82eb4c6f2950e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a character. Only called when color is in the current mode format.  <a href="lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b">More...</a><br /></td></tr>
 <tr class="separator:ac85ff56f632ec086f82eb4c6f2950e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d6d4da3a54857268afee85a6761f027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lib_8c.html#a9d6d4da3a54857268afee85a6761f027">drawCharColor</a> (float px, float py, const char <a class="el" href="trace_8txt.html#aaf48025de61cf6c2756ce268ca9b3dfe">c</a>, uint32_t color, <a class="el" href="structfont__size__t.html">font_size_t</a> size)</td></tr>
-<tr class="memdesc:a9d6d4da3a54857268afee85a6761f027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a colored character.  <a href="lib_8c.html#a9d6d4da3a54857268afee85a6761f027">More...</a><br /></td></tr>
+<tr class="memdesc:a9d6d4da3a54857268afee85a6761f027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a colored character at the specified coordinates.  <a href="lib_8c.html#a9d6d4da3a54857268afee85a6761f027">More...</a><br /></td></tr>
 <tr class="separator:a9d6d4da3a54857268afee85a6761f027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dd6e8c12a808a89a112be62432fe1f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lib_8c.html#a8dd6e8c12a808a89a112be62432fe1f7">drawCharRGB</a> (float px, float py, const char <a class="el" href="trace_8txt.html#aaf48025de61cf6c2756ce268ca9b3dfe">c</a>, uint8_t red, uint8_t green, uint8_t blue, <a class="el" href="structfont__size__t.html">font_size_t</a> size)</td></tr>
 <tr class="memdesc:a8dd6e8c12a808a89a112be62432fe1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a colored character.  <a href="lib_8c.html#a8dd6e8c12a808a89a112be62432fe1f7">More...</a><br /></td></tr>
@@ -255,12 +255,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws a 5 by 7 character. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a 5 by 7 character at the specified coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
     <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
-    <tr><td class="paramname">color</td><td></td></tr>
+    <tr><td class="paramname">c</td><td>boolean array representing the 5 by 7 character. </td></tr>
+    <tr><td class="paramname">color</td><td>the color of the character. </td></tr>
     <tr><td class="paramname">size</td><td>font size </td></tr>
   </table>
   </dd>
@@ -323,11 +323,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a character. Only called when color is in the current mode format. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a single character at the specified coordinates using the current color format. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
     <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
+    <tr><td class="paramname">c</td><td>the character to be drawn. </td></tr>
     <tr><td class="paramname">color</td><td>mode formatted </td></tr>
     <tr><td class="paramname">size</td><td>font size </td></tr>
   </table>
@@ -393,12 +393,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a rectangle receiving x and y in pixels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a rectangle at the given <code>x</code> and <code>y</code> coordinates in pixels. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
-    <tr><td class="paramname">width</td><td></td></tr>
-    <tr><td class="paramname">height</td><td></td></tr>
+    <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
+    <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
+    <tr><td class="paramname">width</td><td>width of the rectangle, in pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>height of the rectangle, in pixels. </td></tr>
     <tr><td class="paramname">color</td><td>Format RGB (8 8 8) </td></tr>
   </table>
   </dd>
@@ -470,14 +470,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored text of characters. Only called when color is in the current mode format. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a text string with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
     <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
-    <tr><td class="paramname">maxWidth</td><td></td></tr>
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">color</td><td>mode formatted </td></tr>
-    <tr><td class="paramname">size</td><td>font size </td></tr>
+    <tr><td class="paramname">maxWidth</td><td>maximum width of the text. </td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
+    <tr><td class="paramname">color</td><td>mode formatted. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -530,6 +530,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Clears the screen by clearing frame-buffer. </p>
+<p >This function clears the screen by setting all the pixels in the frame buffer to either 0x00 (dark theme) or 0xFF (light theme), depending on the current theme. </p>
 
 </div>
 </div>
@@ -577,14 +578,14 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Draws a colored character. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Draws a colored character at the specified coordinates. </p>
+<p >This function draws a single character with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">px</td><td>percentage of x counting from top left corner. </td></tr>
     <tr><td class="paramname">py</td><td>percentage of y counting from top left corner. </td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
-    <tr><td class="paramname">color</td><td>format RGB (8 8 8) </td></tr>
-    <tr><td class="paramname">size</td><td>font size </td></tr>
+    <tr><td class="paramname">c</td><td>represents the character to be drawn. </td></tr>
+    <tr><td class="paramname">color</td><td>format RGB (8 8 8). </td></tr>
+    <tr><td class="paramname">size</td><td>font size. This function checks the current display mode and uses the appropriate color format for drawing the character. If the current mode is in Indexed Mode, it directly uses the color parameter. Otherwise, it converts the RGB color components extracted from the color parameter using bitwise operations and passes it to the underlying drawing function </td></tr>
   </table>
   </dd>
 </dl>
@@ -594,7 +595,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lib_8c_a9d6d4da3a54857268afee85a6761f027_cgraph.png" border="0" usemap="#alib_8c_a9d6d4da3a54857268afee85a6761f027_cgraph" alt=""/></div>
 <map name="alib_8c_a9d6d4da3a54857268afee85a6761f027_cgraph" id="alib_8c_a9d6d4da3a54857268afee85a6761f027_cgraph">
-<area shape="rect" title="Draws a colored character." alt="" coords="5,107,111,133"/>
+<area shape="rect" title="Draws a colored character at the specified coordinates." alt="" coords="5,107,111,133"/>
 <area shape="rect" href="lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b" title="Draws a character. Only called when color is in the current mode format." alt="" coords="179,31,262,57"/>
 <area shape="rect" href="lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="160,81,281,108"/>
 <area shape="rect" href="lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="159,132,282,159"/>
@@ -664,15 +665,15 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored character. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a single character with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">px</td><td>percentage of x counting from top left corner. </td></tr>
     <tr><td class="paramname">py</td><td>percentage of y counting from top left corner. </td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
-    <tr><td class="paramname">size</td><td>font size </td></tr>
+    <tr><td class="paramname">c</td><td>character to be drawn. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the color. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -734,11 +735,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a horizontal colored line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a horizontal line starting from the position specified by <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line. </td></tr>
     <tr><td class="paramname">color</td><td>Format RGB (8 8 8) </td></tr>
   </table>
   </dd>
@@ -812,14 +813,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a horizontal colored line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a horizontal line starting from the position specified by <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the line color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the line color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the line color. </td></tr>
   </table>
   </dd>
 </dl>
@@ -874,10 +875,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored pixel. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a pixel at the specified coordinates <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the pixel, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the pixel, in percentage. </td></tr>
     <tr><td class="paramname">color</td><td>Format RGB (8 8 8) </td></tr>
   </table>
   </dd>
@@ -943,13 +944,13 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored pixel. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a pixel at the specified coordinates <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the pixel, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the pixel, in percentage. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the pixel color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the pixel color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the pixel color. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1059,12 +1060,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a rectangle receiving x and y in percentage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a rectangle at the specified position and dimensions. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">width</td><td></td></tr>
-    <tr><td class="paramname">height</td><td></td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the top-left corner of the rectangle, in pixels counting from the top left corner. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the top-left corner of the rectangle, in pixels counting from the top left corner. </td></tr>
+    <tr><td class="paramname">width</td><td>width of the rectangle, in pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>height of the rectangle, in pixels. </td></tr>
     <tr><td class="paramname">color</td><td>Format RGB (8 8 8) </td></tr>
   </table>
   </dd>
@@ -1145,15 +1146,15 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a rect. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a rectangle at the specified position and dimensions. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">width</td><td></td></tr>
-    <tr><td class="paramname">height</td><td></td></tr>
-    <tr><td class="paramname">red</td><td></td></tr>
-    <tr><td class="paramname">green</td><td></td></tr>
-    <tr><td class="paramname">blue</td><td></td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the top-left corner of the rectangle, in pixels counting from the top left corner. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the top-left corner of the rectangle, in pixels counting from the top left corner. </td></tr>
+    <tr><td class="paramname">width</td><td>width of the rectangle, in pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>height of the rectangle, in pixels. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the rectangle's color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the rectangle's color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the rectangle's color. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1226,14 +1227,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored text of characters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a text string with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cx</td><td>x coordinate of the placed center </td></tr>
-    <tr><td class="paramname">cy</td><td>y coordinate of the placed center </td></tr>
-    <tr><td class="paramname">maxWidth</td><td></td></tr>
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">color</td><td></td></tr>
-    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">cx</td><td>x coordinate of the placed center. </td></tr>
+    <tr><td class="paramname">cy</td><td>y coordinate of the placed center. </td></tr>
+    <tr><td class="paramname">maxWidth</td><td>maximum width of the text. </td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
+    <tr><td class="paramname">color</td><td>mode formatted. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1321,16 +1322,16 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored text of characters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a text string with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cx</td><td>x coordinate of the placed center </td></tr>
     <tr><td class="paramname">cy</td><td>y coordinate of the placed center </td></tr>
-    <tr><td class="paramname">maxWidth</td><td></td></tr>
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
-    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">maxWidth</td><td>maximum width of the text. </td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the color. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1407,14 +1408,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored text of characters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a text string with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
     <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
-    <tr><td class="paramname">maxWidth</td><td></td></tr>
-    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">maxWidth</td><td>maximum width of the text. </td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
     <tr><td class="paramname">color</td><td>format RGB (8 8 8) </td></tr>
-    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1499,16 +1500,16 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a colored text of characters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a text string with the specified color and font size at the given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>in pixels counting from top left corner. </td></tr>
     <tr><td class="paramname">y</td><td>in pixels counting from top left corner. </td></tr>
-    <tr><td class="paramname">maxWidth</td><td></td></tr>
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
-    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">maxWidth</td><td>maximum width of the text. </td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the color. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1569,12 +1570,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a vertical colored line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a vertical line starting from the position specified by <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
-    <tr><td class="paramname">color</td><td>Format RGB (8 8 8) </td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line. </td></tr>
+    <tr><td class="paramname">color</td><td>Format RGB (8 8 8). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1647,14 +1648,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Draws a vertical colored line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function draws a vertical line starting from the position specified by <code>px</code> and <code>py</code> in percentage values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td></td></tr>
-    <tr><td class="paramname">py</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
-    <tr><td class="paramname">uint8_t</td><td>red </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>green </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>blue </td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate of the starting point of the line, in percentage. </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the line. </td></tr>
+    <tr><td class="paramname">red</td><td>red component of the line color. </td></tr>
+    <tr><td class="paramname">green</td><td>green component of the line color. </td></tr>
+    <tr><td class="paramname">blue</td><td>blue component of the line color. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1692,7 +1693,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Unsubscribes all devices' interrupts. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function unsubscribes the interrupts of all devices used in the application, including the serial port, mouse, keyboard, and timer. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1726,9 +1727,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Exits graphics mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function attempts to exit the graphics mode by calling the <code>exit_graphic_mode</code> function multiple times with a delay between each attempt. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">code</td><td></td></tr>
+    <tr><td class="paramname">code</td><td>exit code to return. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1772,10 +1773,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets the text width. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function calculates the width of the text string by multiplying the length of the string with the total width of each character, including the pixel spacing. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">str</td><td>text string to be drawn. </td></tr>
+    <tr><td class="paramname">size</td><td>font size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1800,9 +1801,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets x coordinate in pixels from a percentage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function calculates the x coordinate in pixels based on the given percentage value (px) and the current display mode. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td>x percentage </td></tr>
+    <tr><td class="paramname">px</td><td>x coordinate in percentage. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1827,13 +1828,13 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets y coordinate in pixels from a percentage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function calculates the y coordinate in pixels based on the given percentage value (py) and the current display mode. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">px</td><td>x percentage </td></tr>
+    <tr><td class="paramname">py</td><td>y coordinate in percentage. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>x in pixels </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>y in pixels </dd></dl>
 
 </div>
 </div>
@@ -1853,7 +1854,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initiates all device drivers. </p>
-<dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
+<p >This function initializes the drivers for all devices used in the application. </p><dl class="section return"><dt>Returns</dt><dd>Non-zero if error occured. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1897,9 +1898,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set the desired framerate. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function sets the desired frame rate based on the provided <code>fps</code> parameter. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fps</td><td></td></tr>
+    <tr><td class="paramname">fps</td><td>desired frame rate to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1939,9 +1940,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set the desired minix mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function sets the desired Minix mode based on the provided <code>mode</code> parameter. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td></td></tr>
+    <tr><td class="paramname">mode</td><td>desired Minix mode to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1977,9 +1978,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sets application theme. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >This function sets the theme of the application to the specified newTheme value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newTheme</td><td></td></tr>
+    <tr><td class="paramname">newTheme</td><td>new theme value to set. </td></tr>
   </table>
   </dd>
 </dl>
