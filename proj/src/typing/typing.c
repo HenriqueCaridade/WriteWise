@@ -2,17 +2,17 @@
 #include "typing.h"
 
 typing_info_t typingInfo = {NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.0, 100.0, unready};
-racing_info_t racingInfo = {false, false, 0};
+racing_info_t racingInfo = {false, false, 0, 0, 0, false};
 
 void generateText(uint32_t wordAmmount, unsigned seed) {
-    srand(seed);
+    srandom(seed);
     resetTypingInfo();
     typingInfo.typingCursor = 0;
     typingInfo.generatedText = (char *) malloc(1);
     typingInfo.generatedText[0] = 0;
     typingInfo.generatedTextSize = (wordAmmount == 0) ? 1 : 0;
     for (uint32_t i = 0; i < wordAmmount; i++) {
-        float r = ((float) rand()) / RAND_MAX;
+        float r = ((float) random()) / RAND_MAX;
         size_t ind = (size_t)(r * dictionarySize);
         char* word = dictionary[ind];
         typingInfo.generatedTextSize += strlen(word) + 1;
@@ -52,10 +52,12 @@ void resetRacingInfo() {
     racingInfo.readyYou = false;
     racingInfo.seedMe = 0;
     racingInfo.seedYou = 0;
+    racingInfo.startTime = 0;
+    racingInfo.won = false;
 }
 
-void typingInputHandler() {
-    if (typingInfo.status == ready) startTyping();
+void typingInputHandler(bool isRace) {
+    if (!isRace && typingInfo.status == ready) startTyping();
     if (typingInfo.status == typing) {
         if (scancode == BACKSPACE_SCANCODE) {
             if (typingInfo.typingCursor) {
@@ -86,7 +88,10 @@ void typingInputHandler() {
                     typingInfo.typingCursor++;
                     typingInfo.typedChars++;
                 }
-                if (typingInfo.typedChars == typingInfo.generatedTextSize && typingInfo.wrongChars == 0) endTyping();
+                if (typingInfo.typedChars == typingInfo.generatedTextSize && typingInfo.wrongChars == 0) {
+                    endTyping();
+                    if (isRace) endRace();
+                }
             }
         }
     }
@@ -102,19 +107,24 @@ void calcTypingStatus() {
     uint64_t timeDiff = typingInfo.timeEnd - typingInfo.timeStart;
     if (timeDiff == 0) {
         typingInfo.cpm = typingInfo.wpm = 0.0;
-        typingInfo.acc = 100.0;
-        return;
+    } else {
+        double timeDiffSeconds = ((double) timeDiff) / frameRate;
+        typingInfo.cpm = (typingInfo.typedChars * 60) / timeDiffSeconds;
+        typingInfo.wpm = typingInfo.cpm / 5;
     }
-    double timeDiffSeconds = ((double) timeDiff) / frameRate;
-    typingInfo.cpm = (typingInfo.typedChars * 60) / timeDiffSeconds;
-    typingInfo.wpm = typingInfo.cpm / 5;
-    typingInfo.acc = (100.0 * (typingInfo.typedChars - typingInfo.totalWrongChars)) / typingInfo.typedChars ;
+    if (typingInfo.typedChars == 0) typingInfo.acc = typingInfo.totalWrongChars > 0 ? 0.0 : 100.0;
+    else typingInfo.acc = (100.0 * (typingInfo.typedChars - typingInfo.totalWrongChars)) / typingInfo.typedChars;
 }
 
 void endTyping() {
     typingInfo.timeEnd = timer_get_elapsed_count();
     typingInfo.status = finished;
     calcTypingStatus();
+}
+
+void endRace() {
+    racingInfo.won = true;
+    serialPortSendWon();
 }
 
 void updateTypingInfo() {

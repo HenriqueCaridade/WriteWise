@@ -236,6 +236,14 @@ int serialPortSendNReadyAck() {
     return serialPortSendByte(INFO_NREADY_ACK);
 }
 
+int serialPortSendWon() {
+    return serialPortSendByte(INFO_WON);
+}
+
+int serialPortSendExit() {
+    return serialPortSendByte(INFO_EXIT);
+}
+
 int serialPortSendNack() {
     return serialPortSendByte(INFO_NACK);
 }

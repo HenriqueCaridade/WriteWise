@@ -37,15 +37,20 @@ typedef struct {
     bool readyYou;
     uint64_t seedMe;
     uint64_t seedYou;
+    uint64_t startTime;
+    bool won;
 } racing_info_t;
 racing_info_t racingInfo;
 
 void generateText(uint32_t wordAmmount, unsigned seed);
-void typingInputHandler();
+void typingInputHandler(bool isRace);
 void updateTypingInfo();
 void resetTypingInfo();
 void startTyping();
 void endTyping();
+
+void resetRacingInfo();
+void endRace();
 
 int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint32_t wrongColor, uint32_t unwrittenColor, font_size_t size);
 

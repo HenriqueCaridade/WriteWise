@@ -18,9 +18,11 @@
 #define INFO_FLOAT      (INFO_BITS | 0x6)
 #define INFO_DOUBLE     (INFO_BITS | 0x7)
 #define INFO_READY      (INFO_BITS | 0x8)
-#define INFO_NREADY     (INFO_BITS | 0x8)
-#define INFO_READY_ACK  (INFO_BITS | 0x9)
-#define INFO_NREADY_ACK (INFO_BITS | 0xA)
+#define INFO_NREADY     (INFO_BITS | 0x9)
+#define INFO_READY_ACK  (INFO_BITS | 0xA)
+#define INFO_NREADY_ACK (INFO_BITS | 0xB)
+#define INFO_WON        (INFO_BITS | 0xC)
+#define INFO_EXIT       (INFO_BITS | 0xD)
 
 #define NORMAL_BIT_MAX  (INFO_BITS - 1)
 
@@ -55,6 +57,8 @@ int serialPortSendReady     ();
 int serialPortSendNReady    ();
 int serialPortSendReadyAck  ();
 int serialPortSendNReadyAck ();
+int serialPortSendWon       ();
+int serialPortSendExit      ();
 int serialPortSendNack      ();
 int serialPortClearFIFO     ();
 

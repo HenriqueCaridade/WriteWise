@@ -59,7 +59,6 @@ int exitUI() {
 }
 
 int calcStaticUI(){
-    if (drawButtons()) return 1;
     memcpy(staticBuffer, frameBuffer, frameSize);
     return 0;
 }
@@ -114,7 +113,7 @@ int _drawButton(int index) {
 
 int drawButton(int index) {
     if (index < 0 || index >= MAX_AMOUNT_OF_BUTTONS) return 1;
-    if (_buttonPlaces[index]) return 1;
+    if (!_buttonPlaces[index]) return 1;
     return _drawButton(index);
 }
 

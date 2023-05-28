@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <math.h>
 
 // Any header files included below this line should have been created by you
 #include "typing/typing.h"
@@ -106,13 +107,29 @@ int exitAll(int code) {
     return code;
 }
 
-char receivedInfo[20] = {0};
 uint64_t receivedULong;
 uint32_t receivedUInt;
 int64_t receivedLong;
 int32_t receivedInt;
 double receivedDouble;
 float receivedFloat;
+
+char readyButtonText[8] = {0};
+char popupText[5] = {0};
+
+bool waitingForSeed = false;
+
+void checkIfReady() {
+    if (racingInfo.readyMe && racingInfo.readyYou && racingInfo.seedMe != 0 && racingInfo.seedYou != 0) {
+        uint64_t seed = racingInfo.seedMe + racingInfo.seedYou;
+        printf("Seed Me: %016llx\n", racingInfo.seedMe);
+        printf("Seed You: %016llx\n", racingInfo.seedYou);
+        printf("Seed Calculated: %016llx\n", seed);
+        generateText(25, seed);
+        racingInfo.startTime = 5 * frameRate + timer_get_elapsed_count();
+        printf("Start Time Set To: %ld\n", racingInfo.startTime);
+    }
+}
 
 int(proj_main_loop)(int argc, char *argv[]){
     if (initAllDrivers()) return 1;
@@ -141,11 +158,20 @@ int(proj_main_loop)(int argc, char *argv[]){
             if (msg.m_notify.interrupts & irqSetTimer) {
                 // Timer Interrupt
                 timer_int_handler();
-                if (timer_get_elapsed_count() % (frameRate >> 1) == 0) {
-                    if (currAppState == trainingState) {
+                if (currAppState == trainingState) {
+                    if (timer_get_elapsed_count() % (frameRate >> 1) == 0) {
                         updateTypingInfo();
-                    } else if (currAppState == raceState) {
-
+                    } 
+                } else if (currAppState == raceState) {
+                    if (timer_get_elapsed_count() % (frameRate >> 1) == 0) {
+                        updateTypingInfo();
+                    } 
+                    if (typingInfo.status == ready) {
+                        int64_t timeLeftInt = racingInfo.startTime - timer_get_elapsed_count();
+                        int timeLeft = (int)(floor((double)(timeLeftInt) / frameRate)) + 1;
+                        if (timeLeft <= 0) {
+                            startTyping();
+                        } else sprintf(popupText, "%d", timeLeft);
                     }
                 }
                 if (waitingAckSerialPort && timer_get_elapsed_count() - waitingAckStartTime > ACK_TIMEOUT * frameRate) {
@@ -176,69 +202,84 @@ int(proj_main_loop)(int argc, char *argv[]){
                 switch (receivingSerialPort) {
                     case INFO_ULONG: {
                         if (serialPortReadULong(&receivedULong) == 0) {
-                            sprintf(receivedInfo, "%016llx", receivedULong);
+                            // Unsigned Long Ready
+                            if (waitingForSeed) {
+                                racingInfo.seedYou = receivedULong;
+                                printf("Seed Received: %016llx\n", racingInfo.seedYou);
+                                checkIfReady();
+                                waitingForSeed = false;
+                            }
                             serialPortSendAck();
                         }
                     } break;
                     case INFO_LONG: {
                         if (serialPortReadLong(&receivedLong) == 0) {
-                            sprintf(receivedInfo, "%016llx", receivedLong);
+                            // Long Ready
                             serialPortSendAck();
                         }
                     } break;
                     case INFO_UINT: {
                         if (serialPortReadUInt(&receivedUInt) == 0) {
-                            sprintf(receivedInfo, "%08x", receivedUInt);
+                            // Unsigned Int Ready
                             serialPortSendAck();
                         }
                     } break;
                     case INFO_INT: {
                         if (serialPortReadInt(&receivedInt) == 0) {
-                            sprintf(receivedInfo, "%08x", receivedInt);
+                            // Int Ready
                             serialPortSendAck();
                         }
                     } break;
                     case INFO_FLOAT: {
                         if (serialPortReadFloat(&receivedFloat) == 0) {
-                            sprintf(receivedInfo, "%.4f", receivedFloat);
+                            // Float Ready
                             serialPortSendAck();
                         }
                     } break;
                     case INFO_DOUBLE: {
                         if (serialPortReadDouble(&receivedDouble) == 0) {
-                            sprintf(receivedInfo, "%.6lf", receivedDouble);
+                            // Double Ready
                             serialPortSendAck();
                         }
                     } break;
                     default: {
-                        printf("Serial Interrupt.\n");
                         if (serial_port_ih()) {
-                            // New Data
-                            if (serialPortByte == INFO_READY) {
-                                racingInfo.readyYou = true;
-                                serialPortSendReadyAck();
-                                break;
+                            printf("%02x\n", serialPortByte);
+                            if (typingInfo.status == unready){
+                                if (serialPortByte == INFO_READY) {
+                                    racingInfo.readyYou = true;
+                                    waitingForSeed = true;
+                                    serialPortSendReadyAck();
+                                    break;
+                                }
+                                if (serialPortByte == INFO_NREADY) {
+                                    racingInfo.readyYou = false;
+                                    serialPortSendNReadyAck();
+                                    break;
+                                }
+                            } else if (typingInfo.status == typing) {
+                                if (serialPortByte == INFO_WON) {
+                                    // Opponent Won
+                                    endTyping();
+                                    racingInfo.won = false;
+                                }
                             }
-                            if (serialPortByte == INFO_NREADY) {
-                                racingInfo.readyYou = false;
-                                serialPortSendNReadyAck();
-                                break;
-                            }
-                            if (serialPortByte == INFO_READY_ACK) {
-                                racingInfo.ready = true;
-                                serialPortSendReadyAck();
-                                break;
-                            }
-                            if (serialPortByte == INFO_NREADY_ACK) {
-                                racingInfo.readyYou = false;
-                                serialPortSendNReadyAck();
-                                break;
+                            if (serialPortByte == INFO_EXIT) {
+                                // Opponent Left
+                                resetTypingInfo();
+                                resetRacingInfo();
                             }
                             if (waitingAckSerialPort) {
                                 switch (serialPortByte) {
                                 case INFO_ACK: break;
-                                case INFO_READY_ACK: racingInfo.readyMe = true; break;
-                                case INFO_NREADY_ACK: racingInfo.readyMe = false; break;
+                                case INFO_READY_ACK: 
+                                    racingInfo.readyMe = true;
+                                    checkIfReady();
+                                    break;
+                                case INFO_NREADY_ACK:
+                                    racingInfo.readyMe = false;
+                                    racingInfo.seedMe = 0;
+                                    break;
                                 default: serialPortClearFIFO(); break;
                                 }
                                 waitingAckSerialPort = false;
@@ -255,10 +296,12 @@ int(proj_main_loop)(int argc, char *argv[]){
 }
 int changeState(app_state_t newState) {
     printf("Changed From %d to %d.\n", currAppState, newState);
+    if (currAppState == raceState) serialPortSendExit();
     currAppState = newState;
     switch (newState) {
     case endState: return 0;
     case trainingState: generateText(25, time(NULL)); break;
+    case raceState: resetTypingInfo(); resetRacingInfo(); break;
     default: break;
     }
     return loadScreen();
@@ -281,39 +324,8 @@ void keyboardScancodeHandler() {
             changeState(mainState);
             return;
         }
-        if (currAppState == trainingState) {
-            typingInputHandler();
-        }
-        if (isScancodeTwoBytes) {
-            switch (scancode) {
-                default: return;
-            }
-        } else {
-            switch (scancode) {
-                case KEY_SCANCODE_B: serialPortSendByte((uint8_t) timer_get_elapsed_count()); break;
-                case KEY_SCANCODE_I:
-                    printf("Sending Int\n");
-                    if (isShiftPressed) {
-                        serialPortSendUInt((uint32_t) timer_get_elapsed_count());
-                    } else {
-                        serialPortSendInt((int32_t) timer_get_elapsed_count());
-                    } break;
-                case KEY_SCANCODE_L:
-                    printf("Sending Long\n");
-                    if (isShiftPressed) {
-                        serialPortSendULong(timer_get_elapsed_count());
-                    } else {
-                        serialPortSendLong((int64_t) timer_get_elapsed_count());
-                    } break;
-                case KEY_SCANCODE_F:
-                    printf("Sending Float\n");
-                    if (isShiftPressed) {
-                        serialPortSendDouble((double) timer_get_elapsed_count() / 20.0);
-                    } else {
-                        serialPortSendFloat ((float) timer_get_elapsed_count() / 20.0f);
-                    } break;
-                default: return;
-            }
+        if (currAppState == trainingState || currAppState == raceState) {
+            typingInputHandler(currAppState == raceState);
         }
     }
 }
@@ -341,6 +353,7 @@ int mainScreenLoad() {
     if (addButton((button_t){0.3f, 0.45f, 0.4f, 0.1f, getThemeColor(raceColor)      , "Race"        , getThemeColor(backColor), getFontSize(medium), getThemeColor(textColor), _mainButtonRace        }, 1)) return 1;
     if (addButton((button_t){0.3f, 0.60f, 0.4f, 0.1f, getThemeColor(infoColor)      , "Instructions", getThemeColor(backColor), getFontSize(medium), getThemeColor(textColor), _mainButtonInstructions}, 2)) return 1;
     if (addButton((button_t){0.3f, 0.75f, 0.4f, 0.1f, getThemeColor(buttonBackColor), "Settings"    , getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _mainButtonSettings    }, 3)) return 1;
+    if (drawButtons()) return 1;
     printf("Main Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -354,25 +367,38 @@ int trainingScreenLoad() {
     if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Training", getThemeColor(trainingColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(small))) return 1;
     if (addButton((button_t){0.4f, 0.70f, 0.2f, 0.1f, getThemeColor(buttonBackColor), "New Test", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _trainingButtonReset}, 0)) return 1;
+    if (drawButtons()) return 1;
     printf("Training Screen Drawn.\n"); 
     return calcStaticUI();
 }
 
-
 void _raceReadyButton(void) {
-    if (!racingInfo.readyMe) {
-        serialPortSendReady();
+    if (typingInfo.status == unready) {
+        if (racingInfo.readyMe) serialPortSendNReady();
+        else {
+            racingInfo.seedMe = time(NULL);
+            printf("My Seed: %016llx\n", racingInfo.seedMe);
+            serialPortSendReady();
+            serialPortSendULong(racingInfo.seedMe);
+        }
     }
-    generateText(25, time(NULL));
+}
+void _raceResetButton(void) {
+    if (typingInfo.status == finished) {
+        resetTypingInfo();
+        resetRacingInfo();
+    }
 }
 int raceScreenLoad() {
     clearScreen();
     clearButtons();
     printf("Race Started Drawing.\n");
+    strcpy(readyButtonText, "Ready");
     if (drawTextXYColor(10, 10, -1, "Write Wise", getThemeColor(textColor), getFontSize(xxxlarge))) return 1;
     if (drawTextXYColor(10, 15 + getFontSize(xxxlarge).height, -1, "Race", getThemeColor(raceColor), getFontSize(xlarge))) return 1;
     if (drawTextColor(0.5f, 0.95f, -1.0f, "Press ESC to go back to the menu...", getThemeColor(subtleColor), getFontSize(small))) return 1;
-    if (addButton((button_t){0.4f, 0.70f, 0.2f, 0.1f, getThemeColor(buttonBackColor), "Ready", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _trainingButtonReset}, 0)) return 1;
+    if (addButton((button_t){0.4f, 0.70f, 0.2f, 0.1f, getThemeColor(buttonBackColor), readyButtonText, getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _raceReadyButton}, 0)) return 1;
+    if (addButton((button_t){0.4f, 0.70f, 0.2f, 0.1f, getThemeColor(buttonBackColor), "New Race", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _raceResetButton}, 1)) return 1;
     printf("Race Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -391,6 +417,7 @@ int instructionScreenLoad() {
     if (drawTextColor(0.5f, 0.6f,  0.8f,
         "In the Race section you will race an opponent and the first to finish typing the given words will win!",
         getThemeColor(textColor), getFontSize(large))) return 1;
+    if (drawButtons()) return 1;
     printf("Instructions Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -423,6 +450,7 @@ int settingsScreenLoad() {
         "Dark", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButtonDarkTheme }, 4)) return 1;
     if (addButton((button_t){0.6f, 0.60f, 0.3f, 0.1f, getThemeColor(currentTheme == lightTheme ? selectedButtonColor : buttonBackColor),
         "Light", getThemeColor(buttonTextColor), getFontSize(medium), getThemeColor(textColor), _settingsButtonLightTheme }, 5)) return 1;
+    if (drawButtons()) return 1;
     printf("Settings Screen Drawn.\n");
     return calcStaticUI();
 }
@@ -433,13 +461,51 @@ int drawScreen() {
     
     switch (currAppState) {
     case trainingState: {
-        char infoText[50] = {0};
-        sprintf(infoText, "%.2lf%% %.2lfwpm %d/%d", typingInfo.acc, typingInfo.wpm, typingInfo.typedChars, typingInfo.generatedTextSize);
-        if (drawTypingTest(0.5f, 0.3f, 0.8f, getThemeColor(textColor), getThemeColor(errorColor), getThemeColor(subtleColor), getFontSize(medium))) return 1;
-        if (drawTextColor(0.5f, 0.2f, -1.0f, infoText, getThemeColor(trainingColor), getFontSize(large))) return 1;
+        if (typingInfo.status == typing || typingInfo.status == finished) {
+            char   accText[10] = {0}; sprintf(accText, "%.2lf%%", typingInfo.acc);
+            char   wpmText[10] = {0}; sprintf(wpmText,   "%.2lf", typingInfo.wpm);
+            char charsText[10] = {0}; sprintf(charsText, "%d/%d", typingInfo.typedChars, typingInfo.generatedTextSize);
+            if (drawTextColor(0.3f, 0.25f, -1.0f,   accText, getThemeColor(trainingColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.5f, 0.25f, -1.0f,   wpmText, getThemeColor(trainingColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.7f, 0.25f, -1.0f, charsText, getThemeColor(trainingColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.3f, 0.31f, -1.0f, "accuracy", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+            if (drawTextColor(0.5f, 0.31f, -1.0f,      "wpm", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+            if (drawTextColor(0.7f, 0.31f, -1.0f, "progress", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+        }
+        if (typingInfo.status != unready) if (drawTypingTest(0.5f, 0.4f, 0.8f, getThemeColor(textColor), getThemeColor(errorColor), getThemeColor(subtleColor), getFontSize(medium))) return 1;
     } break;
     case raceState: {
-        if (drawTextColor(0.5f, 0.5f, -1.0f, receivedInfo, getThemeColor(textColor), getFontSize(large))) return 1;
+        switch (typingInfo.status) {
+            case unready:
+                strcpy(readyButtonText, racingInfo.readyMe ? "Unready" : "Ready");
+                if (drawButton(0)) return 1;
+                char* readyYouText = racingInfo.readyYou ? "Other player is ready." : "Other player isn't ready.";
+                uint32_t readyYouColor = racingInfo.readyYou ? getThemeColor(textColor) : getThemeColor(errorColor);
+                if (drawTextColor(0.5f, 0.5f, -1.0f, readyYouText, readyYouColor, getFontSize(large))) return 1;
+                break;
+            default:
+                if (drawTypingTest(0.5f, 0.4f, 0.8f, getThemeColor(textColor), getThemeColor(errorColor), getThemeColor(subtleColor), getFontSize(medium))) return 1;
+                break;
+        }
+        if (typingInfo.status == typing || typingInfo.status == finished) {
+            char   accText[10] = {0}; sprintf(accText, "%.2lf%%", typingInfo.acc);
+            char   wpmText[10] = {0}; sprintf(wpmText,   "%.2lf", typingInfo.wpm);
+            char charsText[10] = {0}; sprintf(charsText, "%d/%d", typingInfo.typedChars, typingInfo.generatedTextSize);
+            if (drawTextColor(0.3f, 0.25f, -1.0f,   accText, getThemeColor(raceColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.5f, 0.25f, -1.0f,   wpmText, getThemeColor(raceColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.7f, 0.25f, -1.0f, charsText, getThemeColor(raceColor), getFontSize(large))) return 1;
+            if (drawTextColor(0.3f, 0.31f, -1.0f, "accuracy", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+            if (drawTextColor(0.5f, 0.31f, -1.0f,      "wpm", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+            if (drawTextColor(0.7f, 0.31f, -1.0f, "progress", getThemeColor(subtleColor), getFontSize(medium))) return 1;
+        }
+        if (typingInfo.status == ready) // Countdown
+            if (drawTextColor (0.5f, 0.5f, -1.0f, popupText, getThemeColor(raceColor), getFontSize(xxxlarge))) return 1;
+        if (typingInfo.status == finished) { // Won / Lost
+            strcpy(popupText, racingInfo.won ? "Won" : "Lost");
+            if (drawTextColor (0.5f, 0.5f, -1.0f, popupText, getThemeColor(raceColor), getFontSize(xxxlarge))) return 1;
+            if (drawButton(1)) return 1;
+        }
+        
     } break;
     default: break;
     }

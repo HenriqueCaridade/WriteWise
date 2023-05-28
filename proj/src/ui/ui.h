@@ -17,7 +17,7 @@ typedef struct {
     float width;            // Width
     float height;           // Height
     uint32_t color;         // Background Color
-    const char *text;       // Button Text
+    char *text;             // Button Text
     uint32_t tColor;        // Text Color
     font_size_t tSize;      // Text Size
     uint32_t bColor;        // Border Color
