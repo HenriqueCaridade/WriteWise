@@ -1,15 +1,20 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/\+KBC/keyboard.c File Reference}
-\hypertarget{keyboard_8c}{}\label{keyboard_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/keyboard.c@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/keyboard.c}}
+\hypertarget{keyboard_8c}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/drivers/\+KBC/keyboard.c File Reference}
+\label{keyboard_8c}\index{C:/MinixVM/shared/proj/src/lib/drivers/KBC/keyboard.c@{C:/MinixVM/shared/proj/src/lib/drivers/KBC/keyboard.c}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include $<$lcom/timer.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-{\ttfamily \#include \"{}KBC.\+h\"{}}\newline
-{\ttfamily \#include \"{}i8042.\+h\"{}}\newline
-{\ttfamily \#include \"{}keyboard.\+h\"{}}\newline
-Include dependency graph for keyboard.\+c\+:
-% FIG 0
-\doxysubsubsection*{Functions}
+{\ttfamily \#include \char`\"{}KBC.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}i8042.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keyboard.\+h\char`\"{}}\newline
+Include dependency graph for keyboard.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695}{keyboard\+\_\+subscribe\+\_\+int}} ()
@@ -20,7 +25,7 @@ int() \mbox{\hyperlink{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4}{keyboard\+
 \item 
 int() \mbox{\hyperlink{keyboard_8c_a58017421d19bb2004825d339ebb600fa}{keyboard\+\_\+restore}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{keyboard_8c_ad1cc8d98927cea25dfb6c2d029884d07}{hook\+Id\+Keyboard}} = 1
@@ -40,25 +45,46 @@ bool \mbox{\hyperlink{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4}\label{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4} 
+\mbox{\Hypertarget{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4}\label{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4}} 
 \index{keyboard.c@{keyboard.c}!keyboard\_ih@{keyboard\_ih}}
 \index{keyboard\_ih@{keyboard\_ih}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{keyboard\_ih()}{keyboard\_ih()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8c_a58017421d19bb2004825d339ebb600fa}\label{keyboard_8c_a58017421d19bb2004825d339ebb600fa} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a1ba896157528456bcc6c82d7856f5eb4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8c_a58017421d19bb2004825d339ebb600fa}\label{keyboard_8c_a58017421d19bb2004825d339ebb600fa}} 
 \index{keyboard.c@{keyboard.c}!keyboard\_restore@{keyboard\_restore}}
 \index{keyboard\_restore@{keyboard\_restore}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{keyboard\_restore()}{keyboard\_restore()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695}\label{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a58017421d19bb2004825d339ebb600fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695}\label{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695}} 
 \index{keyboard.c@{keyboard.c}!keyboard\_subscribe\_int@{keyboard\_subscribe\_int}}
 \index{keyboard\_subscribe\_int@{keyboard\_subscribe\_int}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{keyboard\_subscribe\_int()}{keyboard\_subscribe\_int()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{keyboard_8c_aa23b07fa2192ce772fe143de1bc99695_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed}} 
 \index{keyboard.c@{keyboard.c}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
 \index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{keyboard\_unsubscribe\_int()}{keyboard\_unsubscribe\_int()}}
@@ -67,43 +93,43 @@ bool \mbox{\hyperlink{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{keyboard_8c_acde26971783498b03dfc0dac393ade84}\label{keyboard_8c_acde26971783498b03dfc0dac393ade84} 
+\mbox{\Hypertarget{keyboard_8c_acde26971783498b03dfc0dac393ade84}\label{keyboard_8c_acde26971783498b03dfc0dac393ade84}} 
 \index{keyboard.c@{keyboard.c}!counter\_KB@{counter\_KB}}
 \index{counter\_KB@{counter\_KB}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{counter\_KB}{counter\_KB}}
 {\footnotesize\ttfamily uint32\+\_\+t counter\+\_\+\+KB = 0}
 
-\Hypertarget{keyboard_8c_ad1cc8d98927cea25dfb6c2d029884d07}\label{keyboard_8c_ad1cc8d98927cea25dfb6c2d029884d07} 
+\mbox{\Hypertarget{keyboard_8c_ad1cc8d98927cea25dfb6c2d029884d07}\label{keyboard_8c_ad1cc8d98927cea25dfb6c2d029884d07}} 
 \index{keyboard.c@{keyboard.c}!hookIdKeyboard@{hookIdKeyboard}}
 \index{hookIdKeyboard@{hookIdKeyboard}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{hookIdKeyboard}{hookIdKeyboard}}
 {\footnotesize\ttfamily int hook\+Id\+Keyboard = 1}
 
-\Hypertarget{keyboard_8c_aefec5fd961ddef7e203a9bfe7f93fb17}\label{keyboard_8c_aefec5fd961ddef7e203a9bfe7f93fb17} 
+\mbox{\Hypertarget{keyboard_8c_aefec5fd961ddef7e203a9bfe7f93fb17}\label{keyboard_8c_aefec5fd961ddef7e203a9bfe7f93fb17}} 
 \index{keyboard.c@{keyboard.c}!isAltPressed@{isAltPressed}}
 \index{isAltPressed@{isAltPressed}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{isAltPressed}{isAltPressed}}
 {\footnotesize\ttfamily bool is\+Alt\+Pressed = false}
 
-\Hypertarget{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8}\label{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8} 
+\mbox{\Hypertarget{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8}\label{keyboard_8c_a46ab1e65e4f7729aa111c4e2c76e86e8}} 
 \index{keyboard.c@{keyboard.c}!isCapsLockActive@{isCapsLockActive}}
 \index{isCapsLockActive@{isCapsLockActive}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{isCapsLockActive}{isCapsLockActive}}
 {\footnotesize\ttfamily bool is\+Caps\+Lock\+Active = false}
 
-\Hypertarget{keyboard_8c_ac4f0110b9bfdca2661e9fa0f422f016d}\label{keyboard_8c_ac4f0110b9bfdca2661e9fa0f422f016d} 
+\mbox{\Hypertarget{keyboard_8c_ac4f0110b9bfdca2661e9fa0f422f016d}\label{keyboard_8c_ac4f0110b9bfdca2661e9fa0f422f016d}} 
 \index{keyboard.c@{keyboard.c}!isCtrlPressed@{isCtrlPressed}}
 \index{isCtrlPressed@{isCtrlPressed}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{isCtrlPressed}{isCtrlPressed}}
 {\footnotesize\ttfamily bool is\+Ctrl\+Pressed = false}
 
-\Hypertarget{keyboard_8c_a8b52d0c7736944e422a464e8168f82e7}\label{keyboard_8c_a8b52d0c7736944e422a464e8168f82e7} 
+\mbox{\Hypertarget{keyboard_8c_a8b52d0c7736944e422a464e8168f82e7}\label{keyboard_8c_a8b52d0c7736944e422a464e8168f82e7}} 
 \index{keyboard.c@{keyboard.c}!isShiftPressed@{isShiftPressed}}
 \index{isShiftPressed@{isShiftPressed}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{isShiftPressed}{isShiftPressed}}
 {\footnotesize\ttfamily bool is\+Shift\+Pressed = false}
 
-\Hypertarget{keyboard_8c_a25762c31699a235e3a54906a379525cd}\label{keyboard_8c_a25762c31699a235e3a54906a379525cd} 
+\mbox{\Hypertarget{keyboard_8c_a25762c31699a235e3a54906a379525cd}\label{keyboard_8c_a25762c31699a235e3a54906a379525cd}} 
 \index{keyboard.c@{keyboard.c}!isTwoBytes@{isTwoBytes}}
 \index{isTwoBytes@{isTwoBytes}!keyboard.c@{keyboard.c}}
 \doxysubsubsection{\texorpdfstring{isTwoBytes}{isTwoBytes}}

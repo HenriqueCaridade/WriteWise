@@ -1,11 +1,21 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/\+KBC/keyboard.h File Reference}
-\hypertarget{keyboard_8h}{}\label{keyboard_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/keyboard.h@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/keyboard.h}}
+\hypertarget{keyboard_8h}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/drivers/\+KBC/keyboard.h File Reference}
+\label{keyboard_8h}\index{C:/MinixVM/shared/proj/src/lib/drivers/KBC/keyboard.h@{C:/MinixVM/shared/proj/src/lib/drivers/KBC/keyboard.h}}
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
-Include dependency graph for keyboard.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\doxysubsubsection*{Macros}
+Include dependency graph for keyboard.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{keyboard_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{keyboard_8h_ac6b47609a951e77244ef2be1691c298a}{BREAK\+\_\+\+CODE}}~BIT(7)
@@ -26,7 +36,7 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 \#define \mbox{\hyperlink{keyboard_8h_a55c21dafdb2367c68a6887e15bdb7abd}{CAPSLOCK\+\_\+\+SCANCODE}}~0\+X3A
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}{keyboard\+\_\+subscribe\+\_\+int}} ()
@@ -37,7 +47,7 @@ int() \mbox{\hyperlink{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}{keyboard\+
 \item 
 int() \mbox{\hyperlink{keyboard_8h_a58017421d19bb2004825d339ebb600fa}{keyboard\+\_\+restore}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{keyboard_8h_aa146321463936a50906515420709c7ac}{irq\+Set\+Keyboard}}
@@ -57,55 +67,55 @@ bool \mbox{\hyperlink{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{keyboard_8h_ac6b47609a951e77244ef2be1691c298a}\label{keyboard_8h_ac6b47609a951e77244ef2be1691c298a} 
+\mbox{\Hypertarget{keyboard_8h_ac6b47609a951e77244ef2be1691c298a}\label{keyboard_8h_ac6b47609a951e77244ef2be1691c298a}} 
 \index{keyboard.h@{keyboard.h}!BREAK\_CODE@{BREAK\_CODE}}
 \index{BREAK\_CODE@{BREAK\_CODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{BREAK\_CODE}{BREAK\_CODE}}
 {\footnotesize\ttfamily \#define BREAK\+\_\+\+CODE~BIT(7)}
 
-\Hypertarget{keyboard_8h_a82218ef5fdf988f42e5056a0da2f9fb5}\label{keyboard_8h_a82218ef5fdf988f42e5056a0da2f9fb5} 
+\mbox{\Hypertarget{keyboard_8h_a82218ef5fdf988f42e5056a0da2f9fb5}\label{keyboard_8h_a82218ef5fdf988f42e5056a0da2f9fb5}} 
 \index{keyboard.h@{keyboard.h}!BREAK\_ESC@{BREAK\_ESC}}
 \index{BREAK\_ESC@{BREAK\_ESC}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{BREAK\_ESC}{BREAK\_ESC}}
 {\footnotesize\ttfamily \#define BREAK\+\_\+\+ESC~0x81}
 
-\Hypertarget{keyboard_8h_a55c21dafdb2367c68a6887e15bdb7abd}\label{keyboard_8h_a55c21dafdb2367c68a6887e15bdb7abd} 
+\mbox{\Hypertarget{keyboard_8h_a55c21dafdb2367c68a6887e15bdb7abd}\label{keyboard_8h_a55c21dafdb2367c68a6887e15bdb7abd}} 
 \index{keyboard.h@{keyboard.h}!CAPSLOCK\_SCANCODE@{CAPSLOCK\_SCANCODE}}
 \index{CAPSLOCK\_SCANCODE@{CAPSLOCK\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{CAPSLOCK\_SCANCODE}{CAPSLOCK\_SCANCODE}}
 {\footnotesize\ttfamily \#define CAPSLOCK\+\_\+\+SCANCODE~0\+X3A}
 
-\Hypertarget{keyboard_8h_a5b656eace2dbc3baf75e48fa96f48bd1}\label{keyboard_8h_a5b656eace2dbc3baf75e48fa96f48bd1} 
+\mbox{\Hypertarget{keyboard_8h_a5b656eace2dbc3baf75e48fa96f48bd1}\label{keyboard_8h_a5b656eace2dbc3baf75e48fa96f48bd1}} 
 \index{keyboard.h@{keyboard.h}!LEFT\_ALT\_SCANCODE@{LEFT\_ALT\_SCANCODE}}
 \index{LEFT\_ALT\_SCANCODE@{LEFT\_ALT\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{LEFT\_ALT\_SCANCODE}{LEFT\_ALT\_SCANCODE}}
 {\footnotesize\ttfamily \#define LEFT\+\_\+\+ALT\+\_\+\+SCANCODE~0x38}
 
-\Hypertarget{keyboard_8h_add39cd3013fb6e7677d589841d772a4f}\label{keyboard_8h_add39cd3013fb6e7677d589841d772a4f} 
+\mbox{\Hypertarget{keyboard_8h_add39cd3013fb6e7677d589841d772a4f}\label{keyboard_8h_add39cd3013fb6e7677d589841d772a4f}} 
 \index{keyboard.h@{keyboard.h}!LEFT\_CTRL\_SCANCODE@{LEFT\_CTRL\_SCANCODE}}
 \index{LEFT\_CTRL\_SCANCODE@{LEFT\_CTRL\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{LEFT\_CTRL\_SCANCODE}{LEFT\_CTRL\_SCANCODE}}
 {\footnotesize\ttfamily \#define LEFT\+\_\+\+CTRL\+\_\+\+SCANCODE~0x1D}
 
-\Hypertarget{keyboard_8h_a4e3b694c176d65c113f48f24f9004555}\label{keyboard_8h_a4e3b694c176d65c113f48f24f9004555} 
+\mbox{\Hypertarget{keyboard_8h_a4e3b694c176d65c113f48f24f9004555}\label{keyboard_8h_a4e3b694c176d65c113f48f24f9004555}} 
 \index{keyboard.h@{keyboard.h}!LEFT\_SHIFT\_SCANCODE@{LEFT\_SHIFT\_SCANCODE}}
 \index{LEFT\_SHIFT\_SCANCODE@{LEFT\_SHIFT\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{LEFT\_SHIFT\_SCANCODE}{LEFT\_SHIFT\_SCANCODE}}
 {\footnotesize\ttfamily \#define LEFT\+\_\+\+SHIFT\+\_\+\+SCANCODE~0x2A}
 
-\Hypertarget{keyboard_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9}\label{keyboard_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9} 
+\mbox{\Hypertarget{keyboard_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9}\label{keyboard_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9}} 
 \index{keyboard.h@{keyboard.h}!MAKE\_ESC@{MAKE\_ESC}}
 \index{MAKE\_ESC@{MAKE\_ESC}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{MAKE\_ESC}{MAKE\_ESC}}
 {\footnotesize\ttfamily \#define MAKE\+\_\+\+ESC~0x01}
 
-\Hypertarget{keyboard_8h_a3ac9c664912c2fa477b84c12bb8abd0f}\label{keyboard_8h_a3ac9c664912c2fa477b84c12bb8abd0f} 
+\mbox{\Hypertarget{keyboard_8h_a3ac9c664912c2fa477b84c12bb8abd0f}\label{keyboard_8h_a3ac9c664912c2fa477b84c12bb8abd0f}} 
 \index{keyboard.h@{keyboard.h}!RIGHT\_SHIFT\_SCANCODE@{RIGHT\_SHIFT\_SCANCODE}}
 \index{RIGHT\_SHIFT\_SCANCODE@{RIGHT\_SHIFT\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{RIGHT\_SHIFT\_SCANCODE}{RIGHT\_SHIFT\_SCANCODE}}
 {\footnotesize\ttfamily \#define RIGHT\+\_\+\+SHIFT\+\_\+\+SCANCODE~0x36}
 
-\Hypertarget{keyboard_8h_af69ee2c8992ebdf31dd3707722424c62}\label{keyboard_8h_af69ee2c8992ebdf31dd3707722424c62} 
+\mbox{\Hypertarget{keyboard_8h_af69ee2c8992ebdf31dd3707722424c62}\label{keyboard_8h_af69ee2c8992ebdf31dd3707722424c62}} 
 \index{keyboard.h@{keyboard.h}!SPACE\_SCANCODE@{SPACE\_SCANCODE}}
 \index{SPACE\_SCANCODE@{SPACE\_SCANCODE}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{SPACE\_SCANCODE}{SPACE\_SCANCODE}}
@@ -114,25 +124,46 @@ bool \mbox{\hyperlink{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}\label{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4} 
+\mbox{\Hypertarget{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}\label{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4}} 
 \index{keyboard.h@{keyboard.h}!keyboard\_ih@{keyboard\_ih}}
 \index{keyboard\_ih@{keyboard\_ih}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_ih()}{keyboard\_ih()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8h_a58017421d19bb2004825d339ebb600fa}\label{keyboard_8h_a58017421d19bb2004825d339ebb600fa} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a1ba896157528456bcc6c82d7856f5eb4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8h_a58017421d19bb2004825d339ebb600fa}\label{keyboard_8h_a58017421d19bb2004825d339ebb600fa}} 
 \index{keyboard.h@{keyboard.h}!keyboard\_restore@{keyboard\_restore}}
 \index{keyboard\_restore@{keyboard\_restore}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_restore()}{keyboard\_restore()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}\label{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a58017421d19bb2004825d339ebb600fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}\label{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695}} 
 \index{keyboard.h@{keyboard.h}!keyboard\_subscribe\_int@{keyboard\_subscribe\_int}}
 \index{keyboard\_subscribe\_int@{keyboard\_subscribe\_int}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_subscribe\_int()}{keyboard\_subscribe\_int()}}
 {\footnotesize\ttfamily int() keyboard\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{keyboard_8h_aa23b07fa2192ce772fe143de1bc99695_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8h_a32cc4de66854f8a7bd909e7aa8b901ed}} 
 \index{keyboard.h@{keyboard.h}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
 \index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{keyboard\_unsubscribe\_int()}{keyboard\_unsubscribe\_int()}}
@@ -141,43 +172,43 @@ bool \mbox{\hyperlink{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}{is\+Caps\+L
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{keyboard_8h_aa146321463936a50906515420709c7ac}\label{keyboard_8h_aa146321463936a50906515420709c7ac} 
+\mbox{\Hypertarget{keyboard_8h_aa146321463936a50906515420709c7ac}\label{keyboard_8h_aa146321463936a50906515420709c7ac}} 
 \index{keyboard.h@{keyboard.h}!irqSetKeyboard@{irqSetKeyboard}}
 \index{irqSetKeyboard@{irqSetKeyboard}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{irqSetKeyboard}{irqSetKeyboard}}
 {\footnotesize\ttfamily uint8\+\_\+t irq\+Set\+Keyboard}
 
-\Hypertarget{keyboard_8h_aefec5fd961ddef7e203a9bfe7f93fb17}\label{keyboard_8h_aefec5fd961ddef7e203a9bfe7f93fb17} 
+\mbox{\Hypertarget{keyboard_8h_aefec5fd961ddef7e203a9bfe7f93fb17}\label{keyboard_8h_aefec5fd961ddef7e203a9bfe7f93fb17}} 
 \index{keyboard.h@{keyboard.h}!isAltPressed@{isAltPressed}}
 \index{isAltPressed@{isAltPressed}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{isAltPressed}{isAltPressed}}
 {\footnotesize\ttfamily bool is\+Alt\+Pressed}
 
-\Hypertarget{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}\label{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8} 
+\mbox{\Hypertarget{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}\label{keyboard_8h_a46ab1e65e4f7729aa111c4e2c76e86e8}} 
 \index{keyboard.h@{keyboard.h}!isCapsLockActive@{isCapsLockActive}}
 \index{isCapsLockActive@{isCapsLockActive}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{isCapsLockActive}{isCapsLockActive}}
 {\footnotesize\ttfamily bool is\+Caps\+Lock\+Active}
 
-\Hypertarget{keyboard_8h_ac4f0110b9bfdca2661e9fa0f422f016d}\label{keyboard_8h_ac4f0110b9bfdca2661e9fa0f422f016d} 
+\mbox{\Hypertarget{keyboard_8h_ac4f0110b9bfdca2661e9fa0f422f016d}\label{keyboard_8h_ac4f0110b9bfdca2661e9fa0f422f016d}} 
 \index{keyboard.h@{keyboard.h}!isCtrlPressed@{isCtrlPressed}}
 \index{isCtrlPressed@{isCtrlPressed}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{isCtrlPressed}{isCtrlPressed}}
 {\footnotesize\ttfamily bool is\+Ctrl\+Pressed}
 
-\Hypertarget{keyboard_8h_ac1f5c34ea3c80f50b7faa51e85c0c6d0}\label{keyboard_8h_ac1f5c34ea3c80f50b7faa51e85c0c6d0} 
+\mbox{\Hypertarget{keyboard_8h_ac1f5c34ea3c80f50b7faa51e85c0c6d0}\label{keyboard_8h_ac1f5c34ea3c80f50b7faa51e85c0c6d0}} 
 \index{keyboard.h@{keyboard.h}!isScancodeTwoBytes@{isScancodeTwoBytes}}
 \index{isScancodeTwoBytes@{isScancodeTwoBytes}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{isScancodeTwoBytes}{isScancodeTwoBytes}}
 {\footnotesize\ttfamily bool is\+Scancode\+Two\+Bytes}
 
-\Hypertarget{keyboard_8h_a8b52d0c7736944e422a464e8168f82e7}\label{keyboard_8h_a8b52d0c7736944e422a464e8168f82e7} 
+\mbox{\Hypertarget{keyboard_8h_a8b52d0c7736944e422a464e8168f82e7}\label{keyboard_8h_a8b52d0c7736944e422a464e8168f82e7}} 
 \index{keyboard.h@{keyboard.h}!isShiftPressed@{isShiftPressed}}
 \index{isShiftPressed@{isShiftPressed}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{isShiftPressed}{isShiftPressed}}
 {\footnotesize\ttfamily bool is\+Shift\+Pressed}
 
-\Hypertarget{keyboard_8h_aa1de7a5557e9d96b83cf03f73c92163f}\label{keyboard_8h_aa1de7a5557e9d96b83cf03f73c92163f} 
+\mbox{\Hypertarget{keyboard_8h_aa1de7a5557e9d96b83cf03f73c92163f}\label{keyboard_8h_aa1de7a5557e9d96b83cf03f73c92163f}} 
 \index{keyboard.h@{keyboard.h}!scancode@{scancode}}
 \index{scancode@{scancode}!keyboard.h@{keyboard.h}}
 \doxysubsubsection{\texorpdfstring{scancode}{scancode}}

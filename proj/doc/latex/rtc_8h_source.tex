@@ -1,0 +1,53 @@
+\hypertarget{rtc_8h_source}{}\doxysection{rtc.\+h}
+\label{rtc_8h_source}\index{C:/MinixVM/shared/proj/src/lib/drivers/rtc/rtc.h@{C:/MinixVM/shared/proj/src/lib/drivers/rtc/rtc.h}}
+\mbox{\hyperlink{rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef \_PROJ\_RTC\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define \_PROJ\_RTC\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define IRQ\_RTC             8}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define RTC\_ADDR\_REG        0x70}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define RTC\_DATA\_REG        0x71}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define RTC\_DM              BIT(2)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define RTC\_UIP             BIT(7)}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define RTC\_SECONDS         0}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define RTC\_SECONDS\_ALARM   1}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define RTC\_MINUTES         2}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define RTC\_MINUTES\_ALARM   3}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define RTC\_HOURS           4}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define RTC\_DAY             7}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define RTC\_MONTH           8}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define RTC\_YEAR            9}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define RTC\_REGISTER\_A      10}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define RTC\_REGISTER\_B      11}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define RTC\_REGISTER\_C      12}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define RTC\_REGISTER\_D      13}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{29     uint8\_t \mbox{\hyperlink{structrtc__info__t_a8459fc4e94de7eefc74991e41779c8fc}{second}};}
+\DoxyCodeLine{30     uint8\_t \mbox{\hyperlink{structrtc__info__t_a8ff981ec55c945940f4a0da7d8709b3c}{minute}};}
+\DoxyCodeLine{31     uint8\_t \mbox{\hyperlink{structrtc__info__t_ae5af4ff48939d13d480f87e56a9385d6}{hour}};}
+\DoxyCodeLine{32     uint8\_t \mbox{\hyperlink{structrtc__info__t_a72369a1087b2aeffe374bb054cb97c12}{day}};}
+\DoxyCodeLine{33     uint8\_t \mbox{\hyperlink{structrtc__info__t_a3e00faf7fbf9805e9ec4d2edd6339050}{month}};}
+\DoxyCodeLine{34     uint8\_t \mbox{\hyperlink{structrtc__info__t_a7af2065789bc84419b8d5fe109be83b5}{year}};}
+\DoxyCodeLine{35 \} \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}};}
+\DoxyCodeLine{36 \mbox{\hyperlink{structrtc__info__t}{rtc\_info\_t}} \mbox{\hyperlink{rtc_8h_ad8080461a28df066feb036dfb800950b}{rtcInfo}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}{rtc\_init}}();}
+\DoxyCodeLine{39 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_abd8de825e876e8ef94c64ac616f68a11}{rtc\_subscribe\_int}}();}
+\DoxyCodeLine{40 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}{rtc\_unsubscribe\_int}}();}
+\DoxyCodeLine{41 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_af52c476187dd39a58930d74ad187ec50}{rtcIN}}(uint8\_t command, uint8\_t *output);}
+\DoxyCodeLine{42 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_ac221f25ef3837098295722092bd03eb6}{rtcOUT}}(uint8\_t command, uint8\_t output);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{bool} \mbox{\hyperlink{rtc_8h_ae4c2eccc59963cb4d3c54881c214abbd}{rtcIsUpdating}}();}
+\DoxyCodeLine{44 \textcolor{keywordtype}{int} \mbox{\hyperlink{rtc_8h_ac19059d4296ae449b72fc52e6326bae9}{rtcUpdate}}();}
+\DoxyCodeLine{45 uint8\_t \mbox{\hyperlink{rtc_8h_a53a35ec560d829db41ca144e062e9ffd}{\_bcdToBinary}}(uint8\_t bcd);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_PROJ\_RTC\_H}}
+
+\end{DoxyCode}

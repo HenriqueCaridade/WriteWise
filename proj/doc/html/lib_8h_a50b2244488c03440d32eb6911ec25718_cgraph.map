@@ -1,0 +1,4 @@
+<map id="exitGraphMode" name="exitGraphMode">
+<area shape="rect" id="node1" title="Exits graphics mode." alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#aeddd6e4c5bc00f0f1c054cd3486c72dd" title="Exits the graphic mode and cleans up resources." alt="" coords="163,5,293,32"/>
+</map>

@@ -1,22 +1,32 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/text/text.h File Reference}
-\hypertarget{text_8h}{}\label{text_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h@{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h}}
+\hypertarget{text_8h}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/text/text.h File Reference}
+\label{text_8h}\index{C:/MinixVM/shared/proj/src/lib/text/text.h@{C:/MinixVM/shared/proj/src/lib/text/text.h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
-Include dependency graph for text.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\doxysubsubsection*{Data Structures}
+Include dependency graph for text.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{text_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{text_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em Struct that holds the font size information. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{text_8h_a6572f1706059832f94025fa12c6c45ed}{ALPHABET\+\_\+\+SIZE}}~96
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
+\doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\+\_\+t}} \{ \newline
@@ -29,14 +39,14 @@ enum \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\
 , \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}{xxxlarge}}
  \}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{text_8h_a3f9c40149fc1dd28faac93188796baef}{get\+Char\+Index}} (const char c)
+int \mbox{\hyperlink{text_8h_a3f9c40149fc1dd28faac93188796baef}{get\+Char\+Index}} (const char \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}})
 \begin{DoxyCompactList}\small\item\em Gets the index of the character in the alphabet array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} \mbox{\hyperlink{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}{get\+Font\+Size}} (\mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\+\_\+t}} font\+Type)
 \begin{DoxyCompactList}\small\item\em Font-\/size getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const bool \mbox{\hyperlink{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}} \mbox{[}\mbox{\hyperlink{text_8h_a6572f1706059832f94025fa12c6c45ed}{ALPHABET\+\_\+\+SIZE}}\mbox{]}\mbox{[}7\mbox{]}\mbox{[}5\mbox{]}
@@ -44,7 +54,7 @@ const bool \mbox{\hyperlink{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{text_8h_a6572f1706059832f94025fa12c6c45ed}\label{text_8h_a6572f1706059832f94025fa12c6c45ed} 
+\mbox{\Hypertarget{text_8h_a6572f1706059832f94025fa12c6c45ed}\label{text_8h_a6572f1706059832f94025fa12c6c45ed}} 
 \index{text.h@{text.h}!ALPHABET\_SIZE@{ALPHABET\_SIZE}}
 \index{ALPHABET\_SIZE@{ALPHABET\_SIZE}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{ALPHABET\_SIZE}{ALPHABET\_SIZE}}
@@ -53,34 +63,34 @@ const bool \mbox{\hyperlink{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}
 
 
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84} 
+\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84}} 
 \index{text.h@{text.h}!font\_type\_t@{font\_type\_t}}
 \index{font\_type\_t@{font\_type\_t}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{font\_type\_t}{font\_type\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\+\_\+t}}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{small@{small}!text.h@{text.h}}\index{text.h@{text.h}!small@{small}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{small@{small}!text.h@{text.h}}\index{text.h@{text.h}!small@{small}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761}} 
 small&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{medium@{medium}!text.h@{text.h}}\index{text.h@{text.h}!medium@{medium}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{medium@{medium}!text.h@{text.h}}\index{text.h@{text.h}!medium@{medium}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c}} 
 medium&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{large@{large}!text.h@{text.h}}\index{text.h@{text.h}!large@{large}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{large@{large}!text.h@{text.h}}\index{text.h@{text.h}!large@{large}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e}} 
 large&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{xlarge@{xlarge}!text.h@{text.h}}\index{text.h@{text.h}!xlarge@{xlarge}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{xlarge@{xlarge}!text.h@{text.h}}\index{text.h@{text.h}!xlarge@{xlarge}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f}} 
 xlarge&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{xxlarge@{xxlarge}!text.h@{text.h}}\index{text.h@{text.h}!xxlarge@{xxlarge}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{xxlarge@{xxlarge}!text.h@{text.h}}\index{text.h@{text.h}!xxlarge@{xxlarge}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df}} 
 xxlarge&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{xxxlarge@{xxxlarge}!text.h@{text.h}}\index{text.h@{text.h}!xxxlarge@{xxxlarge}}}\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{xxxlarge@{xxxlarge}!text.h@{text.h}}\index{text.h@{text.h}!xxxlarge@{xxxlarge}}}\mbox{\Hypertarget{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}\label{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}} 
 xxxlarge&\\
 \hline
 
@@ -88,7 +98,7 @@ xxxlarge&\\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{text_8h_a3f9c40149fc1dd28faac93188796baef}\label{text_8h_a3f9c40149fc1dd28faac93188796baef} 
+\mbox{\Hypertarget{text_8h_a3f9c40149fc1dd28faac93188796baef}\label{text_8h_a3f9c40149fc1dd28faac93188796baef}} 
 \index{text.h@{text.h}!getCharIndex@{getCharIndex}}
 \index{getCharIndex@{getCharIndex}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{getCharIndex()}{getCharIndex()}}
@@ -98,15 +108,15 @@ xxxlarge&\\
 
 Gets the index of the character in the alphabet array. 
 
-
+This function takes a character as input and returns its index in the alphabet array. 
 \begin{DoxyParams}{Parameters}
-{\em c} & character \\
+{\em c} & character for which the index is retrieved. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-index 
+index of the character in the alphabet array. 
 \end{DoxyReturn}
-\Hypertarget{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}\label{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4} 
+\mbox{\Hypertarget{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}\label{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}} 
 \index{text.h@{text.h}!getFontSize@{getFontSize}}
 \index{getFontSize@{getFontSize}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
@@ -116,18 +126,18 @@ index
 
 Font-\/size getter. 
 
-
+This function returns the font size based on the current display mode and the specified font type. 
 \begin{DoxyParams}{Parameters}
-{\em font\+Type} & \\
+{\em font\+Type} & type of the font. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{structfont__size__t}{font\+\_\+size\+\_\+t} 
+\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} 
 \end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}\label{text_8h_a9d5fcb1442d06ba8d13030788f117a0b} 
+\mbox{\Hypertarget{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}\label{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}} 
 \index{text.h@{text.h}!alphabet@{alphabet}}
 \index{alphabet@{alphabet}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{alphabet}{alphabet}}

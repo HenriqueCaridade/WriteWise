@@ -1,0 +1,8 @@
+<map id="drawHLineRGB" name="drawHLineRGB">
+<area shape="rect" id="node1" title="Draws a horizontal colored line." alt="" coords="5,81,115,108"/>
+<area shape="rect" id="node2" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="164,5,285,32"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="163,56,286,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957" title=" " alt="" coords="183,107,266,133"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a5e5b25bd525250f61f40b9e9f212d5e6" title=" " alt="" coords="174,157,275,184"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="334,157,435,184"/>
+</map>

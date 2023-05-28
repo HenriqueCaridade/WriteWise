@@ -1,11 +1,21 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h File Reference}
-\hypertarget{graphics_8h}{}\label{graphics_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/graphics/graphics.h}}
+\hypertarget{graphics_8h}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/drivers/graphics/graphics.h File Reference}
+\label{graphics_8h}\index{C:/MinixVM/shared/proj/src/lib/drivers/graphics/graphics.h@{C:/MinixVM/shared/proj/src/lib/drivers/graphics/graphics.h}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
-Include dependency graph for graphics.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\doxysubsubsection*{Functions}
+Include dependency graph for graphics.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{graphics_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphics_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode}} (uint16\+\_\+t submode)
@@ -15,11 +25,11 @@ int() \mbox{\hyperlink{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}{set\+\_\+t
 int() \mbox{\hyperlink{graphics_8h_a92983a6764917e6ddae9db456571407a}{set\+\_\+frame\+\_\+buffer}} ()
 \begin{DoxyCompactList}\small\item\em Sets up the frame buffer for the graphic mode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}{exit\+\_\+graphic\+\_\+mode}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Exits the graphic mode and cleans up resources. \end{DoxyCompactList}\item 
 void() \mbox{\hyperlink{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}{flip\+\_\+frame}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Changes the current frame. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_ad0560a88f4893d5d805c68f670252472}{\+\_\+vg\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color, int ret\+Out\+Of\+Bounds)
-\item 
+\begin{DoxyCompactList}\small\item\em Draws a pixel of a specified color at the given coordinates. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphics_8h_a08c498ffeb0a3962e3b7711b57397741}{vg\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
 \item 
 int() \mbox{\hyperlink{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}{vg\+\_\+draw\+\_\+hline}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t len, uint32\+\_\+t color)
@@ -30,14 +40,14 @@ int() \mbox{\hyperlink{graphics_8h_a99d2da2559e11200c6b40c469e9977ec}{vg\+\_\+dr
 \item 
 uint32\+\_\+t() \mbox{\hyperlink{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957}{rgb\+To\+Color}} (uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{graphics_8h_acbcf61ec794276372586878110524b97}{mode\+Info}}
 \item 
-uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}{frame\+Buffer}}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}{frame\+Buffer}}
 \item 
-uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}{v\+Mem}}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}{v\+Mem}}
 \item 
 size\+\_\+t \mbox{\hyperlink{graphics_8h_a04638868263636c3cd761ada604a2fd9}{frame\+Size}}
 \item 
@@ -46,31 +56,60 @@ uint16\+\_\+t \mbox{\hyperlink{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}{by
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{graphics_8h_ad0560a88f4893d5d805c68f670252472}\label{graphics_8h_ad0560a88f4893d5d805c68f670252472} 
+\mbox{\Hypertarget{graphics_8h_ad0560a88f4893d5d805c68f670252472}\label{graphics_8h_ad0560a88f4893d5d805c68f670252472}} 
 \index{graphics.h@{graphics.h}!\_vg\_draw\_pixel@{\_vg\_draw\_pixel}}
 \index{\_vg\_draw\_pixel@{\_vg\_draw\_pixel}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{\_vg\_draw\_pixel()}{\_vg\_draw\_pixel()}}
 {\footnotesize\ttfamily int() \+\_\+vg\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color,  }\item[{int}]{ret\+Out\+Of\+Bounds }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}\label{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd} 
+
+
+Draws a pixel of a specified color at the given coordinates. 
+
+This function draws a pixel of the specified color at the given coordinates (x, y) on the screen. It first checks if the coordinates are within the screen resolution boundaries. If the coordinates are outside the boundaries, the function returns 1. Otherwise, it calculates the index in the frame buffer based on the coordinates and the bytes per pixel. It then copies the color value into the frame buffer at the calculated index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the pixel. \\
+\hline
+{\em y} & The y-\/coordinate of the pixel. \\
+\hline
+{\em color} & The color value to be set for the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the pixel was drawn successfully, otherwise 1 if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}\label{graphics_8h_aeddd6e4c5bc00f0f1c054cd3486c72dd}} 
 \index{graphics.h@{graphics.h}!exit\_graphic\_mode@{exit\_graphic\_mode}}
 \index{exit\_graphic\_mode@{exit\_graphic\_mode}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{exit\_graphic\_mode()}{exit\_graphic\_mode()}}
 {\footnotesize\ttfamily int() exit\+\_\+graphic\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}\label{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db} 
+
+
+Exits the graphic mode and cleans up resources. 
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if error occured. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}\label{graphics_8h_ab3b868fbc0b28e9a2ab9fd95b2cbe4db}} 
 \index{graphics.h@{graphics.h}!flip\_frame@{flip\_frame}}
 \index{flip\_frame@{flip\_frame}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{flip\_frame()}{flip\_frame()}}
 {\footnotesize\ttfamily void() flip\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957}\label{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957} 
+
+
+Changes the current frame. 
+
+\mbox{\Hypertarget{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957}\label{graphics_8h_afd7d81a3a51261e5f2fa8d7284ad0957}} 
 \index{graphics.h@{graphics.h}!rgbToColor@{rgbToColor}}
 \index{rgbToColor@{rgbToColor}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{rgbToColor()}{rgbToColor()}}
 {\footnotesize\ttfamily uint32\+\_\+t() rgb\+To\+Color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{red,  }\item[{uint8\+\_\+t}]{green,  }\item[{uint8\+\_\+t}]{blue }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_a92983a6764917e6ddae9db456571407a}\label{graphics_8h_a92983a6764917e6ddae9db456571407a} 
+\mbox{\Hypertarget{graphics_8h_a92983a6764917e6ddae9db456571407a}\label{graphics_8h_a92983a6764917e6ddae9db456571407a}} 
 \index{graphics.h@{graphics.h}!set\_frame\_buffer@{set\_frame\_buffer}}
 \index{set\_frame\_buffer@{set\_frame\_buffer}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{set\_frame\_buffer()}{set\_frame\_buffer()}}
@@ -80,15 +119,12 @@ uint16\+\_\+t \mbox{\hyperlink{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}{by
 
 Sets up the frame buffer for the graphic mode. 
 
-This function is called after the graphic mode has been set using \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}. It sets up the frame buffer by allocating physical and virtual memory for the frame buffer based on the mode information obtained from \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}. It also allocates memory for the frame buffer using {\ttfamily malloc()}.
+This function is called after the graphic mode has been set. It sets up the frame buffer by allocating physical and virtual memory.
 
-\begin{DoxyNote}{Note}
-This function should only be called after calling {\ttfamily \doxylink{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode()}}.
-\end{DoxyNote}
 \begin{DoxyReturn}{Returns}
 0 if the frame buffer was set up successfully, otherwise 1 if an error occurred. 
 \end{DoxyReturn}
-\Hypertarget{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}\label{graphics_8h_a967432a6c8128a907b937b0f3f4b4472} 
+\mbox{\Hypertarget{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}\label{graphics_8h_a967432a6c8128a907b937b0f3f4b4472}} 
 \index{graphics.h@{graphics.h}!set\_graphic\_mode@{set\_graphic\_mode}}
 \index{set\_graphic\_mode@{set\_graphic\_mode}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{set\_graphic\_mode()}{set\_graphic\_mode()}}
@@ -104,9 +140,9 @@ This function sets the graphic mode using the specified submode.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-0 if the graphic mode was set successfully, otherwise 1 if an error occurred. 
+Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}\label{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8} 
+\mbox{\Hypertarget{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}\label{graphics_8h_a62f63672fd06c462a0873e30f5e32ef8}} 
 \index{graphics.h@{graphics.h}!set\_text\_mode@{set\_text\_mode}}
 \index{set\_text\_mode@{set\_text\_mode}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{set\_text\_mode()}{set\_text\_mode()}}
@@ -119,62 +155,83 @@ Sets the text mode.
 This function sets the minix mode to text mode. After setting the text mode, it clears the mode information structure.
 
 \begin{DoxyReturn}{Returns}
-0 if the text mode was set successfully, otherwise 1 if an error occurred. 
+Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}\label{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6} 
+\mbox{\Hypertarget{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}\label{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6}} 
 \index{graphics.h@{graphics.h}!vg\_draw\_hline@{vg\_draw\_hline}}
 \index{vg\_draw\_hline@{vg\_draw\_hline}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{vg\_draw\_hline()}{vg\_draw\_hline()}}
 {\footnotesize\ttfamily int() vg\+\_\+draw\+\_\+hline (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{len,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_a08c498ffeb0a3962e3b7711b57397741}\label{graphics_8h_a08c498ffeb0a3962e3b7711b57397741} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{graphics_8h_a5e5b25bd525250f61f40b9e9f212d5e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_a08c498ffeb0a3962e3b7711b57397741}\label{graphics_8h_a08c498ffeb0a3962e3b7711b57397741}} 
 \index{graphics.h@{graphics.h}!vg\_draw\_pixel@{vg\_draw\_pixel}}
 \index{vg\_draw\_pixel@{vg\_draw\_pixel}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{vg\_draw\_pixel()}{vg\_draw\_pixel()}}
 {\footnotesize\ttfamily int() vg\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_a99d2da2559e11200c6b40c469e9977ec}\label{graphics_8h_a99d2da2559e11200c6b40c469e9977ec} 
+\mbox{\Hypertarget{graphics_8h_a99d2da2559e11200c6b40c469e9977ec}\label{graphics_8h_a99d2da2559e11200c6b40c469e9977ec}} 
 \index{graphics.h@{graphics.h}!vg\_draw\_rectangle@{vg\_draw\_rectangle}}
 \index{vg\_draw\_rectangle@{vg\_draw\_rectangle}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{vg\_draw\_rectangle()}{vg\_draw\_rectangle()}}
 {\footnotesize\ttfamily int() vg\+\_\+draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
 
-\Hypertarget{graphics_8h_a1135e6421577648c6d1c0abc1e971663}\label{graphics_8h_a1135e6421577648c6d1c0abc1e971663} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphics_8h_a99d2da2559e11200c6b40c469e9977ec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_a1135e6421577648c6d1c0abc1e971663}\label{graphics_8h_a1135e6421577648c6d1c0abc1e971663}} 
 \index{graphics.h@{graphics.h}!vg\_draw\_vline@{vg\_draw\_vline}}
 \index{vg\_draw\_vline@{vg\_draw\_vline}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{vg\_draw\_vline()}{vg\_draw\_vline()}}
 {\footnotesize\ttfamily int() vg\+\_\+draw\+\_\+vline (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{len,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{graphics_8h_a1135e6421577648c6d1c0abc1e971663_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}\label{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68} 
+\mbox{\Hypertarget{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}\label{graphics_8h_a9c29ab0ca81107ae2aeb64f10885ea68}} 
 \index{graphics.h@{graphics.h}!bytesPP@{bytesPP}}
 \index{bytesPP@{bytesPP}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{bytesPP}{bytesPP}}
 {\footnotesize\ttfamily uint16\+\_\+t bytes\+PP}
 
-\Hypertarget{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}\label{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4} 
+\mbox{\Hypertarget{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}\label{graphics_8h_a9a2fdf82b1d05e2a1cbcb68ad1237ae4}} 
 \index{graphics.h@{graphics.h}!frameBuffer@{frameBuffer}}
 \index{frameBuffer@{frameBuffer}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{frameBuffer}{frameBuffer}}
-{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} frame\+Buffer}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ frame\+Buffer}
 
-\Hypertarget{graphics_8h_a04638868263636c3cd761ada604a2fd9}\label{graphics_8h_a04638868263636c3cd761ada604a2fd9} 
+\mbox{\Hypertarget{graphics_8h_a04638868263636c3cd761ada604a2fd9}\label{graphics_8h_a04638868263636c3cd761ada604a2fd9}} 
 \index{graphics.h@{graphics.h}!frameSize@{frameSize}}
 \index{frameSize@{frameSize}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{frameSize}{frameSize}}
 {\footnotesize\ttfamily size\+\_\+t frame\+Size}
 
-\Hypertarget{graphics_8h_acbcf61ec794276372586878110524b97}\label{graphics_8h_acbcf61ec794276372586878110524b97} 
+\mbox{\Hypertarget{graphics_8h_acbcf61ec794276372586878110524b97}\label{graphics_8h_acbcf61ec794276372586878110524b97}} 
 \index{graphics.h@{graphics.h}!modeInfo@{modeInfo}}
 \index{modeInfo@{modeInfo}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{modeInfo}{modeInfo}}
 {\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t mode\+Info}
 
-\Hypertarget{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}\label{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f} 
+\mbox{\Hypertarget{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}\label{graphics_8h_ae8050d4ab7a2875bdc019e09c57efe6f}} 
 \index{graphics.h@{graphics.h}!vMem@{vMem}}
 \index{vMem@{vMem}!graphics.h@{graphics.h}}
 \doxysubsubsection{\texorpdfstring{vMem}{vMem}}
-{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} v\+Mem}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ v\+Mem}
 

@@ -1,0 +1,8 @@
+<map id="exitAllDrivers" name="exitAllDrivers">
+<area shape="rect" id="node1" title="Unsubscribes all devices&#39; interrupts." alt="" coords="5,107,102,133"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed" title=" " alt="" coords="153,5,326,32"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3" title=" " alt="" coords="160,56,319,83"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#ab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="172,107,307,133"/>
+<area shape="rect" id="node5" href="$serialPort_8c.html#afd52bd27bbf8c2323c4f5e2dddc7bc11" title=" " alt="" coords="150,157,329,184"/>
+<area shape="rect" id="node6" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="165,208,314,235"/>
+</map>

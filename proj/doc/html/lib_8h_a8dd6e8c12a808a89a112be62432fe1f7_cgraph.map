@@ -1,0 +1,10 @@
+<map id="drawCharRGB" name="drawCharRGB">
+<area shape="rect" id="node1" title="Draws a colored character." alt="" coords="5,107,109,133"/>
+<area shape="rect" id="node2" href="$lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b" title="Draws a character. Only called when color is in the current mode format." alt="" coords="177,31,260,57"/>
+<area shape="rect" id="node6" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="158,81,279,108"/>
+<area shape="rect" id="node7" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="157,132,280,159"/>
+<area shape="rect" id="node8" href="$graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957" title=" " alt="" coords="177,183,260,209"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a482296901383ca6738e028621a11fa1c" title="Draws a 5 by 7 character." alt="" coords="339,5,415,32"/>
+<area shape="rect" id="node5" href="$text_8c.html#a3f9c40149fc1dd28faac93188796baef" title="Gets the index of the character in the alphabet array." alt="" coords="328,56,425,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="473,5,575,32"/>
+</map>

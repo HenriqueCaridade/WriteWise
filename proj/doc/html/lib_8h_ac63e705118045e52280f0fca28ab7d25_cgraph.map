@@ -1,0 +1,7 @@
+<map id="_drawText" name="_drawText">
+<area shape="rect" id="node1" title="Draws a colored text of characters. Only called when color is in the current mode format." alt="" coords="5,31,86,57"/>
+<area shape="rect" id="node2" href="$lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b" title="Draws a character. Only called when color is in the current mode format." alt="" coords="134,31,216,57"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a482296901383ca6738e028621a11fa1c" title="Draws a 5 by 7 character." alt="" coords="275,5,351,32"/>
+<area shape="rect" id="node5" href="$text_8c.html#a3f9c40149fc1dd28faac93188796baef" title="Gets the index of the character in the alphabet array." alt="" coords="264,56,361,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="409,5,511,32"/>
+</map>

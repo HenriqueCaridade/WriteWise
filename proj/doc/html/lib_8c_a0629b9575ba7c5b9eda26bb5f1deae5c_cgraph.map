@@ -1,0 +1,9 @@
+<map id="drawTextXYColor" name="drawTextXYColor">
+<area shape="rect" id="node1" title="Draws a colored text of characters." alt="" coords="5,56,125,83"/>
+<area shape="rect" id="node2" href="$lib_8c.html#ac63e705118045e52280f0fca28ab7d25" title="Draws a colored text of characters. Only called when color is in the current mode format." alt="" coords="174,31,255,57"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#afd7d81a3a51261e5f2fa8d7284ad0957" title=" " alt="" coords="173,81,256,108"/>
+<area shape="rect" id="node3" href="$lib_8c.html#ac85ff56f632ec086f82eb4c6f2950e5b" title="Draws a character. Only called when color is in the current mode format." alt="" coords="304,31,386,57"/>
+<area shape="rect" id="node4" href="$lib_8c.html#a482296901383ca6738e028621a11fa1c" title="Draws a 5 by 7 character." alt="" coords="445,5,521,32"/>
+<area shape="rect" id="node6" href="$text_8c.html#a3f9c40149fc1dd28faac93188796baef" title="Gets the index of the character in the alphabet array." alt="" coords="434,56,532,83"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="580,5,681,32"/>
+</map>

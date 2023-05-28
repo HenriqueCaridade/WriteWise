@@ -1,56 +1,56 @@
-\doxysection{UART.\+h}
-\hypertarget{UART_8h_source}{}\label{UART_8h_source}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/UART.h@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/UART.h}}
+\hypertarget{UART_8h_source}{}\doxysection{UART.\+h}
+\label{UART_8h_source}\index{C:/MinixVM/shared/proj/src/lib/drivers/serialPort/UART.h@{C:/MinixVM/shared/proj/src/lib/drivers/serialPort/UART.h}}
 \mbox{\hyperlink{UART_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_UART\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_PROJ\_UART\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ WAIT\_UART\ 20000}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_ATTEMPTS\_UART\ 10}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ COM1\_BASE\_ADDR\ \ 0x3F8}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COM1\_IRQ\ \ \ \ \ \ \ \ 4}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ RBR\ (COM1\_BASE\_ADDR\ +\ 0x00)}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ THR\ RBR}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ IER\ (COM1\_BASE\_ADDR\ +\ 0x01)}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IIR\ (COM1\_BASE\_ADDR\ +\ 0x02)}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ FCR\ IIR}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ LCR\ (COM1\_BASE\_ADDR\ +\ 0x03)}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MCR\ (COM1\_BASE\_ADDR\ +\ 0x04)}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ LSR\ (COM1\_BASE\_ADDR\ +\ 0x05)}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ MSR\ (COM1\_BASE\_ADDR\ +\ 0x06)}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ SR\ \ (COM1\_BASE\_ADDR\ +\ 0x07)}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DLL\ RBR}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ DLM\ IER}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LSR\_DATA\_READY\ \ \ \ \ \ BIT(0)}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LSR\_OVERRUN\_ERROR\ \ \ BIT(1)}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LSR\_PARITY\_ERROR\ \ \ \ BIT(2)}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LSR\_FRAMING\_ERROR\ \ \ BIT(3)}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LSR\_BREAK\_INTERRUPT\ BIT(4)}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ LSR\_THR\_EMPTY\ \ \ \ \ \ \ BIT(5)}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ LSR\_THR\_N\_TSR\_EMPTY\ BIT(6)}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LSR\_FIFO\_ERROR\ \ \ \ \ \ BIT(7)}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ IER\_ENABLE\_RECEIVED\_INT\ \ \ \ \ \ \ \ \ BIT(0)}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ IER\_ENABLE\_TRANSMITER\_INT\ \ \ \ \ \ \ BIT(1)}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ IER\_ENABLE\_RECEIVER\_STATUS\_INT\ \ BIT(2)}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ IER\_ENABLE\_MODEM\_STATUS\_INT\ \ \ \ \ BIT(3)}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ IER\_CLEAR\ (BIT(4)\ |\ BIT(5)\ |\ BIT(6)\ |\ BIT(7))}}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ IIR\_NO\_INTERRUPT\_PENDING\ \ \ \ BIT(0)}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ IIR\_INTERRUPT\_PENDING\_INFO\ \ (BIT(1)\ |\ BIT(2)\ |\ BIT(3))}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ IIR\_RECEIVER\_STATUS\ \ \ \ \ \ \ \ \ (BIT(1)\ |\ BIT(2))}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ IIR\_RECEIVED\_DATA\_AVAILABLE\ BIT(2)}}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ IIR\_CHAR\_TIMEOUT\_FIFO\ \ \ \ \ \ \ (BIT(2)\ |\ BIT(3))}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ IIR\_THR\_EMPTY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BIT(1)}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ IIR\_MODEM\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ 0}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ FCR\_CLEAR\ (BIT(0)\ |\ BIT(1)\ |\ BIT(2))}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_UART\_H}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef \_PROJ\_UART\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define \_PROJ\_UART\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define WAIT\_UART 20000}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define MAX\_ATTEMPTS\_UART 10}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define COM1\_BASE\_ADDR  0x3F8}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define COM1\_IRQ        4}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define RBR (COM1\_BASE\_ADDR + 0x00)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define THR RBR}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define IER (COM1\_BASE\_ADDR + 0x01)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define IIR (COM1\_BASE\_ADDR + 0x02)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define FCR IIR}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define LCR (COM1\_BASE\_ADDR + 0x03)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define MCR (COM1\_BASE\_ADDR + 0x04)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define LSR (COM1\_BASE\_ADDR + 0x05)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define MSR (COM1\_BASE\_ADDR + 0x06)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define SR  (COM1\_BASE\_ADDR + 0x07)}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define DLL RBR}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define DLM IER}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define LSR\_DATA\_READY      BIT(0)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define LSR\_OVERRUN\_ERROR   BIT(1)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define LSR\_PARITY\_ERROR    BIT(2)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define LSR\_FRAMING\_ERROR   BIT(3)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define LSR\_BREAK\_INTERRUPT BIT(4)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LSR\_THR\_EMPTY       BIT(5)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define LSR\_THR\_N\_TSR\_EMPTY BIT(6)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define LSR\_FIFO\_ERROR      BIT(7)}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define IER\_ENABLE\_RECEIVED\_INT         BIT(0)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define IER\_ENABLE\_TRANSMITER\_INT       BIT(1)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define IER\_ENABLE\_RECEIVER\_STATUS\_INT  BIT(2)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define IER\_ENABLE\_MODEM\_STATUS\_INT     BIT(3)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define IER\_CLEAR (BIT(4) | BIT(5) | BIT(6) | BIT(7))}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define IIR\_NO\_INTERRUPT\_PENDING    BIT(0)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define IIR\_INTERRUPT\_PENDING\_INFO  (BIT(1) | BIT(2) | BIT(3))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define IIR\_RECEIVER\_STATUS         (BIT(1) | BIT(2))}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define IIR\_RECEIVED\_DATA\_AVAILABLE BIT(2)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define IIR\_CHAR\_TIMEOUT\_FIFO       (BIT(2) | BIT(3))}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define IIR\_THR\_EMPTY               BIT(1)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define IIR\_MODEM\_STATUS            0}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define FCR\_CLEAR (BIT(0) | BIT(1) | BIT(2))}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_PROJ\_UART\_H}}
 
 \end{DoxyCode}

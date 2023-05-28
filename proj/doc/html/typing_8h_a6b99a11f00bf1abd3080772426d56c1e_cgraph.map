@@ -1,0 +1,9 @@
+<map id="endRace" name="endRace">
+<area shape="rect" id="node1" title="Sends INFO_WON code through the serial port." alt="" coords="5,31,78,57"/>
+<area shape="rect" id="node2" href="$serialPort_8c.html#aa305fdf9b8c353ffa49dcba64a64ab20" title=" " alt="" coords="126,31,259,57"/>
+<area shape="rect" id="node3" href="$serialPort_8c.html#a683eb83ee07e12cf8bbd3732db015ed8" title=" " alt="" coords="307,31,440,57"/>
+<area shape="rect" id="node4" href="$serialPort_8c.html#ab20bfb08015238b37b134b565bd3dac1" title=" " alt="" coords="488,5,638,32"/>
+<area shape="rect" id="node7" href="$trace_8txt.html#a08c23a080ccba15ab4e20f4fac3a33bf" title=" " alt="" coords="526,56,600,83"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="686,5,776,32"/>
+<area shape="rect" id="node6" href="$trace_8txt.html#a86c9af6392f13bddc9d77c0fbc055e35" title=" " alt="" coords="824,5,890,32"/>
+</map>

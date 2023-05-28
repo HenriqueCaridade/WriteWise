@@ -1,21 +1,31 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/typing/typing.h File Reference}
-\hypertarget{typing_8h}{}\label{typing_8h}\index{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h@{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h}}
+\hypertarget{typing_8h}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/typing/typing.h File Reference}
+\label{typing_8h}\index{C:/MinixVM/shared/proj/src/typing/typing.h@{C:/MinixVM/shared/proj/src/typing/typing.h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-{\ttfamily \#include \"{}../lib/lib.\+h\"{}}\newline
-{\ttfamily \#include \"{}../data/data.\+h\"{}}\newline
-Include dependency graph for typing.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\doxysubsubsection*{Data Structures}
+{\ttfamily \#include \char`\"{}../lib/lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../data/data.\+h\char`\"{}}\newline
+Include dependency graph for typing.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typing_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{typing_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structtyping__info__t}{typing\+\_\+info\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em Struct that holds typing information. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em Struct that holds racing mode info. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
+\doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\+\_\+status\+\_\+t}} \{ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}}
@@ -24,13 +34,13 @@ enum \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\+\_\+s
 , \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}{finished}}
  \}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generate\+Text}} (uint32\+\_\+t word\+Ammount, unsigned seed)
 \begin{DoxyCompactList}\small\item\em Generates a text given a word ammount and a creation seed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{reset\+Typing\+Info}} ()
-\begin{DoxyCompactList}\small\item\em Resets typing info variable. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{reset\+Racing\+Info}} ()
 \begin{DoxyCompactList}\small\item\em Resets racing info variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typing\+Input\+Handler}} (bool is\+Race)
@@ -47,7 +57,7 @@ void \mbox{\hyperlink{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}{end\+Race}} (
 \begin{DoxyCompactList}\small\item\em Sends INFO\+\_\+\+WON code through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+Test}} (float cx, float cy, float max\+Width, uint32\+\_\+t right\+Color, uint32\+\_\+t wrong\+Color, uint32\+\_\+t unwritten\+Color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws the text which the player must write. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structtyping__info__t}{typing\+\_\+info\+\_\+t}} \mbox{\hyperlink{typing_8h_aa699a3114ec15155bf95591f59a91f1c}{typing\+Info}}
@@ -57,26 +67,26 @@ int \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+
 
 
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532} 
+\mbox{\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}} 
 \index{typing.h@{typing.h}!typing\_status\_t@{typing\_status\_t}}
 \index{typing\_status\_t@{typing\_status\_t}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{typing\_status\_t}{typing\_status\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\+\_\+status\+\_\+t}}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{unready@{unready}!typing.h@{typing.h}}\index{typing.h@{typing.h}!unready@{unready}}}\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unready@{unready}!typing.h@{typing.h}}\index{typing.h@{typing.h}!unready@{unready}}}\mbox{\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}} 
 unready&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ready@{ready}!typing.h@{typing.h}}\index{typing.h@{typing.h}!ready@{ready}}}\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ready@{ready}!typing.h@{typing.h}}\index{typing.h@{typing.h}!ready@{ready}}}\mbox{\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473}} 
 ready&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{typing@{typing}!typing.h@{typing.h}}\index{typing.h@{typing.h}!typing@{typing}}}\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{typing@{typing}!typing.h@{typing.h}}\index{typing.h@{typing.h}!typing@{typing}}}\mbox{\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786}} 
 typing&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{finished@{finished}!typing.h@{typing.h}}\index{typing.h@{typing.h}!finished@{finished}}}\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finished@{finished}!typing.h@{typing.h}}\index{typing.h@{typing.h}!finished@{finished}}}\mbox{\Hypertarget{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}\label{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}} 
 finished&\\
 \hline
 
@@ -84,7 +94,7 @@ finished&\\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}\label{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f} 
+\mbox{\Hypertarget{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}\label{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}} 
 \index{typing.h@{typing.h}!calcTypingStatus@{calcTypingStatus}}
 \index{calcTypingStatus@{calcTypingStatus}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{calcTypingStatus()}{calcTypingStatus()}}
@@ -94,7 +104,7 @@ finished&\\
 
 Does the typing status calculations. (WPM, ACC, etc) 
 
-\Hypertarget{typing_8h_ab2158f31af29aef2460da7d67d217de1}\label{typing_8h_ab2158f31af29aef2460da7d67d217de1} 
+This function calculates the typing statistics based on the provided typing information. \mbox{\Hypertarget{typing_8h_ab2158f31af29aef2460da7d67d217de1}\label{typing_8h_ab2158f31af29aef2460da7d67d217de1}} 
 \index{typing.h@{typing.h}!drawTypingTest@{drawTypingTest}}
 \index{drawTypingTest@{drawTypingTest}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{drawTypingTest()}{drawTypingTest()}}
@@ -104,27 +114,34 @@ Does the typing status calculations. (WPM, ACC, etc)
 
 Draws the text which the player must write. 
 
-
+This function draws the text that the player needs to type on the screen. The text is positioned based on the provided center coordinates (cx, cy) as a percentage of the screen width and height. 
 \begin{DoxyParams}{Parameters}
-{\em cx} & X coordinate in percentage(0 to 1) starting from the center. \\
+{\em cx} & x coordinate in percentage(0 to 1) starting from the center. \\
 \hline
-{\em cy} & Y coordinate in percentage(0 to 1) starting from the center. \\
+{\em cy} & y coordinate in percentage(0 to 1) starting from the center. \\
 \hline
-{\em max\+Width} & Text max width. \\
+{\em max\+Width} & text max width. \\
 \hline
-{\em right\+Color} & Color of the text when the characters are correctly written. \\
+{\em right\+Color} & color of the text when the characters are correctly written. \\
 \hline
-{\em wrong\+Color} & Color of the text when the characters are incorrectly written. \\
+{\em wrong\+Color} & color of the text when the characters are incorrectly written. \\
 \hline
-{\em unwritten\+Color} & Color of unwritten text. \\
+{\em unwritten\+Color} & color of unwritten text. \\
 \hline
-{\em size} & Font size \\
+{\em size} & font size \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}\label{typing_8h_a6b99a11f00bf1abd3080772426d56c1e} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typing_8h_ab2158f31af29aef2460da7d67d217de1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}\label{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}} 
 \index{typing.h@{typing.h}!endRace@{endRace}}
 \index{endRace@{endRace}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{endRace()}{endRace()}}
@@ -134,7 +151,14 @@ Non-\/zero if error occured.
 
 Sends INFO\+\_\+\+WON code through the serial port. 
 
-\Hypertarget{typing_8h_af20c241f9cd9e758424e745645759650}\label{typing_8h_af20c241f9cd9e758424e745645759650} 
+This function sets the {\ttfamily won} flag in the {\ttfamily racing\+Info} structure to true and sends the INFO\+\_\+\+WON code through the serial port by calling the {\ttfamily serial\+Port\+Send\+Won} function. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typing_8h_a6b99a11f00bf1abd3080772426d56c1e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_af20c241f9cd9e758424e745645759650}\label{typing_8h_af20c241f9cd9e758424e745645759650}} 
 \index{typing.h@{typing.h}!endTyping@{endTyping}}
 \index{endTyping@{endTyping}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{endTyping()}{endTyping()}}
@@ -144,7 +168,14 @@ Sends INFO\+\_\+\+WON code through the serial port.
 
 Updates typing status in the end of typing. 
 
-\Hypertarget{typing_8h_a18851fac97afb33c7b6afb48db123db9}\label{typing_8h_a18851fac97afb33c7b6afb48db123db9} 
+This function updates the {\ttfamily time\+End} field of the {\ttfamily typing\+Info} structure with the current elapsed time, sets the status of the typing information to indicate that typing has finished, and calculates the typing statistics such as CPM, WPM, and accuracy by calling the {\ttfamily calc\+Typing\+Status} function. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{typing_8h_af20c241f9cd9e758424e745645759650_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_a18851fac97afb33c7b6afb48db123db9}\label{typing_8h_a18851fac97afb33c7b6afb48db123db9}} 
 \index{typing.h@{typing.h}!generateText@{generateText}}
 \index{generateText@{generateText}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{generateText()}{generateText()}}
@@ -154,14 +185,22 @@ Updates typing status in the end of typing.
 
 Generates a text given a word ammount and a creation seed. 
 
-
+This function generates a text by randomly selecting words from a dictionary based on the given word amount and creation seed. 
 \begin{DoxyParams}{Parameters}
-{\em word\+Ammount} & \\
+{\em word\+Ammount} & desired word amount in the generated text. \\
 \hline
-{\em seed} & \\
+{\em seed} & creation seed used for randomization. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}\label{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e} 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{typing_8h_a18851fac97afb33c7b6afb48db123db9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}\label{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}} 
 \index{typing.h@{typing.h}!resetRacingInfo@{resetRacingInfo}}
 \index{resetRacingInfo@{resetRacingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{resetRacingInfo()}{resetRacingInfo()}}
@@ -171,7 +210,7 @@ Generates a text given a word ammount and a creation seed.
 
 Resets racing info variable. 
 
-\Hypertarget{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}\label{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9} 
+This function resets the racing information variables to their default values. It sets the \char`\"{}ready\+Me\char`\"{} and \char`\"{}ready\+You\char`\"{} flags to false, resets the seed values for both players, sets the start time to zero, and sets the \char`\"{}won\char`\"{} flag to false. \mbox{\Hypertarget{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}\label{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}} 
 \index{typing.h@{typing.h}!resetTypingInfo@{resetTypingInfo}}
 \index{resetTypingInfo@{resetTypingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{resetTypingInfo()}{resetTypingInfo()}}
@@ -179,9 +218,9 @@ Resets racing info variable.
 
 
 
-Resets typing info variable. 
+Resets typing info variable. This function resets the typing information variables to their default values. It frees the memory allocated for the generated text and typed text, and sets the corresponding pointers to NULL. It also resets other variables such as mistakes, generated text size, typing cursor, time start and end, typed characters, wrong characters, total wrong characters, words per minute (WPM), characters per minute (CPM), accuracy (ACC), and typing status. 
 
-\Hypertarget{typing_8h_af565201f1899ebd4381b1314be13f0f2}\label{typing_8h_af565201f1899ebd4381b1314be13f0f2} 
+\mbox{\Hypertarget{typing_8h_af565201f1899ebd4381b1314be13f0f2}\label{typing_8h_af565201f1899ebd4381b1314be13f0f2}} 
 \index{typing.h@{typing.h}!startTyping@{startTyping}}
 \index{startTyping@{startTyping}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{startTyping()}{startTyping()}}
@@ -191,7 +230,14 @@ Resets typing info variable.
 
 Updates typing status in the beginning of typing. 
 
-\Hypertarget{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30} 
+This function sets the status of the typing information to indicate that typing has started. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{typing_8h_af565201f1899ebd4381b1314be13f0f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}} 
 \index{typing.h@{typing.h}!typingInputHandler@{typingInputHandler}}
 \index{typingInputHandler@{typingInputHandler}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{typingInputHandler()}{typingInputHandler()}}
@@ -201,7 +247,14 @@ Updates typing status in the beginning of typing.
 
 Handles typing. 
 
-\Hypertarget{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}\label{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9} 
+This function handles the input during a typing session. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}\label{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}} 
 \index{typing.h@{typing.h}!updateTypingInfo@{updateTypingInfo}}
 \index{updateTypingInfo@{updateTypingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{updateTypingInfo()}{updateTypingInfo()}}
@@ -211,21 +264,28 @@ Handles typing.
 
 Updates Typing variable. 
 
-
+This function updates the typing information based on the current typing status. 
 \begin{DoxyParams}{Parameters}
 {\em is\+Race} & true when the typing is for a race, false otherwise. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{typing_8h_a1d5909d9080edef2f87755c282fa8833}\label{typing_8h_a1d5909d9080edef2f87755c282fa8833} 
+\mbox{\Hypertarget{typing_8h_a1d5909d9080edef2f87755c282fa8833}\label{typing_8h_a1d5909d9080edef2f87755c282fa8833}} 
 \index{typing.h@{typing.h}!racingInfo@{racingInfo}}
 \index{racingInfo@{racingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{racingInfo}{racingInfo}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structracing__info__t}{racing\+\_\+info\+\_\+t}} racing\+Info}
 
-\Hypertarget{typing_8h_aa699a3114ec15155bf95591f59a91f1c}\label{typing_8h_aa699a3114ec15155bf95591f59a91f1c} 
+\mbox{\Hypertarget{typing_8h_aa699a3114ec15155bf95591f59a91f1c}\label{typing_8h_aa699a3114ec15155bf95591f59a91f1c}} 
 \index{typing.h@{typing.h}!typingInfo@{typingInfo}}
 \index{typingInfo@{typingInfo}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{typingInfo}{typingInfo}}
