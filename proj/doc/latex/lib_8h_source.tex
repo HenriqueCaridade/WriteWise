@@ -1,79 +1,84 @@
-\doxysection{lib.\+h}
-\hypertarget{lib_8h_source}{}\label{lib_8h_source}\index{C:/Users/igorc/lcom/g2/proj/src/lib/lib.h@{C:/Users/igorc/lcom/g2/proj/src/lib/lib.h}}
+\hypertarget{lib_8h_source}{}\doxysection{lib.\+h}
+\label{lib_8h_source}\index{C:/MinixVM/shared/proj/src/lib/lib.h@{C:/MinixVM/shared/proj/src/lib/lib.h}}
 \mbox{\hyperlink{lib_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_LIB\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROJ\_LIB\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{comment}{//\ LCOM\ Library}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{comment}{//\ Text\ Files}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text_8h}{text/text.h}}"{}}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ Scancode\ Files}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scancode_8h}{scancode/scancode.h}}"{}}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{comment}{//\ Driver\ Files}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <lcom/timer.h>}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timer_8h}{drivers/timer/timer.h}}"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8h}{drivers/graphics/graphics.h}}"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{keyboard_8h}{drivers/KBC/keyboard.h}}"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mouse_8h}{drivers/KBC/mouse.h}}"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serialPort_8h}{drivers/serialPort/serialPort.h}}"{}}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ uint16\_t\ \mbox{\hyperlink{lib_8h_ad1e15eb847674081bf2d9003ec7358a5}{frameRate}};}
-\DoxyCodeLine{00022\ message\ \mbox{\hyperlink{lib_8h_a9a27098ef2c3f4770fd8d4102a089c35}{msg}};}
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a5517733c6457898bcf6980720e9f0aa3}{ipcStatus}};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4acbf6aebb5694153ebd6898d70522b49b}{textMode}}\ =\ 0,}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a52869df2f06f50bfca0aa25c4b14c0c3}{vbe768pInd}}\ =\ 0x105,}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4abef370a6e776e42f6f1f0a8866f55702}{vbe480pDc}}\ =\ 0x110,}
-\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a8181323027be7c16cd219143915b3f70}{vbe600pDc}}\ =\ 0x115,}
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4aed05ef9494077db6ec198f802bc27716}{vbe1024pDc}}\ =\ 0x11A,}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a6c5ff7c56ee067c0b199ab6b7ab426fc}{vbe864pDc}}\ =\ 0x14C}
-\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}};}
-\DoxyCodeLine{00033\ \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}}\ \mbox{\hyperlink{lib_8h_a6a79cf0549bc133b8fb52ddb5766a18a}{currentMode}};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9a2ce301d056c01d8819bb363fec11ac65}{darkTheme}},}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9ac81ba0100d3fb18609c989b4652ffa94}{lightTheme}}}
-\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}};}
-\DoxyCodeLine{00039\ \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}}\ \mbox{\hyperlink{lib_8h_a094eadb7353b721c88dca18263b12607}{currentTheme}};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ad84f587f3f9bfb1453e47024478e53c1}{initAllDrivers}}();}
-\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a2b8ea982c737c5e3bd7718792e5ce53e}{exitAllDrivers}}();}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a84f7237bb532d71424716feccd37304e}{setFrameRate}}(uint16\_t\ fps);}
-\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ab208e97b2cdf3cf2bc6fa01de657287d}{setMinixMode}}(\mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}}\ mode);}
-\DoxyCodeLine{00074\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a50b2244488c03440d32eb6911ec25718}{exitGraphMode}}(\textcolor{keywordtype}{int}\ code);}
-\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a210880831f442907ebff4888379925fd}{setTheme}}(\mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}}\ newTheme);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00089\ uint16\_t\ \mbox{\hyperlink{lib_8h_a198b3af62d2c68d75b6d915560f0dec8}{getXFromPercent}}(\textcolor{keywordtype}{float}\ px);}
-\DoxyCodeLine{00096\ uint16\_t\ \mbox{\hyperlink{lib_8h_a8aed4af7f8500c0a79d465646cfda4c6}{getYFromPercent}}(\textcolor{keywordtype}{float}\ py);}
-\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lib_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}\ \ ();}
-\DoxyCodeLine{00110\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_af89e8fb84894d0fda066ae5cab2bd3f5}{drawPixelColor}}(\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ uint32\_t\ color);}
-\DoxyCodeLine{00121\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a4f6b625ae91741c5df5b9234f9086b9c}{drawPixelRGB}}\ \ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue);}
-\DoxyCodeLine{00131\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_adcb8a0e5dee8b465b174bb807ba7b53a}{drawHLineColor}}(\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ len,\ uint32\_t\ color);}
-\DoxyCodeLine{00143\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ad33705309c24e38d7ff9bd4250d163c4}{drawHLineRGB}}\ \ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ len,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue);}
-\DoxyCodeLine{00153\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ae02d69fdfab393078fd28d935d067155}{drawVLineColor}}(\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ len,\ uint32\_t\ color);}
-\DoxyCodeLine{00165\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_aff72860aa24c87b07c81a9ff12b47a39}{drawVLineRGB}}\ \ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ len,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue);}
-\DoxyCodeLine{00176\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ab44642f468e7b37b6824bfa0282a20a9}{\_drawRect}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ width,\ uint16\_t\ height,\ uint32\_t\ color);}
-\DoxyCodeLine{00187\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ac98ca31a724998e6f9001e48ef05a5ad}{drawRectColor}}\ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ uint32\_t\ color);}
-\DoxyCodeLine{00200\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a255047e555e53b88117ee2adc9dd42dc}{drawRectRGB}}\ \ \ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue);}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00212\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a482296901383ca6738e028621a11fa1c}{\_draw5x7}}\ \ \ \ \ \ (uint16\_t\ x,\ uint16\_t\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ c[7][5],\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00223\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ac85ff56f632ec086f82eb4c6f2950e5b}{\_drawChar}}\ \ \ \ \ (uint16\_t\ x,\ uint16\_t\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c,\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00234\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a9d6d4da3a54857268afee85a6761f027}{drawCharColor}}\ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c,\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00247\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a8dd6e8c12a808a89a112be62432fe1f7}{drawCharRGB}}\ \ \ (\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00259\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ac63e705118045e52280f0fca28ab7d25}{\_drawText}}\ \ \ \ \ (uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ maxWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00271\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a69a459090b0979fc9ca0da4d2b5e067f}{drawTextColor}}\ (\textcolor{keywordtype}{float}\ cx,\ \textcolor{keywordtype}{float}\ cy,\ \textcolor{keywordtype}{float}\ maxWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00285\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_ab6fdf5bea02afd06677d5b44316531f1}{drawTextRGB}}\ \ \ (\textcolor{keywordtype}{float}\ cx,\ \textcolor{keywordtype}{float}\ cy,\ \textcolor{keywordtype}{float}\ maxWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00297\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_a0629b9575ba7c5b9eda26bb5f1deae5c}{drawTextXYColor}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ maxWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ uint32\_t\ color,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00311\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lib_8h_aa7a73d65cf5cf61499dbae284ac439ed}{drawTextXYRGB}}\ \ (uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ maxWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00319\ uint16\_t\ \mbox{\hyperlink{lib_8h_ae581111c441c4b4f3e8a108822e90511}{getTextWidth}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00320\ }
-\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_LIB\_H}}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_PROJ\_LIB\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_PROJ\_LIB\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// LCOM Library}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{// Text Files}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{text_8h}{text/text.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Scancode Files}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{scancode_8h}{scancode/scancode.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// Driver Files}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <lcom/timer.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{timer_8h}{drivers/timer/timer.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{graphics_8h}{drivers/graphics/graphics.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{keyboard_8h}{drivers/KBC/keyboard.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mouse_8h}{drivers/KBC/mouse.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{serialPort_8h}{drivers/serialPort/serialPort.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rtc_8h}{drivers/rtc/rtc.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 uint16\_t \mbox{\hyperlink{lib_8h_ad1e15eb847674081bf2d9003ec7358a5}{frameRate}};}
+\DoxyCodeLine{23 message \mbox{\hyperlink{lib_8h_a9a27098ef2c3f4770fd8d4102a089c35}{msg}};}
+\DoxyCodeLine{24 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a5517733c6457898bcf6980720e9f0aa3}{ipcStatus}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{27     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4acbf6aebb5694153ebd6898d70522b49b}{textMode}} = 0,}
+\DoxyCodeLine{28     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a52869df2f06f50bfca0aa25c4b14c0c3}{vbe768pInd}} = 0x105,}
+\DoxyCodeLine{29     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4abef370a6e776e42f6f1f0a8866f55702}{vbe480pDc}} = 0x110,}
+\DoxyCodeLine{30     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a8181323027be7c16cd219143915b3f70}{vbe600pDc}} = 0x115,}
+\DoxyCodeLine{31     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4aed05ef9494077db6ec198f802bc27716}{vbe1024pDc}} = 0x11A,}
+\DoxyCodeLine{32     \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4a6c5ff7c56ee067c0b199ab6b7ab426fc}{vbe864pDc}} = 0x14C}
+\DoxyCodeLine{33 \} \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}};}
+\DoxyCodeLine{34 \mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}} \mbox{\hyperlink{lib_8h_a6a79cf0549bc133b8fb52ddb5766a18a}{currentMode}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{37     \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9a2ce301d056c01d8819bb363fec11ac65}{darkTheme}},}
+\DoxyCodeLine{38     \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9ac81ba0100d3fb18609c989b4652ffa94}{lightTheme}}}
+\DoxyCodeLine{39 \} \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}};}
+\DoxyCodeLine{40 \mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}} \mbox{\hyperlink{lib_8h_a094eadb7353b721c88dca18263b12607}{currentTheme}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ad84f587f3f9bfb1453e47024478e53c1}{initAllDrivers}}();}
+\DoxyCodeLine{53 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a2b8ea982c737c5e3bd7718792e5ce53e}{exitAllDrivers}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a84f7237bb532d71424716feccd37304e}{setFrameRate}}(uint16\_t fps);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ab208e97b2cdf3cf2bc6fa01de657287d}{setMinixMode}}(\mbox{\hyperlink{lib_8h_a9a99f6c30c93b295a78d09e5728fe2b4}{minix\_mode\_t}} mode);}
+\DoxyCodeLine{75 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a50b2244488c03440d32eb6911ec25718}{exitGraphMode}}(\textcolor{keywordtype}{int} code);}
+\DoxyCodeLine{82 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a210880831f442907ebff4888379925fd}{setTheme}}(\mbox{\hyperlink{lib_8h_a834914785d6875cca828254fdf987ca9}{app\_theme\_t}} newTheme);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{90 uint16\_t \mbox{\hyperlink{lib_8h_a198b3af62d2c68d75b6d915560f0dec8}{getXFromPercent}}(\textcolor{keywordtype}{float} px);}
+\DoxyCodeLine{97 uint16\_t \mbox{\hyperlink{lib_8h_a8aed4af7f8500c0a79d465646cfda4c6}{getYFromPercent}}(\textcolor{keywordtype}{float} py);}
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{lib_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}  ();}
+\DoxyCodeLine{111 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_af89e8fb84894d0fda066ae5cab2bd3f5}{drawPixelColor}}(\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, uint32\_t color);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a4f6b625ae91741c5df5b9234f9086b9c}{drawPixelRGB}}  (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, uint8\_t red, uint8\_t green, uint8\_t blue);}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_adcb8a0e5dee8b465b174bb807ba7b53a}{drawHLineColor}}(\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} len, uint32\_t color);}
+\DoxyCodeLine{144 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ad33705309c24e38d7ff9bd4250d163c4}{drawHLineRGB}}  (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} len, uint8\_t red, uint8\_t green, uint8\_t blue);}
+\DoxyCodeLine{154 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ae02d69fdfab393078fd28d935d067155}{drawVLineColor}}(\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} len, uint32\_t color);}
+\DoxyCodeLine{166 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_aff72860aa24c87b07c81a9ff12b47a39}{drawVLineRGB}}  (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} len, uint8\_t red, uint8\_t green, uint8\_t blue);}
+\DoxyCodeLine{177 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ab44642f468e7b37b6824bfa0282a20a9}{\_drawRect}}(uint16\_t x, uint16\_t y, uint16\_t width, uint16\_t height, uint32\_t color);}
+\DoxyCodeLine{188 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ac98ca31a724998e6f9001e48ef05a5ad}{drawRectColor}} (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, uint32\_t color);}
+\DoxyCodeLine{201 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a255047e555e53b88117ee2adc9dd42dc}{drawRectRGB}}   (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, uint8\_t red, uint8\_t green, uint8\_t blue);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{213 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a482296901383ca6738e028621a11fa1c}{\_draw5x7}}      (uint16\_t x, uint16\_t y, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}[7][5], uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{224 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ac85ff56f632ec086f82eb4c6f2950e5b}{\_drawChar}}     (uint16\_t x, uint16\_t y, \textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{235 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a9d6d4da3a54857268afee85a6761f027}{drawCharColor}} (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{248 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a8dd6e8c12a808a89a112be62432fe1f7}{drawCharRGB}}   (\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint8\_t red, uint8\_t green, uint8\_t blue, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{260 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ac63e705118045e52280f0fca28ab7d25}{\_drawText}}     (uint16\_t x, uint16\_t y, uint16\_t maxWidth, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{272 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a69a459090b0979fc9ca0da4d2b5e067f}{drawTextColor}} (\textcolor{keywordtype}{float} cx, \textcolor{keywordtype}{float} cy, \textcolor{keywordtype}{float} maxWidth, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{286 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_ab6fdf5bea02afd06677d5b44316531f1}{drawTextRGB}}   (\textcolor{keywordtype}{float} cx, \textcolor{keywordtype}{float} cy, \textcolor{keywordtype}{float} maxWidth, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, uint8\_t red, uint8\_t green, uint8\_t blue, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{298 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a0629b9575ba7c5b9eda26bb5f1deae5c}{drawTextXYColor}}(uint16\_t x, uint16\_t y, uint16\_t maxWidth, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{312 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_aa7a73d65cf5cf61499dbae284ac439ed}{drawTextXYRGB}}  (uint16\_t x, uint16\_t y, uint16\_t maxWidth, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, uint8\_t red, uint8\_t green, uint8\_t blue, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{320 uint16\_t \mbox{\hyperlink{lib_8h_ae581111c441c4b4f3e8a108822e90511}{getTextWidth}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{keywordtype}{char} *\mbox{\hyperlink{lib_8h_a640cee868597a386a0135fb31e5cd3b3}{\_getRealTime}}();}
+\DoxyCodeLine{323 \textcolor{keywordtype}{int} \mbox{\hyperlink{lib_8h_a8d6e6ba24767ec51a82b53eeb5d9eb80}{drawRealTime}}(uint32\_t color, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_PROJ\_LIB\_H}}
 
 \end{DoxyCode}

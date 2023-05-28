@@ -1,5 +1,6 @@
-pushd %~dp0
-if not %errorlevel% == 0 goto :end
+set Dir_Old=%cd%
+cd /D %~dp0
+
 
 set ORG_LATEX_CMD=%LATEX_CMD%
 set ORG_MKIDX_CMD=%MKIDX_CMD%
@@ -41,7 +42,8 @@ endlocal
 %LATEX_CMD% %MANUAL_FILE%
 
 @REM reset environment
-popd
+cd /D %Dir_Old%
+set Dir_Old=
 set LATEX_CMD=%ORG_LATEX_CMD%
 set ORG_LATEX_CMD=
 set MKIDX_CMD=%ORG_MKIDX_CMD%
@@ -52,5 +54,3 @@ set MANUAL_FILE=%ORG_MANUAL_FILE%
 set ORG_MANUAL_FILE=
 set LATEX_COUNT=%ORG_LATEX_COUNT%
 set ORG_LATEX_COUNT=
-
-:end

@@ -1,0 +1,4 @@
+<map id="button_t" name="button_t">
+<area shape="rect" id="node1" title="This struct holds the properties of each button of our game." alt="" coords="13,96,82,123"/>
+<area shape="rect" id="node2" href="$structfont__size__t.html" title="Struct that holds the font size information." alt="" coords="5,5,90,32"/>
+</map>

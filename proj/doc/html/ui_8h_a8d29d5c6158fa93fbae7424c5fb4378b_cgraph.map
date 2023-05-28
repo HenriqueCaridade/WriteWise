@@ -1,0 +1,5 @@
+<map id="_isClickOnButton" name="_isClickOnButton">
+<area shape="rect" id="node1" title="Checks if mouse clicked on a button." alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node2" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="177,5,298,32"/>
+<area shape="rect" id="node3" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="176,56,299,83"/>
+</map>

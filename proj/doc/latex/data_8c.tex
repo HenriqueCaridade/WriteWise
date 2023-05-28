@@ -1,26 +1,31 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/data/data.c File Reference}
-\hypertarget{data_8c}{}\label{data_8c}\index{C:/Users/igorc/lcom/g2/proj/src/data/data.c@{C:/Users/igorc/lcom/g2/proj/src/data/data.c}}
-{\ttfamily \#include \"{}data.\+h\"{}}\newline
-Include dependency graph for data.\+c\+:
-% FIG 0
-\doxysubsubsection*{Functions}
+\hypertarget{data_8c}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/data/data.c File Reference}
+\label{data_8c}\index{C:/MinixVM/shared/proj/src/data/data.c@{C:/MinixVM/shared/proj/src/data/data.c}}
+{\ttfamily \#include \char`\"{}data.\+h\char`\"{}}\newline
+Include dependency graph for data.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{data_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{data_8c_ad24c1f0359dfd751137ca3af69829f26}{load\+Dictionary}} (const char \texorpdfstring{$\ast$}{*}filename)
+int \mbox{\hyperlink{data_8c_ad24c1f0359dfd751137ca3af69829f26}{load\+Dictionary}} (const char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Creates a new dictionary from a file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{data_8c_af9c02c3165aac6d0c8af8c77e8a946b7}{free\+Dictionary}} ()
 \begin{DoxyCompactList}\small\item\em Frees dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 size\+\_\+t \mbox{\hyperlink{data_8c_a409357dd4ad68000b07964363bee73cf}{dictionary\+Size}} = 0
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{data_8c_aaeba5259110a72e90d3863b346739502}{dictionary}} \mbox{[}\mbox{\hyperlink{data_8h_a95892d692fc0dbc1843c78ae32b18519}{MAX\+\_\+\+WORD\+\_\+\+AMMOUNT}}\mbox{]} = \{ NULL \}
+char $\ast$ \mbox{\hyperlink{data_8c_aaeba5259110a72e90d3863b346739502}{dictionary}} \mbox{[}\mbox{\hyperlink{data_8h_a95892d692fc0dbc1843c78ae32b18519}{MAX\+\_\+\+WORD\+\_\+\+AMMOUNT}}\mbox{]} = \{ NULL \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{data_8c_af9c02c3165aac6d0c8af8c77e8a946b7}\label{data_8c_af9c02c3165aac6d0c8af8c77e8a946b7} 
+\mbox{\Hypertarget{data_8c_af9c02c3165aac6d0c8af8c77e8a946b7}\label{data_8c_af9c02c3165aac6d0c8af8c77e8a946b7}} 
 \index{data.c@{data.c}!freeDictionary@{freeDictionary}}
 \index{freeDictionary@{freeDictionary}!data.c@{data.c}}
 \doxysubsubsection{\texorpdfstring{freeDictionary()}{freeDictionary()}}
@@ -30,11 +35,11 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{data_8c_aaeba5259110a72e90d3863
 
 Frees dictionary. 
 
-\Hypertarget{data_8c_ad24c1f0359dfd751137ca3af69829f26}\label{data_8c_ad24c1f0359dfd751137ca3af69829f26} 
+\mbox{\Hypertarget{data_8c_ad24c1f0359dfd751137ca3af69829f26}\label{data_8c_ad24c1f0359dfd751137ca3af69829f26}} 
 \index{data.c@{data.c}!loadDictionary@{loadDictionary}}
 \index{loadDictionary@{loadDictionary}!data.c@{data.c}}
 \doxysubsubsection{\texorpdfstring{loadDictionary()}{loadDictionary()}}
-{\footnotesize\ttfamily int load\+Dictionary (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int load\+Dictionary (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 
 
@@ -48,16 +53,23 @@ Creates a new dictionary from a file.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{data_8c_ad24c1f0359dfd751137ca3af69829f26_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{data_8c_aaeba5259110a72e90d3863b346739502}\label{data_8c_aaeba5259110a72e90d3863b346739502} 
+\mbox{\Hypertarget{data_8c_aaeba5259110a72e90d3863b346739502}\label{data_8c_aaeba5259110a72e90d3863b346739502}} 
 \index{data.c@{data.c}!dictionary@{dictionary}}
 \index{dictionary@{dictionary}!data.c@{data.c}}
 \doxysubsubsection{\texorpdfstring{dictionary}{dictionary}}
-{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} dictionary\mbox{[}\mbox{\hyperlink{data_8h_a95892d692fc0dbc1843c78ae32b18519}{MAX\+\_\+\+WORD\+\_\+\+AMMOUNT}}\mbox{]} = \{ NULL \}}
+{\footnotesize\ttfamily char$\ast$ dictionary\mbox{[}\mbox{\hyperlink{data_8h_a95892d692fc0dbc1843c78ae32b18519}{MAX\+\_\+\+WORD\+\_\+\+AMMOUNT}}\mbox{]} = \{ NULL \}}
 
-\Hypertarget{data_8c_a409357dd4ad68000b07964363bee73cf}\label{data_8c_a409357dd4ad68000b07964363bee73cf} 
+\mbox{\Hypertarget{data_8c_a409357dd4ad68000b07964363bee73cf}\label{data_8c_a409357dd4ad68000b07964363bee73cf}} 
 \index{data.c@{data.c}!dictionarySize@{dictionarySize}}
 \index{dictionarySize@{dictionarySize}!data.c@{data.c}}
 \doxysubsubsection{\texorpdfstring{dictionarySize}{dictionarySize}}

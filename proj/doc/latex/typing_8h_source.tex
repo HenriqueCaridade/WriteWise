@@ -1,66 +1,66 @@
-\doxysection{typing.\+h}
-\hypertarget{typing_8h_source}{}\label{typing_8h_source}\index{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h@{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h}}
+\hypertarget{typing_8h_source}{}\doxysection{typing.\+h}
+\label{typing_8h_source}\index{C:/MinixVM/shared/proj/src/typing/typing.h@{C:/MinixVM/shared/proj/src/typing/typing.h}}
 \mbox{\hyperlink{typing_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_TYPING\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_PROJ\_TYPING\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../lib/lib.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../data/data.h"{}}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}},}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473}{ready}},}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786}{typing}},}
-\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}{finished}},}
-\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\_status\_t}};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structtyping__info__t_afc76c2f29469c973e4056b92f8293aed}{generatedText}};}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structtyping__info__t_acc7fa59382fbb79290ab2455558d60a6}{typedText}};}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}*\ \mbox{\hyperlink{structtyping__info__t_a3272b22f083df98cbd97cc192b677fa0}{mistakes}};}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtyping__info__t_aa27e9a6949d5daf82559aab66d28d21f}{generatedTextSize}};}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtyping__info__t_a085d04ebec48505e63f9e0a5e4bd7f5d}{typingCursor}};}
-\DoxyCodeLine{00056\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structtyping__info__t_a3690b474fb95cbf6636a76164faae0ac}{timeStart}};}
-\DoxyCodeLine{00057\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structtyping__info__t_acf9d648f4e4999fb343db5c6c8166d4e}{timeEnd}};}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtyping__info__t_a08027658d213c24d712dd1d3bd3e539a}{typedChars}};}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtyping__info__t_a32729f7e98a4cdedb85d8444c09a6adf}{wrongChars}};}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtyping__info__t_aa82b71b421fb88ecb23e41c74dd62255}{totalWrongChars}};}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structtyping__info__t_a4c8cfa6fa36197662fd06d48f5bbaf15}{wpm}};}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structtyping__info__t_af8e0e579a6675947c567e26542c18232}{cpm}};}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structtyping__info__t_a4ecce0cbecc7f36338ed1a74dd5bee49}{acc}};}
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\_status\_t}}\ \mbox{\hyperlink{structtyping__info__t_a015eb90e0de9f16e87bd149d4b9ce959}{status}};}
-\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{structtyping__info__t}{typing\_info\_t}};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \mbox{\hyperlink{structtyping__info__t}{typing\_info\_t}}\ \mbox{\hyperlink{typing_8h_aa699a3114ec15155bf95591f59a91f1c}{typingInfo}};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structracing__info__t_a8d07b0d6fb4b26f84765c06b3bd47817}{readyMe}};}
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structracing__info__t_ae7ad5c5c3596018af55eefa558d4dd93}{readyYou}};}
-\DoxyCodeLine{00084\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_a729306e6aa52402c184e5c71eda8e8c6}{seedMe}};}
-\DoxyCodeLine{00085\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_a923c8cecdf5229253a1d0864a176468f}{seedYou}};}
-\DoxyCodeLine{00086\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structracing__info__t_ac10ecee7f82c1bbe01ce5a56ceaa55e8}{startTime}};}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structracing__info__t_a3e75feb3349ca4d088a303072d41a8f0}{won}};}
-\DoxyCodeLine{00088\ \}\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}};}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}}\ \mbox{\hyperlink{typing_8h_a1d5909d9080edef2f87755c282fa8833}{racingInfo}};}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generateText}}(uint32\_t\ wordAmmount,\ \textcolor{keywordtype}{unsigned}\ seed);}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{resetTypingInfo}}();}
-\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{resetRacingInfo}}();}
-\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typingInputHandler}}(\textcolor{keywordtype}{bool}\ isRace);}
-\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}{updateTypingInfo}}();}
-\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}{calcTypingStatus}}();}
-\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af565201f1899ebd4381b1314be13f0f2}{startTyping}}();}
-\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_af20c241f9cd9e758424e745645759650}{endTyping}}();}
-\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}{endRace}}();}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00161\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{drawTypingTest}}(\textcolor{keywordtype}{float}\ cx,\ \textcolor{keywordtype}{float}\ cy,\ \textcolor{keywordtype}{float}\ maxWidth,\ uint32\_t\ rightColor,\ uint32\_t\ wrongColor,\ uint32\_t\ unwrittenColor,\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ size);}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_TYPING\_H}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef \_PROJ\_TYPING\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define \_PROJ\_TYPING\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../lib/lib.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../data/data.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{11     \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a85627f988d27d6d80c7fafd4d04f47cd}{unready}},}
+\DoxyCodeLine{12     \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a620a31d3a677faaa9e000fb23967a473}{ready}},}
+\DoxyCodeLine{13     \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532a5352b2a9e6a753482ef81766ad923786}{typing}},}
+\DoxyCodeLine{14     \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532aaf38e35232eb6728664f98c8110d11a4}{finished}},}
+\DoxyCodeLine{15 \} \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\_status\_t}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{51     \textcolor{keywordtype}{char}* \mbox{\hyperlink{structtyping__info__t_afc76c2f29469c973e4056b92f8293aed}{generatedText}};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{char}* \mbox{\hyperlink{structtyping__info__t_acc7fa59382fbb79290ab2455558d60a6}{typedText}};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool}* \mbox{\hyperlink{structtyping__info__t_a3272b22f083df98cbd97cc192b677fa0}{mistakes}};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structtyping__info__t_aa27e9a6949d5daf82559aab66d28d21f}{generatedTextSize}};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structtyping__info__t_a085d04ebec48505e63f9e0a5e4bd7f5d}{typingCursor}};}
+\DoxyCodeLine{56     uint64\_t \mbox{\hyperlink{structtyping__info__t_a3690b474fb95cbf6636a76164faae0ac}{timeStart}};}
+\DoxyCodeLine{57     uint64\_t \mbox{\hyperlink{structtyping__info__t_acf9d648f4e4999fb343db5c6c8166d4e}{timeEnd}};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structtyping__info__t_a08027658d213c24d712dd1d3bd3e539a}{typedChars}};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structtyping__info__t_a32729f7e98a4cdedb85d8444c09a6adf}{wrongChars}};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structtyping__info__t_aa82b71b421fb88ecb23e41c74dd62255}{totalWrongChars}};}
+\DoxyCodeLine{61     \textcolor{keywordtype}{double} \mbox{\hyperlink{structtyping__info__t_a4c8cfa6fa36197662fd06d48f5bbaf15}{wpm}};}
+\DoxyCodeLine{62     \textcolor{keywordtype}{double} \mbox{\hyperlink{structtyping__info__t_af8e0e579a6675947c567e26542c18232}{cpm}};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{double} \mbox{\hyperlink{structtyping__info__t_a4ecce0cbecc7f36338ed1a74dd5bee49}{acc}};}
+\DoxyCodeLine{64     \mbox{\hyperlink{typing_8h_a2a85d215ce55e6d4682ef7eb731c9532}{typing\_status\_t}} \mbox{\hyperlink{structtyping__info__t_a015eb90e0de9f16e87bd149d4b9ce959}{status}};}
+\DoxyCodeLine{65 \} \mbox{\hyperlink{structtyping__info__t}{typing\_info\_t}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \mbox{\hyperlink{structtyping__info__t}{typing\_info\_t}} \mbox{\hyperlink{typing_8h_aa699a3114ec15155bf95591f59a91f1c}{typingInfo}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{82     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structracing__info__t_a8d07b0d6fb4b26f84765c06b3bd47817}{readyMe}};}
+\DoxyCodeLine{83     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structracing__info__t_ae7ad5c5c3596018af55eefa558d4dd93}{readyYou}};}
+\DoxyCodeLine{84     uint64\_t \mbox{\hyperlink{structracing__info__t_a729306e6aa52402c184e5c71eda8e8c6}{seedMe}};}
+\DoxyCodeLine{85     uint64\_t \mbox{\hyperlink{structracing__info__t_a923c8cecdf5229253a1d0864a176468f}{seedYou}};}
+\DoxyCodeLine{86     uint64\_t \mbox{\hyperlink{structracing__info__t_ac10ecee7f82c1bbe01ce5a56ceaa55e8}{startTime}};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structracing__info__t_a3e75feb3349ca4d088a303072d41a8f0}{won}};}
+\DoxyCodeLine{88 \} \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \mbox{\hyperlink{structracing__info__t}{racing\_info\_t}} \mbox{\hyperlink{typing_8h_a1d5909d9080edef2f87755c282fa8833}{racingInfo}};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a18851fac97afb33c7b6afb48db123db9}{generateText}}(uint32\_t wordAmmount, \textcolor{keywordtype}{unsigned} seed);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{resetTypingInfo}}();}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{resetRacingInfo}}();}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typingInputHandler}}(\textcolor{keywordtype}{bool} isRace);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}{updateTypingInfo}}();}
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a3450b0c5eb5b5804836eec3e3a8d724f}{calcTypingStatus}}();}
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_af565201f1899ebd4381b1314be13f0f2}{startTyping}}();}
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_af20c241f9cd9e758424e745645759650}{endTyping}}();}
+\DoxyCodeLine{141 \textcolor{keywordtype}{void} \mbox{\hyperlink{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}{endRace}}();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{int} \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{drawTypingTest}}(\textcolor{keywordtype}{float} cx, \textcolor{keywordtype}{float} cy, \textcolor{keywordtype}{float} maxWidth, uint32\_t rightColor, uint32\_t wrongColor, uint32\_t unwrittenColor, \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} size);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_PROJ\_TYPING\_H}}
 
 \end{DoxyCode}

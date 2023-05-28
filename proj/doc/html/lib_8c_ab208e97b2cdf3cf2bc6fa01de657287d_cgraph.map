@@ -1,0 +1,6 @@
+<map id="setMinixMode" name="setMinixMode">
+<area shape="rect" id="node1" title="Set the desired minix mode." alt="" coords="5,56,108,83"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#a92983a6764917e6ddae9db456571407a" title="Sets up the frame buffer for the graphic mode." alt="" coords="161,5,278,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the graphic mode with the specified submode." alt="" coords="156,56,283,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a62f63672fd06c462a0873e30f5e32ef8" title="Sets the text mode." alt="" coords="166,107,273,133"/>
+</map>

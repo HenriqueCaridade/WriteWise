@@ -1,7 +1,64 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/\+KBC/\+KBC.c File Reference}
-\hypertarget{KBC_8c}{}\label{KBC_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/KBC.c@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/KBC/KBC.c}}
+\hypertarget{KBC_8c}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/drivers/\+KBC/\+KBC.c File Reference}
+\label{KBC_8c}\index{C:/MinixVM/shared/proj/src/lib/drivers/KBC/KBC.c@{C:/MinixVM/shared/proj/src/lib/drivers/KBC/KBC.c}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include $<$lcom/utils.\+h$>$}\newline
-{\ttfamily \#include \"{}i8042.\+h\"{}}\newline
-{\ttfamily \#include \"{}KBC.\+h\"{}}\newline
-Include dependency graph for KBC.\+c\+:
+{\ttfamily \#include \char`\"{}i8042.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}KBC.\+h\char`\"{}}\newline
+Include dependency graph for KBC.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KBC_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d}{read\+KBCStatus}} (uint8\+\_\+t $\ast$status)
+\item 
+int \mbox{\hyperlink{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e}{read\+KBCOutput}} (uint8\+\_\+t port, uint8\+\_\+t $\ast$output, bool mouse)
+\item 
+int \mbox{\hyperlink{KBC_8c_aff8640e03ef10dff9e4632125438403d}{write\+KBCCommand}} (uint8\+\_\+t port, uint8\+\_\+t command\+Byte)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e}\label{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e}} 
+\index{KBC.c@{KBC.c}!readKBCOutput@{readKBCOutput}}
+\index{readKBCOutput@{readKBCOutput}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{readKBCOutput()}{readKBCOutput()}}
+{\footnotesize\ttfamily int read\+KBCOutput (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t $\ast$}]{output,  }\item[{bool}]{mouse }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KBC_8c_a88618e19011d35fc000235c4a7ed6b9e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d}\label{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d}} 
+\index{KBC.c@{KBC.c}!readKBCStatus@{readKBCStatus}}
+\index{readKBCStatus@{readKBCStatus}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{readKBCStatus()}{readKBCStatus()}}
+{\footnotesize\ttfamily int read\+KBCStatus (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{status }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KBC_8c_ac15822ae85d903cbbd741e0d128c6d9d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{KBC_8c_aff8640e03ef10dff9e4632125438403d}\label{KBC_8c_aff8640e03ef10dff9e4632125438403d}} 
+\index{KBC.c@{KBC.c}!writeKBCCommand@{writeKBCCommand}}
+\index{writeKBCCommand@{writeKBCCommand}!KBC.c@{KBC.c}}
+\doxysubsubsection{\texorpdfstring{writeKBCCommand()}{writeKBCCommand()}}
+{\footnotesize\ttfamily int write\+KBCCommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{command\+Byte }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KBC_8c_aff8640e03ef10dff9e4632125438403d_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,52 @@
+<map id="proj_main_loop" name="proj_main_loop">
+<area shape="rect" id="node1" title=" " alt="" coords="5,894,114,920"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a966b6df6da3fefa81cf52f6a6b68bce6" title=" " alt="" coords="422,32,516,59"/>
+<area shape="rect" id="node3" href="$proj_8c.html#aa14e5c55821f0a4742d5b2992c855fd1" title=" " alt="" coords="200,260,300,287"/>
+<area shape="rect" id="node5" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="600,260,709,287"/>
+<area shape="rect" id="node6" href="$timer_8c.html#a4158c6b92acd61ce9ef52913cfff9aca" title=" " alt="" coords="386,362,552,388"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a49ec2dfa736580020278194b77d72f33" title=" " alt="" coords="205,514,295,540"/>
+<area shape="rect" id="node18" href="$typing_8c.html#af20c241f9cd9e758424e745645759650" title="Updates typing status in the end of typing." alt="" coords="210,412,290,439"/>
+<area shape="rect" id="node20" href="$proj_8c.html#abf39a6e85845f60b60d8086d8095c97b" title=" " alt="" coords="221,210,279,236"/>
+<area shape="rect" id="node21" href="$lib_8c.html#a2b8ea982c737c5e3bd7718792e5ce53e" title="Unsubscribes all devices&#39; interrupts." alt="" coords="421,159,517,186"/>
+<area shape="rect" id="node23" href="$lib_8c.html#ad84f587f3f9bfb1453e47024478e53c1" title="Initiates all device drivers." alt="" coords="204,564,296,591"/>
+<area shape="rect" id="node24" href="$ui_8c.html#a3a8845a85f0243935a8d592a8de6e916" title="Initializes UI data&#45;structures and allocates static&#45;buffer memory." alt="" coords="225,615,275,642"/>
+<area shape="rect" id="node25" href="$keyboard_8c.html#a1ba896157528456bcc6c82d7856f5eb4" title=" " alt="" coords="204,666,296,692"/>
+<area shape="rect" id="node26" href="$proj_8c.html#a24b06f2006c10abf3489fb220edbd04c" title=" " alt="" coords="162,58,338,84"/>
+<area shape="rect" id="node27" href="$data_8c.html#ad24c1f0359dfd751137ca3af69829f26" title="Creates a new dictionary from a file." alt="" coords="198,716,302,743"/>
+<area shape="rect" id="node28" href="$proj_8c.html#a911c7e963bbb29b147c59b47bbb99a48" title=" " alt="" coords="207,767,293,794"/>
+<area shape="rect" id="node29" href="$mouse_8c.html#a3f71cbe6a40c250b92b67faa3e2e2302" title=" " alt="" coords="202,818,298,844"/>
+<area shape="rect" id="node30" href="$ui_8c.html#a5dc33d742b7e68e69d61af445a94247c" title="Function that updates mouse every mouse interrupt." alt="" coords="199,868,301,895"/>
+<area shape="rect" id="node31" href="$typing_8c.html#aa240e1a1bfad4e107b57a0f664cd684e" title="Resets racing info variable." alt="" coords="195,919,305,946"/>
+<area shape="rect" id="node32" href="$rtc_8c.html#ac19059d4296ae449b72fc52e6326bae9" title=" " alt="" coords="211,970,289,996"/>
+<area shape="rect" id="node33" href="$serialPort_8c.html#aeb45773771775f22abeffc9725b0f484" title=" " alt="" coords="201,1020,299,1047"/>
+<area shape="rect" id="node34" href="$serialPort_8c.html#a3fe05b675294d1c1aec1e95afdd054d4" title=" " alt="" coords="402,1147,537,1174"/>
+<area shape="rect" id="node35" href="$serialPort_8c.html#aa34c79dc8f929aed059070fb3a44a117" title=" " alt="" coords="177,1274,323,1300"/>
+<area shape="rect" id="node36" href="$serialPort_8c.html#ad612d0d0a938ba98a9d6fc9fe1d2ad19" title=" " alt="" coords="182,1324,318,1351"/>
+<area shape="rect" id="node37" href="$serialPort_8c.html#af35cdc050e3f74b0bebda76996742714" title=" " alt="" coords="190,1375,310,1402"/>
+<area shape="rect" id="node38" href="$serialPort_8c.html#a0f7d69b738ed89b95181c49c98831c38" title=" " alt="" coords="183,1426,317,1452"/>
+<area shape="rect" id="node39" href="$serialPort_8c.html#a2b8fb32ff4b2c7b68e6a9c2491976153" title=" " alt="" coords="185,1476,315,1503"/>
+<area shape="rect" id="node40" href="$serialPort_8c.html#a52ada979206bc06251dda2490315a1c0" title=" " alt="" coords="178,1527,322,1554"/>
+<area shape="rect" id="node41" href="$serialPort_8c.html#a35ac75b09a38e8b2784ca723644b0200" title=" " alt="" coords="185,1122,315,1148"/>
+<area shape="rect" id="node42" href="$serialPort_8c.html#ab276142b3c1078569432d047f28846a2" title=" " alt="" coords="162,1172,338,1199"/>
+<area shape="rect" id="node43" href="$serialPort_8c.html#a152dcde4b0c1c2bb87fc9a3be3ea9d50" title=" " alt="" coords="167,1223,333,1250"/>
+<area shape="rect" id="node44" href="$lib_8c.html#a84f7237bb532d71424716feccd37304e" title="Set the desired framerate." alt="" coords="198,1578,302,1604"/>
+<area shape="rect" id="node45" href="$scancode_8c.html#a99bdce47fe660363b70c9d4b50b2b1c5" title="Sets the keyboard layout." alt="" coords="183,1628,317,1655"/>
+<area shape="rect" id="node46" href="$lib_8c.html#ab208e97b2cdf3cf2bc6fa01de657287d" title="Set the desired minix mode." alt="" coords="199,1703,301,1730"/>
+<area shape="rect" id="node47" href="$lib_8c.html#a210880831f442907ebff4888379925fd" title="Sets application theme." alt="" coords="211,1754,289,1780"/>
+<area shape="rect" id="node48" href="$typing_8c.html#af565201f1899ebd4381b1314be13f0f2" title="Updates typing status in the beginning of typing." alt="" coords="207,362,293,388"/>
+<area shape="rect" id="node49" href="$timer_8c.html#a91a2072306c68353712a6b771287dc2c" title=" " alt="" coords="190,1804,310,1831"/>
+<area shape="rect" id="node50" href="$typing_8c.html#a075b28f53a26e139b72c4e06dc3e2ab9" title="Updates Typing variable." alt="" coords="191,463,309,490"/>
+<area shape="rect" id="node4" href="$typing_8c.html#a18851fac97afb33c7b6afb48db123db9" title="Generates a text given a word ammount and a creation seed." alt="" coords="421,311,517,338"/>
+<area shape="rect" id="node8" href="$ui_8c.html#a42351835b435d0a8de0ffe5338dcc8a3" title="Draws button." alt="" coords="426,818,512,844"/>
+<area shape="rect" id="node9" href="$ui_8c.html#a03617d69c890839ae77389d5bcc2dde8" title="Draws cursor." alt="" coords="426,868,512,895"/>
+<area shape="rect" id="node10" href="$lib_8c.html#a8d6e6ba24767ec51a82b53eeb5d9eb80" title=" " alt="" coords="418,919,520,946"/>
+<area shape="rect" id="node11" href="$ui_8c.html#a6d245d5b4d6ab7880e4d7a2cf0b3ba3b" title="Highlights selected button." alt="" coords="401,463,538,490"/>
+<area shape="rect" id="node12" href="$lib_8c.html#a69a459090b0979fc9ca0da4d2b5e067f" title="Draws a colored text of characters." alt="" coords="418,514,521,540"/>
+<area shape="rect" id="node13" href="$typing_8c.html#ab2158f31af29aef2460da7d67d217de1" title="Draws the text which the player must write." alt="" coords="414,564,525,591"/>
+<area shape="rect" id="node14" href="$graphics_8c.html#ab3b868fbc0b28e9a2ab9fd95b2cbe4db" title="Changes the current frame." alt="" coords="431,615,507,642"/>
+<area shape="rect" id="node15" href="$text_8c.html#ad0d48f6dd01a3d197a1ee285afaaf6a4" title="Font&#45;size getter." alt="" coords="424,666,515,692"/>
+<area shape="rect" id="node16" href="$proj_8c.html#aa8dae723987ff8095c723602a30acf92" title=" " alt="" coords="415,716,523,743"/>
+<area shape="rect" id="node17" href="$ui_8c.html#a4345659b0d1efdd5c542fac7d3fdfeca" title="Copies static&#45;buffer to the frame&#45;buffer." alt="" coords="424,767,515,794"/>
+<area shape="rect" id="node19" href="$typing_8c.html#a3450b0c5eb5b5804836eec3e3a8d724f" title="Does the typing status calculations. (WPM, ACC, etc)" alt="" coords="409,412,530,439"/>
+<area shape="rect" id="node22" href="$lib_8c.html#a50b2244488c03440d32eb6911ec25718" title="Exits graphics mode." alt="" coords="415,210,524,236"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="drawSelectedButton" name="drawSelectedButton">
+<area shape="rect" id="node1" title="Highlights selected button." alt="" coords="5,81,143,108"/>
+<area shape="rect" id="node2" href="$lib_8c.html#ab44642f468e7b37b6824bfa0282a20a9" title="Draws a rectangle receiving x and y in pixels." alt="" coords="217,5,300,32"/>
+<area shape="rect" id="node6" href="$ui_8c.html#a75c6c3382cc9175aac05a54db71c8526" title="Auxiliary function for drawSelectedButton." alt="" coords="191,107,326,133"/>
+<area shape="rect" id="node8" href="$lib_8c.html#a198b3af62d2c68d75b6d915560f0dec8" title="Gets x coordinate in pixels from a percentage." alt="" coords="550,68,672,95"/>
+<area shape="rect" id="node9" href="$lib_8c.html#a8aed4af7f8500c0a79d465646cfda4c6" title="Gets y coordinate in pixels from a percentage." alt="" coords="549,144,673,171"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a99d2da2559e11200c6b40c469e9977ec" title=" " alt="" coords="374,5,501,32"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a5e5b25bd525250f61f40b9e9f212d5e6" title=" " alt="" coords="560,5,662,32"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a08c498ffeb0a3962e3b7711b57397741" title=" " alt="" coords="721,5,822,32"/>
+<area shape="rect" id="node7" href="$ui_8c.html#a8d29d5c6158fa93fbae7424c5fb4378b" title="Checks if mouse clicked on a button." alt="" coords="377,107,499,133"/>
+</map>

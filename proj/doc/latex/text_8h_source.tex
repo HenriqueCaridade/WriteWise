@@ -1,34 +1,34 @@
-\doxysection{text.\+h}
-\hypertarget{text_8h_source}{}\label{text_8h_source}\index{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h@{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h}}
+\hypertarget{text_8h_source}{}\doxysection{text.\+h}
+\label{text_8h_source}\index{C:/MinixVM/shared/proj/src/lib/text/text.h@{C:/MinixVM/shared/proj/src/lib/text/text.h}}
 \mbox{\hyperlink{text_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROJ\_TEXT\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROJ\_TEXT\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfont__size__t_a5558ace5433f9aabbf0a0ec059900d94}{width}};}
-\DoxyCodeLine{00019\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfont__size__t_a509290c21d570ff479c1b9d9b1fe8810}{height}};}
-\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structfont__size__t_a36392890a1aba4cacbe1cad263a699f0}{pixel}};}
-\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761}{small}},}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c}{medium}},}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e}{large}},}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f}{xlarge}},}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df}{xxlarge}},}
-\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}{xxxlarge}},}
-\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\_type\_t}};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ ALPHABET\_SIZE\ 96}}
-\DoxyCodeLine{00033\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}}[\mbox{\hyperlink{text_8h_a6572f1706059832f94025fa12c6c45ed}{ALPHABET\_SIZE}}][7][5];}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text_8h_a3f9c40149fc1dd28faac93188796baef}{getCharIndex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c);}
-\DoxyCodeLine{00048\ \mbox{\hyperlink{structfont__size__t}{font\_size\_t}}\ \mbox{\hyperlink{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}{getFontSize}}(\mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\_type\_t}}\ fontType);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROJ\_TEXT\_H}}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_PROJ\_TEXT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_PROJ\_TEXT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{18     uint32\_t \mbox{\hyperlink{structfont__size__t_a5558ace5433f9aabbf0a0ec059900d94}{width}};}
+\DoxyCodeLine{19     uint32\_t \mbox{\hyperlink{structfont__size__t_a509290c21d570ff479c1b9d9b1fe8810}{height}};}
+\DoxyCodeLine{20     uint8\_t \mbox{\hyperlink{structfont__size__t_a36392890a1aba4cacbe1cad263a699f0}{pixel}};}
+\DoxyCodeLine{21 \} \mbox{\hyperlink{structfont__size__t}{font\_size\_t}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a6eb5ea92f3d8e929ccc26a9692383761}{small}},}
+\DoxyCodeLine{25     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84ae28dc453a60126745c1644b58f32f83c}{medium}},}
+\DoxyCodeLine{26     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84acec41118da39e347e468570af53bb63e}{large}},}
+\DoxyCodeLine{27     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a0261d096b35e5e31d59456d73743a66f}{xlarge}},}
+\DoxyCodeLine{28     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a16607cfc8293337f1e87f5639a92e5df}{xxlarge}},}
+\DoxyCodeLine{29     \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84a51b8c5dd9c66a16fb2c640947c0dde7e}{xxxlarge}},}
+\DoxyCodeLine{30 \} \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\_type\_t}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define ALPHABET\_SIZE 96}}
+\DoxyCodeLine{33 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{text_8h_a9d5fcb1442d06ba8d13030788f117a0b}{alphabet}}[\mbox{\hyperlink{text_8h_a6572f1706059832f94025fa12c6c45ed}{ALPHABET\_SIZE}}][7][5];}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{41 \textcolor{keywordtype}{int} \mbox{\hyperlink{text_8h_a3f9c40149fc1dd28faac93188796baef}{getCharIndex}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}});}
+\DoxyCodeLine{48 \mbox{\hyperlink{structfont__size__t}{font\_size\_t}} \mbox{\hyperlink{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}{getFontSize}}(\mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\_type\_t}} fontType);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_PROJ\_TEXT\_H}}
 
 \end{DoxyCode}

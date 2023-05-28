@@ -1,0 +1,4 @@
+<map id="generateText" name="generateText">
+<area shape="rect" id="node1" title="Generates a text given a word ammount and a creation seed." alt="" coords="5,5,102,32"/>
+<area shape="rect" id="node2" href="$typing_8c.html#a61a5ec9381d677e8b9be1604fad28bc9" title="Resets typing info variable." alt="" coords="150,5,258,32"/>
+</map>

@@ -1,9 +1,14 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/lib.c File Reference}
-\hypertarget{lib_8c}{}\label{lib_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/lib.c@{C:/Users/igorc/lcom/g2/proj/src/lib/lib.c}}
-{\ttfamily \#include \"{}lib.\+h\"{}}\newline
-Include dependency graph for lib.\+c\+:
-% FIG 0
-\doxysubsubsection*{Functions}
+\hypertarget{lib_8c}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/lib/lib.c File Reference}
+\label{lib_8c}\index{C:/MinixVM/shared/proj/src/lib/lib.c@{C:/MinixVM/shared/proj/src/lib/lib.c}}
+{\ttfamily \#include \char`\"{}lib.\+h\char`\"{}}\newline
+Include dependency graph for lib.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{lib_8c_ad84f587f3f9bfb1453e47024478e53c1}{init\+All\+Drivers}} ()
@@ -42,30 +47,34 @@ int \mbox{\hyperlink{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}{draw\+Rect\+Color
 \begin{DoxyCompactList}\small\item\em Draws a rectangle receiving x and y in percentage. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lib_8c_a255047e555e53b88117ee2adc9dd42dc}{draw\+Rect\+RGB}} (float px, float py, float width, float height, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue)
 \begin{DoxyCompactList}\small\item\em Draws a rect. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_a482296901383ca6738e028621a11fa1c}{\+\_\+draw5x7}} (uint16\+\_\+t x, uint16\+\_\+t y, const bool c\mbox{[}7\mbox{]}\mbox{[}5\mbox{]}, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_a482296901383ca6738e028621a11fa1c}{\+\_\+draw5x7}} (uint16\+\_\+t x, uint16\+\_\+t y, const bool \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}\mbox{[}7\mbox{]}\mbox{[}5\mbox{]}, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a 5 by 7 character. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}{\+\_\+draw\+Char}} (uint16\+\_\+t x, uint16\+\_\+t y, const char c, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}{\+\_\+draw\+Char}} (uint16\+\_\+t x, uint16\+\_\+t y, const char \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a character. Only called when color is in the current mode format. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_a9d6d4da3a54857268afee85a6761f027}{draw\+Char\+Color}} (float px, float py, const char c, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_a9d6d4da3a54857268afee85a6761f027}{draw\+Char\+Color}} (float px, float py, const char \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored character. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}{draw\+Char\+RGB}} (float px, float py, const char c, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}{draw\+Char\+RGB}} (float px, float py, const char \mbox{\hyperlink{trace_8txt_aaf48025de61cf6c2756ce268ca9b3dfe}{c}}, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored character. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_ac63e705118045e52280f0fca28ab7d25}{\+\_\+draw\+Text}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_ac63e705118045e52280f0fca28ab7d25}{\+\_\+draw\+Text}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char $\ast$str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. Only called when color is in the current mode format. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f}{draw\+Text\+Color}} (float cx, float cy, float max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f}{draw\+Text\+Color}} (float cx, float cy, float max\+Width, const char $\ast$str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_ab6fdf5bea02afd06677d5b44316531f1}{draw\+Text\+RGB}} (float cx, float cy, float max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_ab6fdf5bea02afd06677d5b44316531f1}{draw\+Text\+RGB}} (float cx, float cy, float max\+Width, const char $\ast$str, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}{draw\+Text\+XYColor}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}{draw\+Text\+XYColor}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char $\ast$str, uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}{draw\+Text\+XYRGB}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char \texorpdfstring{$\ast$}{*}str, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+int \mbox{\hyperlink{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}{draw\+Text\+XYRGB}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t max\+Width, const char $\ast$str, uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws a colored text of characters. \end{DoxyCompactList}\item 
-uint16\+\_\+t \mbox{\hyperlink{lib_8c_ae581111c441c4b4f3e8a108822e90511}{get\+Text\+Width}} (const char \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
-\begin{DoxyCompactList}\small\item\em Gets the text width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint16\+\_\+t \mbox{\hyperlink{lib_8c_ae581111c441c4b4f3e8a108822e90511}{get\+Text\+Width}} (const char $\ast$str, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Gets the text width. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{lib_8c_a640cee868597a386a0135fb31e5cd3b3}{\+\_\+get\+Real\+Time}} ()
+\item 
+int \mbox{\hyperlink{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}{draw\+Real\+Time}} (uint32\+\_\+t color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{lib_8c_a482296901383ca6738e028621a11fa1c}\label{lib_8c_a482296901383ca6738e028621a11fa1c} 
+\mbox{\Hypertarget{lib_8c_a482296901383ca6738e028621a11fa1c}\label{lib_8c_a482296901383ca6738e028621a11fa1c}} 
 \index{lib.c@{lib.c}!\_draw5x7@{\_draw5x7}}
 \index{\_draw5x7@{\_draw5x7}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{\_draw5x7()}{\_draw5x7()}}
@@ -91,7 +100,14 @@ Draws a 5 by 7 character.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}\label{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{lib_8c_a482296901383ca6738e028621a11fa1c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}\label{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b}} 
 \index{lib.c@{lib.c}!\_drawChar@{\_drawChar}}
 \index{\_drawChar@{\_drawChar}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{\_drawChar()}{\_drawChar()}}
@@ -117,7 +133,14 @@ Draws a character. Only called when color is in the current mode format.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ab44642f468e7b37b6824bfa0282a20a9}\label{lib_8c_ab44642f468e7b37b6824bfa0282a20a9} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ac85ff56f632ec086f82eb4c6f2950e5b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ab44642f468e7b37b6824bfa0282a20a9}\label{lib_8c_ab44642f468e7b37b6824bfa0282a20a9}} 
 \index{lib.c@{lib.c}!\_drawRect@{\_drawRect}}
 \index{\_drawRect@{\_drawRect}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{\_drawRect()}{\_drawRect()}}
@@ -144,11 +167,18 @@ Draws a rectangle receiving x and y in pixels.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ac63e705118045e52280f0fca28ab7d25}\label{lib_8c_ac63e705118045e52280f0fca28ab7d25} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ab44642f468e7b37b6824bfa0282a20a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ac63e705118045e52280f0fca28ab7d25}\label{lib_8c_ac63e705118045e52280f0fca28ab7d25}} 
 \index{lib.c@{lib.c}!\_drawText@{\_drawText}}
 \index{\_drawText@{\_drawText}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{\_drawText()}{\_drawText()}}
-{\footnotesize\ttfamily int \+\_\+draw\+Text (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int \+\_\+draw\+Text (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char $\ast$}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -172,7 +202,20 @@ Draws a colored text of characters. Only called when color is in the current mod
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f}\label{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ac63e705118045e52280f0fca28ab7d25_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a640cee868597a386a0135fb31e5cd3b3}\label{lib_8c_a640cee868597a386a0135fb31e5cd3b3}} 
+\index{lib.c@{lib.c}!\_getRealTime@{\_getRealTime}}
+\index{\_getRealTime@{\_getRealTime}!lib.c@{lib.c}}
+\doxysubsubsection{\texorpdfstring{\_getRealTime()}{\_getRealTime()}}
+{\footnotesize\ttfamily char $\ast$ \+\_\+get\+Real\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f}\label{lib_8c_a9d7e8af417b6d543da691e9c0e2f6f9f}} 
 \index{lib.c@{lib.c}!clearScreen@{clearScreen}}
 \index{clearScreen@{clearScreen}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{clearScreen()}{clearScreen()}}
@@ -182,7 +225,7 @@ Non-\/zero if error occured.
 
 Clears the screen by clearing frame-\/buffer. 
 
-\Hypertarget{lib_8c_a9d6d4da3a54857268afee85a6761f027}\label{lib_8c_a9d6d4da3a54857268afee85a6761f027} 
+\mbox{\Hypertarget{lib_8c_a9d6d4da3a54857268afee85a6761f027}\label{lib_8c_a9d6d4da3a54857268afee85a6761f027}} 
 \index{lib.c@{lib.c}!drawCharColor@{drawCharColor}}
 \index{drawCharColor@{drawCharColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawCharColor()}{drawCharColor()}}
@@ -208,7 +251,14 @@ Draws a colored character.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}\label{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a9d6d4da3a54857268afee85a6761f027_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}\label{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7}} 
 \index{lib.c@{lib.c}!drawCharRGB@{drawCharRGB}}
 \index{drawCharRGB@{drawCharRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawCharRGB()}{drawCharRGB()}}
@@ -238,7 +288,14 @@ Draws a colored character.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_adcb8a0e5dee8b465b174bb807ba7b53a}\label{lib_8c_adcb8a0e5dee8b465b174bb807ba7b53a} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a8dd6e8c12a808a89a112be62432fe1f7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_adcb8a0e5dee8b465b174bb807ba7b53a}\label{lib_8c_adcb8a0e5dee8b465b174bb807ba7b53a}} 
 \index{lib.c@{lib.c}!drawHLineColor@{drawHLineColor}}
 \index{drawHLineColor@{drawHLineColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawHLineColor()}{drawHLineColor()}}
@@ -263,7 +320,14 @@ Draws a horizontal colored line.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ad33705309c24e38d7ff9bd4250d163c4}\label{lib_8c_ad33705309c24e38d7ff9bd4250d163c4} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_adcb8a0e5dee8b465b174bb807ba7b53a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ad33705309c24e38d7ff9bd4250d163c4}\label{lib_8c_ad33705309c24e38d7ff9bd4250d163c4}} 
 \index{lib.c@{lib.c}!drawHLineRGB@{drawHLineRGB}}
 \index{drawHLineRGB@{drawHLineRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawHLineRGB()}{drawHLineRGB()}}
@@ -292,7 +356,14 @@ Draws a horizontal colored line.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_af89e8fb84894d0fda066ae5cab2bd3f5}\label{lib_8c_af89e8fb84894d0fda066ae5cab2bd3f5} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ad33705309c24e38d7ff9bd4250d163c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_af89e8fb84894d0fda066ae5cab2bd3f5}\label{lib_8c_af89e8fb84894d0fda066ae5cab2bd3f5}} 
 \index{lib.c@{lib.c}!drawPixelColor@{drawPixelColor}}
 \index{drawPixelColor@{drawPixelColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawPixelColor()}{drawPixelColor()}}
@@ -314,7 +385,14 @@ Draws a colored pixel.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a4f6b625ae91741c5df5b9234f9086b9c}\label{lib_8c_a4f6b625ae91741c5df5b9234f9086b9c} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{lib_8c_af89e8fb84894d0fda066ae5cab2bd3f5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a4f6b625ae91741c5df5b9234f9086b9c}\label{lib_8c_a4f6b625ae91741c5df5b9234f9086b9c}} 
 \index{lib.c@{lib.c}!drawPixelRGB@{drawPixelRGB}}
 \index{drawPixelRGB@{drawPixelRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawPixelRGB()}{drawPixelRGB()}}
@@ -340,7 +418,27 @@ Draws a colored pixel.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}\label{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{lib_8c_a4f6b625ae91741c5df5b9234f9086b9c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}\label{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80}} 
+\index{lib.c@{lib.c}!drawRealTime@{drawRealTime}}
+\index{drawRealTime@{drawRealTime}!lib.c@{lib.c}}
+\doxysubsubsection{\texorpdfstring{drawRealTime()}{drawRealTime()}}
+{\footnotesize\ttfamily int draw\+Real\+Time (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a8d6e6ba24767ec51a82b53eeb5d9eb80_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}\label{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad}} 
 \index{lib.c@{lib.c}!drawRectColor@{drawRectColor}}
 \index{drawRectColor@{drawRectColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawRectColor()}{drawRectColor()}}
@@ -367,7 +465,14 @@ Draws a rectangle receiving x and y in percentage.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a255047e555e53b88117ee2adc9dd42dc}\label{lib_8c_a255047e555e53b88117ee2adc9dd42dc} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ac98ca31a724998e6f9001e48ef05a5ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a255047e555e53b88117ee2adc9dd42dc}\label{lib_8c_a255047e555e53b88117ee2adc9dd42dc}} 
 \index{lib.c@{lib.c}!drawRectRGB@{drawRectRGB}}
 \index{drawRectRGB@{drawRectRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawRectRGB()}{drawRectRGB()}}
@@ -397,11 +502,18 @@ Draws a rect.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f}\label{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a255047e555e53b88117ee2adc9dd42dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f}\label{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f}} 
 \index{lib.c@{lib.c}!drawTextColor@{drawTextColor}}
 \index{drawTextColor@{drawTextColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawTextColor()}{drawTextColor()}}
-{\footnotesize\ttfamily int draw\+Text\+Color (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{max\+Width,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int draw\+Text\+Color (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{max\+Width,  }\item[{const char $\ast$}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -425,11 +537,18 @@ Draws a colored text of characters.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ab6fdf5bea02afd06677d5b44316531f1}\label{lib_8c_ab6fdf5bea02afd06677d5b44316531f1} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a69a459090b0979fc9ca0da4d2b5e067f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ab6fdf5bea02afd06677d5b44316531f1}\label{lib_8c_ab6fdf5bea02afd06677d5b44316531f1}} 
 \index{lib.c@{lib.c}!drawTextRGB@{drawTextRGB}}
 \index{drawTextRGB@{drawTextRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawTextRGB()}{drawTextRGB()}}
-{\footnotesize\ttfamily int draw\+Text\+RGB (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{max\+Width,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{uint8\+\_\+t}]{red,  }\item[{uint8\+\_\+t}]{green,  }\item[{uint8\+\_\+t}]{blue,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int draw\+Text\+RGB (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{max\+Width,  }\item[{const char $\ast$}]{str,  }\item[{uint8\+\_\+t}]{red,  }\item[{uint8\+\_\+t}]{green,  }\item[{uint8\+\_\+t}]{blue,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -458,11 +577,18 @@ Draws a colored text of characters.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}\label{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ab6fdf5bea02afd06677d5b44316531f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}\label{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c}} 
 \index{lib.c@{lib.c}!drawTextXYColor@{drawTextXYColor}}
 \index{drawTextXYColor@{drawTextXYColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawTextXYColor()}{drawTextXYColor()}}
-{\footnotesize\ttfamily int draw\+Text\+XYColor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int draw\+Text\+XYColor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char $\ast$}]{str,  }\item[{uint32\+\_\+t}]{color,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -486,11 +612,18 @@ Draws a colored text of characters.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}\label{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a0629b9575ba7c5b9eda26bb5f1deae5c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}\label{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed}} 
 \index{lib.c@{lib.c}!drawTextXYRGB@{drawTextXYRGB}}
 \index{drawTextXYRGB@{drawTextXYRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawTextXYRGB()}{drawTextXYRGB()}}
-{\footnotesize\ttfamily int draw\+Text\+XYRGB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{uint8\+\_\+t}]{red,  }\item[{uint8\+\_\+t}]{green,  }\item[{uint8\+\_\+t}]{blue,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int draw\+Text\+XYRGB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{max\+Width,  }\item[{const char $\ast$}]{str,  }\item[{uint8\+\_\+t}]{red,  }\item[{uint8\+\_\+t}]{green,  }\item[{uint8\+\_\+t}]{blue,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -518,7 +651,14 @@ Draws a colored text of characters.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ae02d69fdfab393078fd28d935d067155}\label{lib_8c_ae02d69fdfab393078fd28d935d067155} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_aa7a73d65cf5cf61499dbae284ac439ed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ae02d69fdfab393078fd28d935d067155}\label{lib_8c_ae02d69fdfab393078fd28d935d067155}} 
 \index{lib.c@{lib.c}!drawVLineColor@{drawVLineColor}}
 \index{drawVLineColor@{drawVLineColor}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawVLineColor()}{drawVLineColor()}}
@@ -543,7 +683,14 @@ Draws a vertical colored line.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_aff72860aa24c87b07c81a9ff12b47a39}\label{lib_8c_aff72860aa24c87b07c81a9ff12b47a39} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ae02d69fdfab393078fd28d935d067155_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_aff72860aa24c87b07c81a9ff12b47a39}\label{lib_8c_aff72860aa24c87b07c81a9ff12b47a39}} 
 \index{lib.c@{lib.c}!drawVLineRGB@{drawVLineRGB}}
 \index{drawVLineRGB@{drawVLineRGB}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{drawVLineRGB()}{drawVLineRGB()}}
@@ -572,7 +719,14 @@ Draws a vertical colored line.
 Non-\/zero if error occured. ~\newline
  
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a2b8ea982c737c5e3bd7718792e5ce53e}\label{lib_8c_a2b8ea982c737c5e3bd7718792e5ce53e} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_aff72860aa24c87b07c81a9ff12b47a39_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a2b8ea982c737c5e3bd7718792e5ce53e}\label{lib_8c_a2b8ea982c737c5e3bd7718792e5ce53e}} 
 \index{lib.c@{lib.c}!exitAllDrivers@{exitAllDrivers}}
 \index{exitAllDrivers@{exitAllDrivers}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{exitAllDrivers()}{exitAllDrivers()}}
@@ -585,7 +739,14 @@ Unsubscribes all devices\textquotesingle{} interrupts.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a50b2244488c03440d32eb6911ec25718}\label{lib_8c_a50b2244488c03440d32eb6911ec25718} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{lib_8c_a2b8ea982c737c5e3bd7718792e5ce53e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a50b2244488c03440d32eb6911ec25718}\label{lib_8c_a50b2244488c03440d32eb6911ec25718}} 
 \index{lib.c@{lib.c}!exitGraphMode@{exitGraphMode}}
 \index{exitGraphMode@{exitGraphMode}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{exitGraphMode()}{exitGraphMode()}}
@@ -603,11 +764,18 @@ Exits graphics mode.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ae581111c441c4b4f3e8a108822e90511}\label{lib_8c_ae581111c441c4b4f3e8a108822e90511} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{lib_8c_a50b2244488c03440d32eb6911ec25718_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ae581111c441c4b4f3e8a108822e90511}\label{lib_8c_ae581111c441c4b4f3e8a108822e90511}} 
 \index{lib.c@{lib.c}!getTextWidth@{getTextWidth}}
 \index{getTextWidth@{getTextWidth}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{getTextWidth()}{getTextWidth()}}
-{\footnotesize\ttfamily uint16\+\_\+t get\+Text\+Width (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Text\+Width (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -623,7 +791,7 @@ Gets the text width.
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t width 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a198b3af62d2c68d75b6d915560f0dec8}\label{lib_8c_a198b3af62d2c68d75b6d915560f0dec8} 
+\mbox{\Hypertarget{lib_8c_a198b3af62d2c68d75b6d915560f0dec8}\label{lib_8c_a198b3af62d2c68d75b6d915560f0dec8}} 
 \index{lib.c@{lib.c}!getXFromPercent@{getXFromPercent}}
 \index{getXFromPercent@{getXFromPercent}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{getXFromPercent()}{getXFromPercent()}}
@@ -641,7 +809,7 @@ Gets x coordinate in pixels from a percentage.
 \begin{DoxyReturn}{Returns}
 x in pixels 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a8aed4af7f8500c0a79d465646cfda4c6}\label{lib_8c_a8aed4af7f8500c0a79d465646cfda4c6} 
+\mbox{\Hypertarget{lib_8c_a8aed4af7f8500c0a79d465646cfda4c6}\label{lib_8c_a8aed4af7f8500c0a79d465646cfda4c6}} 
 \index{lib.c@{lib.c}!getYFromPercent@{getYFromPercent}}
 \index{getYFromPercent@{getYFromPercent}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{getYFromPercent()}{getYFromPercent()}}
@@ -659,7 +827,7 @@ Gets y coordinate in pixels from a percentage.
 \begin{DoxyReturn}{Returns}
 x in pixels 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ad84f587f3f9bfb1453e47024478e53c1}\label{lib_8c_ad84f587f3f9bfb1453e47024478e53c1} 
+\mbox{\Hypertarget{lib_8c_ad84f587f3f9bfb1453e47024478e53c1}\label{lib_8c_ad84f587f3f9bfb1453e47024478e53c1}} 
 \index{lib.c@{lib.c}!initAllDrivers@{initAllDrivers}}
 \index{initAllDrivers@{initAllDrivers}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{initAllDrivers()}{initAllDrivers()}}
@@ -672,7 +840,14 @@ Initiates all device drivers.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a84f7237bb532d71424716feccd37304e}\label{lib_8c_a84f7237bb532d71424716feccd37304e} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_ad84f587f3f9bfb1453e47024478e53c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a84f7237bb532d71424716feccd37304e}\label{lib_8c_a84f7237bb532d71424716feccd37304e}} 
 \index{lib.c@{lib.c}!setFrameRate@{setFrameRate}}
 \index{setFrameRate@{setFrameRate}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
@@ -690,7 +865,14 @@ Set the desired framerate.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_ab208e97b2cdf3cf2bc6fa01de657287d}\label{lib_8c_ab208e97b2cdf3cf2bc6fa01de657287d} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lib_8c_a84f7237bb532d71424716feccd37304e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_ab208e97b2cdf3cf2bc6fa01de657287d}\label{lib_8c_ab208e97b2cdf3cf2bc6fa01de657287d}} 
 \index{lib.c@{lib.c}!setMinixMode@{setMinixMode}}
 \index{setMinixMode@{setMinixMode}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{setMinixMode()}{setMinixMode()}}
@@ -708,7 +890,14 @@ Set the desired minix mode.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{lib_8c_a210880831f442907ebff4888379925fd}\label{lib_8c_a210880831f442907ebff4888379925fd} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{lib_8c_ab208e97b2cdf3cf2bc6fa01de657287d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{lib_8c_a210880831f442907ebff4888379925fd}\label{lib_8c_a210880831f442907ebff4888379925fd}} 
 \index{lib.c@{lib.c}!setTheme@{setTheme}}
 \index{setTheme@{setTheme}!lib.c@{lib.c}}
 \doxysubsubsection{\texorpdfstring{setTheme()}{setTheme()}}

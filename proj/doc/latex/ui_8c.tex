@@ -1,14 +1,19 @@
-\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/ui/ui.c File Reference}
-\hypertarget{ui_8c}{}\label{ui_8c}\index{C:/Users/igorc/lcom/g2/proj/src/ui/ui.c@{C:/Users/igorc/lcom/g2/proj/src/ui/ui.c}}
-{\ttfamily \#include \"{}ui.\+h\"{}}\newline
-Include dependency graph for ui.\+c\+:
-% FIG 0
-\doxysubsubsection*{Macros}
+\hypertarget{ui_8c}{}\doxysection{C\+:/\+Minix\+VM/shared/proj/src/ui/ui.c File Reference}
+\label{ui_8c}\index{C:/MinixVM/shared/proj/src/ui/ui.c@{C:/MinixVM/shared/proj/src/ui/ui.c}}
+{\ttfamily \#include \char`\"{}ui.\+h\char`\"{}}\newline
+Include dependency graph for ui.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{ui_8c_a408e9a4b73f4c7ffe778daabbccb2baf}{CLAMP}}(x,  lower,  upper)~(MIN(upper, MAX(x, lower)))
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{ui_8c_a3a8845a85f0243935a8d592a8de6e916}{init\+UI}} ()
@@ -37,11 +42,11 @@ int \mbox{\hyperlink{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b}{draw\+Selected\+Bu
 \begin{DoxyCompactList}\small\item\em Highlights selected button. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7}{draw\+Buttons}} ()
 \begin{DoxyCompactList}\small\item\em Draws multiple buttons. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}{\+\_\+is\+Click\+On\+Button}} (uint16\+\_\+t x, uint16\+\_\+t y, \mbox{\hyperlink{structbutton__t}{button\+\_\+t}} \texorpdfstring{$\ast$}{*}button)
+int \mbox{\hyperlink{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}{\+\_\+is\+Click\+On\+Button}} (uint16\+\_\+t x, uint16\+\_\+t y, \mbox{\hyperlink{structbutton__t}{button\+\_\+t}} $\ast$button)
 \begin{DoxyCompactList}\small\item\em Checks if mouse clicked on a button. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{ui_8c_a5dc33d742b7e68e69d61af445a94247c}{mouse\+Update}} ()
 \begin{DoxyCompactList}\small\item\em Function that updates mouse every mouse interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
+\doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structbutton__t}{button\+\_\+t}} \mbox{\hyperlink{ui_8c_a6f915a03c20cf45c7c62931dc78cfb14}{\+\_\+buttons}} \mbox{[}\mbox{\hyperlink{ui_8h_ab156b22ab47140f4a5ed2ff0b666bf3e}{MAX\+\_\+\+AMOUNT\+\_\+\+OF\+\_\+\+BUTTONS}}\mbox{]} = \{\{0, 0, 0, 0, 0, 0, 0, (\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}})\{0, 0, 0\}, 0, 0\}\}
@@ -55,7 +60,7 @@ const bool \mbox{\hyperlink{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}{cursor\+Map
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{ui_8c_a408e9a4b73f4c7ffe778daabbccb2baf}\label{ui_8c_a408e9a4b73f4c7ffe778daabbccb2baf} 
+\mbox{\Hypertarget{ui_8c_a408e9a4b73f4c7ffe778daabbccb2baf}\label{ui_8c_a408e9a4b73f4c7ffe778daabbccb2baf}} 
 \index{ui.c@{ui.c}!CLAMP@{CLAMP}}
 \index{CLAMP@{CLAMP}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{CLAMP}{CLAMP}}
@@ -64,7 +69,7 @@ const bool \mbox{\hyperlink{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}{cursor\+Map
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{ui_8c_a2a7961ac6b7559a0fd012770aa79174a}\label{ui_8c_a2a7961ac6b7559a0fd012770aa79174a} 
+\mbox{\Hypertarget{ui_8c_a2a7961ac6b7559a0fd012770aa79174a}\label{ui_8c_a2a7961ac6b7559a0fd012770aa79174a}} 
 \index{ui.c@{ui.c}!\_drawButton@{\_drawButton}}
 \index{\_drawButton@{\_drawButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{\_drawButton()}{\_drawButton()}}
@@ -82,7 +87,14 @@ Auxiliary function for draw\+Button and draw\+Buttons.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a75c6c3382cc9175aac05a54db71c8526}\label{ui_8c_a75c6c3382cc9175aac05a54db71c8526} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a2a7961ac6b7559a0fd012770aa79174a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a75c6c3382cc9175aac05a54db71c8526}\label{ui_8c_a75c6c3382cc9175aac05a54db71c8526}} 
 \index{ui.c@{ui.c}!\_getSelectedButton@{\_getSelectedButton}}
 \index{\_getSelectedButton@{\_getSelectedButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{\_getSelectedButton()}{\_getSelectedButton()}}
@@ -95,11 +107,18 @@ Auxiliary function for draw\+Selected\+Button.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}\label{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a75c6c3382cc9175aac05a54db71c8526_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}\label{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b}} 
 \index{ui.c@{ui.c}!\_isClickOnButton@{\_isClickOnButton}}
 \index{\_isClickOnButton@{\_isClickOnButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{\_isClickOnButton()}{\_isClickOnButton()}}
-{\footnotesize\ttfamily int \+\_\+is\+Click\+On\+Button (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{structbutton__t}{button\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{button }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int \+\_\+is\+Click\+On\+Button (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{structbutton__t}{button\+\_\+t}} $\ast$}]{button }\end{DoxyParamCaption})}
 
 
 
@@ -117,7 +136,14 @@ Checks if mouse clicked on a button.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a02c701eb3959a99d2faed6d99689ccb5}\label{ui_8c_a02c701eb3959a99d2faed6d99689ccb5} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{ui_8c_a8d29d5c6158fa93fbae7424c5fb4378b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a02c701eb3959a99d2faed6d99689ccb5}\label{ui_8c_a02c701eb3959a99d2faed6d99689ccb5}} 
 \index{ui.c@{ui.c}!addButton@{addButton}}
 \index{addButton@{addButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
@@ -137,7 +163,7 @@ Adds a new button.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_abb46ba7394e7c887bbc58daf6123dbce}\label{ui_8c_abb46ba7394e7c887bbc58daf6123dbce} 
+\mbox{\Hypertarget{ui_8c_abb46ba7394e7c887bbc58daf6123dbce}\label{ui_8c_abb46ba7394e7c887bbc58daf6123dbce}} 
 \index{ui.c@{ui.c}!calcStaticUI@{calcStaticUI}}
 \index{calcStaticUI@{calcStaticUI}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{calcStaticUI()}{calcStaticUI()}}
@@ -150,7 +176,7 @@ Copies frame-\/buffer to the static-\/buffer.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a9265a8ce3890d8507144b8ea922e7146}\label{ui_8c_a9265a8ce3890d8507144b8ea922e7146} 
+\mbox{\Hypertarget{ui_8c_a9265a8ce3890d8507144b8ea922e7146}\label{ui_8c_a9265a8ce3890d8507144b8ea922e7146}} 
 \index{ui.c@{ui.c}!clearButtons@{clearButtons}}
 \index{clearButtons@{clearButtons}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{clearButtons()}{clearButtons()}}
@@ -163,7 +189,7 @@ Clears the memory used by the buttons.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3}\label{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3} 
+\mbox{\Hypertarget{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3}\label{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3}} 
 \index{ui.c@{ui.c}!drawButton@{drawButton}}
 \index{drawButton@{drawButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{drawButton()}{drawButton()}}
@@ -181,7 +207,14 @@ Draws button.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7}\label{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a42351835b435d0a8de0ffe5338dcc8a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7}\label{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7}} 
 \index{ui.c@{ui.c}!drawButtons@{drawButtons}}
 \index{drawButtons@{drawButtons}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{drawButtons()}{drawButtons()}}
@@ -194,7 +227,14 @@ Draws multiple buttons.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a03617d69c890839ae77389d5bcc2dde8}\label{ui_8c_a03617d69c890839ae77389d5bcc2dde8} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a167ca2fce5ffd4d6e89a24f472ae42e7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a03617d69c890839ae77389d5bcc2dde8}\label{ui_8c_a03617d69c890839ae77389d5bcc2dde8}} 
 \index{ui.c@{ui.c}!drawCursor@{drawCursor}}
 \index{drawCursor@{drawCursor}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{drawCursor()}{drawCursor()}}
@@ -207,7 +247,14 @@ Draws cursor.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b}\label{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{ui_8c_a03617d69c890839ae77389d5bcc2dde8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b}\label{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b}} 
 \index{ui.c@{ui.c}!drawSelectedButton@{drawSelectedButton}}
 \index{drawSelectedButton@{drawSelectedButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{drawSelectedButton()}{drawSelectedButton()}}
@@ -220,7 +267,14 @@ Highlights selected button.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91}\label{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a6d245d5b4d6ab7880e4d7a2cf0b3ba3b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91}\label{ui_8c_a47d7edd85b04ff819f4fbe4cf0d4ba91}} 
 \index{ui.c@{ui.c}!exitUI@{exitUI}}
 \index{exitUI@{exitUI}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{exitUI()}{exitUI()}}
@@ -233,7 +287,7 @@ Frees static-\/buffer allocated memory.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a3a8845a85f0243935a8d592a8de6e916}\label{ui_8c_a3a8845a85f0243935a8d592a8de6e916} 
+\mbox{\Hypertarget{ui_8c_a3a8845a85f0243935a8d592a8de6e916}\label{ui_8c_a3a8845a85f0243935a8d592a8de6e916}} 
 \index{ui.c@{ui.c}!initUI@{initUI}}
 \index{initUI@{initUI}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{initUI()}{initUI()}}
@@ -246,7 +300,14 @@ Initializes UI data-\/structures and allocates static-\/buffer memory.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca}\label{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{ui_8c_a3a8845a85f0243935a8d592a8de6e916_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca}\label{ui_8c_a4345659b0d1efdd5c542fac7d3fdfeca}} 
 \index{ui.c@{ui.c}!loadStaticUI@{loadStaticUI}}
 \index{loadStaticUI@{loadStaticUI}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{loadStaticUI()}{loadStaticUI()}}
@@ -259,7 +320,7 @@ Copies static-\/buffer to the frame-\/buffer.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a5dc33d742b7e68e69d61af445a94247c}\label{ui_8c_a5dc33d742b7e68e69d61af445a94247c} 
+\mbox{\Hypertarget{ui_8c_a5dc33d742b7e68e69d61af445a94247c}\label{ui_8c_a5dc33d742b7e68e69d61af445a94247c}} 
 \index{ui.c@{ui.c}!mouseUpdate@{mouseUpdate}}
 \index{mouseUpdate@{mouseUpdate}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{mouseUpdate()}{mouseUpdate()}}
@@ -272,7 +333,14 @@ Function that updates mouse every mouse interrupt.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
-\Hypertarget{ui_8c_a8feb5e615d6d11a3411274d071e64bf9}\label{ui_8c_a8feb5e615d6d11a3411274d071e64bf9} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c_a5dc33d742b7e68e69d61af445a94247c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ui_8c_a8feb5e615d6d11a3411274d071e64bf9}\label{ui_8c_a8feb5e615d6d11a3411274d071e64bf9}} 
 \index{ui.c@{ui.c}!removeButton@{removeButton}}
 \index{removeButton@{removeButton}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{removeButton()}{removeButton()}}
@@ -293,19 +361,19 @@ int
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{ui_8c_aba57c938626988d30ff9ca8d15b90ca1}\label{ui_8c_aba57c938626988d30ff9ca8d15b90ca1} 
+\mbox{\Hypertarget{ui_8c_aba57c938626988d30ff9ca8d15b90ca1}\label{ui_8c_aba57c938626988d30ff9ca8d15b90ca1}} 
 \index{ui.c@{ui.c}!\_buttonPlaces@{\_buttonPlaces}}
 \index{\_buttonPlaces@{\_buttonPlaces}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{\_buttonPlaces}{\_buttonPlaces}}
 {\footnotesize\ttfamily bool \+\_\+button\+Places\mbox{[}\mbox{\hyperlink{ui_8h_ab156b22ab47140f4a5ed2ff0b666bf3e}{MAX\+\_\+\+AMOUNT\+\_\+\+OF\+\_\+\+BUTTONS}}\mbox{]} = \{false\}}
 
-\Hypertarget{ui_8c_a6f915a03c20cf45c7c62931dc78cfb14}\label{ui_8c_a6f915a03c20cf45c7c62931dc78cfb14} 
+\mbox{\Hypertarget{ui_8c_a6f915a03c20cf45c7c62931dc78cfb14}\label{ui_8c_a6f915a03c20cf45c7c62931dc78cfb14}} 
 \index{ui.c@{ui.c}!\_buttons@{\_buttons}}
 \index{\_buttons@{\_buttons}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{\_buttons}{\_buttons}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structbutton__t}{button\+\_\+t}} \+\_\+buttons\mbox{[}\mbox{\hyperlink{ui_8h_ab156b22ab47140f4a5ed2ff0b666bf3e}{MAX\+\_\+\+AMOUNT\+\_\+\+OF\+\_\+\+BUTTONS}}\mbox{]} = \{\{0, 0, 0, 0, 0, 0, 0, (\mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}})\{0, 0, 0\}, 0, 0\}\}}
 
-\Hypertarget{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}\label{ui_8c_a63145f18bd01d2914d0eda2524d13a3a} 
+\mbox{\Hypertarget{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}\label{ui_8c_a63145f18bd01d2914d0eda2524d13a3a}} 
 \index{ui.c@{ui.c}!cursorMapBorder@{cursorMapBorder}}
 \index{cursorMapBorder@{cursorMapBorder}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{cursorMapBorder}{cursorMapBorder}}
@@ -313,27 +381,27 @@ int
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \{\ }
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1,\ 1,\ 1,\ 0\}}
+\DoxyCodeLine{= \{ }
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 1, 0, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 1, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 1, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 1, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 1, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 1, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 0, 1, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 0, 0, 1, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 0, 0, 1, 1\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 0, 1, 1, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 1, 0, 0, 1, 0, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 1, 0, 1, 0, 0, 1, 0, 0\},}
+\DoxyCodeLine{    \{1, 1, 0, 0, 1, 0, 0, 1, 0, 0\},}
+\DoxyCodeLine{    \{1, 0, 0, 0, 0, 1, 0, 0, 1, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 1, 1, 1, 1, 0\}}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\Hypertarget{ui_8c_ac0a34f0631c24c102f650290c264d68a}\label{ui_8c_ac0a34f0631c24c102f650290c264d68a} 
+\mbox{\Hypertarget{ui_8c_ac0a34f0631c24c102f650290c264d68a}\label{ui_8c_ac0a34f0631c24c102f650290c264d68a}} 
 \index{ui.c@{ui.c}!cursorMapMain@{cursorMapMain}}
 \index{cursorMapMain@{cursorMapMain}!ui.c@{ui.c}}
 \doxysubsubsection{\texorpdfstring{cursorMapMain}{cursorMapMain}}
@@ -341,23 +409,23 @@ int
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \{\ }
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0\},}
-\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\}}
+\DoxyCodeLine{= \{ }
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 0, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 1, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 1, 1, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 1, 1, 1, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 1, 1, 1, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 1, 1, 1, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 1, 0, 1, 1, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 1, 0, 0, 0, 1, 1, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 1, 1, 0, 0, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 0, 1, 1, 0, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0\}}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
