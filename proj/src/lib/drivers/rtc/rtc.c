@@ -1,4 +1,3 @@
-
 #include "rtc.h"
 
 int hookIdRTC = 5;
@@ -30,19 +29,6 @@ int rtcIN(uint8_t command, uint8_t *output) {
     }
     return 0;
 }
-
-int rtcOUT(uint8_t command, uint8_t output) {
-    if (sys_outb(RTC_ADDR_REG, command)) {
-        printf("(rtcOUT) Failed writing to RTC_ADDR_REG.\n");
-        return 1;
-    }
-	if (sys_outb(RTC_DATA_REG, output)) {
-        printf("(rtcOUT) Failed writing from RTC_DATA_REG.\n");
-        return 1;
-    }
-    return 0;
-}
-
 bool rtcIsUpdating() {
     uint8_t updating;
     if (rtcIN(RTC_REGISTER_A, &updating)) return 1;
