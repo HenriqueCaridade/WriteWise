@@ -347,8 +347,21 @@ int drawTextXYRGB  (uint16_t x, uint16_t y, uint16_t maxWidth, const char* str, 
  * @return uint16_t width
  */
 uint16_t getTextWidth(const char* str, font_size_t size);
-
+/**
+ * @brief Retrieves the current real-time as a formatted string.
+ *
+ * This function allocates memory for a string and formats the current real-time information into the string.
+ * @return Non-zero if error occured. 
+ */
 char *_getRealTime();
+/**
+ * @brief Draws the current real-time on the screen.
+ *
+ * This function retrieves the current real-time information using the _getRealTime function and draws it on the screen at a specified position.
+ * @param color color of the text.
+ * @param size font size of the text.
+ * @return Non-zero if an error occured.
+ */
 int drawRealTime(uint32_t color, font_size_t size);
 
 
