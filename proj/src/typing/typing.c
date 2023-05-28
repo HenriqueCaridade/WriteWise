@@ -92,12 +92,12 @@ void typingInputHandler() {
     }
 }
 
-void startTyping() {
-    typingInfo.status = typing;
-    typingInfo.timeStart = timer_get_elapsed_count();
-    typingInfo.timeEnd = timer_get_elapsed_count();
+void updateTypingInfo() {
+    if (typingInfo.status == typing) {
+        typingInfo.timeEnd = timer_get_elapsed_count();
+        calcTypingStatus();
+    }
 }
-
 void calcTypingStatus() {
     uint64_t timeDiff = typingInfo.timeEnd - typingInfo.timeStart;
     if (timeDiff == 0) {
@@ -111,17 +111,16 @@ void calcTypingStatus() {
     typingInfo.acc = (100.0 * (typingInfo.typedChars - typingInfo.totalWrongChars)) / typingInfo.typedChars ;
 }
 
+void startTyping() {
+    typingInfo.status = typing;
+    typingInfo.timeStart = timer_get_elapsed_count();
+    typingInfo.timeEnd = timer_get_elapsed_count();
+}
+
 void endTyping() {
     typingInfo.timeEnd = timer_get_elapsed_count();
     typingInfo.status = finished;
     calcTypingStatus();
-}
-
-void updateTypingInfo() {
-    if (typingInfo.status == typing) {
-        typingInfo.timeEnd = timer_get_elapsed_count();
-        calcTypingStatus();
-    }
 }
 
 int drawTypingTest(float cx, float cy, float maxWidth, uint32_t rightColor, uint32_t wrongColor, uint32_t unwrittenColor, font_size_t size) {

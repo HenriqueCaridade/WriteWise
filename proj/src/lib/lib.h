@@ -38,12 +38,46 @@ typedef enum {
 } app_theme_t;
 app_theme_t currentTheme;
 
+/**
+ * @brief Initiates all device drivers.
+ * 
+ * @return Non-zero if error occured.
+ */
 int initAllDrivers();
+/**
+ * @brief Unsubscribes all devices' interrupts.
+ * 
+ * @return Non-zero if error occured.
+ */
 int exitAllDrivers();
 
+/**
+ * @brief Set the desired framerate.
+ * 
+ * @param fps 
+ * @return Non-zero if error occured.
+ */
 int setFrameRate(uint16_t fps);
+/**
+ * @brief Set the desired minix mode.
+ * 
+ * @param mode 
+ * @return Non-zero if error occured.
+ */
 int setMinixMode(minix_mode_t mode);
+/**
+ * @brief Exits graphics mode.
+ * 
+ * @param code 
+ * @return Non-zero if error occured.
+ */
 int exitGraphMode(int code);
+/**
+ * @brief Sets application theme.
+ * 
+ * @param newTheme 
+ * @return Non-zero if error occured.
+ */
 int setTheme(app_theme_t newTheme);
 
 uint16_t getXFromPercent(float px);

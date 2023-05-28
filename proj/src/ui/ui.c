@@ -54,12 +54,10 @@ int initUI() {
 }
 
 int exitUI() {
-    free(staticBuffer);
-    return 0;
+    return free(staticBuffer);
 }
 
 int calcStaticUI(){
-    if (drawButtons()) return 1;
     memcpy(staticBuffer, frameBuffer, frameSize);
     return 0;
 }
