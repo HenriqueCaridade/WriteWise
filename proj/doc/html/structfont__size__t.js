@@ -1,6 +1,6 @@
 var structfont__size__t =
 [
-    [ "height", "structfont__size__t.html#a6ad4f820ce4e75cda0686fcaad5168be", null ],
-    [ "pixel", "structfont__size__t.html#a03ae8f6034c643489417f0a12a95966d", null ],
-    [ "width", "structfont__size__t.html#a325272ddd9a962f05deb905101d25cbd", null ]
+    [ "height", "structfont__size__t.html#a509290c21d570ff479c1b9d9b1fe8810", null ],
+    [ "pixel", "structfont__size__t.html#a36392890a1aba4cacbe1cad263a699f0", null ],
+    [ "width", "structfont__size__t.html#a5558ace5433f9aabbf0a0ec059900d94", null ]
 ];

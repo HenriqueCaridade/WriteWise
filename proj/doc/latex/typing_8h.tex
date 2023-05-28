@@ -1,5 +1,5 @@
-\doxysection{typing/typing.h File Reference}
-\hypertarget{typing_8h}{}\label{typing_8h}\index{typing/typing.h@{typing/typing.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/typing/typing.h File Reference}
+\hypertarget{typing_8h}{}\label{typing_8h}\index{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h@{C:/Users/igorc/lcom/g2/proj/src/typing/typing.h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include \"{}../lib/lib.\+h\"{}}\newline
@@ -33,7 +33,7 @@ void \mbox{\hyperlink{typing_8h_a61a5ec9381d677e8b9be1604fad28bc9}{reset\+Typing
 \begin{DoxyCompactList}\small\item\em Resets typing info variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_aa240e1a1bfad4e107b57a0f664cd684e}{reset\+Racing\+Info}} ()
 \begin{DoxyCompactList}\small\item\em Resets racing info variable. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{typing_8h_a4668a9a826030f7eea4b33ce3b0f80cb}{typing\+Input\+Handler}} ()
+void \mbox{\hyperlink{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}{typing\+Input\+Handler}} (bool is\+Race)
 \begin{DoxyCompactList}\small\item\em Handles typing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_a075b28f53a26e139b72c4e06dc3e2ab9}{update\+Typing\+Info}} ()
 \begin{DoxyCompactList}\small\item\em Updates Typing variable. \end{DoxyCompactList}\item 
@@ -43,6 +43,8 @@ void \mbox{\hyperlink{typing_8h_af565201f1899ebd4381b1314be13f0f2}{start\+Typing
 \begin{DoxyCompactList}\small\item\em Updates typing status in the beginning of typing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{typing_8h_af20c241f9cd9e758424e745645759650}{end\+Typing}} ()
 \begin{DoxyCompactList}\small\item\em Updates typing status in the end of typing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}{end\+Race}} ()
+\begin{DoxyCompactList}\small\item\em Sends INFO\+\_\+\+WON code through the serial port. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{typing_8h_ab2158f31af29aef2460da7d67d217de1}{draw\+Typing\+Test}} (float cx, float cy, float max\+Width, uint32\+\_\+t right\+Color, uint32\+\_\+t wrong\+Color, uint32\+\_\+t unwritten\+Color, \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} size)
 \begin{DoxyCompactList}\small\item\em Draws the text which the player must write. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
@@ -122,6 +124,16 @@ Draws the text which the player must write.
 \begin{DoxyReturn}{Returns}
 Non-\/zero if error occured. 
 \end{DoxyReturn}
+\Hypertarget{typing_8h_a6b99a11f00bf1abd3080772426d56c1e}\label{typing_8h_a6b99a11f00bf1abd3080772426d56c1e} 
+\index{typing.h@{typing.h}!endRace@{endRace}}
+\index{endRace@{endRace}!typing.h@{typing.h}}
+\doxysubsubsection{\texorpdfstring{endRace()}{endRace()}}
+{\footnotesize\ttfamily void end\+Race (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends INFO\+\_\+\+WON code through the serial port. 
+
 \Hypertarget{typing_8h_af20c241f9cd9e758424e745645759650}\label{typing_8h_af20c241f9cd9e758424e745645759650} 
 \index{typing.h@{typing.h}!endTyping@{endTyping}}
 \index{endTyping@{endTyping}!typing.h@{typing.h}}
@@ -179,11 +191,11 @@ Resets typing info variable.
 
 Updates typing status in the beginning of typing. 
 
-\Hypertarget{typing_8h_a4668a9a826030f7eea4b33ce3b0f80cb}\label{typing_8h_a4668a9a826030f7eea4b33ce3b0f80cb} 
+\Hypertarget{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30}\label{typing_8h_a0a8a6c7245a63c8bbf72185c8be02e30} 
 \index{typing.h@{typing.h}!typingInputHandler@{typingInputHandler}}
 \index{typingInputHandler@{typingInputHandler}!typing.h@{typing.h}}
 \doxysubsubsection{\texorpdfstring{typingInputHandler()}{typingInputHandler()}}
-{\footnotesize\ttfamily void typing\+Input\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void typing\+Input\+Handler (\begin{DoxyParamCaption}\item[{bool}]{is\+Race }\end{DoxyParamCaption})}
 
 
 
@@ -199,6 +211,11 @@ Handles typing.
 
 Updates Typing variable. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Race} & true when the typing is for a race, false otherwise. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Variable Documentation}

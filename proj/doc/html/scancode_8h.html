@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Write Wise: lib/scancode/scancode.h File Reference</title>
+<title>Write Wise: C:/Users/igorc/lcom/g2/proj/src/lib/scancode/scancode.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,12 +103,12 @@ $(document).ready(function(){initNavTree('scancode_8h.html',''); initResizable()
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for scancode.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="scancode_8h__incl.png" border="0" usemap="#alib_2scancode_2scancode_8h" alt=""/></div>
+<div class="center"><img src="scancode_8h__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2scancode_2scancode_8h" alt=""/></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="scancode_8h__dep__incl.png" border="0" usemap="#alib_2scancode_2scancode_8hdep" alt=""/></div>
+<div class="center"><img src="scancode_8h__dep__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2scancode_2scancode_8hdep" alt=""/></div>
 </div>
 </div>
 <p><a href="scancode_8h_source.html">Go to the source code of this file.</a></p>
@@ -116,6 +116,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeyboard__t.html">keyboard_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that holds each of the key's corresponding letter.  <a href="structkeyboard__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -239,8 +240,10 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scancode_8h.html#a99bdce47fe660363b70c9d4b50b2b1c5">setKeyboardLayout</a> (<a class="el" href="scancode_8h.html#a88bd684e3020855cc41cdb48a6bca4e9">keyboard_layout_t</a> keyboardLayout)</td></tr>
+<tr class="memdesc:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the keyboard layout.  <br /></td></tr>
 <tr class="separator:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scancode_8h.html#ada8187b2c0a1eed5dc772fe2c64db5b2">getCharFromMakecode</a> (uint8_t makecode)</td></tr>
+<tr class="memdesc:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a character from a given makecode.  <br /></td></tr>
 <tr class="separator:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -1045,6 +1048,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retrieves a character from a given makecode. </p>
+<p>This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">makecode</td><td>The makecode to retrieve the character from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding character if found, ' ' (space) if makecode matches SPACE_SCANCODE, '<br  />
+' (newline) if makecode matches ENTER_SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none. </dd></dl>
+
 </div>
 </div>
 <a id="a99bdce47fe660363b70c9d4b50b2b1c5" name="a99bdce47fe660363b70c9d4b50b2b1c5"></a>
@@ -1062,6 +1076,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the keyboard layout. </p>
+<p>This function sets the keyboard layout based on the provided keyboardLayout parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyboardLayout</td><td>The keyboard layout to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided. </dd></dl>
 
 </div>
 </div>
@@ -1113,7 +1137,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1a130ff735c8a0dc4b21eece30c275de.html">scancode</a></li><li class="navelem"><a class="el" href="scancode_8h.html">scancode.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_7e19df4349fd0348dce6f141908bb821.html">scancode</a></li><li class="navelem"><a class="el" href="scancode_8h.html">scancode.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

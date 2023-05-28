@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Write Wise: lib/scancode/scancode.c File Reference</title>
+<title>Write Wise: C:/Users/igorc/lcom/g2/proj/src/lib/scancode/scancode.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,14 +99,16 @@ $(document).ready(function(){initNavTree('scancode_8c.html',''); initResizable()
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for scancode.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="scancode_8c__incl.png" border="0" usemap="#alib_2scancode_2scancode_8c" alt=""/></div>
+<div class="center"><img src="scancode_8c__incl.png" border="0" usemap="#aC_1_2Users_2igorc_2lcom_2g2_2proj_2src_2lib_2scancode_2scancode_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scancode_8c.html#a99bdce47fe660363b70c9d4b50b2b1c5">setKeyboardLayout</a> (<a class="el" href="scancode_8h.html#a88bd684e3020855cc41cdb48a6bca4e9">keyboard_layout_t</a> keyboardLayout)</td></tr>
+<tr class="memdesc:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the keyboard layout.  <br /></td></tr>
 <tr class="separator:a99bdce47fe660363b70c9d4b50b2b1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scancode_8c.html#ada8187b2c0a1eed5dc772fe2c64db5b2">getCharFromMakecode</a> (uint8_t makecode)</td></tr>
+<tr class="memdesc:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a character from a given makecode.  <br /></td></tr>
 <tr class="separator:ada8187b2c0a1eed5dc772fe2c64db5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -133,6 +135,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retrieves a character from a given makecode. </p>
+<p>This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">makecode</td><td>The makecode to retrieve the character from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding character if found, ' ' (space) if makecode matches SPACE_SCANCODE, '<br  />
+' (newline) if makecode matches ENTER_SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none. </dd></dl>
+
 </div>
 </div>
 <a id="a99bdce47fe660363b70c9d4b50b2b1c5" name="a99bdce47fe660363b70c9d4b50b2b1c5"></a>
@@ -150,6 +163,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the keyboard layout. </p>
+<p>This function sets the keyboard layout based on the provided keyboardLayout parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyboardLayout</td><td>The keyboard layout to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided. </dd></dl>
 
 </div>
 </div>
@@ -180,11 +203,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    {<span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;0&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;q&#39;</span>, <span class="charliteral">&#39;w&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;y&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;i&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;p&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;g&#39;</span>, <span class="charliteral">&#39;h&#39;</span>, <span class="charliteral">&#39;j&#39;</span>, <span class="charliteral">&#39;k&#39;</span>, <span class="charliteral">&#39;l&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;z&#39;</span>, <span class="charliteral">&#39;x&#39;</span>, <span class="charliteral">&#39;c&#39;</span>, <span class="charliteral">&#39;v&#39;</span>, <span class="charliteral">&#39;b&#39;</span>, <span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;m&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;.&#39;</span>, <span class="charliteral">&#39;-&#39;</span>},</div>
-<div class="line">    {<span class="charliteral">&#39;!&#39;</span>, <span class="charliteral">&#39;&quot;&#39;</span>, <span class="charliteral">&#39;#&#39;</span>, <span class="charliteral">&#39;$&#39;</span>, <span class="charliteral">&#39;%&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;(&#39;</span>, <span class="charliteral">&#39;)&#39;</span>, <span class="charliteral">&#39;=&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;!&#39;</span>, <span class="charliteral">&#39;&quot;&#39;</span>, <span class="charliteral">&#39;#&#39;</span>, <span class="charliteral">&#39;$&#39;</span>, <span class="charliteral">&#39;%&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;(&#39;</span>, <span class="charliteral">&#39;)&#39;</span>, <span class="charliteral">&#39;=&#39;</span>, <span class="charliteral">&#39;?&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;Q&#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;P&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;J&#39;</span>, <span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;L&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;Z&#39;</span>, <span class="charliteral">&#39;X&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;:&#39;</span>, <span class="charliteral">&#39;_&#39;</span>},</div>
@@ -197,7 +220,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1a130ff735c8a0dc4b21eece30c275de.html">scancode</a></li><li class="navelem"><a class="el" href="scancode_8c.html">scancode.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_7e19df4349fd0348dce6f141908bb821.html">scancode</a></li><li class="navelem"><a class="el" href="scancode_8c.html">scancode.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

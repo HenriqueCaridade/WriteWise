@@ -22,15 +22,15 @@
  * @var button_t::height
  * height of the button in percentage(from 0 to 1)
  * @var button_t::color
- * color in hexadecimal in format RGB(88 88 88)
+ * color in hexadecimal in format RGB (888)
  * @var button_t::text
  * text that appears in the button
  * @var button_t::tColor
- * color of the text in hexadecimal format RGB(88 88 88)
+ * color of the text in hexadecimal format RGB(888)
  * @var button_t::tSize
  * size of the text
  * @var button_t::bColor
- * color of the border in hexadecimal format RGB(88 88 88)
+ * color of the border in hexadecimal format RGB(888)
  * @var button_t::onClick
  * function called when button is clicked
  */
@@ -84,9 +84,9 @@ const bool cursorMapBorder[CURSOR_HEIGHT][CURSOR_WIDTH];
  * @var cursor::y
  * y cursor position in pixels
  * @var cursor::color
- * cursor's color in format RGB(88 88 88)
+ * cursor's color in format RGB(888)
  * @var cursor::bColor
- * cursor's border color in format RGB(88 88 88)
+ * cursor's border color in format RGB(888)
  * 
  */
 typedef struct {

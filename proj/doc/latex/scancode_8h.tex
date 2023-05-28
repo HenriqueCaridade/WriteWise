@@ -1,5 +1,5 @@
-\doxysection{lib/scancode/scancode.h File Reference}
-\hypertarget{scancode_8h}{}\label{scancode_8h}\index{lib/scancode/scancode.h@{lib/scancode/scancode.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/scancode/scancode.h File Reference}
+\hypertarget{scancode_8h}{}\label{scancode_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/scancode/scancode.h@{C:/Users/igorc/lcom/g2/proj/src/lib/scancode/scancode.h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include \"{}../drivers/\+KBC/keyboard.\+h\"{}}\newline
 Include dependency graph for scancode.\+h\+:
@@ -10,7 +10,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structkeyboard__t}{keyboard\+\_\+t}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Struct that holds each of the key\textquotesingle{}s corresponding letter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -133,9 +133,9 @@ enum \mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}{set\+Keyboard\+Layout}} (\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}} keyboard\+Layout)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the keyboard layout. \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{scancode_8h_ada8187b2c0a1eed5dc772fe2c64db5b2}{get\+Char\+From\+Makecode}} (uint8\+\_\+t makecode)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retrieves a character from a given makecode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -500,12 +500,41 @@ portuguese&\\
 \doxysubsubsection{\texorpdfstring{getCharFromMakecode()}{getCharFromMakecode()}}
 {\footnotesize\ttfamily char get\+Char\+From\+Makecode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{makecode }\end{DoxyParamCaption})}
 
+
+
+Retrieves a character from a given makecode. 
+
+This function returns the corresponding character based on the provided makecode parameter and the current keyboard layout.
+
+
+\begin{DoxyParams}{Parameters}
+{\em makecode} & The makecode to retrieve the character from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding character if found, \textquotesingle{} \textquotesingle{} (space) if makecode matches SPACE\+\_\+\+SCANCODE, \textquotesingle{}~\newline
+\textquotesingle{} (newline) if makecode matches ENTER\+\_\+\+SCANCODE, or 0 if no matching character is found or the current keyboard layout is set to none. 
+\end{DoxyReturn}
 \Hypertarget{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5}\label{scancode_8h_a99bdce47fe660363b70c9d4b50b2b1c5} 
 \index{scancode.h@{scancode.h}!setKeyboardLayout@{setKeyboardLayout}}
 \index{setKeyboardLayout@{setKeyboardLayout}!scancode.h@{scancode.h}}
 \doxysubsubsection{\texorpdfstring{setKeyboardLayout()}{setKeyboardLayout()}}
 {\footnotesize\ttfamily int set\+Keyboard\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{scancode_8h_a88bd684e3020855cc41cdb48a6bca4e9}{keyboard\+\_\+layout\+\_\+t}}}]{keyboard\+Layout }\end{DoxyParamCaption})}
 
+
+
+Sets the keyboard layout. 
+
+This function sets the keyboard layout based on the provided keyboard\+Layout parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keyboard\+Layout} & The keyboard layout to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the keyboard layout was set successfully, otherwise 1 if an error occurred or an unsupported layout was provided. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

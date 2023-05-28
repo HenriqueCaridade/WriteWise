@@ -1,5 +1,5 @@
-\doxysection{lib/drivers/serial\+Port/serial\+Port.c File Reference}
-\hypertarget{serialPort_8c}{}\label{serialPort_8c}\index{lib/drivers/serialPort/serialPort.c@{lib/drivers/serialPort/serialPort.c}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/serial\+Port/serial\+Port.c File Reference}
+\hypertarget{serialPort_8c}{}\label{serialPort_8c}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/serialPort.c@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/serialPort.c}}
 {\ttfamily \#include \"{}serial\+Port.\+h\"{}}\newline
 Include dependency graph for serial\+Port.\+c\+:
 % FIG 0
@@ -53,6 +53,10 @@ int \mbox{\hyperlink{serialPort_8c_ab7bc0d7bea9c6dbc7a7262e88e4ce600}{serial\+Po
 int \mbox{\hyperlink{serialPort_8c_a152dcde4b0c1c2bb87fc9a3be3ea9d50}{serial\+Port\+Send\+Ready\+Ack}} ()
 \item 
 int \mbox{\hyperlink{serialPort_8c_ab276142b3c1078569432d047f28846a2}{serial\+Port\+Send\+NReady\+Ack}} ()
+\item 
+int \mbox{\hyperlink{serialPort_8c_aa305fdf9b8c353ffa49dcba64a64ab20}{serial\+Port\+Send\+Won}} ()
+\item 
+int \mbox{\hyperlink{serialPort_8c_a7e0f1f128a6b66e79663d3f90f6349f0}{serial\+Port\+Send\+Exit}} ()
 \item 
 int \mbox{\hyperlink{serialPort_8c_a9589a68172d56e3652a6746e5d454e87}{serial\+Port\+Send\+Nack}} ()
 \item 
@@ -170,6 +174,12 @@ bool \mbox{\hyperlink{serialPort_8c_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \doxysubsubsection{\texorpdfstring{serialPortSendDouble()}{serialPortSendDouble()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Double (\begin{DoxyParamCaption}\item[{double}]{double\+Value }\end{DoxyParamCaption})}
 
+\Hypertarget{serialPort_8c_a7e0f1f128a6b66e79663d3f90f6349f0}\label{serialPort_8c_a7e0f1f128a6b66e79663d3f90f6349f0} 
+\index{serialPort.c@{serialPort.c}!serialPortSendExit@{serialPortSendExit}}
+\index{serialPortSendExit@{serialPortSendExit}!serialPort.c@{serialPort.c}}
+\doxysubsubsection{\texorpdfstring{serialPortSendExit()}{serialPortSendExit()}}
+{\footnotesize\ttfamily int serial\+Port\+Send\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \Hypertarget{serialPort_8c_a0134693fd4a7d6a123305129712792b8}\label{serialPort_8c_a0134693fd4a7d6a123305129712792b8} 
 \index{serialPort.c@{serialPort.c}!serialPortSendFloat@{serialPortSendFloat}}
 \index{serialPortSendFloat@{serialPortSendFloat}!serialPort.c@{serialPort.c}}
@@ -229,6 +239,12 @@ bool \mbox{\hyperlink{serialPort_8c_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \index{serialPortSendULong@{serialPortSendULong}!serialPort.c@{serialPort.c}}
 \doxysubsubsection{\texorpdfstring{serialPortSendULong()}{serialPortSendULong()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+ULong (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{long\+Value }\end{DoxyParamCaption})}
+
+\Hypertarget{serialPort_8c_aa305fdf9b8c353ffa49dcba64a64ab20}\label{serialPort_8c_aa305fdf9b8c353ffa49dcba64a64ab20} 
+\index{serialPort.c@{serialPort.c}!serialPortSendWon@{serialPortSendWon}}
+\index{serialPortSendWon@{serialPortSendWon}!serialPort.c@{serialPort.c}}
+\doxysubsubsection{\texorpdfstring{serialPortSendWon()}{serialPortSendWon()}}
+{\footnotesize\ttfamily int serial\+Port\+Send\+Won (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 

@@ -1,5 +1,5 @@
-\doxysection{lib/text/text.h File Reference}
-\hypertarget{text_8h}{}\label{text_8h}\index{lib/text/text.h@{lib/text/text.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/text/text.h File Reference}
+\hypertarget{text_8h}{}\label{text_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h@{C:/Users/igorc/lcom/g2/proj/src/lib/text/text.h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 Include dependency graph for text.\+h\+:
@@ -10,7 +10,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Struct that holds the font size information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,9 +33,9 @@ enum \mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{text_8h_a3f9c40149fc1dd28faac93188796baef}{get\+Char\+Index}} (const char c)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the index of the character in the alphabet array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} \mbox{\hyperlink{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}{get\+Font\+Size}} (\mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\+\_\+t}} font\+Type)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Font-\/size getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -94,12 +94,36 @@ xxxlarge&\\
 \doxysubsubsection{\texorpdfstring{getCharIndex()}{getCharIndex()}}
 {\footnotesize\ttfamily int get\+Char\+Index (\begin{DoxyParamCaption}\item[{const char}]{c }\end{DoxyParamCaption})}
 
+
+
+Gets the index of the character in the alphabet array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index 
+\end{DoxyReturn}
 \Hypertarget{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4}\label{text_8h_ad0d48f6dd01a3d197a1ee285afaaf6a4} 
 \index{text.h@{text.h}!getFontSize@{getFontSize}}
 \index{getFontSize@{getFontSize}!text.h@{text.h}}
 \doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structfont__size__t}{font\+\_\+size\+\_\+t}} get\+Font\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{text_8h_a127877a35232d7d6af0cf08a59d3ac84}{font\+\_\+type\+\_\+t}}}]{font\+Type }\end{DoxyParamCaption})}
 
+
+
+Font-\/size getter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structfont__size__t}{font\+\_\+size\+\_\+t} 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

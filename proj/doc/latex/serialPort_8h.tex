@@ -1,5 +1,5 @@
-\doxysection{lib/drivers/serial\+Port/serial\+Port.h File Reference}
-\hypertarget{serialPort_8h}{}\label{serialPort_8h}\index{lib/drivers/serialPort/serialPort.h@{lib/drivers/serialPort/serialPort.h}}
+\doxysection{C\+:/\+Users/igorc/lcom/g2/proj/src/lib/drivers/serial\+Port/serial\+Port.h File Reference}
+\hypertarget{serialPort_8h}{}\label{serialPort_8h}\index{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/serialPort.h@{C:/Users/igorc/lcom/g2/proj/src/lib/drivers/serialPort/serialPort.h}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include \"{}../timer/timer.\+h\"{}}\newline
 {\ttfamily \#include \"{}UART.\+h\"{}}\newline
@@ -32,11 +32,15 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 \#define \mbox{\hyperlink{serialPort_8h_a9e4b6fb4b9e92344c7f1d92c05e992b8}{INFO\+\_\+\+READY}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x8)
 \item 
-\#define \mbox{\hyperlink{serialPort_8h_a01bde8315f4a818197fd272ef95697ae}{INFO\+\_\+\+NREADY}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x8)
+\#define \mbox{\hyperlink{serialPort_8h_a01bde8315f4a818197fd272ef95697ae}{INFO\+\_\+\+NREADY}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x9)
 \item 
-\#define \mbox{\hyperlink{serialPort_8h_a6fdb9f83114cdaa989c30360eabc4468}{INFO\+\_\+\+READY\+\_\+\+ACK}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x9)
+\#define \mbox{\hyperlink{serialPort_8h_a6fdb9f83114cdaa989c30360eabc4468}{INFO\+\_\+\+READY\+\_\+\+ACK}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xA)
 \item 
-\#define \mbox{\hyperlink{serialPort_8h_aee5576a838624511d5cab4f6c9a41d42}{INFO\+\_\+\+NREADY\+\_\+\+ACK}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xA)
+\#define \mbox{\hyperlink{serialPort_8h_aee5576a838624511d5cab4f6c9a41d42}{INFO\+\_\+\+NREADY\+\_\+\+ACK}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xB)
+\item 
+\#define \mbox{\hyperlink{serialPort_8h_ab45c46ceb54fb3fdfa87375e5602d5d8}{INFO\+\_\+\+WON}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xC)
+\item 
+\#define \mbox{\hyperlink{serialPort_8h_ac1a387f1e38b2715daa1fbd3fdcc3935}{INFO\+\_\+\+EXIT}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xD)
 \item 
 \#define \mbox{\hyperlink{serialPort_8h_a30d2bdf684f0e26f5060952776ce302b}{NORMAL\+\_\+\+BIT\+\_\+\+MAX}}~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} -\/ 1)
 \end{DoxyCompactItemize}
@@ -91,6 +95,10 @@ int \mbox{\hyperlink{serialPort_8h_a152dcde4b0c1c2bb87fc9a3be3ea9d50}{serial\+Po
 \item 
 int \mbox{\hyperlink{serialPort_8h_ab276142b3c1078569432d047f28846a2}{serial\+Port\+Send\+NReady\+Ack}} ()
 \item 
+int \mbox{\hyperlink{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20}{serial\+Port\+Send\+Won}} ()
+\item 
+int \mbox{\hyperlink{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0}{serial\+Port\+Send\+Exit}} ()
+\item 
 int \mbox{\hyperlink{serialPort_8h_a9589a68172d56e3652a6746e5d454e87}{serial\+Port\+Send\+Nack}} ()
 \item 
 int \mbox{\hyperlink{serialPort_8h_a3fe05b675294d1c1aec1e95afdd054d4}{serial\+Port\+Clear\+FIFO}} ()
@@ -135,6 +143,12 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \doxysubsubsection{\texorpdfstring{INFO\_DOUBLE}{INFO\_DOUBLE}}
 {\footnotesize\ttfamily \#define INFO\+\_\+\+DOUBLE~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x7)}
 
+\Hypertarget{serialPort_8h_ac1a387f1e38b2715daa1fbd3fdcc3935}\label{serialPort_8h_ac1a387f1e38b2715daa1fbd3fdcc3935} 
+\index{serialPort.h@{serialPort.h}!INFO\_EXIT@{INFO\_EXIT}}
+\index{INFO\_EXIT@{INFO\_EXIT}!serialPort.h@{serialPort.h}}
+\doxysubsubsection{\texorpdfstring{INFO\_EXIT}{INFO\_EXIT}}
+{\footnotesize\ttfamily \#define INFO\+\_\+\+EXIT~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xD)}
+
 \Hypertarget{serialPort_8h_a95ff86a7ac36ecd574a9360b0d3bc80c}\label{serialPort_8h_a95ff86a7ac36ecd574a9360b0d3bc80c} 
 \index{serialPort.h@{serialPort.h}!INFO\_FLOAT@{INFO\_FLOAT}}
 \index{INFO\_FLOAT@{INFO\_FLOAT}!serialPort.h@{serialPort.h}}
@@ -163,13 +177,13 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \index{serialPort.h@{serialPort.h}!INFO\_NREADY@{INFO\_NREADY}}
 \index{INFO\_NREADY@{INFO\_NREADY}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{INFO\_NREADY}{INFO\_NREADY}}
-{\footnotesize\ttfamily \#define INFO\+\_\+\+NREADY~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x8)}
+{\footnotesize\ttfamily \#define INFO\+\_\+\+NREADY~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x9)}
 
 \Hypertarget{serialPort_8h_aee5576a838624511d5cab4f6c9a41d42}\label{serialPort_8h_aee5576a838624511d5cab4f6c9a41d42} 
 \index{serialPort.h@{serialPort.h}!INFO\_NREADY\_ACK@{INFO\_NREADY\_ACK}}
 \index{INFO\_NREADY\_ACK@{INFO\_NREADY\_ACK}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{INFO\_NREADY\_ACK}{INFO\_NREADY\_ACK}}
-{\footnotesize\ttfamily \#define INFO\+\_\+\+NREADY\+\_\+\+ACK~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xA)}
+{\footnotesize\ttfamily \#define INFO\+\_\+\+NREADY\+\_\+\+ACK~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xB)}
 
 \Hypertarget{serialPort_8h_a9e4b6fb4b9e92344c7f1d92c05e992b8}\label{serialPort_8h_a9e4b6fb4b9e92344c7f1d92c05e992b8} 
 \index{serialPort.h@{serialPort.h}!INFO\_READY@{INFO\_READY}}
@@ -181,7 +195,7 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \index{serialPort.h@{serialPort.h}!INFO\_READY\_ACK@{INFO\_READY\_ACK}}
 \index{INFO\_READY\_ACK@{INFO\_READY\_ACK}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{INFO\_READY\_ACK}{INFO\_READY\_ACK}}
-{\footnotesize\ttfamily \#define INFO\+\_\+\+READY\+\_\+\+ACK~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x9)}
+{\footnotesize\ttfamily \#define INFO\+\_\+\+READY\+\_\+\+ACK~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xA)}
 
 \Hypertarget{serialPort_8h_ad5be585674559c3bc6345352ac35d436}\label{serialPort_8h_ad5be585674559c3bc6345352ac35d436} 
 \index{serialPort.h@{serialPort.h}!INFO\_UINT@{INFO\_UINT}}
@@ -194,6 +208,12 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \index{INFO\_ULONG@{INFO\_ULONG}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{INFO\_ULONG}{INFO\_ULONG}}
 {\footnotesize\ttfamily \#define INFO\+\_\+\+ULONG~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0x2)}
+
+\Hypertarget{serialPort_8h_ab45c46ceb54fb3fdfa87375e5602d5d8}\label{serialPort_8h_ab45c46ceb54fb3fdfa87375e5602d5d8} 
+\index{serialPort.h@{serialPort.h}!INFO\_WON@{INFO\_WON}}
+\index{INFO\_WON@{INFO\_WON}!serialPort.h@{serialPort.h}}
+\doxysubsubsection{\texorpdfstring{INFO\_WON}{INFO\_WON}}
+{\footnotesize\ttfamily \#define INFO\+\_\+\+WON~(\mbox{\hyperlink{serialPort_8h_a5355849469c0a836aa82352542383565}{INFO\+\_\+\+BITS}} \texorpdfstring{$\vert$}{|} 0xC)}
 
 \Hypertarget{serialPort_8h_a30d2bdf684f0e26f5060952776ce302b}\label{serialPort_8h_a30d2bdf684f0e26f5060952776ce302b} 
 \index{serialPort.h@{serialPort.h}!NORMAL\_BIT\_MAX@{NORMAL\_BIT\_MAX}}
@@ -300,6 +320,12 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \doxysubsubsection{\texorpdfstring{serialPortSendDouble()}{serialPortSendDouble()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+Double (\begin{DoxyParamCaption}\item[{double}]{double\+Value }\end{DoxyParamCaption})}
 
+\Hypertarget{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0}\label{serialPort_8h_a7e0f1f128a6b66e79663d3f90f6349f0} 
+\index{serialPort.h@{serialPort.h}!serialPortSendExit@{serialPortSendExit}}
+\index{serialPortSendExit@{serialPortSendExit}!serialPort.h@{serialPort.h}}
+\doxysubsubsection{\texorpdfstring{serialPortSendExit()}{serialPortSendExit()}}
+{\footnotesize\ttfamily int serial\+Port\+Send\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \Hypertarget{serialPort_8h_a0134693fd4a7d6a123305129712792b8}\label{serialPort_8h_a0134693fd4a7d6a123305129712792b8} 
 \index{serialPort.h@{serialPort.h}!serialPortSendFloat@{serialPortSendFloat}}
 \index{serialPortSendFloat@{serialPortSendFloat}!serialPort.h@{serialPort.h}}
@@ -359,6 +385,12 @@ bool \mbox{\hyperlink{serialPort_8h_a2ae49fccede6f003c419b937c9be3ddd}{waiting\+
 \index{serialPortSendULong@{serialPortSendULong}!serialPort.h@{serialPort.h}}
 \doxysubsubsection{\texorpdfstring{serialPortSendULong()}{serialPortSendULong()}}
 {\footnotesize\ttfamily int serial\+Port\+Send\+ULong (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{long\+Value }\end{DoxyParamCaption})}
+
+\Hypertarget{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20}\label{serialPort_8h_aa305fdf9b8c353ffa49dcba64a64ab20} 
+\index{serialPort.h@{serialPort.h}!serialPortSendWon@{serialPortSendWon}}
+\index{serialPortSendWon@{serialPortSendWon}!serialPort.h@{serialPort.h}}
+\doxysubsubsection{\texorpdfstring{serialPortSendWon()}{serialPortSendWon()}}
+{\footnotesize\ttfamily int serial\+Port\+Send\+Won (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
